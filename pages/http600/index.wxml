@@ -1,0 +1,24 @@
+<view class="container row-col-center data-v-420356b8">
+    <view class="row-center data-v-420356b8" style="position:relative;top:-120rpx;">
+        <image class="data-v-420356b8" mode="scaleToFill" src="https://img2.7mate.cn/pdjh_http600_01.png" style="width:200rpx;height:200rpx;"></image>
+        <view class="data-v-420356b8" style="padding-top:20rpx;font-size:28rpx;" wx:if="{{code==429}}">您已被限流，请耐心等待...</view>
+        <view class="data-v-420356b8" style="padding-top:20rpx;font-size:28rpx;" wx:else>当前服务器人数过多，请耐心排队等待...</view>
+        <view class="data-v-420356b8" style="font-size:24rpx;color:#666;padding-top:20rpx;">
+            <text class="data-v-420356b8">您已等待</text>
+            <text class="data-v-420356b8">
+                <text class="data-v-420356b8" wx:if="{{getTime.h}}">
+                    <text class="data-v-420356b8" style="color:#FC555C;margin:0 10rpx 0 10rpx;font-size:26rpx;font-weight:700;">{{getTime.h}}</text>
+                    <text class="data-v-420356b8">小时</text>
+                </text>
+                <text class="data-v-420356b8" wx:if="{{getTime.m}}">
+                    <text class="data-v-420356b8" style="color:#FC555C;margin:0 10rpx 0 10rpx;font-size:26rpx;font-weight:700;">{{getTime.m}}</text>
+                    <text class="data-v-420356b8">分钟</text>
+                </text>
+                <text class="data-v-420356b8" wx:if="{{getTime.s}}">
+                    <text class="data-v-420356b8" style="color:#FC555C;margin:0 10rpx 0 10rpx;font-size:26rpx;font-weight:700;">{{getTime.s}}</text>
+                    <text class="data-v-420356b8">秒</text>
+                </text>
+            </text>
+        </view>
+    </view>
+</view>

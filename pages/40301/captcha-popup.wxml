@@ -1,0 +1,33 @@
+<view class="captcha-mask data-v-acc1da16" wx:if="{{show}}">
+    <view class="captcha-container data-v-acc1da16">
+        <view class="captcha-header data-v-acc1da16">
+            <text class="captcha-title data-v-acc1da16">安全验证</text>
+        </view>
+        <view class="captcha-body data-v-acc1da16">
+            <view bindtap="__e" class="captcha-img-box data-v-acc1da16" data-event-opts="{{[ [ 'tap',[ [ 'onClickContent',['$event'] ] ] ] ]}}">
+                <image class="captcha-bg data-v-acc1da16" mode="scaleToFill" src="{{captchaImg}}" wx:if="{{captchaImg}}"></image>
+                <image class="captcha-slider data-v-acc1da16" mode="scaleToFill" src="{{sliderImg}}" style="{{'top: '+sliderY+'px; left: '+sliderX+'px;'}}" wx:if="{{captchaType==='slider'&&sliderImg}}"></image>
+                <block wx:if="{{captchaType==='click'}}">
+                    <view class="click-dot data-v-acc1da16" style="{{'left: '+item.x+'px; top: '+item.y+'px;'}}" wx:for="{{clickDots}}" wx:for-index="__i0__" wx:key="num">{{''+item.num+''}}</view>
+                </block>
+                <view class="captcha-loading data-v-acc1da16" wx:if="{{isLoading}}">加载中...</view>
+                <view bindtap="__e" class="captcha-error data-v-acc1da16" data-event-opts="{{[ [ 'tap',[ [ 'initCaptcha',['$event'] ] ] ] ]}}" wx:if="{{isError}}">
+                    <text class="data-v-acc1da16">加载失败，点击重试</text>
+                </view>
+            </view>
+            <view class="captcha-track data-v-acc1da16" wx:if="{{captchaType==='slider'}}">
+                <view class="track-bg data-v-acc1da16">
+                    <text class="track-text data-v-acc1da16">{{isSuccess?'验证通过':'向右滑动填充拼图'}}</text>
+                </view>
+                <view class="track-mask data-v-acc1da16" style="{{'width: '+sliderX+'px;'}}"></view>
+                <view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{['track-btn','data-v-acc1da16',isDragging?'active':'',isSuccess?'success':'',isError?'error':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'onTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'onTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'onTouchEnd',['$event'] ] ] ] ]}}" style="{{'transform: translateX('+sliderX+'px);'}}">
+                    <view class="track-icon data-v-acc1da16"></view>
+                </view>
+            </view>
+            <view class="captcha-tips data-v-acc1da16" wx:if="{{captchaType==='click'}}">
+                <text class="data-v-acc1da16">{{tips}}</text>
+                <view bindtap="__e" class="captcha-refresh data-v-acc1da16" data-event-opts="{{[ [ 'tap',[ [ 'initCaptcha',['$event'] ] ] ] ]}}">↻</view>
+            </view>
+        </view>
+    </view>
+</view>

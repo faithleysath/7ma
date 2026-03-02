@@ -1,0 +1,26 @@
+<view class="over-auto ios" style="max-height:500rpx;min-height:500rpx;">
+    <view class="mb25 font24 over-hidden" style="border:1.5rpx solid #c7c7c7;border-radius:20rpx;color:#515151;" wx:for="{{list}}" wx:key="index">
+        <view class="box-sizing p30">
+            <view class="row-left-top">
+                <view class="ell" style="color:#a8a8a8;width:130rpx;">评价内容：</view>
+                <view class="flex1 box-sizing pr20">{{item.content}}</view>
+            </view>
+            <view class="row-left-top pt10">
+                <view class="ell" style="color:#a8a8a8;width:130rpx;">评价时间：</view>
+                <view class="flex1 box-sizing pr20">{{item.created_at}}</view>
+            </view>
+        </view>
+        <view class="relative box-sizing pt30 pl30 pr30" style="background:#f5f5f5;" wx:if="{{item.reply}}">
+            <view class="row-left-top">
+                <view class="ell" style="color:#a8a8a8;width:130rpx;">评价反馈：</view>
+                <view class="flex1 box-sizing pr20">{{item.reply}}</view>
+            </view>
+            <view class="row-left-top pt10 pb30">
+                <view class="ell" style="color:#a8a8a8;width:130rpx;">反馈时间：</view>
+                <view class="flex1 box-sizing pr20">{{item.reply_time}}</view>
+            </view>
+            <view class="absolute left60" style="bottom:100%;width:0;height:0;border:15rpx solid transparent;border-bottom-color:#f5f5f5;"></view>
+        </view>
+    </view>
+    <view class="text-center font30 pt100" style="color:#b7b7b7;" wx:if="{{!$root.g0}}">--暂无数据--</view>
+</view>

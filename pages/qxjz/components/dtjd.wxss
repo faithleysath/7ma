@@ -1,0 +1,16 @@
+.progress.data-v-7a6c7b5c {
+    background: #dcf6dc;
+    border-radius: 8rpx;
+    height: 15rpx;
+    position: relative
+}
+
+.progress-item.data-v-7a6c7b5c {
+    background: #009b03;
+    border-radius: 8rpx;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .2s
+}

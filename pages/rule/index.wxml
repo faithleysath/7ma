@@ -1,0 +1,157 @@
+<view class="container data-v-48659f66" hidden="{{!info.carmodel_id}}">
+    <view class="header box-sizing data-v-48659f66">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-48659f66" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-48659f66">计费规则</view>
+    </view>
+    <view class="content over-auto ios data-v-48659f66">
+        <view class="row-center pt5 data-v-48659f66">
+            <image class="data-v-48659f66" src="https://img2.7mate.cn/rule_a.png" style="width:250rpx;height:250rpx;" wx:if="{{info.carmodel_id==1}}"></image>
+            <image class="data-v-48659f66" src="https://img2.7mate.cn/hbc_2.png" style="width:250rpx;height:250rpx;" wx:if="{{info.carmodel_id==2&&(info.school_id==102||info.school_id==113)}}"></image>
+            <block wx:else>
+                <image class="data-v-48659f66" src="https://img2.7mate.cn/rule_c.png" style="width:250rpx;height:250rpx;" wx:if="{{info.carmodel_id==2}}"></image>
+            </block>
+            <view class="font34 data-v-48659f66" wx:if="{{info.carmodel_id==2&&(info.school_id==102||info.school_id==113)}}">滑板车</view>
+            <view class="font34 data-v-48659f66" wx:else>{{info.carmodel_id==1?'单车':'助力车'}}</view>
+            <view class="font22 pt10 data-v-48659f66" style="color:#666;">本计费规则仅适用于当前运营区内车辆</view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 data-v-48659f66">
+            <view class="bg-f br10 box-sizing pl40 pt32 pb32 pr30 data-v-48659f66">
+                <view class="row-left-bottom data-v-48659f66">
+                    <view class="font700 font36 data-v-48659f66">骑行价格</view>
+                    <view class="font22 data-v-48659f66" style="color:#999;">（借车1分钟内还车免费）</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">起步价格</view>
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.first_price+'元/'+info.first_time+'分钟'}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">{{'骑行时间小于等于'+info.first_time+'分钟都按照'+info.first_time+'分钟计算'}}</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">时长价格</view>
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.continued_price+'元/'+info.continued_time+'分钟'}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">超过起步价时间的收费价格</view>
+                </view>
+                <view class="pt40 data-v-48659f66" wx:if="{{info.school_id!=33}}">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">封顶价格</view>
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.daily_max_price+'元/每天'}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">{{'每日0时~24时骑行最多花费'+info.daily_max_price+'元，超过部分不再计费'}}</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">信用分价格</view>
+                        <view bindtap="__e" class="font30 row-left-center data-v-48659f66" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/h5/index?title=信用分&path='+$root.m0] ] ] ] ]}}" style="color:#333;">
+                            <view class="data-v-48659f66">了解详情</view>
+                            <image class="block relative top3 ml10 data-v-48659f66" src="https://img2.7mate.cn/arrow_right_b.png" style="width:18rpx;height:30rpx;"></image>
+                        </view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">不同的信用分对应的计费不同</view>
+                </view>
+            </view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 data-v-48659f66" wx:if="{{isXha}}">
+            <view class="bg-f br10 box-sizing pl40 pt32 pb32 pr30 data-v-48659f66">
+                <view class="row-col-berween data-v-48659f66">
+                    <view class="font700 font36 data-v-48659f66">换乘价格</view>
+                    <view bindtap="__e" class="font30 row-left-center data-v-48659f66" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index2'] ] ] ] ]}}" style="color:#333;">
+                        <view class="data-v-48659f66">了解详情</view>
+                        <image class="block relative top3 ml10 data-v-48659f66" src="https://img2.7mate.cn/arrow_right_b.png" style="width:18rpx;height:30rpx;"></image>
+                    </view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">跨园区15分钟内换车骑行延续上一笔订单计费</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">仅限余额或单次支付骑行用户，套餐卡用户不享受</view>
+                </view>
+            </view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 data-v-48659f66">
+            <view class="bg-f br10 box-sizing pl40 pt32 pb32 pr30 data-v-48659f66">
+                <view class="row-left-bottom data-v-48659f66">
+                    <view class="font700 font36 data-v-48659f66">车辆管理费</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">调度费(运营区内非还车点)</view>
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.in_area+'元/次'}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">停至运营区内非还车点需缴纳的费用</view>
+                    <view class="row-col-berween pt35 data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">调度费(运营区外)</view>
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.out_area_in_5+'~'+info.out_area_over_5+'元/次'}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">{{'停至运营区外需缴纳的费用(0-5公里'+info.out_area_in_5+'元，5公里以上'+info.out_area_over_5+'元)'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 data-v-48659f66" wx:if="{{info.activity_card.title}}">
+            <view class="bg-f br10 box-sizing pl40 pt32 pb32 pr30 data-v-48659f66">
+                <view class="row-left-bottom data-v-48659f66">
+                    <view class="font700 font36 data-v-48659f66">{{info.activity_card.title}}</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">{{info.activity_card.content}}</view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">使用套餐卡的骑行次数不计入内</view>
+                </view>
+            </view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 data-v-48659f66" wx:if="{{info.price_decrement.first_time}}">
+            <view class="bg-f br10 box-sizing pl40 pt32 pr30 data-v-48659f66">
+                <view class="row-left-bottom data-v-48659f66">
+                    <view class="font700 font36 data-v-48659f66">单价递减活动</view>
+                </view>
+                <view class="pt40 data-v-48659f66">
+                    <view class="row-col-berween data-v-48659f66">
+                        <view class="font30 data-v-48659f66" style="color:#333;">每日单次骑行价格递减</view>
+                        <view class="row-left-center data-v-48659f66">
+                            <view class="font22 data-v-48659f66">起步时长：</view>
+                            <view class="font30 data-v-48659f66">{{info.price_decrement.first_time+'分钟'}}</view>
+                        </view>
+                    </view>
+                    <view class="font22 pt10 data-v-48659f66" style="color:#999;">使用套餐卡支付不享受该活动优惠</view>
+                    <view class="pt20 data-v-48659f66">
+                        <view class="flex box-sizing pt20 pb20 data-v-48659f66">
+                            <view class="flex3_1 text-center data-v-48659f66" style="border-right:1.5rpx solid #eee;">
+                                <view class="data-v-48659f66">{{info.price_decrement.first_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">第1次</view>
+                            </view>
+                            <view class="flex3_1 text-center data-v-48659f66" style="border-right:1.5rpx solid #eee;">
+                                <view class="data-v-48659f66">{{info.price_decrement.second_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">第2次</view>
+                            </view>
+                            <view class="flex3_1 text-center data-v-48659f66">
+                                <view class="data-v-48659f66">{{info.price_decrement.third_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">第3次</view>
+                            </view>
+                        </view>
+                        <view class="data-v-48659f66" style="border-bottom:1.5rpx solid #eee;"></view>
+                        <view class="flex box-sizing pt20 pb20 data-v-48659f66">
+                            <view class="flex3_1 text-center data-v-48659f66" style="border-right:1.5rpx solid #eee;">
+                                <view class="data-v-48659f66">{{info.price_decrement.fourth_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">第4次</view>
+                            </view>
+                            <view class="flex3_1 text-center data-v-48659f66" style="border-right:1.5rpx solid #eee;">
+                                <view class="data-v-48659f66">{{info.price_decrement.fifth_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">第5次</view>
+                            </view>
+                            <view class="flex3_1 text-center data-v-48659f66">
+                                <view class="data-v-48659f66">{{info.price_decrement.sixth_price+'元'}}</view>
+                                <view class="font18 pt10 data-v-48659f66" style="color:#999;">6次及以上</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="pt20 box-sizing pl32 pr32 pb100 data-v-48659f66">
+            <view class="pb100 data-v-48659f66"></view>
+        </view>
+    </view>
+</view>

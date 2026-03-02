@@ -1,0 +1,182 @@
+<view class="container relative data-v-65e93a21">
+    <map bindupdated="__e" class="data-v-65e93a21" data-event-opts="{{[ [ 'updated',[ [ 'updated',['$event'] ] ] ] ]}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{mapLine}}" showLocation="{{true}}" style="width:750rpx;height:100%;"></map>
+    <view class="absolute left0 top0 w_100 box-sizing p25 data-v-65e93a21" wx:if="{{minibusschedule.id}}">
+        <view class="bg-f box-sizing pl25 pr25 pt15 pb15 row-col-berween font24 data-v-65e93a21" style="border-radius:20rpx;box-shadow:0 4rpx 8rpx 2rpx #ccc;">
+            <view class="row-left-center data-v-65e93a21">
+                <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_8.png" style="width:43rpx;height:43rpx;"></image>
+                <view class="ml20 data-v-65e93a21">首班：</view>
+                <view class="ml10 data-v-65e93a21" style="color:#EA5359;">{{minibusschedule.first_vehicle_time}}</view>
+                <view class="ml35 data-v-65e93a21">末班：</view>
+                <view class="ml10 data-v-65e93a21" style="color:#EA5359;">{{minibusschedule.final_vehicle_time}}</view>
+            </view>
+            <view bindtap="__e" class="data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">查看时刻表</view>
+        </view>
+    </view>
+    <view class="{{['animated','absolute','left0','w_100','top90','box-sizing','p25','data-v-65e93a21',showMinibusschedule&&'fadeInRight']}}" hidden="{{!showMinibusschedule}}" style="z-index:10;animation-duration:0.4s;">
+        <view class="bg-f box-sizing pt15 pb15 font228 data-v-65e93a21" style="border-radius:20rpx;box-shadow:0 4rpx 8rpx 2rpx #ccc;">
+            <view class="row-col-berween box-sizing pr25 pb15 data-v-65e93a21">
+                <view class="row-left-center data-v-65e93a21">
+                    <view class="br5 data-v-65e93a21" style="width:8rpx;height:28rpx;background:#F94754;"></view>
+                    <view class="ml35 data-v-65e93a21">工作日发车时间表</view>
+                </view>
+                <view bindtap="__e" class="pl50 pr20 pt10 pb10 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">
+                    <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_9.png" style="width:18rpx;height:18rpx;"></image>
+                </view>
+            </view>
+            <view class="box-sizing pl20 pr20 data-v-65e93a21">
+                <view class="data-v-65e93a21" style="border-bottom:1.5rpx solid #E9E9E9;"></view>
+                <view class="ios over-auto box-sizing pt10 pb10 data-v-65e93a21" style="max-height:70vh;">
+                    <image class="w_100 block data-v-65e93a21" mode="widthFix" src="{{item}}" wx:for="{{minibusschedule.pictures_url}}" wx:key="index"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="absolute bottom0 left25 data-v-65e93a21" id="bottomLineWrap" style="width:700rpx;">
+        <view class="box-sizing bg-f data-v-65e93a21" style="border-radius:20rpx;box-shadow:0 4rpx 8rpx 2rpx #ccc;">
+            <view class="absolute left0 data-v-65e93a21" style="top:-100rpx;">
+                <view bindtap="__e" class="bg-f data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'reset',['$event'] ] ] ] ]}}" style="box-shadow:0 4rpx 8rpx 2rpx rgba(0,0,0,0.16);padding:16rpx;border-radius:14rpx;">
+                    <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_5.png" style="width:37rpx;height:37rpx;"></image>
+                </view>
+            </view>
+            <view class="absolute right0 data-v-65e93a21" style="top:-324rpx;">
+                <view class="row-right-top mb30 data-v-65e93a21">
+                    <view bindtap="__e" class="bg-f row-left-center h_100 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}" style="box-shadow:0 4rpx 8rpx 2rpx rgba(0,0,0,0.16);border-radius:14rpx;">
+                        <view class="row-left-center h_100 data-v-65e93a21" style="padding:16rpx;">
+                            <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_7_1.png" style="width:37rpx;height:37rpx;"></image>
+                        </view>
+                        <view class="color-f font20 row-center data-v-65e93a21" style="width:50rpx;background:#F94754;padding:8rpx 10rpx 8rpx 10rpx;border-radius:0 14rpx 14rpx 0;">
+                            <view class="data-v-65e93a21">呼叫</view>
+                            <view class="data-v-65e93a21">车辆</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="row-right-top mb30 data-v-65e93a21">
+                    <view bindtap="__e" class="bg-f row-left-center h_100 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}" style="box-shadow:0 4rpx 8rpx 2rpx rgba(0,0,0,0.16);border-radius:14rpx;">
+                        <view class="row-left-center h_100 data-v-65e93a21" style="padding:16rpx;">
+                            <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_10.png" style="width:37rpx;height:37rpx;"></image>
+                        </view>
+                        <view class="color-f font20 row-center data-v-65e93a21" style="width:50rpx;background:#F94754;padding:8rpx 10rpx 8rpx 10rpx;border-radius:0 14rpx 14rpx 0;">
+                            <view class="data-v-65e93a21">乘车</view>
+                            <view class="data-v-65e93a21">评价</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="row-left-top data-v-65e93a21">
+                    <view class="ml20 bg-f row-left-center h_100 data-v-65e93a21" style="box-shadow:0 4rpx 8rpx 2rpx rgba(0,0,0,0.16);border-radius:14rpx;">
+                        <view class="row-left-center h_100 data-v-65e93a21" style="padding:16rpx;">
+                            <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_6.png" style="width:37rpx;height:37rpx;"></image>
+                        </view>
+                        <view class="color-f text-center h_100 data-v-65e93a21" style="width:50rpx;background:#F94754;padding:18rpx 10rpx 18rpx 10rpx;border-radius:0 14rpx 14rpx 0;">{{$root.g0}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data-v-65e93a21">
+                <view class="box-sizing pl25 pr25 pt30 data-v-65e93a21">
+                    <view class="row-left-center over-auto ios pb20 data-v-65e93a21">
+                        <view bindtap="__e" class="{{['line-item','mr20','data-v-65e93a21',lineDetail.id==item.id&&'line-item-active']}}" data-event-opts="{{[ [ 'tap',[ [ 'getLineDetail',['$0'],[ [ ['gjLineList','',index] ] ] ] ] ] ]}}" wx:for="{{gjLineList}}" wx:key="index">
+                            <view class="ell data-v-65e93a21">{{item.name}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="line70 font30 data-v-65e93a21" style="background:#f9f9f9;font-weight:500;">
+                    <view class="box-sizing pl20 pr20 data-v-65e93a21">
+                        <text class="data-v-65e93a21">{{lineDetail.school_name}}</text>
+                        <text class="data-v-65e93a21" wx:if="{{lineDetail.school_area}}">{{'- '+lineDetail.school_area}}</text>
+                    </view>
+                </view>
+                <view class="box-sizing pl20 pr20 pt20 pb50 row-left-center font28 flex-wrap data-v-65e93a21" style="color:#777;">
+                    <view class="data-v-65e93a21" wx:for="{{zdList}}" wx:key="index">
+                        <view class="data-v-65e93a21">{{item.site_name+(index<$root.g1-1?'-':'')}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data-v-65e93a21" style="height:20rpx;"></view>
+        <view class="x-bottom data-v-65e93a21"></view>
+    </view>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e4'] ] ] ]}}" round="{{true}}" show="{{ccShow}}" vueId="55402753-1" vueSlots="{{['default']}}">
+        <view class="box-sizing data-v-65e93a21" style="width:610rpx;background:#FFF3EE;padding:23rpx;">
+            <view class="row-left-center data-v-65e93a21">
+                <view bindtap="__e" class="{{['btn-item','data-v-65e93a21',btnIndex==0&&'btn-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'e5',['$event'] ] ] ] ]}}">呼叫车辆</view>
+                <view bindtap="__e" class="{{['btn-item','data-v-65e93a21',btnIndex==1&&'btn-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'e6',['$event'] ] ] ] ]}}">呼叫记录</view>
+            </view>
+            <view class="data-v-65e93a21" style="background:#fff;border-radius:0 0 21rpx 21rpx;padding:45rpx 40rpx;">
+                <view class="data-v-65e93a21" wx:if="{{btnIndex==0}}">
+                    <view bindtap="__e" class="font30 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e7',['$event'] ] ] ] ]}}" style="background:#FBFBFB;padding:20rpx;border-radius:15rpx;border:1.5rpx solid #E9E9E9;">
+                        <view class="ell data-v-65e93a21" wx:if="{{ccForm.start_site_text}}">{{ccForm.start_site_text}}</view>
+                        <view class="data-v-65e93a21" style="color:#b7b7b7;" wx:else>请选择呼叫站点</view>
+                    </view>
+                    <view bindtap="__e" class="font30 mt40 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e8',['$event'] ] ] ] ]}}" style="background:#FBFBFB;padding:20rpx;border-radius:15rpx;border:1.5rpx solid #E9E9E9;">
+                        <view class="ell data-v-65e93a21" wx:if="{{ccForm.end_site_text}}">{{ccForm.end_site_text}}</view>
+                        <view class="data-v-65e93a21" style="color:#b7b7b7;" wx:else>请选择行驶方向</view>
+                    </view>
+                    <view bindtap="__e" class="font30 mt40 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'cc',['$event'] ] ] ] ]}}" style="background:#F94754;padding:20rpx;border-radius:15rpx;">
+                        <view class="color-f text-center data-v-65e93a21">呼叫</view>
+                    </view>
+                </view>
+                <view class="data-v-65e93a21" wx:if="{{btnIndex==1}}">
+                    <cc-list bind:__l="__l" class="data-v-65e93a21" vueId="{{'55402753-2'+','+'55402753-1'}}"></cc-list>
+                </view>
+            </view>
+        </view>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e9'] ] ] ]}}" round="{{true}}" show="{{pjShow}}" vueId="55402753-3" vueSlots="{{['default']}}">
+        <view class="box-sizing data-v-65e93a21" style="width:670rpx;background:#FFF3EE;padding:23rpx;">
+            <view class="row-left-center data-v-65e93a21">
+                <view bindtap="__e" class="{{['btn-item','data-v-65e93a21',pjbthIndex==0&&'btn-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'e10',['$event'] ] ] ] ]}}">乘客评价</view>
+                <view bindtap="__e" class="{{['btn-item','data-v-65e93a21',pjbthIndex==1&&'btn-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'e11',['$event'] ] ] ] ]}}">评价反馈(三个月内)</view>
+            </view>
+            <view class="data-v-65e93a21" style="background:#fff;border-radius:0 0 21rpx 21rpx;padding:45rpx 20rpx;">
+                <view class="data-v-65e93a21" wx:if="{{pjbthIndex==0}}">
+                    <view class="row-left-center data-v-65e93a21">
+                        <view class="row-col-berween data-v-65e93a21">
+                            <view class="data-v-65e93a21">车</view>
+                            <view class="data-v-65e93a21" style="opacity:0;">车车</view>
+                            <view class="data-v-65e93a21">辆</view>
+                        </view>
+                        <view class="flex1 box-sizing pl20 data-v-65e93a21">
+                            <view bindtap="__e" class="row-col-berween box-sizing pl25 pr10 line70 font28 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'e12',['$event'] ] ] ] ]}}" style="border:1.5px solid #F94754;border-radius:20rpx;">
+                                <view class="data-v-65e93a21" style="color:#F94754;" wx:if="{{pjForm.minbus_name}}">{{pjForm.minbus_name}}</view>
+                                <view class="data-v-65e93a21" style="color:#B5B5B5;" wx:else>请选择</view>
+                                <image catchtap="__e" class="block data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'scan',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_11.png" style="width:56rpx;height:56rpx;"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="row-left-center mt25 data-v-65e93a21">
+                        <view class="row-col-berween data-v-65e93a21">
+                            <view class="data-v-65e93a21">乘车时间</view>
+                        </view>
+                        <view class="flex1 box-sizing pl20 data-v-65e93a21">
+                            <view bindtap="__e" class="row-col-berween box-sizing pl25 pr25 line70 font28 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'openPjTimeShow',['$event'] ] ] ] ]}}" style="border:1.5px solid #F94754;border-radius:20rpx;">
+                                <view class="data-v-65e93a21" style="color:#F94754;" wx:if="{{pjForm.by_minibus_time}}">{{pjForm.by_minibus_time}}</view>
+                                <view class="data-v-65e93a21" style="color:#B5B5B5;" wx:else>请选择</view>
+                                <image class="block data-v-65e93a21" mode="scaleToFill" src="https://img2.7mate.cn/gjlx_12.png" style="width:14rpx;height:24rpx;"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="__e" class="font30 mt40 data-v-65e93a21" data-event-opts="{{[ [ 'tap',[ [ 'goPj',['$event'] ] ] ] ]}}" style="background:#F94754;padding:20rpx;border-radius:15rpx;" wx:if="{{pjForm.minbus_id&&pjForm.by_minibus_time}}">
+                        <view class="color-f text-center data-v-65e93a21">去评价</view>
+                    </view>
+                    <view class="font30 mt40 data-v-65e93a21" style="background:#bbb;padding:20rpx;border-radius:15rpx;" wx:else>
+                        <view class="color-f text-center data-v-65e93a21">去评价</view>
+                    </view>
+                </view>
+                <view class="data-v-65e93a21" wx:if="{{pjbthIndex==1}}">
+                    <pj-list bind:__l="__l" class="data-v-65e93a21" vueId="{{'55402753-4'+','+'55402753-3'}}"></pj-list>
+                </view>
+            </view>
+        </view>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e13'] ] ] ]}}" position="bottom" show="{{zdShow}}" vueId="55402753-5" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-65e93a21" columns="{{zdList}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e14'] ] ],[ '^confirm',[ ['zdConfirm'] ] ] ]}}" showToolbar="{{true}}" valueKey="site_name" vueId="{{'55402753-6'+','+'55402753-5'}}"></van-picker>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e15'] ] ] ]}}" position="bottom" show="{{ffShow}}" vueId="55402753-7" vueSlots="{{['default']}}" wx:if="{{$root.g2}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-65e93a21" columns="{{[ zdList[0],$root.g3[0] ]}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e16'] ] ],[ '^confirm',[ ['ffConfirm'] ] ] ]}}" showToolbar="{{true}}" valueKey="site_name" vueId="{{'55402753-8'+','+'55402753-7'}}"></van-picker>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e17'] ] ] ]}}" position="bottom" show="{{clShow}}" vueId="55402753-9" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-65e93a21" columns="{{clList}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e18'] ] ],[ '^confirm',[ ['clConfig'] ] ] ]}}" showToolbar="{{true}}" valueKey="name" vueId="{{'55402753-10'+','+'55402753-9'}}"></van-picker>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:close="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^close',[ ['e19'] ] ] ]}}" position="bottom" show="{{pjTimeShow}}" vueId="55402753-11" vueSlots="{{['default']}}">
+        <van-datetime-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-65e93a21" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e20'] ] ],[ '^confirm',[ ['pjTimeShowConfirm'] ] ] ]}}" maxDate="{{maxDate}}" type="datetime" value="{{pjTimeShowDate}}" vueId="{{'55402753-12'+','+'55402753-11'}}"></van-datetime-picker>
+    </van-popup>
+</view>

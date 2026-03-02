@@ -1,0 +1,31 @@
+<view class="data-v-3b5cdfc2" id="auth_phone">
+    <view class="header data-v-3b5cdfc2">
+        <view bindtap="__e" class="close_container data-v-3b5cdfc2" data-event-opts="{{[ [ 'tap',[ [ 'goBack',['$event'] ] ] ] ]}}">
+            <image class="close data-v-3b5cdfc2" src="https://img2.7mate.cn/close.png"></image>
+        </view>
+    </view>
+    <view class="main data-v-3b5cdfc2">
+        <view class="title data-v-3b5cdfc2">欢迎使用7MA出行</view>
+        <view class="desc data-v-3b5cdfc2">我们将发送6位动态码 以验证您的手机号码</view>
+        <view class="input data-v-3b5cdfc2">
+            <van-field bind:__l="__l" bind:input="__e" class="data-v-3b5cdfc2" data-com-type="wx" data-event-opts="{{[ [ '^input',[ ['onInput'] ] ] ]}}" label="+86" maxlength="11" placeholder="输入手机号" type="number" value="{{phone}}" vueId="b8027df4-1"></van-field>
+        </view>
+        <view bindtap="__e" class="change data-v-3b5cdfc2" data-event-opts="{{[ [ 'tap',[ [ 'gotoAppeal',['$event'] ] ] ] ]}}">换绑手机号</view>
+        <view class="data-v-3b5cdfc2" style="padding-top:200rpx;">
+            <view class="_footer data-v-3b5cdfc2">
+                <van-checkbox bind:__l="__l" bind:change="__e" center="{{true}}" checkedColor="rgb(238, 10, 36)" class="data-v-3b5cdfc2" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isPassChange'] ] ] ]}}" shape="square" value="{{isPass}}" vueId="b8027df4-2" vueSlots="{{['default']}}">
+                    <label class="_span data-v-3b5cdfc2">我已阅读并同意</label>
+                    <label catchtap="__e" class="b _span data-v-3b5cdfc2" data-event-opts="{{[ [ 'tap',[ [ 'gotoAgreement',['$event'] ] ] ] ]}}">《服务协议》</label>
+                </van-checkbox>
+                <view class="x-bottom data-v-3b5cdfc2"></view>
+            </view>
+            <view class="btn data-v-3b5cdfc2" wx:if="{{status==0}}">正在授权...</view>
+            <block wx:else>
+                <view bindtap="__e" class="{{['btn','data-v-3b5cdfc2',valid&&isPass?'valid':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'gotoVerificationcode',['$event'] ] ] ] ]}}" wx:if="{{status==1}}">开始使用</view>
+                <block wx:else>
+                    <view bindtap="__e" class="btn data-v-3b5cdfc2" data-event-opts="{{[ [ 'tap',[ [ 'wx_login',['$event'] ] ] ] ]}}" wx:if="{{status==2}}">授权失败，点击重新授权</view>
+                </block>
+            </block>
+        </view>
+    </view>
+</view>

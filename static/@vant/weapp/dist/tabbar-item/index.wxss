@@ -1,0 +1,41 @@
+@import "../common/index.wxss";
+
+.van-tabbar-item {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #646566;
+    color: var(--tabbar-item-text-color,#646566);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    font-size: 12px;
+    font-size: var(--tabbar-item-font-size,12px);
+    height: 100%;
+    -webkit-justify-content: center;
+    justify-content: center;
+    line-height: 1;
+    line-height: var(--tabbar-item-line-height,1)
+}
+
+.van-tabbar-item__icon {
+    font-size: 18px;
+    font-size: var(--tabbar-item-icon-size,18px);
+    margin-bottom: 5px;
+    margin-bottom: var(--tabbar-item-margin-bottom,5px);
+    position: relative
+}
+
+.van-tabbar-item__icon__inner {
+    display: block;
+    min-width: 1em
+}
+
+.van-tabbar-item--active {
+    color: #1989fa;
+    color: var(--tabbar-item-active-color,#1989fa)
+}
+
+.van-tabbar-item__info {
+    margin-top: 2px
+}

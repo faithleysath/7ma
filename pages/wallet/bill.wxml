@@ -1,0 +1,52 @@
+<view class="data-v-2c91e46c" id="wallet_bill" style="{{'background:'+($root.g0?'#ffffff':'#F1F1F1')+';'}}">
+    <ws-header bind:__l="__l" bind:refresh="__e" class="data-v-2c91e46c" data-event-opts="{{[ [ '^refresh',[ ['refresh'] ] ] ]}}" title="账单" vueId="877dfcdc-1"></ws-header>
+    <view class="ws_container data-v-2c91e46c" style="top:204px;" wx:if="{{!loading}}">
+        <view class="no_bill data-v-2c91e46c" wx:if="{{$root.g1}}">
+            <image class="img data-v-2c91e46c" src="https://img2.7mate.cn/no_bill.png"></image>
+            <view class="desc data-v-2c91e46c">您还未有账单…</view>
+        </view>
+        <view class="card data-v-2c91e46c" wx:if="{{order.g2>0}}" wx:for="{{$root.l0}}" wx:for-item="order" wx:key="index">
+            <image class="badge data-v-2c91e46c" src="https://img2.7mate.cn/badge_cq.jpg" wx:if="{{order[$orig].order_state===40&&order[$orig].is_over_area===1}}"></image>
+            <view class="item data-v-2c91e46c">
+                <label class="data-v-2c91e46c">交易类型：</label>
+                <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===1}}">骑行消费</label>
+                <block wx:else>
+                    <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===2}}">套餐卡</label>
+                    <block wx:else>
+                        <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===3}}">普通充值</label>
+                        <block wx:else>
+                            <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===4}}">认证充值</label>
+                            <block wx:else>
+                                <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===5}}">调度费</label>
+                                <block wx:else>
+                                    <label class="data-v-2c91e46c" wx:if="{{order[$orig].order_type===6}}">赔偿费</label>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </view>
+            <view class="item data-v-2c91e46c">
+                <label class="data-v-2c91e46c">订单编号：</label>
+                <label class="data-v-2c91e46c">{{order[$orig].order_sn}}</label>
+            </view>
+            <view class="item data-v-2c91e46c">
+                <label class="data-v-2c91e46c">付款时间：</label>
+                <label class="data-v-2c91e46c">{{order[$orig].payment_time}}</label>
+            </view>
+            <view class="item data-v-2c91e46c">
+                <label class="data-v-2c91e46c">付款方式：</label>
+                <label class="data-v-2c91e46c">{{order[$orig].payment_name}}</label>
+            </view>
+            <view class="price data-v-2c91e46c">
+                <label class="data-v-2c91e46c">￥</label>
+                <label class="data-v-2c91e46c">{{order[$orig].order_amount}}</label>
+            </view>
+            <view class="absolute right35 bottom80 row-bottom-center data-v-2c91e46c" wx:if="{{order[$orig].refund_amount>0}}">
+                <view class="font20 data-v-2c91e46c" style="color:#00A2FF;">退款：</view>
+                <view class="relative top2 data-v-2c91e46c" style="color:#00A2FF;">{{order[$orig].refund_amount}}</view>
+            </view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-2c91e46c" data-com-type="wx" type="spinner" vueId="877dfcdc-2" wx:if="{{show_loading}}"></van-loading>
+</view>

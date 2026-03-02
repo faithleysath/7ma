@@ -1,0 +1,7 @@
+<view class="lime-painter vue-ref" data-ref="limepainter">
+    <view style="{{styles}}" wx:if="{{canvasId&&size}}">
+        <canvas class="lime-painter__canvas" id="{{canvasId}}" style="{{size}}" type="2d" wx:if="{{use2dCanvas}}"></canvas>
+        <canvas canvasId="{{canvasId}}" class="lime-painter__canvas" height="{{boardHeight*dpr}}" hidpi="{{hidpi}}" id="{{canvasId}}" style="{{size}}" width="{{boardWidth*dpr}}" wx:else></canvas>
+    </view>
+    <slot></slot>
+</view>

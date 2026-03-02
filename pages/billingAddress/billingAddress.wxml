@@ -1,0 +1,97 @@
+<view class="container data-v-22d31f4d">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-22d31f4d" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="选择抬头" vueId="849633c0-1"></my-header>
+    <view class="box-sizing pt30 pl30 pr30 data-v-22d31f4d">
+        <view class="bg-f br10 box-sizing p25 row-berween data-v-22d31f4d">
+            <view class="font30 data-v-22d31f4d" wx:if="{{!form.addInfo.id}}">请选择发票抬头</view>
+            <view class="font30 data-v-22d31f4d" wx:else>{{form.addInfo.title}}</view>
+            <image bindtap="__e" class="data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/billing_02.png" style="width:66rpx;height:50rpx;"></image>
+        </view>
+    </view>
+    <view class="box-sizing pt30 pl30 pr30 data-v-22d31f4d">
+        <view class="bg-f br10 box-sizing p25 row-berween data-v-22d31f4d">
+            <view class="font30 data-v-22d31f4d">发票金额</view>
+            <view class="row-bottom-center data-v-22d31f4d">
+                <view class="data-v-22d31f4d" style="color:#FC565A;font-size:64rpx;">{{form.count}}</view>
+                <view class="font20 relative bottom15 ml5 data-v-22d31f4d">元</view>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing pt30 pl30 pr30 data-v-22d31f4d" wx:if="{{form.addInfo.id}}">
+        <view class="bg-f br10 box-sizing p25 data-v-22d31f4d">
+            <view class="row-berween data-v-22d31f4d">
+                <view class="font30 data-v-22d31f4d">抬头类型</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.type==1?'个人/非企业单位':'企业单位'}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d">
+                <view class="font30 data-v-22d31f4d">发票抬头</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.title}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}">
+                <view class="font30 data-v-22d31f4d">税号</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.tax_id}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d" hidden="{{!(form.addInfo.type==1)}}">
+                <view class="font30 data-v-22d31f4d">身份证</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.identity_number}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" hidden="{{!(form.addInfo.type==1)}}" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d">
+                <view class="font30 data-v-22d31f4d">地址</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.address}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d">
+                <view class="font30 data-v-22d31f4d">电话</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.phone}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}">
+                <view class="font30 data-v-22d31f4d">开户行</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.bank}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}">
+                <view class="font30 data-v-22d31f4d">账号</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.bank_account}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-22d31f4d" hidden="{{!(form.addInfo.type==0)}}" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-berween data-v-22d31f4d">
+                <view class="font30 data-v-22d31f4d">接收邮箱</view>
+                <view class="font26 data-v-22d31f4d" style="color:#666;">{{form.addInfo.email}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-22d31f4d">
+        <view class="row-center color-f font36 br40 data-v-22d31f4d" style="width:600rpx;height:80rpx;background:#C5C5C5;" wx:if="{{!form.billing_address_id}}">
+            <view class="data-v-22d31f4d">提交</view>
+        </view>
+        <view bindtap="__e" class="row-center color-f font36 br40 data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);" wx:else>
+            <view class="data-v-22d31f4d">提交</view>
+        </view>
+    </view>
+    <view class="data-v-22d31f4d" style="height:200rpx;"></view>
+    <van-popup bind:__l="__l" bind:clickOverlay="__e" class="data-v-22d31f4d" closeOnClickOverlay="{{true}}" data-com-type="wx" data-event-opts="{{[ [ '^clickOverlay',[ ['e1'] ] ] ]}}" position="bottom" round="{{true}}" show="{{addrShow}}" vueId="849633c0-2" vueSlots="{{['default']}}">
+        <view class="relative row-berween box-sizing p30 data-v-22d31f4d">
+            <view bindtap="__e" class="font34 data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}" style="color:#666;">取消</view>
+            <view class="absolute centers font30 data-v-22d31f4d">请选择发票抬头</view>
+            <view bindtap="__e" class="font34 data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}" style="color:#FC565A;">确定</view>
+        </view>
+        <view class="row-center data-v-22d31f4d">
+            <view class="data-v-22d31f4d" style="width:640rpx;height:1.5rpx;background:#ccc;"></view>
+        </view>
+        <view class="over-auto ios pl30 pr30 box-sizing data-v-22d31f4d" style="min-height:200rpx;max-height:400rpx;">
+            <view bindtap="__e" class="row-berween pt20 pb20 font30 data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'setAddInfo',['$0'],[ [ ['addrList','id',item.id] ] ] ] ] ] ]}}" wx:for="{{addrList}}" wx:key="id">
+                <view class="data-v-22d31f4d">{{item.title}}</view>
+                <icon class="data-v-22d31f4d" color="{{form.billing_address_id===item.id?'#FF4C52':'#C5C5C5'}}" type="success"></icon>
+            </view>
+        </view>
+        <view class="row-center pb30 data-v-22d31f4d">
+            <view bindtap="__e" class="br40 color-f font36 row-center data-v-22d31f4d" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingAdd/billingAdd'] ] ] ] ]}}" style="background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);width:600rpx;height:80rpx;">
+                <view class="data-v-22d31f4d">新增抬头</view>
+            </view>
+        </view>
+    </van-popup>
+</view>

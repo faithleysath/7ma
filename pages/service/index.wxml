@@ -1,0 +1,43 @@
+<view class="data-v-2cafe60e" id="service_index">
+    <view class="header box-sizing data-v-2cafe60e">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-2cafe60e" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-2cafe60e">客服中心</view>
+        <image bindtap="__e" class="absolute right32 bottom18 data-v-2cafe60e" data-event-opts="{{[ [ 'tap',[ [ 'getServicePhones',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/cert1_1.png" style="width:52rpx;height:52rpx;"></image>
+    </view>
+    <view class="flex pt25 pb25 data-v-2cafe60e">
+        <view bindtap="__e" class="flex1 row-center data-v-2cafe60e" data-event-opts="{{[ [ 'tap',[ [ 'toggleMenus',['$0',index],[ [ ['menusList','',index] ] ] ] ] ] ]}}" wx:for="{{menusList}}" wx:key="index">
+            <image class="data-v-2cafe60e" mode="scaleToFill" src="{{item.icon}}" style="width:114rpx;height:114rpx;"></image>
+            <view class="font24 data-v-2cafe60e">{{item.title}}</view>
+        </view>
+    </view>
+    <view class="data-v-2cafe60e">
+        <image class="w_100 data-v-2cafe60e" hidden="{{!(menusIndex==0)}}" mode="scaleToFill" src="https://img2.7mate.cn/service_06.png" style="height:40rpx;"></image>
+        <image class="w_100 data-v-2cafe60e" hidden="{{!(menusIndex==1)}}" mode="scaleToFill" src="https://img2.7mate.cn/service_07.png" style="height:40rpx;"></image>
+        <image class="w_100 data-v-2cafe60e" hidden="{{!(menusIndex==2)}}" mode="scaleToFill" src="https://img2.7mate.cn/service_08.png" style="height:40rpx;"></image>
+        <image class="w_100 data-v-2cafe60e" hidden="{{!(menusIndex==3)}}" mode="scaleToFill" src="https://img2.7mate.cn/service_09.png" style="height:40rpx;"></image>
+        <image class="w_100 data-v-2cafe60e" hidden="{{!(menusIndex==4)}}" mode="scaleToFill" src="https://img2.7mate.cn/service_10.png" style="height:40rpx;"></image>
+    </view>
+    <view class="data-v-2cafe60e">
+        <swiper bindchange="__e" class="swiper h_100 data-v-2cafe60e" current="{{menusIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+            <swiper-item class="h_100 data-v-2cafe60e" wx:for="{{menusList}}" wx:key="index">
+                <scroll-view class="h_100 data-v-2cafe60e" scrollY="true">
+                    <service-list bind:__l="__l" class="data-v-2cafe60e" type="{{item.tab}}" vueId="{{'d0a39cd2-1-'+index}}" wx:if="{{item.isClick}}"></service-list>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="ws_container data-v-2cafe60e">
+        <van-popup bind:__l="__l" class="popup data-v-2cafe60e" data-com-type="wx" position="bottom" show="{{show_modal}}" vueId="d0a39cd2-2" vueSlots="{{['default']}}">
+            <view class="container data-v-2cafe60e">
+                <view class="{{['_item','data-v-2cafe60e',index===$root.g1-1?'last':'']}}" wx:if="{{$root.g0>0}}" wx:for="{{service_phones}}" wx:for-item="service_phone" wx:key="index">
+                    <label class="fl data-v-2cafe60e">{{service_phone.title}}</label>
+                    <label bindtap="__e" class="fr data-v-2cafe60e" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],[ [ ['service_phones','',index,'phone'] ] ] ] ] ] ]}}">{{service_phone.phone}}</label>
+                </view>
+            </view>
+        </van-popup>
+        <van-popup bind:__l="__l" class="popup2 data-v-2cafe60e" data-com-type="wx" overlay="{{false}}" position="bottom" show="{{show_modal}}" vueId="d0a39cd2-3" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="cancel data-v-2cafe60e" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{show_modal}}">取消</view>
+        </van-popup>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-2cafe60e" data-com-type="wx" type="spinner" vueId="d0a39cd2-4" wx:if="{{show_loading}}"></van-loading>
+</view>

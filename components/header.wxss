@@ -1,0 +1,110 @@
+.ws_header .tip.data-v-243e8ca7 {
+    background: #ffebeb;
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    height: 56rpx;
+    left: 0;
+    line-height: 56rpx;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%
+}
+
+.ws_header ._header.data-v-243e8ca7 {
+    background: #fff;
+    box-shadow: 0 4rpx 8rpx 0 rgba(0,0,0,.1);
+    left: 0;
+    padding: 0 60rpx 36rpx;
+    position: fixed;
+    width: 630rpx;
+    z-index: 2
+}
+
+.ws_header ._header._2.data-v-243e8ca7 {
+    padding: 0 60rpx
+}
+
+.ws_header ._header .back.data-v-243e8ca7 {
+    height: 100rpx;
+    left: 40rpx;
+    position: absolute;
+    top: 80rpx;
+    width: 100rpx
+}
+
+.ws_header ._header .back .img.data-v-243e8ca7 {
+    height: 30rpx;
+    left: 50%;
+    margin-left: -23rpx;
+    margin-top: -15rpx;
+    position: absolute;
+    top: 50%;
+    width: 46rpx
+}
+
+.ws_header ._header .title.data-v-243e8ca7 {
+    font-size: 60rpx;
+    margin-top: 200rpx
+}
+
+.ws_header ._header .title .icon.data-v-243e8ca7 {
+    position: relative;
+    right: -20rpx;
+    top: -30rpx
+}
+
+.ws_header ._header .picker.data-v-243e8ca7 {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #888;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 32rpx;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin-top: 24rpx
+}
+
+.ws_header ._header .picker .label.data-v-243e8ca7 {
+    width: 128rpx
+}
+
+.ws_header ._header .picker .input.data-v-243e8ca7 {
+    border: 2rpx solid #c9c9c9;
+    border-radius: 20rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    position: relative;
+    text-align: center;
+    width: 478rpx
+}
+
+.ws_header ._header .picker .input .arrow.data-v-243e8ca7 {
+    height: 14rpx;
+    margin-top: -7rpx;
+    position: absolute;
+    right: 26rpx;
+    top: 50%;
+    width: 24rpx
+}
+
+.ws_header ._header .picker ._picker.data-v-243e8ca7 {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%
+}
+
+.ws_header ._header .right.data-v-243e8ca7 {
+    color: #333;
+    font-size: 28rpx;
+    position: absolute;
+    right: 60rpx;
+    top: 222rpx
+}
+
+.ws_header ._header .tab.data-v-243e8ca7 {
+    margin-top: 22rpx
+}

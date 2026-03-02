@@ -1,0 +1,96 @@
+#auth_index.data-v-af30a154 {
+    font-family: PingFangSC-Regular,serif;
+    height: 100%;
+    padding: 0 60rpx
+}
+
+#auth_index ._header.data-v-af30a154 {
+    left: 50%;
+    margin-left: -90rpx;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    width: 180rpx
+}
+
+#auth_index ._header .logo.data-v-af30a154 {
+    height: 148rpx;
+    width: 148rpx
+}
+
+#auth_index ._header .desc.data-v-af30a154 {
+    color: #333;
+    display: inline-block;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 32rpx;
+    margin-top: 24rpx;
+    width: 160rpx
+}
+
+#auth_index ._middle.data-v-af30a154 {
+    left: 60rpx;
+    position: absolute;
+    top: 50%;
+    width: 630rpx
+}
+
+#auth_index ._middle .btn.data-v-af30a154 {
+    -webkit-align-items: center;
+    align-items: center;
+    background: #fd555b;
+    border-radius: 20rpx;
+    display: -webkit-flex;
+    display: flex;
+    height: 92rpx;
+    -webkit-justify-content: center;
+    justify-content: center;
+    opacity: 1
+}
+
+#auth_index ._middle .btn.data-v-af30a154:after {
+    border: none
+}
+
+#auth_index ._middle .btn .icon.data-v-af30a154 {
+    height: 46rpx;
+    width: 54rpx
+}
+
+#auth_index ._middle .btn ._span.data-v-af30a154 {
+    color: #fff;
+    font-family: PingFang SC,serif;
+    font-size: 36rpx;
+    font-weight: 400;
+    margin-left: 26rpx
+}
+
+#auth_index ._middle .link.data-v-af30a154 {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-top: 42rpx
+}
+
+#auth_index ._middle .link ._span.data-v-af30a154 {
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 28rpx
+}
+
+#auth_index ._footer.data-v-af30a154 {
+    bottom: 60rpx;
+    position: absolute;
+    text-align: center;
+    width: 630rpx
+}
+
+#auth_index ._footer ._span.data-v-af30a154 {
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx
+}
+
+#auth_index ._footer ._span.b.data-v-af30a154 {
+    color: #1f6ce1
+}

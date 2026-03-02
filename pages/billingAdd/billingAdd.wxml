@@ -1,0 +1,92 @@
+<view class="container data-v-2b4518b0">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-2b4518b0" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="新增抬头" vueId="0c5b9640-1"></my-header>
+    <view class="box-sizing p30 data-v-2b4518b0">
+        <view class="bg-f br10 box-sizing pl20 pr20 data-v-2b4518b0">
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">抬头类型</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 row-right-center data-v-2b4518b0">
+                    <view bindtap="__e" class="row-left-center data-v-2b4518b0" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                        <icon class="data-v-2b4518b0" color="{{form.type===0?'#FF4C52':'#C5C5C5'}}" type="success"></icon>
+                        <view class="font26 ml10 data-v-2b4518b0" style="color:#666;">企业单位</view>
+                    </view>
+                    <view bindtap="__e" class="row-left-center ml20 data-v-2b4518b0" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">
+                        <icon class="data-v-2b4518b0" color="{{form.type===1?'#FF4C52':'#C5C5C5'}}" type="success"></icon>
+                        <view class="font26 ml10 data-v-2b4518b0" style="color:#666;">个人/非企业单位</view>
+                    </view>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">发票抬头</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','title','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写发票抬头" value="{{form.title}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" hidden="{{!(form.type==1)}}" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">身份证</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','identity_number','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写身份证号" value="{{form.identity_number}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" hidden="{{!(form.type==0)}}" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">税号</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tax_id','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写纳税人识别号" value="{{form.tax_id}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">地址</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','address','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写地址" value="{{form.address}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">电话</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','phone','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写联系电话" value="{{form.phone}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" hidden="{{!(form.type==0)}}" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">开户行</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','bank','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写开户银行全称" value="{{form.bank}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0" hidden="{{!(form.type==0)}}" style="border-bottom:1.5rpx solid #ccc;">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">账号</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','bank_account','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写银行账号" value="{{form.bank_account}}"></input>
+                </view>
+            </view>
+            <view class="row-left-top pt20 pb20 data-v-2b4518b0">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">接收邮箱</view>
+                <view class="font30 data-v-2b4518b0" style="color:#FC565A;">*</view>
+                <view class="flex1 box-sizing pl20 data-v-2b4518b0">
+                    <input bindinput="__e" class="w_100 text-right font30 data-v-2b4518b0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','email','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写接收邮箱" value="{{form.email}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing pl30 pr30 data-v-2b4518b0">
+        <view class="bg-f br10 box-sizing pl20 pr20 data-v-2b4518b0">
+            <view class="row-berween pt20 pb20 data-v-2b4518b0">
+                <view class="font30 data-v-2b4518b0" style="color:#333;">设为默认</view>
+                <icon bindtap="__e" class="data-v-2b4518b0" color="#C5C5C5" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}" type="success" wx:if="{{form.is_default===0}}"></icon>
+                <icon bindtap="__e" class="data-v-2b4518b0" color="#FF4C52" data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}" type="success" wx:if="{{form.is_default===1}}"></icon>
+            </view>
+        </view>
+    </view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-2b4518b0">
+        <view bindtap="__e" class="row-center color-f font30 br40 data-v-2b4518b0" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+            <view class="data-v-2b4518b0">保存</view>
+        </view>
+    </view>
+    <view class="data-v-2b4518b0" style="height:200rpx;"></view>
+</view>

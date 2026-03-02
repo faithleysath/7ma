@@ -1,0 +1,313 @@
+<view catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" id="home_index">
+    <view class="data-v-4d344215" hidden="{{!showInput}}" style="height:100%;">
+        <view class="_header _scan data-v-4d344215">
+            <view bindtap="__e" class="back data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <image class="data-v-4d344215" src="https://img2.7mate.cn/back.png"></image>
+            </view>
+        </view>
+        <view class="scan_main data-v-4d344215">
+            <view class="c data-v-4d344215">
+                <view class="scan_icon data-v-4d344215"></view>
+                <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="scan_input data-v-4d344215" data-com-type="wx" data-event-opts="{{[ [ '^input',[ ['onInput'] ] ],[ '^blur',[ ['onBlur'] ] ] ]}}" placeholder="请输入车编号" value="{{car_number}}" vueId="61245cba-1"></van-field>
+                <view bindtap="__e" class="btn data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'scan1Action',['$event'] ] ] ] ]}}">立即用车</view>
+            </view>
+        </view>
+    </view>
+    <view class="data-v-4d344215" hidden="{{!!showInput}}">
+        <view class="flex_container data-v-4d344215">
+            <view class="swiper data-v-4d344215" style="{{'margin-top:'+topHeight+10+'px'}}">
+                <swiper autoplay="true" class="h_100 data-v-4d344215" duration="500" indicatorActiveColor="#F95A64" indicatorColor="#DFDFDF" indicatorDots="true" interval="5000" wx:if="{{parking===''&&(user_car_authority===undefined||user_car_authority.unauthorized_code<6)}}">
+                    <swiper-item catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'action',['$0'],[ [ ['banners','',index] ] ] ] ] ] ]}}" style="border-radius:5px;" wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
+                        <image class="swiper_image data-v-4d344215" src="{{banner.image_url}}" wx:if="{{banner.image_url}}"></image>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <map bindend="__e" bindmarkertap="__e" bindtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'markertap',[ [ 'markerTap',['$event'] ] ] ],[ 'tap',[ [ 'mapTap',['$event'] ] ] ],[ 'end',[ [ 'regionChangeEnd',['$event'] ] ] ] ]}}" enableZoom="{{true}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{myMarkers}}" polygons="{{polygons}}" polyline="{{polyline}}" scale="{{scale}}" showLocation="{{true}}" style="{{'height:'+(is_iphone_x?screen_height-94+'px;':screen_height-60+'px;')+';'}}" wx:if="{{screen_height>0}}">
+                <cover-view class="_container data-v-4d344215" hidden="{{!(banner_is_init&&user_car_authority_is_init)}}" style="{{'top:'+topHeight+10+'px'}}">
+                    <cover-view class="parking_modal p20 box-sizing data-v-4d344215" hidden="{{!(parking!=='')}}">
+                        <cover-view class="row-left-center data-v-4d344215">
+                            <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_p3.png" style="width:80rpx;height:80rpx;"></cover-image>
+                            <cover-view class="flex1 box-sizing pl40 data-v-4d344215">
+                                <cover-view class="ell font32 pb10 data-v-4d344215">{{parking.name}}</cover-view>
+                                <cover-view class="font24 data-v-4d344215" style="color:#808080;">{{'距您'+parking.distance+'米'}}</cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class="data-v-4d344215" wx:if="{{user_car_authority!==undefined&&user_car_authority.unauthorized_code>=6&&user_car_authority.unauthorized_code<=10}}">
+                        <cover-view class="popup_top data-v-4d344215">
+                            <cover-view class="header data-v-4d344215" hidden="{{!(user_car_authority.unauthorized_code!=10)}}">
+                                <cover-view class="left data-v-4d344215">
+                                    <cover-view class="data-v-4d344215">{{user_car_authority.order.carmodel_id==1?'单车编号':'助力车编号'}}</cover-view>
+                                    <cover-view class="data-v-4d344215">{{user_car_authority.order.car_number}}</cover-view>
+                                </cover-view>
+                                <cover-view class="right data-v-4d344215">
+                                    <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">费用</cover-view>
+                                    <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">{{'￥'+user_car_authority.order.order_amount+''}}</cover-view>
+                                    <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==6}}">{{''+(user_car_authority.order.carmodel_id==1?'￥'+user_car_authority.order.estimated_cost:user_car_authority.order.electricity)+''}}</cover-view>
+                                    <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==6}}">{{''+(user_car_authority.order.carmodel_id==1?'预计费用':'当前电量')+''}}</cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <cover-view class="header data-v-4d344215" hidden="{{!(user_car_authority.unauthorized_code==10)}}">
+                                <cover-view class="text-center line80 data-v-4d344215">您有套餐卡订单待支付</cover-view>
+                            </cover-view>
+                            <cover-view class="line data-v-4d344215"></cover-view>
+                            <cover-view class="main data-v-4d344215">
+                                <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">
+                                    <cover-view class="container data-v-4d344215">
+                                        <cover-view class="data-v-4d344215">开始时间：</cover-view>
+                                        <cover-view class="l data-v-4d344215">{{user_car_authority.order.car_start_time}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="container data-v-4d344215">
+                                        <cover-view class="_first data-v-4d344215">结束时间：</cover-view>
+                                        <cover-view class="_last l data-v-4d344215">{{user_car_authority.order.car_end_time}}</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                                <cover-view class="data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==6}}">
+                                    <cover-view class="container l data-v-4d344215" style="text-align:left;" wx:if="{{user_car_authority.order.carmodel_id==2}}">
+                                        <cover-view class="data-v-4d344215">续航里程：</cover-view>
+                                        <cover-view class="l data-v-4d344215">{{user_car_authority.order.mileage}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="container l data-v-4d344215" style="text-align:left;">
+                                        <cover-view class="data-v-4d344215">借车时间：</cover-view>
+                                        <cover-view class="l data-v-4d344215">{{user_car_authority.order.car_start_time}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="container data-v-4d344215" style="text-align:left;" wx:if="{{user_car_authority.order.carmodel_id==2}}">
+                                        <cover-view class="data-v-4d344215">预计费用：</cover-view>
+                                        <cover-view class="l data-v-4d344215" style="color:#FF0000;">{{'￥'+user_car_authority.order.estimated_cost+''}}</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <cover-view catchtap="__e" class="_footer data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'gotoPayment',['$event'] ] ] ] ]}}" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=10}}">
+                                <cover-view class="btn _3 data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==7}}">骑行支付</cover-view>
+                                <cover-view class="btn _3 data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==8}}">调度费支付</cover-view>
+                                <cover-view class="btn _3 data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==9}}">赔偿费支付</cover-view>
+                                <cover-view class="btn _3 data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==10}}">前往支付</cover-view>
+                            </cover-view>
+                            <cover-view class="_footer data-v-4d344215" wx:if="{{user_car_authority.unauthorized_code==6&&user_car_authority.order.car_lock_status!==undefined}}">
+                                <cover-view catchtap="__e" class="btn _1 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'temporaryLock',['$event'] ] ] ] ]}}" wx:if="{{user_car_authority.order.carmodel_id==2||user_car_authority.order.carmodel_id==1&&user_car_authority.order.lock_id==11}}">临时上锁</cover-view>
+                                <cover-view catchtap="__e" class="btn _1 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'unlockAgain',['$event'] ] ] ] ]}}">再次开锁</cover-view>
+                                <cover-view catchtap="__e" class="btn _2 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'backCar',['$event'] ] ] ] ]}}" hidden="{{!(yjsTime<=0)}}">我要还车</cover-view>
+                                <cover-view class="btn _2 data-v-4d344215" hidden="{{!(yjsTime>0)}}" style="width:180rpx;opacity:0.7;">{{'我要还车('+yjsTime+'s)'}}</cover-view>
+                            </cover-view>
+                            <cover-view class="data-v-4d344215">
+                                <cover-view class="data-v-4d344215" style="text-align:center;font-size:26rpx;color:#EA5359;padding-bottom:20rpx;">还车请至运营区P点，靠近车辆点击我要还车</cover-view>
+                            </cover-view>
+                            <cover-view class="data-v-4d344215" hidden="{{!user_car_authority.order.remark}}">
+                                <cover-view class="data-v-4d344215" style="text-align:center;font-size:26rpx;color:#EA5359;padding-bottom:20rpx;">{{user_car_authority.order.remark}}</cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <cover-view bindtap="__e" class="row-col-berween font28 color-f box-sizing pt10 pb10 pl20 pr20 br10 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index2'] ] ] ] ]}}" hidden="{{!user_car_authority.order.is_west_transfer}}" style="background:#FF4C52;width:686rpx;margin:10rpx auto 0;">
+                            <cover-view class="data-v-4d344215">该订单为换乘订单</cover-view>
+                            <cover-view class="row-left-center data-v-4d344215">
+                                <cover-view class="mr10 relative bottom1 data-v-4d344215">了解详情</cover-view>
+                                <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/ls_right.png" style="width:13rpx;height:24rpx;"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="scan data-v-4d344215">
+                    <cover-view class="relative w_100 h_100 data-v-4d344215" hidden="{{!!(user_car_authority.order&&user_car_authority.order.order_id)}}">
+                        <cover-image class="absolute left0 top0 w_100 h_100 data-v-4d344215" src="https://img2.7mate.cn/home_d_1.png"></cover-image>
+                        <cover-view class="absolute w_100 h_100 left0 top0 row-col-berween box-sizing pl45 pr40 data-v-4d344215">
+                            <cover-image catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'scan',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_e.png" style="width:60rpx;height:60rpx;"></cover-image>
+                            <cover-view catchtap="__e" class="color-f line100 relative left10 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'scan',['$event'] ] ] ] ]}}" style="font-size:44rpx;letter-spacing:6rpx;">扫码用车</cover-view>
+                            <cover-image catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'scan1',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_f.png" style="width:80rpx;height:80rpx;"></cover-image>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-image catchtap="__e" class="icon refresh data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'refresh',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_a.png" style="{{'bottom:'+220+'rpx'}}"></cover-image>
+                <cover-image catchtap="__e" class="icon location data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'getCurLocation',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_b.png" style="{{'bottom:'+128+'rpx'}}"></cover-image>
+                <cover-image catchtap="__e" class="icon service data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'show_service',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_c.png" style="{{'bottom:'+128+'rpx'}}"></cover-image>
+                <cover-image catchtap="__e" class="icon service data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[true,2] ] ] ] ]}}" hidden="{{!(user_car_authority.order&&user_car_authority.order.order_id&&user_car_authority.order.show_open_close_helmet_bth&&!user_car_authority.order.gys_helmet_bth)}}" src="https://img2.7mate.cn/home_d_20230311.png" style="{{'bottom:'+220+'rpx'}}"></cover-image>
+                <cover-view class="popup_bottom bg-f data-v-4d344215" hidden="{{!showCarModel}}" style="{{'bottom:'+(is_iphone_x?screen_height-screen_height-94+'px;':screen_height-screen_height-60+'px;')+';'}}">
+                    <cover-view class="box-sizing pl32 pr32 pt14 data-v-4d344215">
+                        <cover-view class="row-left-center data-v-4d344215" hidden="{{!(car.carmodel_id==1)}}">
+                            <cover-view class="flex1 data-v-4d344215">
+                                <cover-view class="data-v-4d344215">
+                                    <cover-view class="font40 pb18 pl20 row-left-bottom data-v-4d344215" style="color:#2E3033;">
+                                        <cover-view class="data-v-4d344215">单车</cover-view>
+                                        <cover-view class="font28 ml20 flex1 data-v-4d344215" style="color:#EA5359;white-space:pre-wrap;">{{car.remark}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="data-v-4d344215" style="height:2rpx;background:#F5F5F5;"></cover-view>
+                                </cover-view>
+                                <cover-view class="font30 pt35 pb35 pr10 data-v-4d344215" style="color:#808080;">{{'车辆编号：'+car.number}}</cover-view>
+                            </cover-view>
+                            <cover-view class="pl40 pr20 pb15 data-v-4d344215">
+                                <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_g.png" style="width:250rpx;height:170rpx;"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                        <cover-view class="data-v-4d344215" hidden="{{!(car.carmodel_id==2)}}">
+                            <cover-view class="data-v-4d344215">
+                                <cover-view class="font40 pb18 pl20 row-left-top data-v-4d344215" style="color:#2E3033;">
+                                    <cover-view class="row-left-bottom data-v-4d344215">
+                                        <cover-view class="data-v-4d344215">{{car.carmodel_name}}</cover-view>
+                                        <cover-view class="font22 ml10 pr10 data-v-4d344215" style="color:#808080;">{{'车辆编号'+car.number}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="font28 ml20 flex1 data-v-4d344215" style="color:#EA5359;white-space:pre-wrap;">{{car.remark}}</cover-view>
+                                </cover-view>
+                                <cover-view class="data-v-4d344215" style="height:2rpx;background:#F5F5F5;"></cover-view>
+                            </cover-view>
+                            <cover-view class="row-col-berween box-sizing pl30 pr30 pt15 pb25 data-v-4d344215">
+                                <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_j.png" style="width:250rpx;height:170rpx;"></cover-image>
+                                <cover-view class="flex1 box-sizing pl65 data-v-4d344215">
+                                    <cover-view class="row-left-center mb20 data-v-4d344215">
+                                        <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_k.png" style="width:44rpx;height:44rpx;"></cover-image>
+                                        <cover-view class="ml35 font24 data-v-4d344215">当前电量</cover-view>
+                                        <cover-view class="flex1 text-right font36 data-v-4d344215" style="color:#EA5359;">{{car.electricity}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="row-left-center data-v-4d344215">
+                                        <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_l.png" style="width:44rpx;height:44rpx;"></cover-image>
+                                        <cover-view class="ml35 font24 data-v-4d344215">续航里程</cover-view>
+                                        <cover-view class="flex1 text-right font36 data-v-4d344215" style="color:#EA5359;">{{car.mileage}}</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <cover-image catchtap="__e" class="mb20 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/h5/index?path='+car.H5Url] ] ] ] ]}}" src="https://img2.7mate.cn/home_h.png?2" style="width:100%;"></cover-image>
+                        <cover-view class="relative mb20 data-v-4d344215" style="height:220rpx;color:#FEFBF8;">
+                            <cover-image class="absolute w_100 h_100 left0 top0 data-v-4d344215" src="https://img2.7mate.cn/home_m.png" wx:if="{{haveFree}}"></cover-image>
+                            <cover-image class="absolute w_100 h_100 left0 top0 data-v-4d344215" src="https://img2.7mate.cn/home_n.png" wx:else></cover-image>
+                            <cover-view class="absolute row-col-berween top0 left0 w_100 box-sizing pl50 pr50 data-v-4d344215" style="height:70rpx;z-index:10;">
+                                <cover-view catchtap="__e" class="font32 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index?number='+car.number] ] ] ] ]}}" hidden="{{!haveFree}}">计费规则</cover-view>
+                                <cover-view catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/index?tab='+car.carmodel_id-1] ] ] ] ]}}" hidden="{{!!haveFree}}">
+                                    <cover-view class="font28 data-v-4d344215">暂无可用套餐卡</cover-view>
+                                    <cover-view class="font20 data-v-4d344215">购买套餐卡享优惠骑行</cover-view>
+                                </cover-view>
+                                <cover-view class="font23 row-left-center data-v-4d344215">
+                                    <cover-view catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index?number='+car.number] ] ] ] ]}}" hidden="{{!haveFree}}">了解详情</cover-view>
+                                    <cover-view bindtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'carInfoEvent',['$0','buy'],['car'] ] ] ] ]}}" hidden="{{!!haveFree}}">购买套餐卡</cover-view>
+                                    <cover-image class="ml20 data-v-4d344215" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></cover-image>
+                                </cover-view>
+                            </cover-view>
+                            <cover-view bindtap="__e" class="absolute w_100 left0 top70 row-left-center box-sizing pl50 pr20 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'carInfoEvent',['$0'],['car'] ] ] ] ]}}" style="height:150rpx;z-index:10;">
+                                <cover-image class="absolute bottom0 data-v-4d344215" hidden="{{!(car.carmodel_id==1)}}" src="https://img2.7mate.cn/home_p.png" style="left:170rpx;width:172rpx;height:120rpx;"></cover-image>
+                                <cover-image class="absolute bottom0 data-v-4d344215" hidden="{{!(car.carmodel_id==2)}}" src="https://img2.7mate.cn/home_o.png" style="left:170rpx;width:172rpx;height:120rpx;"></cover-image>
+                                <cover-view class="relative bottom10 row-botton-berween w_100 data-v-4d344215">
+                                    <cover-view class="data-v-4d344215" style="width:250rpx;">
+                                        <cover-view class="row-left-bottom data-v-4d344215">
+                                            <cover-view class="font45 data-v-4d344215">{{car.carmodel_name}}</cover-view>
+                                            <cover-view class="font24 ml10 relative bottom2 ell data-v-4d344215" hidden="{{!haveFree}}">{{carSort}}</cover-view>
+                                        </cover-view>
+                                        <cover-view class="font24 pt35 data-v-4d344215" hidden="{{!haveFree}}">{{'每次'+car.each_free_time+'分钟免费'}}</cover-view>
+                                        <cover-view class="font24 pt35 data-v-4d344215" hidden="{{!!haveFree}}">{{'起步价：'+car.first_price+'元'+car.first_time+'分钟'}}</cover-view>
+                                    </cover-view>
+                                    <cover-view class="data-v-4d344215">
+                                        <cover-view class="font24 row-left-center data-v-4d344215" hidden="{{!!haveFree}}">
+                                            <cover-view class="relative bottom2 data-v-4d344215">了解详情</cover-view>
+                                            <cover-image class="ml20 data-v-4d344215" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></cover-image>
+                                        </cover-view>
+                                        <cover-view class="font24 row-left-center data-v-4d344215" hidden="{{!haveFree}}">
+                                            <cover-view class="relative bottom2 data-v-4d344215">了解详情</cover-view>
+                                            <cover-image class="ml20 data-v-4d344215" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></cover-image>
+                                        </cover-view>
+                                    </cover-view>
+                                    <cover-view class="text-center data-v-4d344215" style="width:190rpx;height:135rpx;">
+                                        <cover-view class="font700 data-v-4d344215" style="font-size:80rpx;" wx:if="{{haveFree}}">{{car.days}}</cover-view>
+                                        <cover-view class="data-v-4d344215" wx:if="{{haveFree}}">{{carSort=='天数卡'?'天':'次'}}</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <cover-view class="row-col-berween box-sizing pl20 pr20 pb20 data-v-4d344215">
+                            <cover-view catchtap="__e" class="box-sizing text-center font36 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" style="width:280rpx;height:80rpx;line-height:80rpx;border:2rpx solid #FF5053;border-radius:40rpx;color:#FF5053;">取消</cover-view>
+                            <cover-image catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'useCar',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_r.png" style="width:319rpx;height:119rpx;"></cover-image>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="popup data-v-4d344215" hidden="{{!$root.g0}}" style="z-index:11;">
+                    <cover-image catchtap="__e" class="image data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'action',['$0'],['popup'] ] ] ] ]}}" src="{{popup.image_url}}" wx:if="{{popup.image_url}}"></cover-image>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'closePopup',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="overlay z3 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" hidden="{{!backCarErrorInfo.show}}"></cover-view>
+                <cover-view class="popup data-v-4d344215" hidden="{{!backCarErrorInfo.show}}">
+                    <cover-view class="relative data-v-4d344215">
+                        <cover-image class="data-v-4d344215" src="{{backCarErrorInfo.image_url}}" style="width:600rpx;height:800rpx;" wx:if="{{backCarErrorInfo.image_url}}"></cover-image>
+                        <cover-view class="absolute left0 bottom40 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-4d344215" style="z-index:10;">
+                            <cover-image catchtap="__e" class="data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" src="https://img2.7mate.cn/home_s.png" style="width:220rpx;height:62rpx;"></cover-image>
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'orderFinish',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{backCarErrorInfo.type==2&&is_mandatory_return}}">强制还车</cover-view>
+                            <block wx:else>
+                                <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'contact_service',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{user_car_authority.order.lock_id===10||user_car_authority.order.lock_id===12&&user.school_id==62}}">无法还车</cover-view>
+                                <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'gotoBackCarError',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:else>无法还车</cover-view>
+                            </block>
+                        </cover-view>
+                    </cover-view>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="overlay z3 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" hidden="{{!toolsInfo.show}}"></cover-view>
+                <cover-view class="popup data-v-4d344215" hidden="{{!toolsInfo.show}}">
+                    <cover-view class="relative data-v-4d344215">
+                        <cover-image class="data-v-4d344215" src="{{toolsInfo.image_url}}" style="width:600rpx;height:800rpx;" wx:if="{{toolsInfo.image_url}}"></cover-image>
+                        <cover-view class="absolute left0 bottom40 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-4d344215" style="z-index:10;">
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{toolsInfo.type==0}}">暂不借用</cover-view>
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'openTk',[0] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{toolsInfo.type==2}}">关闭头盔</cover-view>
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'openTk',[1] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;background:#EA5359;color:#fff;" wx:if="{{toolsInfo.type==0||toolsInfo.type==2}}">借用头盔</cover-view>
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" style="width:100%;line-height:60rpx;border-radius:30rpx;background:#EA5359;color:#fff;" wx:if="{{toolsInfo.type==1}}">我知道了</cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="overlay data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}" hidden="{{!ls_show}}" style="z-index:11;"></cover-view>
+                <cover-view class="popup data-v-4d344215" hidden="{{!ls_show}}" style="z-index:12;">
+                    <cover-view class="relative data-v-4d344215">
+                        <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/ls_xq.png" style="width:600rpx;height:800rpx;" wx:if="{{ls_show}}"></cover-image>
+                        <cover-view class="absolute left0 bottom60 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-4d344215" style="z-index:10;">
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;">继续用车</cover-view>
+                            <cover-view catchtap="__e" class="text-center box-sizing color-f data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/updateSchool/index'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;background:#EA5359;">更换校区</cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e4',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="overlay data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e5',['$event'] ] ] ] ]}}" hidden="{{!rc_show}}" style="z-index:11;"></cover-view>
+                <cover-view class="popup data-v-4d344215" hidden="{{!rc_show}}" style="z-index:12;">
+                    <cover-view class="relative data-v-4d344215">
+                        <cover-image class="data-v-4d344215" src="https://img2.7mate.cn/home_index_202308240829.png" style="width:600rpx;height:800rpx;" wx:if="{{rc_show}}"></cover-image>
+                        <cover-view class="absolute left0 bottom60 w_100 row-col-center box-sizing pl50 pr50 font32 data-v-4d344215" style="z-index:10;">
+                            <cover-view catchtap="__e" class="text-center box-sizing data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e6',['$event'] ] ] ] ]}}" style="width:420rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;">继续用车</cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e7',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="bg-f br20 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'e8',['$event'] ] ] ] ]}}" hidden="{{!show_service_modal}}" style="{{'position:fixed;left:25rpx;z-index:3;width:700rpx;'+'bottom:'+(is_iphone_x?screen_height-screen_height-104+'px;':screen_height-screen_height-70+'px;')+';'}}">
+                    <cover-view class="service_modal flex data-v-4d344215">
+                        <cover-view catchtap="__e" class="flex1 row-center data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'gotoBackCarError',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                            <cover-image class="img data-v-4d344215" src="https://img2.7mate.cn/home_20220920_01.png"></cover-image>
+                            <cover-view class="pt5 data-v-4d344215">问题反馈</cover-view>
+                        </cover-view>
+                        <cover-view catchtap="__e" class="flex1 row-center data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'gotoBikeBad',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                            <cover-image class="img data-v-4d344215" src="https://img2.7mate.cn/home_20220920_02.png"></cover-image>
+                            <cover-view class="pt5 data-v-4d344215">上报故障</cover-view>
+                        </cover-view>
+                        <cover-view catchtap="__e" class="flex1 row-center data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'goTsyJy',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                            <cover-image class="img data-v-4d344215" src="https://img2.7mate.cn/home_20220920_03.png"></cover-image>
+                            <cover-view class="pt5 data-v-4d344215">建议投诉</cover-view>
+                        </cover-view>
+                        <cover-view catchtap="__e" class="flex1 row-center data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'gotoService',['$event'] ] ] ] ]}}">
+                            <cover-image class="img data-v-4d344215" src="https://img2.7mate.cn/home_20220920_04.png"></cover-image>
+                            <cover-view class="pt5 data-v-4d344215">客服中心</cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="temp tip data-v-4d344215" hidden="{{!show_temp}}">
+                    <cover-view class="title data-v-4d344215">提示</cover-view>
+                    <cover-view class="content data-v-4d344215">如需临时上锁，请点击确定 后关闭车锁</cover-view>
+                    <cover-view class="footer data-v-4d344215">
+                        <cover-view bindtap="__e" class="btn data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'temp_cancel',['$event'] ] ] ] ]}}">取消</cover-view>
+                        <cover-view bindtap="__e" class="btn active data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'temp_confirm',['$event'] ] ] ] ]}}">确定</cover-view>
+                    </cover-view>
+                </cover-view>
+                <ws-modal bg="{{modal_icon}}" bind:__l="__l" bind:btnClick="__e" bind:close="__e" class="data-v-4d344215" content="{{modal_content}}" data-custom-hidden="{{!modal_icon}}" data-event-opts="{{[ [ '^btnClick',[ ['modalBtnClick'] ] ],[ '^close',[ ['modalClose'] ] ] ]}}" show="{{modal_show}}" vueId="61245cba-2"></ws-modal>
+                <cover-view class="notice_modal data-v-4d344215" hidden="{{!notice_modal_show}}">
+                    <cover-view class="content_container data-v-4d344215">
+                        <cover-view class="content data-v-4d344215">{{notice_modal_content}}</cover-view>
+                    </cover-view>
+                    <cover-image class="bg data-v-4d344215" src="https://img2.7mate.cn/notice_modal.png"></cover-image>
+                    <cover-image catchtap="__e" class="close data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'closeNoticeModal',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/popup_close.png"></cover-image>
+                </cover-view>
+                <cover-view catchtap="__e" class="overlay z10 data-v-4d344215" data-event-opts="{{[ [ 'tap',[ [ 'close_show',['$event'] ] ] ] ]}}" hidden="{{!show_overlay}}"></cover-view>
+                <cover-view class="overlay z10 data-v-4d344215" hidden="{{!show_overlay2}}"></cover-view>
+            </map>
+            <ws-tabbar active="home" bind:__l="__l" class="data-v-4d344215" vueId="61245cba-3"></ws-tabbar>
+        </view>
+        <van-loading bind:__l="__l" class="spinner data-v-4d344215" data-com-type="wx" type="spinner" vueId="61245cba-4" wx:if="{{show_loading}}"></van-loading>
+    </view>
+</view>

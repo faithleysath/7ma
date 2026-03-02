@@ -1,0 +1,76 @@
+<view class="data-v-d1165e80" id="order_detail">
+    <view class="ws_container1 data-v-d1165e80" wx:if="{{$root.g0}}">
+        <view class="header data-v-d1165e80">
+            <view class="icon data-v-d1165e80">
+                <image class="bike data-v-d1165e80" src="https://img2.7mate.cn/minibus_icon.png"></image>
+            </view>
+            <view class="number data-v-d1165e80">
+                <label class="data-v-d1165e80">车辆名称：</label>
+                <label class="data-v-d1165e80">{{order.bus_name}}</label>
+            </view>
+            <view class="number data-v-d1165e80">
+                <label class="data-v-d1165e80">车辆编号：</label>
+                <label class="data-v-d1165e80">{{order.bus_number}}</label>
+            </view>
+            <view class="price_title data-v-d1165e80">本次消费</view>
+            <view class="price data-v-d1165e80">
+                <label class="data-v-d1165e80">￥</label>
+                <label class="data-v-d1165e80">{{order.order_amount}}</label>
+            </view>
+        </view>
+        <view class="main data-v-d1165e80">
+            <view class="title data-v-d1165e80">订单明细</view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">订单编号：</label>
+                <label class="data-v-d1165e80">{{order.order_sn}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">订单状态：</label>
+                <label class="data-v-d1165e80">
+                    <label class="_span data-v-d1165e80" style="color:#43C93E;" wx:if="{{order.order_state==1}}">已完成</label>
+                    <block wx:else>
+                        <label class="_span data-v-d1165e80" style="color:#E70014;" wx:if="{{order.order_state==0}}">未支付</label>
+                    </block>
+                </label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">支付方式：</label>
+                <label class="data-v-d1165e80">{{order.payment_name}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">乘车单价：</label>
+                <label class="data-v-d1165e80">{{order.price}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">乘车人数：</label>
+                <label class="data-v-d1165e80">{{order.person_number}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">订单金额：</label>
+                <label class="data-v-d1165e80">{{order.order_amount}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">订单时间：</label>
+                <label class="data-v-d1165e80">{{order.created_at}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">支付时间：</label>
+                <label class="data-v-d1165e80">{{order.payment_time||'无'}}</label>
+            </view>
+            <view class="item data-v-d1165e80">
+                <label class="data-v-d1165e80">退款状态：</label>
+                <label class="data-v-d1165e80" style="color:#E70014;" wx:if="{{order.is_refund==1}}">已退款</label>
+                <label class="data-v-d1165e80" wx:else>无</label>
+            </view>
+            <view class="item data-v-d1165e80" wx:if="{{order.is_refund==1}}">
+                <label class="data-v-d1165e80">退款金额：</label>
+                <label class="data-v-d1165e80">{{order.refund_amount}}</label>
+            </view>
+        </view>
+        <view class="pt50 pb100 box-sizing pl32 pr32 data-v-d1165e80" hidden="{{!adBannerShow}}">
+            <image class="block data-v-d1165e80" mode="scaleToFill" src="https://img2.7mate.cn/ad_01.png" style="width:100%;height:50rpx;"></image>
+            <ad binderror="__e" bindload="__e" class="data-v-d1165e80" data-event-opts="{{[ [ 'error',[ [ 'e0',['$event'] ] ] ],[ 'load',[ [ 'e1',['$event'] ] ] ] ]}}" unitId="adunit-0e4da32e277c12d5"></ad>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-d1165e80" data-com-type="wx" type="spinner" vueId="7e3bbaf6-1" wx:if="{{show_loading}}"></van-loading>
+</view>

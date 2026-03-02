@@ -1,0 +1,121 @@
+{
+  "entryPagePath": "pages/home/index",
+  "pages": [
+    "pages/home/index",
+    "pages/home/index_old",
+    "pages/wallet/index",
+    "pages/member/index",
+    "pages/member/detail",
+    "pages/setting/index",
+    "pages/order/index",
+    "pages/order/minibus",
+    "pages/order/detail",
+    "pages/order/minibusDetail",
+    "pages/minibus/index",
+    "pages/notice/index",
+    "pages/recharge/index",
+    "pages/payment/index",
+    "pages/payment/h5",
+    "pages/payment/control",
+    "pages/common/wxAppPay",
+    "pages/card/index",
+    "pages/card/buy",
+    "pages/card/my",
+    "pages/card/detail",
+    "pages/card/exchange",
+    "pages/card/cert",
+    "pages/auth/index",
+    "pages/auth/phone",
+    "pages/h5/index",
+    "pages/40301/index",
+    "pages/40301/captcha-popup",
+    "pages/auth/verificationcode",
+    "pages/wallet/bill",
+    "pages/service/index",
+    "pages/service/backCarError",
+    "pages/service/bikeBad",
+    "pages/service/bikeBad2",
+    "pages/changephone/index",
+    "pages/changephone/verificationcode",
+    "pages/cert/index",
+    "pages/cert/cert1",
+    "pages/cert/cert2",
+    "pages/school/index",
+    "pages/appeal/index",
+    "pages/points/index",
+    "pages/points/records",
+    "pages/points/exchange_records",
+    "pages/order/other",
+    "pages/rule/index",
+    "pages/rule/index2",
+    "pages/rule/index3",
+    "pages/seat/index",
+    "pages/billingList/billingList",
+    "pages/billingMain/billingMain",
+    "pages/billingAddress/billingAddress",
+    "pages/billingAdd/billingAdd",
+    "pages/billingMng/billingMng",
+    "pages/billingAddrMng/billingAddrMng",
+    "pages/billingEdit/billingEdit",
+    "pages/billingRead/billingRead",
+    "pages/billingDetail/billingDetail",
+    "pages/updateSchool/index",
+    "pages/updateSchool/updateSchool",
+    "pages/complaintAndSuggests/complaintAndSuggests",
+    "pages/addComplaintAndSuggests/addComplaintAndSuggests",
+    "pages/complaintAndSuggestsDetail/complaintAndSuggestsDetail",
+    "pages/feedBackList/feedBackList",
+    "pages/feedBackDetail/feedBackDetail",
+    "pages/balanceprocess/index",
+    "pages/privacy/privacy",
+    "pages/bxDetail/index",
+    "pages/bxSubmit/index",
+    "pages/gjline/index",
+    "pages/gjpj/index",
+    "pages/http600/index",
+    "pages/qxjz/index",
+    "pages/qxjz/ks",
+    "pages/qxjz/st",
+    "pages/qxdzjz/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于7MA出行小程序车辆展示"
+    }
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/index"
+      },
+      {
+        "text": "钱包",
+        "pagePath": "pages/wallet/index"
+      },
+      {
+        "text": "会员中心",
+        "pagePath": "pages/member/index"
+      }
+    ]
+  },
+  "renderer": "webview",
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdate"
+  ],
+  "componentFramework": "exparser",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "plugins": {}
+}

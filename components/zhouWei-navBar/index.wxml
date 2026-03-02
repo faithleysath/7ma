@@ -1,0 +1,67 @@
+<view>
+    <view class="{{[navFixed?'header_fixed':'',type=='transparent'?'header_absolute':'',navShadow?'header_shadow':'',themeBgColorName]}}" style="{{$root.s0}}">
+        <view class="header_content">
+            <view class="header_left_box">
+                <slot name="left" wx:if="{{$slots.left}}"></slot>
+                <block wx:else>
+                    <view class="{{['header_left_info',isTwoBtn?'header_btnMongol':'',isWhite&&isTwoBtn?'header_colorWhite_btnMongol':'']}}" wx:if="{{back||$slots.left||home}}">
+                        <view bindtap="__e" class="{{['header_left_back',isTwoBtn?'header_btnMongol_left_back':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onBackPage',['$event'] ] ] ] ]}}" wx:if="{{back&&!firstPage}}">
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_back_white.png" wx:if="{{isWhite}}"></image>
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_back_black_xyj.png" wx:else></image>
+                        </view>
+                        <text class="{{['header_left_line',isWhite?'header_colorWhite_left_line':'']}}" wx:if="{{isTwoBtn}}"></text>
+                        <view bindtap="__e" class="{{['header_left_home',isTwoBtn?'header_btnMongol_left_home':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onBackHome',['$event'] ] ] ] ]}}" wx:if="{{firstPage&&back||home}}">
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_home_white.png" wx:if="{{isWhite}}"></image>
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_home_black.png" wx:else></image>
+                        </view>
+                    </view>
+                </block>
+                <view class="header_title" style="{{'color:'+navFontColor+';'+'max-width:'+'350upx'+';'}}" wx:if="{{!titleCenter&&($slots.default||navTitle)}}">
+                    <slot wx:if="{{$slots.default}}"></slot>
+                    <text class="ell" style="{{'color:'+navFontColor+';'}}" wx:else>{{navTitle}}</text>
+                </view>
+            </view>
+            <view class="header_title header_title_center" style="{{'max-width:350rpx;'+'color:'+navFontColor+';'}}" wx:if="{{titleCenter&&($slots.default||navTitle)}}">
+                <slot wx:if="{{$slots.default}}"></slot>
+                <text class="ell" style="{{'color:'+navFontColor+';'}}" wx:else>{{navTitle}}</text>
+            </view>
+            <view class="header_right_info">
+                <slot name="right"></slot>
+            </view>
+        </view>
+    </view>
+    <view class="header_transparentFixed header_fixed" style="{{'padding-top:'+statusBarHeight+'px'+';'+'color:'+navTransparentFixedFontColor+';'+'opacity:'+1-transparentValue+';'+'z-index:'+(transparentValue<0.3?100:90)+';'}}" wx:if="{{type=='transparentFixed'}}">
+        <view class="header_content">
+            <view class="header_left_box">
+                <slot name="transparentFixedLeft" wx:if="{{$slots.transparentFixedLeft}}"></slot>
+                <block wx:else>
+                    <view class="{{['header_left_info','header_transparentFixed_left_info',isWhite?'header_transparentFixed_colorWhite_left_info':'']}}" wx:if="{{back||$slots.left||home}}">
+                        <view bindtap="__e" class="{{['header_left_back',isTwoBtn?'header_btnMongol_left_back':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onBackPage',['$event'] ] ] ] ]}}" wx:if="{{back&&!firstPage}}">
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_back_white.png" wx:if="{{isWhite}}"></image>
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_back_black.png" wx:else></image>
+                        </view>
+                        <text class="header_left_line" wx:if="{{isTwoBtn}}"></text>
+                        <view bindtap="__e" class="{{['header_left_home',isTwoBtn?'header_btnMongol_left_home':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onBackHome',['$event'] ] ] ] ]}}" wx:if="{{firstPage&&back||home}}">
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_home_white.png" wx:if="{{isWhite}}"></image>
+                            <image class="header_icon" mode="aspectFit" src="/static/zhouWei-navBar/icon_home_black.png" wx:else></image>
+                        </view>
+                    </view>
+                </block>
+                <view class="header_title" style="{{'color:'+navTransparentFixedFontColor+';'+'max-width:'+'350upx'+';'}}" wx:if="{{!titleCenter&&(navTitle||$slots.transparentFixed)}}">
+                    <slot name="transparentFixed" wx:if="{{$slots.transparentFixed}}"></slot>
+                    <text class="ell" style="{{'color:'+navTransparentFixedFontColor+';'}}" wx:else>{{navTitle}}</text>
+                </view>
+            </view>
+            <view class="header_title header_title_center" style="{{'color:'+navTransparentFixedFontColor+';'+'max-width:'+'350upx'+';'}}" wx:if="{{titleCenter&&(navTitle||$slots.transparentFixed)}}">
+                <slot name="transparentFixed" wx:if="{{$slots.transparentFixed}}"></slot>
+                <text class="ell" style="{{'color:'+navTransparentFixedFontColor+';'}}" wx:else>{{navTitle}}</text>
+            </view>
+            <view class="header_right_info">
+                <slot name="transparentFixedRight"></slot>
+            </view>
+        </view>
+    </view>
+    <view style="{{'padding-top:'+statusBarHeight+'px'+';'}}" wx:if="{{type=='fixed'}}">
+        <view class="header_station"></view>
+    </view>
+</view>

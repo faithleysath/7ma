@@ -1,0 +1,35 @@
+<view class="data-v-43e2f56a" id="appeal_index">
+    <ws-header bind:__l="__l" class="data-v-43e2f56a" title="申诉" vueId="984a4bca-1"></ws-header>
+    <view class="ws_container box-sizing data-v-43e2f56a">
+        <view class="title data-v-43e2f56a">变更手机号</view>
+        <view class="item _1 data-v-43e2f56a">
+            <view class="label data-v-43e2f56a" wx:if="{{show_labels._1}}">
+                <label class="data-v-43e2f56a">原手机号</label>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="data-v-43e2f56a" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',1] ] ] ],[ '^blur',[ [ 'onBlur',['$event',1] ] ] ] ]}}" maxlength="11" type="number" value="{{old_phone}}" vueId="984a4bca-2"></van-field>
+        </view>
+        <view class="item data-v-43e2f56a">
+            <view class="label data-v-43e2f56a" wx:if="{{show_labels._2}}">
+                <label class="data-v-43e2f56a">原密码</label>
+                <label class="last data-v-43e2f56a">可不填</label>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="data-v-43e2f56a" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',2] ] ] ],[ '^blur',[ [ 'onBlur',['$event',2] ] ] ] ]}}" value="{{old_password}}" vueId="984a4bca-3"></van-field>
+        </view>
+        <view class="item data-v-43e2f56a">
+            <view class="label data-v-43e2f56a" wx:if="{{show_labels._3}}">
+                <label class="data-v-43e2f56a">新手机号</label>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="data-v-43e2f56a" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',3] ] ] ],[ '^blur',[ [ 'onBlur',['$event',3] ] ] ] ]}}" maxlength="11" type="number" value="{{new_phone}}" vueId="984a4bca-4"></van-field>
+        </view>
+        <view class="item data-v-43e2f56a">
+            <view class="label data-v-43e2f56a" wx:if="{{show_labels._4}}">
+                <label class="data-v-43e2f56a">输入验证号码</label>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="data-v-43e2f56a" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',4] ] ] ],[ '^blur',[ [ 'onBlur',['$event',4] ] ] ] ]}}" maxlength="6" type="number" value="{{verification_code}}" vueId="984a4bca-5"></van-field>
+            <view catchtap="__e" class="btn data-v-43e2f56a" data-event-opts="{{[ [ 'tap',[ [ 'getVerificationCode',['$event'] ] ] ] ]}}">{{code}}</view>
+        </view>
+        <view bindtap="__e" class="footer data-v-43e2f56a" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">
+            <view class="btn data-v-43e2f56a">提交</view>
+        </view>
+    </view>
+</view>

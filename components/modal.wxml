@@ -1,0 +1,10 @@
+<cover-view class="ws_modal relative" hidden="{{!show}}" id="ws_modal">
+    <cover-image src="{{bg}}" style="width:500rpx;height:600rpx;"></cover-image>
+    <cover-view class="absolute row-center" style="width:430rpx;height:240rpx;left:35rpx;bottom:100rpx;">
+        <cover-view class="content" style="word-break:break-all;width:300rpx;white-space:pre-wrap;">{{content}}</cover-view>
+    </cover-view>
+    <cover-view class="absolute left35 bottom20 row-berween" style="width:430rpx;">
+        <cover-view bindtap="__e" class="box-sizing font30 text-center" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" style="width:180rpx;height:54rpx;border-radius:27rpx;border:1.5rpx solid #FF484B;color:#FF484B;line-height:54rpx;">取消</cover-view>
+        <cover-view bindtap="__e" class="box-sizing font30 text-center" data-event-opts="{{[ [ 'tap',[ [ 'btnClick',['$event'] ] ] ] ]}}" style="width:180rpx;height:54rpx;border-radius:27rpx;color:#fff;line-height:54rpx;background:#FF484B;">换一辆</cover-view>
+    </cover-view>
+</cover-view>

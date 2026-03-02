@@ -1,0 +1,11 @@
+<view class="data-v-43dd827d" id="card_exchage">
+    <ws-header bind:__l="__l" class="data-v-43dd827d" title="兑换" vueId="184e228d-1"></ws-header>
+    <view class="ws_container data-v-43dd827d">
+        <view class="input data-v-43dd827d">
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="data-v-43dd827d" data-com-type="wx" data-event-opts="{{[ [ '^input',[ ['onInput'] ] ],[ '^blur',[ ['onBlur'] ] ] ]}}" placeholder="输入兑换码" value="{{code}}" vueId="184e228d-2"></van-field>
+        </view>
+        <view class="footer data-v-43dd827d">
+            <view bindtap="__e" class="btn data-v-43dd827d" data-event-opts="{{[ [ 'tap',[ [ 'exchange',['$event'] ] ] ] ]}}">确认</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,45 @@
+<view class="container data-v-f12563b2">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-f12563b2" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="更换校区" vueId="774d76a0-1"></my-header>
+    <view class="relative data-v-f12563b2">
+        <image class="w_100 data-v-f12563b2" mode="widthFix" src="https://img2.7mate.cn/cert1_3.png"></image>
+        <view class="absolute box-sizing pl32 pr32 w_100 left0 top0 data-v-f12563b2">
+            <view class="relative data-v-f12563b2">
+                <view class="font36 pt50 pb20 data-v-f12563b2" style="color:#1a1a1a;">骑行区域</view>
+                <view bindtap="__e" class="br20 box-sizing pl20 pr20 pt34 pb34 row-left-center data-v-f12563b2" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);">
+                    <view class="data-v-f12563b2" style="color:#4D4D4D;">学校</view>
+                    <view class="flex1 text-right data-v-f12563b2">{{form.school_text}}</view>
+                    <image class="block ml10 relative top2 data-v-f12563b2" src="https://img2.7mate.cn/arrow_right.png" style="width:18rpx;height:29rpx;"></image>
+                </view>
+                <view class="font36 pt50 pb20 data-v-f12563b2" style="color:#1a1a1a;">个人信息</view>
+                <view class="br20 box-sizing pl20 pr20 pt34 pb34 data-v-f12563b2" style="background:rgba(255,255,255,0.7);">
+                    <view class="row-left-center pb32 data-v-f12563b2">
+                        <view class="data-v-f12563b2" style="color:#4D4D4D;">姓名</view>
+                        <input class="text-right flex1 data-v-f12563b2" disabled="{{true}}" type="text" value="{{info.user_name}}"></input>
+                    </view>
+                    <view class="data-v-f12563b2">
+                        <view class="data-v-f12563b2" style="height:2rpx;background:#B3B3B3;"></view>
+                        <view class="row-left-center pt32 data-v-f12563b2">
+                            <view class="font24 data-v-f12563b2" style="color:#4D4D4D;">{{info.student_id?'工号/学号/一卡通/其他':'身份证'}}</view>
+                            <input class="text-right flex1 data-v-f12563b2" disabled="{{true}}" type="text" value="{{info.student_id}}" wx:if="{{info.student_id}}"></input>
+                            <input class="text-right flex1 data-v-f12563b2" disabled="{{true}}" type="text" value="{{info.identity_number}}" wx:else></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="data-v-f12563b2">
+                    <view class="row-center pt100 pb100 data-v-f12563b2">
+                        <view class="flex font24 data-v-f12563b2">
+                            <van-checkbox bind:__l="__l" bind:change="__e" class="relative bottom4 data-v-f12563b2" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isTrue'] ] ] ]}}" iconSize="12px" shape="square" value="{{checked}}" vueId="774d76a0-2" vueSlots="{{['default']}}">
+                                <view class="data-v-f12563b2" style="color:#a0a0a0;">已阅读并同意</view>
+                            </van-checkbox>
+                            <view bindtap="__e" class="data-v-f12563b2" data-event-opts="{{[ [ 'tap',[ [ 'gotoH5',['$0'],['agreement'] ] ] ] ]}}" style="color:#FF4C52;">《服务协议》</view>
+                        </view>
+                        <view bindtap="__e" class="btn mt20 data-v-f12563b2" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">提交认证</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-popup bind:__l="__l" bind:clickOverlay="__e" class="data-v-f12563b2" data-com-type="wx" data-event-opts="{{[ [ '^clickOverlay',[ ['e1'] ] ] ]}}" duration="200" position="bottom" show="{{schoolShow}}" vueId="774d76a0-3" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:change="__e" bind:confirm="__e" class="data-v-f12563b2" columns="{{list}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e2'] ] ],[ '^confirm',[ ['getSchool'] ] ],[ '^change',[ ['getSchool'] ] ] ]}}" showToolbar="{{true}}" vueId="{{'774d76a0-4'+','+'774d76a0-3'}}"></van-picker>
+    </van-popup>
+</view>

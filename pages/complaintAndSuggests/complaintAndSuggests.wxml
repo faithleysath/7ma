@@ -1,0 +1,27 @@
+<view class="container data-v-1c5dd774">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-1c5dd774" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="投诉与建议" vueId="53c34040-1"></my-header>
+    <view class="box-sizing pl32 pr32 pt40 data-v-1c5dd774">
+        <view class="mb30 data-v-1c5dd774" wx:for="{{list}}" wx:key="index">
+            <view class="bg-f br10 box-sizing p30 data-v-1c5dd774">
+                <view class="row-berween data-v-1c5dd774">
+                    <view class="data-v-1c5dd774">{{item.created_at}}</view>
+                    <view bindtap="__e" class="row-right-center font26 data-v-1c5dd774" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/complaintAndSuggestsDetail/complaintAndSuggestsDetail?id='+item.id] ] ] ] ]}}">
+                        <view class="data-v-1c5dd774" hidden="{{!item.status}}">已处理</view>
+                        <view class="data-v-1c5dd774" hidden="{{!(item.status==0)}}" style="color:#FF4C52;">处理中</view>
+                        <image class="ml20 data-v-1c5dd774" mode="scaleToFill" src="https://img2.7mate.cn/index_01.png" style="width:12rpx;height:23rpx;"></image>
+                    </view>
+                </view>
+                <view class="mt30 mb25 data-v-1c5dd774" style="border-bottom:1.5rpx solid #ccc;"></view>
+                <view class="ell data-v-1c5dd774">{{'标题：'+item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="row-center line80 font30 data-v-1c5dd774" style="color:#666;" wx:if="{{notMore}}">暂无更多</view>
+    <view bindtap="__e" class="row-center line80 font30 data-v-1c5dd774" data-event-opts="{{[ [ 'tap',[ [ 'loadMore',['$event'] ] ] ] ]}}" style="color:#666;" wx:else>加载更多</view>
+    <view class="data-v-1c5dd774" style="height:320rpx;"></view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-1c5dd774">
+        <view bindtap="__e" class="row-center color-f font30 br40 data-v-1c5dd774" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/addComplaintAndSuggests/addComplaintAndSuggests'] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+            <view class="data-v-1c5dd774">我要投诉</view>
+        </view>
+    </view>
+</view>

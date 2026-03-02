@@ -1,0 +1,298 @@
+#card_buy.data-v-d863e514 {
+    height: 100%
+}
+
+#card_buy .w375.data-v-d863e514 {
+    width: 375rpx!important
+}
+
+#card_buy .w250.data-v-d863e514 {
+    width: 250rpx!important
+}
+
+#card_buy .header.data-v-d863e514 {
+    position: relative;
+    width: 100%
+}
+
+#card_buy .header .bg.data-v-d863e514 {
+    height: 600rpx;
+    left: 0;
+    top: 0;
+    width: 750rpx;
+    z-index: 1
+}
+
+#card_buy .header .back.data-v-d863e514 {
+    height: 40rpx;
+    left: 30rpx;
+    position: fixed;
+    top: 112rpx;
+    width: 23rpx;
+    z-index: 3
+}
+
+#card_buy .header .yellow_container.data-v-d863e514 {
+    bottom: 8rpx;
+    height: 280rpx;
+    left: 70rpx;
+    position: absolute
+}
+
+#card_buy .header .yellow_container .yellow.data-v-d863e514 {
+    height: 100%;
+    width: 614rpx
+}
+
+#card_buy .header .yellow_container .t.data-v-d863e514 {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    left: 0;
+    position: absolute;
+    top: 64rpx;
+    width: 612rpx
+}
+
+#card_buy .header .yellow_container .t .t1.data-v-d863e514 {
+    font-size: 36rpx;
+    margin-left: 84rpx
+}
+
+#card_buy .header .yellow_container .t .t2.data-v-d863e514 {
+    font-size: 22rpx;
+    height: 22rpx;
+    margin-top: -14rpx;
+    position: absolute;
+    right: 86rpx;
+    top: 50%
+}
+
+#card_buy .header .yellow_container .b.data-v-d863e514 {
+    -webkit-align-items: center;
+    align-items: center;
+    bottom: 56rpx;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    left: 0;
+    position: absolute;
+    width: 612rpx
+}
+
+#card_buy .header .yellow_container .b .b1.data-v-d863e514 {
+    font-size: 44rpx;
+    margin-left: 84rpx
+}
+
+#card_buy .header .yellow_container .b .b2.data-v-d863e514 {
+    font-size: 24rpx;
+    margin-left: 4rpx;
+    padding: 12rpx 0 0 4rpx
+}
+
+#card_buy .header .yellow_container .b .b3.data-v-d863e514 {
+    font-size: 24rpx;
+    margin-left: 53rpx;
+    opacity: .6;
+    padding-top: 14rpx;
+    text-decoration: line-through
+}
+
+#card_buy .header .activity.data-v-d863e514,#card_buy .header .discount.data-v-d863e514 {
+    height: 3.75%;
+    position: fixed;
+    right: 73rpx;
+    top: 22.1%;
+    width: 120rpx;
+    z-index: 3
+}
+
+#card_buy .header .shadow.data-v-d863e514 {
+    height: 24rpx;
+    left: 0;
+    position: fixed;
+    top: 39.5%;
+    width: 750rpx;
+    z-index: 3
+}
+
+#card_buy .header .title.data-v-d863e514 {
+    color: #fff;
+    font-size: 34rpx;
+    position: fixed;
+    text-align: center;
+    top: 112rpx;
+    width: 100%;
+    z-index: 2
+}
+
+#card_buy .attribute.data-v-d863e514 {
+    -webkit-align-items: center;
+    align-items: center;
+    background: #454955;
+    box-shadow: 0 -2px 20px 0 rgba(95,31,33,.35);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 0 15rpx;
+    width: 750rpx
+}
+
+#card_buy .attribute .item.data-v-d863e514 {
+    color: #fff;
+    position: relative;
+    text-align: center
+}
+
+#card_buy .attribute .item .t.data-v-d863e514 {
+    font-size: 36rpx
+}
+
+#card_buy .attribute .item .t .s.data-v-d863e514 {
+    font-size: 24rpx;
+    opacity: .5
+}
+
+#card_buy .attribute .item .b.data-v-d863e514 {
+    font-size: 24rpx;
+    margin-top: 13rpx;
+    opacity: .5
+}
+
+#card_buy .attribute .item .separator.data-v-d863e514 {
+    height: 42rpx;
+    margin-top: -21rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 2rpx
+}
+
+#card_buy .main.data-v-d863e514 {
+    background: #fff;
+    border-radius: 10px;
+    height: 43.5%;
+    margin: 25rpx 32rpx;
+    overflow: hidden;
+    width: 686rpx
+}
+
+#card_buy .main .content.data-v-d863e514 {
+    height: 100%;
+    padding: 0 40rpx
+}
+
+#card_buy .main .content .title.data-v-d863e514 {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    height: 20%;
+    -webkit-justify-content: space-between;
+    justify-content: space-between
+}
+
+#card_buy .main .content .title .t.data-v-d863e514 {
+    color: #332f2f;
+    font-size: 36rpx;
+    height: 35rpx;
+    line-height: 35rpx
+}
+
+#card_buy .main .content .title .p.data-v-d863e514 {
+    color: #ea5359;
+    display: inline-block;
+    font-size: 40rpx;
+    height: 35rpx;
+    line-height: 35rpx
+}
+
+#card_buy .main .content .title .op.data-v-d863e514 {
+    color: #665e5e;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 35rpx;
+    line-height: 35rpx;
+    margin-left: 10rpx;
+    text-decoration: line-through
+}
+
+#card_buy .main .content .desc.data-v-d863e514 {
+    color: #332f2f;
+    font-size: 28rpx;
+    height: 50%;
+    overflow-y: auto
+}
+
+#card_buy .main .content ._footer.data-v-d863e514 {
+    height: 30%;
+    position: relative
+}
+
+#card_buy .main .content ._footer .agreement.data-v-d863e514 {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 24rpx
+}
+
+#card_buy .main .content ._footer .agreement wx-image.data-v-d863e514 {
+    height: 26rpx;
+    margin-right: 20rpx;
+    width: 26rpx
+}
+
+#card_buy .main .content ._footer .agreement .t_checked.data-v-d863e514 {
+    color: #ea5359
+}
+
+#card_buy .main .content ._footer .agreement .t_unchecked.data-v-d863e514 {
+    color: #c2c2c2
+}
+
+#card_buy .main .content ._footer .btn1.data-v-d863e514 {
+    background: #ea5359;
+    border-radius: 35rpx;
+    color: #fff;
+    font-size: 32rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-top: 10rpx;
+    text-align: center;
+    width: 615rpx
+}
+
+#card_buy .main .content ._footer .btn2.data-v-d863e514 {
+    background: #fff;
+    border: 3px solid #ea5359;
+    border-radius: 35rpx;
+    color: #ea5359;
+    font-size: 32rpx;
+    height: 58rpx;
+    line-height: 58rpx;
+    margin-top: 10rpx;
+    text-align: center;
+    width: 602rpx
+}
+
+page {
+    background-color: #f7f7f7
+}
+
+#card_buy wx-checkbox .wx-checkbox-input {
+    height: 20rpx;
+    width: 20rpx
+}
+
+#card_buy wx-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    background-color: #ea5359;
+    content: "";
+    height: 30rpx;
+    width: 30rpx
+}

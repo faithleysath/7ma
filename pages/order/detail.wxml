@@ -1,0 +1,89 @@
+<view class="data-v-54e88a2e" id="order_detail">
+    <view class="ws_container1 data-v-54e88a2e" wx:if="{{$root.g0}}">
+        <view class="header data-v-54e88a2e">
+            <view class="icon data-v-54e88a2e">
+                <image class="bike data-v-54e88a2e" src="https://img2.7mate.cn/detail_bike.png" wx:if="{{order.car_type==1}}"></image>
+                <block wx:else>
+                    <image class="data-v-54e88a2e" src="https://img2.7mate.cn/hbc_2.png" style="width:186rpx;height:186rpx;" wx:if="{{order.car_type==2&&(order.car_school_id==102||order.car_school_id==113)}}"></image>
+                    <block wx:else>
+                        <image class="ebike data-v-54e88a2e" src="https://img2.7mate.cn/detail_ebike.png" wx:if="{{order.car_type==2}}"></image>
+                    </block>
+                </block>
+            </view>
+            <view class="{{['title','data-v-54e88a2e',order.order_state===40&&order.is_over_area===1?'rd':'']}}" wx:if="{{order.car_type==1}}">{{'单车'+(order.order_state>20&&order.is_over_area===1?'(超区)':'')+''}}</view>
+            <block wx:else>
+                <view class="{{['title','data-v-54e88a2e',order.order_state===40&&order.is_over_area===1?'rd':'']}}" wx:if="{{order.car_type==2}}">
+                    <view class="data-v-54e88a2e" wx:if="{{order.car_school_id==102||order.car_school_id==113}}">{{'滑板车'+(order.order_state>20&&order.is_over_area===1?'(超区)':'')}}</view>
+                    <view class="data-v-54e88a2e" wx:else>{{'助力车'+(order.order_state>20&&order.is_over_area===1?'(超区)':'')}}</view>
+                </view>
+            </block>
+            <view class="number data-v-54e88a2e">
+                <label class="data-v-54e88a2e">车辆编号：</label>
+                <label class="data-v-54e88a2e">{{order.car_number}}</label>
+            </view>
+            <view class="price_title data-v-54e88a2e">本次消费</view>
+            <view class="price data-v-54e88a2e">
+                <label class="data-v-54e88a2e">￥</label>
+                <label class="data-v-54e88a2e">{{order.order_amount}}</label>
+            </view>
+        </view>
+        <view class="main data-v-54e88a2e">
+            <view class="title data-v-54e88a2e">费用明细</view>
+            <view class="item data-v-54e88a2e">
+                <label class="data-v-54e88a2e">订单号：</label>
+                <label class="data-v-54e88a2e">{{order.order_sn}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.payment_name}}">
+                <label class="data-v-54e88a2e">支付方式：</label>
+                <label class="data-v-54e88a2e">{{order.payment_name}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.payment_time}}">
+                <label class="data-v-54e88a2e">支付时间：</label>
+                <label class="data-v-54e88a2e">{{order.payment_time}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.car_start_time}}">
+                <label class="data-v-54e88a2e">开始时间：</label>
+                <label class="data-v-54e88a2e">{{order.car_start_time}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.car_end_time}}">
+                <label class="data-v-54e88a2e">结束时间：</label>
+                <label class="data-v-54e88a2e">{{order.car_end_time}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.price}}">
+                <label class="data-v-54e88a2e" wx:if="{{order.credit_score_desc!==''}}">{{'起步价('+order.credit_score_desc+')：'}}</label>
+                <label class="data-v-54e88a2e" wx:else>起步价：</label>
+                <label class="{{['data-v-54e88a2e',order.credit_score_desc!==''?'red':'']}}">{{order.price}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.continued_price}}">
+                <label class="data-v-54e88a2e" wx:if="{{order.credit_score_desc!==''}}">{{'续租价('+order.credit_score_desc+')：'}}</label>
+                <label class="data-v-54e88a2e" wx:else>续租价：</label>
+                <label class="{{['data-v-54e88a2e',order.credit_score_desc!==''?'red':'']}}">{{order.continued_price}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.each_free_time>0}}">
+                <label class="data-v-54e88a2e">免费时长：</label>
+                <label class="data-v-54e88a2e">{{order.each_free_time+'分钟'}}</label>
+            </view>
+            <view class="item data-v-54e88a2e" wx:if="{{order.cycling_time}}">
+                <label class="data-v-54e88a2e">骑行时长：</label>
+                <label class="data-v-54e88a2e">{{order.cycling_time}}</label>
+            </view>
+        </view>
+        <view class="row-center pt80 data-v-54e88a2e" wx:if="{{order.insurance_management}}">
+            <view bindtap="__e" class="row-col-center data-v-54e88a2e" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/bxDetail/index'] ] ] ] ]}}" style="border-radius:13rpx;border:2rpx solid #F94754;width:326rpx;height:66rpx;color:#F94754;">
+                <image class="block data-v-54e88a2e" mode="scaleToFill" src="https://img2.7mate.cn/baoxian_01.png" style="width:28rpx;height:33rpx;"></image>
+                <view class="font28 ml15 data-v-54e88a2e">保险服务</view>
+            </view>
+        </view>
+        <view class="row-center pt50 data-v-54e88a2e">
+            <view bindtap="__e" class="row-col-center data-v-54e88a2e" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/service/bikeBad2?car_number='+order.car_number+'&carmodel_id='+order.car_type] ] ] ] ]}}" style="border-radius:13rpx;border:2rpx solid #F94754;width:326rpx;height:66rpx;color:#F94754;">
+                <image class="block data-v-54e88a2e" mode="scaleToFill" src="https://img2.7mate.cn/shangbaoguzhang_01.png" style="width:30rpx;height:30rpx;"></image>
+                <view class="font28 ml15 data-v-54e88a2e">上报故障</view>
+            </view>
+        </view>
+        <view class="pt50 pb100 box-sizing pl32 pr32 data-v-54e88a2e" hidden="{{!adBannerShow}}">
+            <image class="block data-v-54e88a2e" mode="scaleToFill" src="https://img2.7mate.cn/ad_01.png" style="width:100%;height:50rpx;"></image>
+            <ad binderror="__e" bindload="__e" class="data-v-54e88a2e" data-event-opts="{{[ [ 'error',[ [ 'e0',['$event'] ] ] ],[ 'load',[ [ 'e1',['$event'] ] ] ] ]}}" unitId="adunit-0e4da32e277c12d5"></ad>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-54e88a2e" data-com-type="wx" type="spinner" vueId="a2b0478a-1" wx:if="{{show_loading}}"></van-loading>
+</view>

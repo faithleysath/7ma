@@ -1,0 +1,21 @@
+<view class="container data-v-19547e2c">
+    <view class="pt70 text-center font700 font45 data-v-19547e2c">您对本次乘车的感受如何？</view>
+    <view class="box-sizing pl70 pr70 pt50 pb50 flex data-v-19547e2c">
+        <view bindtap="__e" class="flex1 row-center data-v-19547e2c" data-event-opts="{{[ [ 'tap',[ [ 'change',['$0'],[ [ ['icon','',index] ] ] ] ] ] ]}}" wx:for="{{icon}}" wx:key="index">
+            <image class="block data-v-19547e2c" hidden="{{!(form.degree_of_satisfaction==item.id)}}" mode="scaleToFill" src="{{item.src1}}" style="width:69rpx;height:69rpx;"></image>
+            <image class="block data-v-19547e2c" hidden="{{!(form.degree_of_satisfaction!=item.id)}}" mode="scaleToFill" src="{{item.src2}}" style="width:69rpx;height:69rpx;"></image>
+            <view class="pt15 font24 data-v-19547e2c" style="color:#747474;">{{item.text}}</view>
+        </view>
+    </view>
+    <view class="box-sizing pl70 pr70 data-v-19547e2c">
+        <view class="font24 br20 data-v-19547e2c" style="background:#F9F9F9;">
+            <textarea bindinput="__e" class="w_100 font30 box-sizing p30 br20 data-v-19547e2c" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','content','$event',[] ],['form'] ] ] ] ]}}" maxlength="255" placeholder="我们很重视您的每一条反馈" style="height:40vh;background:#F9F9F9;" type="text" value="{{form.content}}"></textarea>
+        </view>
+        <view bindtap="__e" class="font30 mt40 data-v-19547e2c" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="background:#F94754;padding:20rpx;border-radius:15rpx;" wx:if="{{form.degree_of_satisfaction}}">
+            <view class="color-f text-center data-v-19547e2c">提 交</view>
+        </view>
+        <view class="font30 mt40 data-v-19547e2c" style="background:#bbb;padding:20rpx;border-radius:15rpx;" wx:else>
+            <view class="color-f text-center data-v-19547e2c">提 交</view>
+        </view>
+    </view>
+</view>

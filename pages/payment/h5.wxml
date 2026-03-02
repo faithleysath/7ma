@@ -1,0 +1,4 @@
+<view>
+    <web-view binderror="__e" bindload="__e" data-event-opts="{{[ [ 'load',[ [ 'load',['$event'] ] ] ],[ 'error',[ [ 'error',['$event'] ] ] ] ]}}" src="{{src}}" wx:if="{{src}}"></web-view>
+    <view class="text-center" style="padding-top:200rpx;" wx:else>未接收到tran_no信息</view>
+</view>

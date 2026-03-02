@@ -1,0 +1,19 @@
+<view class="container data-v-459e67ce">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-459e67ce" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="我要投诉" vueId="7c183006-1"></my-header>
+    <view class="box-sizing pl32 pr32 pt40 data-v-459e67ce">
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb30 data-v-459e67ce">
+            <input bindinput="__e" class="w_100 font30 data-v-459e67ce" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','title','$event',[] ],['form'] ] ] ] ]}}" maxlength="50" placeholder="标题" type="text" value="{{form.title}}"></input>
+        </view>
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 data-v-459e67ce">
+            <textarea bindinput="__e" class="w_100 font30 data-v-459e67ce" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','content','$event',[] ],['form'] ] ] ] ]}}" maxlength="255" placeholder="投诉内容" style="height:200rpx;" type="text" value="{{form.content}}"></textarea>
+        </view>
+    </view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-459e67ce">
+        <view bindtap="__e" class="row-center color-f font30 br40 data-v-459e67ce" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);" wx:if="{{!isDone}}">
+            <view class="data-v-459e67ce">提交</view>
+        </view>
+        <view class="row-center color-f font30 br40 data-v-459e67ce" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);" wx:else>
+            <view class="data-v-459e67ce">提交</view>
+        </view>
+    </view>
+</view>

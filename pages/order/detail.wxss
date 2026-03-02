@@ -1,0 +1,112 @@
+#order_detail.data-v-54e88a2e {
+    height: 100%
+}
+
+#order_detail .ws_container1 .header.data-v-54e88a2e {
+    border-bottom: 2rpx solid #e5e5e5;
+    margin: 0 60rpx;
+    padding-bottom: 14rpx
+}
+
+#order_detail .ws_container1 .header .icon.data-v-54e88a2e {
+    margin-top: 54rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .icon .bike.data-v-54e88a2e {
+    height: 126rpx;
+    width: 196rpx
+}
+
+#order_detail .ws_container1 .header .icon .ebike.data-v-54e88a2e {
+    height: 120rpx;
+    width: 186rpx
+}
+
+#order_detail .ws_container1 .header .title.data-v-54e88a2e {
+    color: #717171;
+    font-size: 36rpx;
+    margin-top: 30rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .title.rd.data-v-54e88a2e {
+    color: red
+}
+
+#order_detail .ws_container1 .header .number.data-v-54e88a2e {
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-54e88a2e {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-54e88a2e:first-child {
+    color: #717171
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-54e88a2e:last-child {
+    color: #3a3a3a
+}
+
+#order_detail .ws_container1 .header .price_title.data-v-54e88a2e {
+    color: #717171;
+    font-size: 32rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .price.data-v-54e88a2e {
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-54e88a2e {
+    color: #ff1700
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-54e88a2e:first-child {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-54e88a2e:last-child {
+    font-size: 48rpx
+}
+
+#order_detail .ws_container1 .main.data-v-54e88a2e {
+    margin-top: 14rpx;
+    padding: 0 60rpx
+}
+
+#order_detail .ws_container1 .main .title.data-v-54e88a2e {
+    color: #3a3a3a;
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx
+}
+
+#order_detail .ws_container1 .main .item.data-v-54e88a2e {
+    height: 60rpx;
+    line-height: 60rpx
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-54e88a2e {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-54e88a2e:first-child {
+    color: #717171;
+    float: left
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-54e88a2e:last-child {
+    color: #3a3a3a;
+    float: right
+}
+
+#order_detail .ws_container1 .main .item wx-label:last-child.red.data-v-54e88a2e {
+    color: #fd555b
+}
+
+page {
+    height: 100%
+}

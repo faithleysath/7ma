@@ -1,0 +1,122 @@
+<view class="{{['absolute','w_100','left0','top0','animated','bg-f','data-v-c7ed4122',(user_car_authority.unauthorized_code>=6&&user_car_authority.unauthorized_code<=10||user_car_authority.unauthorized_code==999)&&'bounceInDown']}}" style="z-index:3;" wx:if="{{user_car_authority.unauthorized_code>=6&&user_car_authority.unauthorized_code<=10||user_car_authority.unauthorized_code==999}}">
+    <view class="box-sizing p20 bg-f data-v-c7ed4122" style="box-shadow:0 0 10px 5px #ccc;">
+        <view class="popup_top data-v-c7ed4122" hidden="{{!(user_car_authority.unauthorized_code==999)}}">
+            <view class="_footer row-col-berween data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==999}}">
+                <view class="box-sizing pr50 data-v-c7ed4122" style="color:#FF0000;">已下单，若车锁长时间未打开，请尝试点击右侧→"再次开锁"</view>
+                <view catchtap="__e" class="btn _2 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'fakeUnlockAgain',['$event'] ] ] ] ]}}" style="width:200rpx;" wx:if="{{fakeUnlockShow}}">再次开锁</view>
+                <view class="btn _2 data-v-c7ed4122" style="opacity:0.7;width:200rpx;" wx:else>开锁中...</view>
+            </view>
+        </view>
+        <view class="popup_top data-v-c7ed4122" hidden="{{!(user_car_authority.unauthorized_code!=999)}}">
+            <view class="header data-v-c7ed4122" hidden="{{!(user_car_authority.unauthorized_code!=10)}}">
+                <view class="left data-v-c7ed4122">
+                    <view class="data-v-c7ed4122" wx:if="{{user_car_authority.order.carmodel_id==2&&(user_car_authority.order.car_school_id==102||user_car_authority.order.car_school_id==113)}}">滑板车编号</view>
+                    <view class="data-v-c7ed4122" wx:else>{{user_car_authority.order.carmodel_id==1?'单车编号':'助力车编号'}}</view>
+                    <view class="data-v-c7ed4122">
+                        <text class="data-v-c7ed4122">{{user_car_authority.order.car_number}}</text>
+                    </view>
+                </view>
+                <view class="right data-v-c7ed4122">
+                    <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">费用</view>
+                    <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">{{'￥'+user_car_authority.order.order_amount+''}}</view>
+                    <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==6}}">{{''+(user_car_authority.order.carmodel_id==1?'￥'+user_car_authority.order.estimated_cost:user_car_authority.order.electricity)+''}}</view>
+                    <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==6}}">{{''+(user_car_authority.order.carmodel_id==1?'预计费用':'当前电量')+''}}</view>
+                </view>
+            </view>
+            <view class="header data-v-c7ed4122" hidden="{{!(user_car_authority.unauthorized_code==10)}}">
+                <view class="text-center line80 data-v-c7ed4122">您有套餐卡订单待支付</view>
+            </view>
+            <view class="line data-v-c7ed4122"></view>
+            <view class="main data-v-c7ed4122">
+                <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=9}}">
+                    <view class="container data-v-c7ed4122">
+                        <view class="data-v-c7ed4122">开始时间：</view>
+                        <view class="l data-v-c7ed4122">{{user_car_authority.order.car_start_time}}</view>
+                    </view>
+                    <view class="container data-v-c7ed4122">
+                        <view class="_first data-v-c7ed4122">结束时间：</view>
+                        <view class="_last l data-v-c7ed4122">{{user_car_authority.order.car_end_time}}</view>
+                    </view>
+                </view>
+                <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==6}}">
+                    <view class="container l data-v-c7ed4122" style="text-align:left;" wx:if="{{user_car_authority.order.carmodel_id==2}}">
+                        <view class="data-v-c7ed4122">续航里程：</view>
+                        <view class="l data-v-c7ed4122">{{user_car_authority.order.mileage}}</view>
+                    </view>
+                    <view class="container l data-v-c7ed4122" style="text-align:left;">
+                        <view class="data-v-c7ed4122">借车时间：</view>
+                        <view class="l data-v-c7ed4122">{{user_car_authority.order.car_start_time}}</view>
+                    </view>
+                    <view class="container data-v-c7ed4122" style="text-align:left;">
+                        <view class="data-v-c7ed4122">预计费用：</view>
+                        <view class="l data-v-c7ed4122" style="color:#FF0000;">
+                            <text class="data-v-c7ed4122">{{'￥'+user_car_authority.order.estimated_cost}}</text>
+                            <text class="data-v-c7ed4122" style="font-size:20rpx;" wx:if="{{user_car_authority.order.price_tips}}">{{user_car_authority.order.price_tips}}</text>
+                            <text bindtap="__e" class="data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/h5/index?title=信用分&path='+$root.m0] ] ] ] ]}}" style="color:#000;font-size:20rpx;" wx:if="{{user_car_authority.order.price_tips}}">查看规则</text>
+                            <image bindtap="__e" class="ml20 relative top6 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'updateOrder',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/fund_exchange.png" style="width:30rpx;height:30rpx;" wx:if="{{orderShow}}"></image>
+                            <text bindtap="__e" class="ml5 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'updateOrder',['$event'] ] ] ] ]}}" style="color:#666;" wx:if="{{orderShow}}">更新</text>
+                        </view>
+                    </view>
+                    <view class="container l data-v-c7ed4122" style="text-align:left;">
+                        <view class="data-v-c7ed4122">上次更新时间：</view>
+                        <view class="l data-v-c7ed4122">
+                            <text class="data-v-c7ed4122">{{user_car_authority.lasttime||'---'}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view catchtap="__e" class="_footer data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['gotoPayment'] ] ] ] ]}}" wx:if="{{user_car_authority.unauthorized_code>=7&&user_car_authority.unauthorized_code<=10}}">
+                <view class="btn _3 data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==7}}">骑行支付</view>
+                <view class="btn _3 data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==8}}">调度费支付</view>
+                <view class="btn _3 data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==9}}">赔偿费支付</view>
+                <view class="btn _3 data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==10}}">前往支付</view>
+            </view>
+            <view class="_footer data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code==6&&user_car_authority.order.car_lock_status!==undefined&&isSuccess}}">
+                <view catchtap="__e" class="btn _1 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['temporaryLock'] ] ] ] ]}}" wx:if="{{user_car_authority.order.carmodel_id==2||user_car_authority.order.carmodel_id==1&&user_car_authority.order.lock_id==11}}">临时上锁</view>
+                <view catchtap="__e" class="btn _1 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['unlockAgain'] ] ] ] ]}}">再次开锁</view>
+                <view catchtap="__e" class="btn _2 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['backCar'] ] ] ] ]}}" hidden="{{!(yjsTime<=0)}}">我要还车</view>
+                <view class="btn _2 data-v-c7ed4122" hidden="{{!(yjsTime>0)}}" style="width:180rpx;opacity:0.7;">{{'我要还车('+yjsTime+'s)'}}</view>
+            </view>
+            <block wx:else>
+                <view class="data-v-c7ed4122" style="text-align:center;font-size:32rpx;color:#EA5359;padding:20rpx 0;" wx:if="{{!isSuccess}}">您有订单信息，正在连接服务器...</view>
+            </block>
+            <view class="data-v-c7ed4122" wx:if="{{user_car_authority.unauthorized_code!=999}}">
+                <view class="data-v-c7ed4122" style="text-align:center;font-size:26rpx;color:#EA5359;padding-bottom:4rpx;">还车请至运营区P点，靠近车辆点击我要还车</view>
+            </view>
+            <view class="data-v-c7ed4122" hidden="{{!(user_car_authority.order.remark&&user_car_authority.unauthorized_code!=999)}}">
+                <view class="data-v-c7ed4122" style="text-align:center;font-size:26rpx;color:#EA5359;">
+                    <text class="data-v-c7ed4122">{{user_car_authority.order.remark}}</text>
+                    <text bindtap="__e" class="data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['go','/pages/rule/index?number='+user_car_authority.order.car_number] ] ] ] ]}}" style="color:#409EFF;">(查看计费规则)</text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="row-col-berween font24 color-f box-sizing pt10 pb10 pl20 pr20 br10 data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'emit',['go','/pages/rule/index2'] ] ] ] ]}}" hidden="{{!user_car_authority.order.is_west_transfer}}" style="background:#FF4C52;width:686rpx;margin:10rpx auto 0;">
+            <view class="data-v-c7ed4122">该订单为换乘订单</view>
+            <view class="row-left-center data-v-c7ed4122">
+                <view class="mr10 relative bottom1 data-v-c7ed4122">了解详情</view>
+                <image class="data-v-c7ed4122" src="https://img2.7mate.cn/ls_right.png" style="width:13rpx;height:24rpx;"></image>
+            </view>
+        </view>
+    </view>
+    <view class="absolute bg-f p20 br20 left20 mt20 data-v-c7ed4122" style="box-shadow:0 0 10px 5px #ccc;width:114rpx;top:100%;">
+        <image class="data-v-c7ed4122" mode="scaleToFill" src="https://img2.7mate.cn/yyq_20230720.png" style="width:114rpx;height:43rpx;"></image>
+        <image class="data-v-c7ed4122" mode="scaleToFill" src="https://img2.7mate.cn/hcd_20230720.png" style="width:114rpx;height:51rpx;"></image>
+        <image class="data-v-c7ed4122" mode="scaleToFill" src="https://img2.7mate.cn/jtq_20230720.png" style="width:114rpx;height:49rpx;"></image>
+        <image class="data-v-c7ed4122" mode="scaleToFill" src="https://img2.7mate.cn/20250928_01.png" style="width:114rpx;height:49rpx;"></image>
+        <image class="data-v-c7ed4122" mode="scaleToFill" src="https://img2.7mate.cn/20250928_02.png" style="width:114rpx;height:49rpx;"></image>
+    </view>
+    <view class="absolute right20 mt20 br5 font20 p10 data-v-c7ed4122" style="min-width:90rpx;top:100%;background:rgba(0,0,0,0.6);">
+        <view class="color-f font18 data-v-c7ed4122" style="margin-bottom:2rpx;">网络延迟：</view>
+        <view class="data-v-c7ed4122" style="color:#F56C6C;" wx:if="{{healthMs=='未知'}}">{{healthMs}}</view>
+        <block wx:else>
+            <view class="data-v-c7ed4122" style="color:#67C23A;" wx:if="{{healthMs<=100}}">{{healthMs+' ms'}}</view>
+            <block wx:else>
+                <view class="data-v-c7ed4122" style="color:#E6A23C;" wx:if="{{healthMs>100&&healthMs<=300}}">{{healthMs+' ms'}}</view>
+                <view class="data-v-c7ed4122" style="color:#F56C6C;" wx:else>{{healthMs+' ms'}}</view>
+            </block>
+        </block>
+    </view>
+    <view bindtap="__e" class="absolute p20 br20 center-x data-v-c7ed4122" data-event-opts="{{[ [ 'tap',[ [ 'getCarPosition',['$event'] ] ] ] ]}}" style="top:100%;padding-top:50rpx;" wx:if="{{findCarShow&&user_car_authority.unauthorized_code==6}}">
+        <find-car bind:__l="__l" class="data-v-c7ed4122" vueId="4716754b-1"></find-car>
+    </view>
+</view>

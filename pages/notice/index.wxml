@@ -1,0 +1,15 @@
+<view class="data-v-b4496b82" id="notice_index" style="{{'background:'+($root.g0?'#ffffff':'#F1F1F1')+';'}}">
+    <ws-header bind:__l="__l" class="data-v-b4496b82" title="我的消息" vueId="fe0ecd9c-1"></ws-header>
+    <view class="ws_container data-v-b4496b82" wx:if="{{!loading}}">
+        <view bindtap="__e" class="item data-v-b4496b82" data-event-opts="{{[ [ 'tap',[ [ 'gotoPath',['$0'],[ [ ['notices','',index] ] ] ] ] ] ]}}" wx:for="{{notices}}" wx:for-item="notice" wx:key="index">
+            <label class="title data-v-b4496b82">{{''+notice.title+''}}<image class="badge data-v-b4496b82" src="https://img2.7mate.cn/badge.png" wx:if="{{notice.is_read===0}}"></image>
+            </label>
+            <view class="content data-v-b4496b82">{{''+notice.content+''}}</view>
+        </view>
+        <view class="no_notice data-v-b4496b82" wx:if="{{$root.g1}}">
+            <image class="img data-v-b4496b82" src="https://img2.7mate.cn/no_notice.png"></image>
+            <view class="desc data-v-b4496b82">您还未有消息！</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-b4496b82" data-com-type="wx" type="spinner" vueId="fe0ecd9c-2" wx:if="{{show_loading}}"></van-loading>
+</view>

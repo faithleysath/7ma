@@ -1,0 +1,13 @@
+<view class="changephone_verificationcode data-v-46fe93d8" id="changephone_verificationcode">
+    <image bindtap="__e" class="back data-v-46fe93d8" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back.png"></image>
+    <view class="title data-v-46fe93d8">验证码已发送至</view>
+    <view class="desc data-v-46fe93d8">{{''+phone+''}}<view catchtap="__e" class="code data-v-46fe93d8" data-event-opts="{{[ [ 'tap',[ [ 'getVerificationCode',['$event'] ] ] ] ]}}">{{code}}</view>
+    </view>
+    <view class="field data-v-46fe93d8">
+        <view class="container data-v-46fe93d8">
+            <view class="input data-v-46fe93d8" wx:for="{{n}}" wx:for-index="__i0__" wx:for-item="i" wx:key="*this">{{''+verification_codes[i]+''}}<view class="cursor data-v-46fe93d8" wx:if="{{show_focus[i]}}"></view>
+            </view>
+        </view>
+        <input bindinput="__e" class="van-field__input data-v-46fe93d8" confirmHold="{{true}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','verification_code','$event',[] ] ],[ 'onInput',['$event'] ] ] ] ]}}" focus="{{focus}}" holdKeyboard="{{true}}" maxlength="6" type="number" value="{{verification_code}}"></input>
+    </view>
+</view>

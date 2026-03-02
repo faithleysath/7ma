@@ -1,0 +1,9 @@
+<view class="data-v-08c2be5e" id="service_bike_bad">
+    <ws-header bind:__l="__l" class="data-v-08c2be5e" title="车辆故障" vueId="707b7a85-1"></ws-header>
+    <view class="ws_container data-v-08c2be5e">
+        <van-field bind:__l="__l" bind:blur="__e" bind:clickIcon="__e" bind:input="__e" class="data-v-08c2be5e" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',1] ] ] ],[ '^blur',[ [ 'onBlur',['$event',1] ] ] ],[ '^clickIcon',[ ['scan'] ] ] ]}}" placeholder="{{car_number_placeholder}}" rightIcon="https://img2.7mate.cn/feedback_scan.png" rightIconClass="right_icon_class" value="{{car_number}}" vueId="707b7a85-2"></van-field>
+        <view class="footer data-v-08c2be5e">
+            <view bindtap="__e" class="btn data-v-08c2be5e" data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}">下一步</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,25 @@
+#changephone_index.data-v-82609666 {
+    height: 100%
+}
+
+#changephone_index .input.data-v-82609666 {
+    padding: 60rpx
+}
+
+#changephone_index .btn.data-v-82609666 {
+    background: #9c9c9c
+}
+
+#changephone_index .field-index--van-field.van-cell {
+    padding-left: 0
+}
+
+#changephone_index .van-field__input.van-field__input {
+    color: #b2b2b2;
+    font-size: 32rpx
+}
+
+#changephone_index .van-cell:after {
+    border-color: #979797;
+    left: 0
+}

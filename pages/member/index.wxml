@@ -1,0 +1,93 @@
+<view class="container data-v-014f91e0">
+    <view class="relative data-v-014f91e0">
+        <view class="status_bar data-v-014f91e0"></view>
+        <view class="relative data-v-014f91e0" style="height:507rpx;z-index:10;">
+            <view class="absolute w_100 left0 box-sizing pl30 pr30 data-v-014f91e0" style="top:200rpx;">
+                <view class="row-berween data-v-014f91e0">
+                    <view class="row-left-center data-v-014f91e0">
+                        <view class="br_50 data-v-014f91e0" style="border:2px solid #fff;">
+                            <image class="block br_50 data-v-014f91e0" mode="scaleToFill" src="{{user.avatar||'https://img2.7mate.cn/memberIndex_20250703_16.png'}}" style="width:108rpx;height:108rpx;"></image>
+                        </view>
+                        <view bindtap="__e" class="ml25 data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'goToLogin',['$event'] ] ] ] ]}}" wx:if="{{!user.id}}">
+                            <view class="font34 color-f line48 pb15 data-v-014f91e0">注册/登录</view>
+                            <view class="flex data-v-014f91e0">
+                                <view class="row-left-center bg-f box-sizing pl10 pr15 pt5 pb5 br20 data-v-014f91e0">
+                                    <image class="block data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_4.png" style="width:28rpx;height:28rpx;"></image>
+                                    <view class="font20 data-v-014f91e0" style="color:#8c8c8c;">未认证</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view bindtap="__e" class="ml25 data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'goToLogin',['$event'] ] ] ] ]}}" wx:else>
+                            <view class="font34 color-f line48 pb15 data-v-014f91e0">{{user.nickname?user.nickname:user.phone}}</view>
+                            <view class="flex data-v-014f91e0">
+                                <view class="row-left-center bg-f box-sizing pl10 pr15 pt5 pb5 br20 data-v-014f91e0">
+                                    <image class="block data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_4.png" style="width:28rpx;height:28rpx;" wx:if="{{!user.school_id}}"></image>
+                                    <image class="block data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250718_1.png" style="width:28rpx;height:28rpx;" wx:else></image>
+                                    <view class="font20 data-v-014f91e0" style="{{'color:'+(!user.school_id?'#8c8c8c':'#DE2736')+';'}}">{{user.school_id?'已认证':'未认证'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="row-left-top pt20 data-v-014f91e0">
+                        <view bindtap="__e" class="data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/setting/index',true] ] ] ] ]}}">
+                            <image class="block data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_2.png" style="width:40rpx;height:40rpx;"></image>
+                        </view>
+                        <view bindtap="__e" class="relative data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/notice/index',true] ] ] ] ]}}">
+                            <image class="block ml30 data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_3.png" style="width:40rpx;height:40rpx;"></image>
+                            <view class="absolute font20 pl10 pr10 pt2 pb2 data-v-014f91e0" style="right:-20rpx;top:-20rpx;background:#FF0015;color:#fff;box-shadow:0px 0px 6px 0px rgba(0,0,0,0.44);border:1px solid #fff;border-radius:50rpx;" wx:if="{{user.unread_count}}">{{user.unread_count}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="pt45 data-v-014f91e0">
+                    <view class="bg-f br15 box-sizing pl20 pr20 pt40 pb40 data-v-014f91e0" style="box-shadow:0px 0px 10px 0px rgba(0,0,0,0.09);">
+                        <view class="flex data-v-014f91e0">
+                            <view class="flex1 text-center data-v-014f91e0" style="border-right:1px solid #D8D8D8;">
+                                <view class="font36 font700 pb10 data-v-014f91e0" style="color:#DE2736;">{{user.points!==undefined?user.points:'--'}}</view>
+                                <view class="font26 data-v-014f91e0">会员积分</view>
+                            </view>
+                            <view class="flex1 text-center data-v-014f91e0" style="border-right:1px solid #D8D8D8;">
+                                <view class="font36 font700 pb10 data-v-014f91e0" style="color:#DE2736;">{{user.balance!==undefined?user.balance:'--'}}</view>
+                                <view class="font26 data-v-014f91e0">账户余额</view>
+                            </view>
+                            <view bindtap="__e" class="flex1 text-center data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'gotoMenu',[ [ 'o',['icon','credit_score.png'],['title','信用分'],['url','/pages/h5/index?title='],[ 'h5',{title:'credit_scores_h5_title',url:'credit_scores_h5_url'} ],['do','navigateTo'],['isLogin',true] ] ] ] ] ] ]}}">
+                                <view class="font36 font700 pb10 data-v-014f91e0" style="color:#DE2736;">{{scores}}</view>
+                                <view class="font26 data-v-014f91e0">信用分</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image class="block w_100 h_100 absolute left0 top0 data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_1.png"></image>
+        <view bindtap="__e" class="absolute left30 bg-f row-left-center box-sizing pl30 pt12 pb12 pr10 data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/points/index',true] ] ] ] ]}}" style="{{'height:'+menuButtonInfo.height+'px'+';'+'top:'+menuButtonInfo.top+'px'+';'+'border-radius:'+menuButtonInfo.height/2+'px'+';'+'z-index:'+20+';'}}">
+            <view class="font24 data-v-014f91e0">签到得积分</view>
+            <view class="h_100 ml10 br30 font24 box-sizing row-center pl15 pr15 data-v-014f91e0" style="background:#FFEADE;color:#FF4A00;">
+                <text class="data-v-014f91e0">签到</text>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing pl30 pr30 pt40 data-v-014f91e0">
+        <view class="bg-f box-sizing br15 pb50 data-v-014f91e0">
+            <view class="row-left-center box-sizing pt30 pl20 pb5 data-v-014f91e0">
+                <view class="data-v-014f91e0" style="width:6rpx;height:25rpx;background:#E60012;border-radius:3rpx;"></view>
+                <view class="ml10 font28 data-v-014f91e0">我的服务</view>
+            </view>
+            <view class="flex flex-wrap data-v-014f91e0">
+                <view bindtap="__e" class="flex4_1 row-center pt23 data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'gotoMenu',['$0'],[ [ ['menus','icon',item.icon] ] ] ] ] ] ]}}" wx:for="{{menus}}" wx:for-index="__i0__" wx:key="icon">
+                    <image class="block data-v-014f91e0" mode="scaleToFill" src="{{'https://img2.7mate.cn/'+item.icon}}" style="width:68rpx;height:68rpx;"></image>
+                    <view class="pt10 font26 data-v-014f91e0">{{item.title}}</view>
+                </view>
+                <view bindtap="__e" class="flex4_1 row-center pt23 data-v-014f91e0" data-event-opts="{{[ [ 'tap',[ [ 'gotoMenu',[ [ 'o',['url','/pages/qxjz/index?userName='+user.name],['do','navigateTo'],['isLogin',true] ] ] ] ] ] ]}}" wx:if="{{user.show_exam}}">
+                    <image class="block data-v-014f91e0" mode="scaleToFill" src="https://img2.7mate.cn/memberIndex_20250703_15.png" style="width:68rpx;height:68rpx;"></image>
+                    <view class="pt10 font26 data-v-014f91e0">骑行驾照</view>
+                </view>
+            </view>
+        </view>
+        <view class="mt25 data-v-014f91e0" wx:if="{{showAd}}">
+            <ad bindclose="__e" binderror="__e" class="data-v-014f91e0" data-event-opts="{{[ [ 'error',[ [ 'adError',['$event'] ] ] ],[ 'close',[ [ 'adClose',['$event'] ] ] ] ]}}" unitId="adunit-282ebca06d6b45ea"></ad>
+        </view>
+    </view>
+    <view class="data-v-014f91e0" style="height:200rpx;"></view>
+    <view class="x-bottom data-v-014f91e0"></view>
+    <ws-tabbar active="member" bind:__l="__l" class="data-v-014f91e0" vueId="00d1cfa0-1"></ws-tabbar>
+</view>

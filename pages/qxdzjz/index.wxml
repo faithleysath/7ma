@@ -1,0 +1,38 @@
+<view class="container row-center data-v-08fdd360">
+    <my-header bind:__l="__l" bind:back="__e" class="data-v-08fdd360" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" type="transparentFixed" vueId="2b7b0446-1"></my-header>
+    <view class="box-sizing row-center data-v-08fdd360" style="padding:0 95rpx;">
+        <text class="mb40 text-center font34 font700 data-v-08fdd360" hidden="{{!isSuccess}}" style="color:transparent;background:linear-gradient(180deg, #FEF8E3 0%, #FFCB51 100%);background-clip:text;-webkit-background-clip:text;">恭喜你获得7MA出行骑行驾照</text>
+        <view class="data-v-08fdd360">
+            <l-painter bind:__l="__l" bind:fail="__e" bind:progress="__e" bind:success="__e" class="data-v-08fdd360 vue-ref" data-event-opts="{{[ [ '^success',[ ['success'] ] ],[ '^fail',[ ['fail'] ] ],[ '^progress',[ ['progress'] ] ] ]}}" data-ref="painter" isCanvasToTempFilePath="{{true}}" vueId="2b7b0446-2" vueSlots="{{['default']}}">
+                <l-painter-view bind:__l="__l" class="data-v-08fdd360" vueId="{{'2b7b0446-3'+','+'2b7b0446-2'}}" vueSlots="{{['default']}}" wx:if="{{load}}">
+                    <l-painter-image bind:__l="__l" class="data-v-08fdd360" css="width: 560rpx; height: 760rpx" src="{{'https://img2.7mate.cn/qxdzjz_1_1.png?id='+time}}" vueId="{{'2b7b0446-4'+','+'2b7b0446-3'}}"></l-painter-image>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;top:224rpx;left:0;width:100%;text-align:center;" vueId="{{'2b7b0446-5'+','+'2b7b0446-3'}}" vueSlots="{{['default']}}">
+                        <l-painter-text bind:__l="__l" class="data-v-08fdd360" css="font-size:32rpx;font-weight:bold;color:#000" text="{{'恭喜你！'+name}}" vueId="{{'2b7b0446-6'+','+'2b7b0446-5'}}"></l-painter-text>
+                    </l-painter-view>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;top:299rpx;left:0;width:100%;padding:0 60rpx;" vueId="{{'2b7b0446-7'+','+'2b7b0446-3'}}" vueSlots="{{['default']}}">
+                        <l-painter-text bind:__l="__l" class="data-v-08fdd360" css="font-size:26rpx;font-weight:bold;color:#613419" text="{{'你于'+timeText+'成功通过7MA出\n行骑行驾照线上考试。'}}" vueId="{{'2b7b0446-8'+','+'2b7b0446-7'}}"></l-painter-text>
+                    </l-painter-view>
+                    <l-painter-image bind:__l="__l" class="data-v-08fdd360" css="width: 444rpx; height: 40rpx; position: absolute; left: 59rpx; top: 393rpx;" src="{{'https://img2.7mate.cn/qxdzjz_2.png?id='+time}}" vueId="{{'2b7b0446-9'+','+'2b7b0446-3'}}"></l-painter-image>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;top:513rpx;left:227rpx;width:106rpx;height:4rpx;background:#6B4E3E;" vueId="{{'2b7b0446-10'+','+'2b7b0446-3'}}"></l-painter-view>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;top:537rpx;left:0;width:100%;text-align:center;" vueId="{{'2b7b0446-11'+','+'2b7b0446-3'}}" vueSlots="{{['default']}}">
+                        <l-painter-text bind:__l="__l" class="data-v-08fdd360" css="font-size:28rpx;font-weight:bold;color:#613419" text="证书编号" vueId="{{'2b7b0446-12'+','+'2b7b0446-11'}}"></l-painter-text>
+                    </l-painter-view>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;bottom:137rpx;left:0;width:100%;text-align:center;" vueId="{{'2b7b0446-13'+','+'2b7b0446-3'}}" vueSlots="{{['default']}}">
+                        <l-painter-text bind:__l="__l" class="data-v-08fdd360" css="font-size:28rpx;color:#613419" text="NO.6778956847534859678" vueId="{{'2b7b0446-14'+','+'2b7b0446-13'}}"></l-painter-text>
+                    </l-painter-view>
+                    <l-painter-view bind:__l="__l" class="data-v-08fdd360" css="position:absolute;bottom:50rpx;left:0;width:100%;text-align:center;" vueId="{{'2b7b0446-15'+','+'2b7b0446-3'}}" vueSlots="{{['default']}}">
+                        <l-painter-text bind:__l="__l" class="data-v-08fdd360" css="font-size:26rpx;color:#C8BDB5" text="{{'发证时间：'+time}}" vueId="{{'2b7b0446-16'+','+'2b7b0446-15'}}"></l-painter-text>
+                    </l-painter-view>
+                </l-painter-view>
+            </l-painter>
+        </view>
+        <view class="box-sizing w_100 pl40 pr40 pt80 row-berween data-v-08fdd360" hidden="{{!isSuccess}}">
+            <view bindtap="__e" class="btn row-center data-v-08fdd360" data-event-opts="{{[ [ 'tap',[ ['back'] ] ] ]}}">
+                <view class="data-v-08fdd360">知道了</view>
+            </view>
+            <view bindtap="__e" class="btn row-center data-v-08fdd360" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" style="background:#FFC665;border-color:#D58326;">
+                <view class="data-v-08fdd360">保存证书</view>
+            </view>
+        </view>
+    </view>
+</view>

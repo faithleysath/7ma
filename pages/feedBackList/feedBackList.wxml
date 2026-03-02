@@ -1,0 +1,35 @@
+<view class="container data-v-65a04648">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-65a04648" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="问题反馈记录" vueId="06e62640-1"></my-header>
+    <view class="box-sizing pl32 pr32 pt40 data-v-65a04648">
+        <view class="mb30 data-v-65a04648" wx:for="{{list}}" wx:key="index">
+            <view class="bg-f br10 box-sizing p30 data-v-65a04648">
+                <view class="row-berween data-v-65a04648">
+                    <view class="data-v-65a04648">{{item.created_at}}</view>
+                    <view bindtap="__e" class="row-right-center font26 data-v-65a04648" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/feedBackDetail/feedBackDetail?id='+item.id] ] ] ] ]}}">
+                        <view class="data-v-65a04648" wx:if="{{item.status==0}}">处理中</view>
+                        <block wx:else>
+                            <view class="data-v-65a04648" wx:if="{{item.status==1}}">已处理</view>
+                            <block wx:else>
+                                <view class="data-v-65a04648" wx:if="{{item.status==2}}">已驳回</view>
+                            </block>
+                        </block>
+                        <image class="ml20 data-v-65a04648" mode="scaleToFill" src="https://img2.7mate.cn/index_01.png" style="width:12rpx;height:23rpx;"></image>
+                    </view>
+                </view>
+                <view class="mt30 mb25 data-v-65a04648" style="border-bottom:1.5rpx solid #ccc;"></view>
+                <view class="ell data-v-65a04648">{{'问题类型：'+item.question_type}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="row-center line80 font30 data-v-65a04648" style="color:#666;" wx:if="{{notMore}}">暂无更多</view>
+    <view bindtap="__e" class="row-center line80 font30 data-v-65a04648" data-event-opts="{{[ [ 'tap',[ [ 'loadMore',['$event'] ] ] ] ]}}" style="color:#666;" wx:else>加载更多</view>
+    <view class="data-v-65a04648" style="height:320rpx;"></view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-65a04648">
+        <view bindtap="__e" class="row-center color-f font30 br40 data-v-65a04648" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/service/backCarError?car_number='+car_number+'&carmodel_id='+carmodel_id] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);" wx:if="{{car_number&&carmodel_id}}">
+            <view class="data-v-65a04648">无法还车</view>
+        </view>
+        <view class="row-center color-f font30 br40 data-v-65a04648" style="width:600rpx;height:80rpx;background:#c0c0c0;box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);" wx:else>
+            <view class="data-v-65a04648">无法还车</view>
+        </view>
+    </view>
+</view>

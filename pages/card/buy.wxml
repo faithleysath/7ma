@@ -1,0 +1,226 @@
+<view class="data-v-d863e514" id="card_buy">
+    <view class="data-v-d863e514" style="height:100%;" wx:if="{{!show_loading&&card!==undefined}}">
+        <view class="header data-v-d863e514">
+            <image class="bg data-v-d863e514" src="https://img2.7mate.cn/card_bg_2.png"></image>
+            <image bindtap="__e" class="back data-v-d863e514" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/i_close_white.png"></image>
+            <view class="yellow_container data-v-d863e514">
+                <image class="yellow data-v-d863e514" src="https://img2.7mate.cn/bg_card_yellow.png"></image>
+                <view class="t data-v-d863e514">
+                    <view class="t1 data-v-d863e514">{{card.name}}</view>
+                </view>
+                <view class="b data-v-d863e514">
+                    <view class="b1 data-v-d863e514">{{card.price}}</view>
+                    <view class="b2 data-v-d863e514">元</view>
+                    <view class="b3 data-v-d863e514">{{card.original_price+'元'}}</view>
+                </view>
+                <view class="absolute bottom10 left40 data-v-d863e514">
+                    <view class="font20 data-v-d863e514" style="color:#fff;">{{'售卖时间：'+card.start_time+' 至 '+card.end_time}}</view>
+                </view>
+            </view>
+            <image class="activity data-v-d863e514" src="https://img2.7mate.cn/card_activity.png" wx:if="{{card.is_activity==1}}"></image>
+            <block wx:else>
+                <image class="discount data-v-d863e514" src="https://img2.7mate.cn/discount.png" wx:if="{{card.price*1<card.original_price*1}}"></image>
+            </block>
+            <view class="title data-v-d863e514">购买套餐卡</view>
+        </view>
+        <view class="attribute data-v-d863e514">
+            <view class="flex1 box-sizing data-v-d863e514">
+                <view class="flex pt20 data-v-d863e514" wx:if="{{$root.g0>=0}}">
+                    <view class="row-col-center data-v-d863e514" style="width:100rpx;" wx:if="{{$root.g1>1}}">
+                        <label class="font24 color-f _span data-v-d863e514">单车</label>
+                    </view>
+                    <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity==0}}">
+                        <view class="flex1 item font26 data-v-d863e514">
+                            <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                <label class="_span data-v-d863e514">{{card.d_times==0?'不限':card.d_times+'次'}}</label>
+                            </view>
+                            <view class="b data-v-d863e514" style="font-size:26rpx;">免费骑行次数</view>
+                            <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                        </view>
+                        <view class="flex1 item data-v-d863e514">
+                            <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                <label class="_span data-v-d863e514">{{card.d_each_free_time+'分钟'}}</label>
+                                <label class="s _span data-v-d863e514">/每次</label>
+                            </view>
+                            <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity!=0}}">
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.days+'天'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">有效天数</view>
+                                <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                            </view>
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.d_times==0?'不限':card.d_times+'次'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">免费骑行次数</view>
+                                <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                            </view>
+                            <view class="flex1 item data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.d_each_free_time+'分钟'}}</label>
+                                    <label class="s _span data-v-d863e514">/每次</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==1||card.type==4}}">
+                                <view class="flex1 item font26 data-v-d863e514">
+                                    <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                        <label class="_span data-v-d863e514">{{card.d_daily_free_times==0?'不限':card.d_daily_free_times+'次'}}</label>
+                                    </view>
+                                    <view class="b data-v-d863e514" style="font-size:26rpx;">每天免费次数</view>
+                                    <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                                </view>
+                                <view class="flex1 item data-v-d863e514">
+                                    <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                        <label class="_span data-v-d863e514">{{card.d_each_free_time+'分钟'}}</label>
+                                        <label class="s _span data-v-d863e514">/每次</label>
+                                    </view>
+                                    <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+                <view class="flex pt20 data-v-d863e514" wx:if="{{$root.g2>=0}}">
+                    <view class="row-col-center data-v-d863e514" style="width:100rpx;" wx:if="{{$root.g3>1}}">
+                        <label class="font24 color-f _span data-v-d863e514">助力车</label>
+                    </view>
+                    <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity==0}}">
+                        <view class="flex1 item font26 data-v-d863e514">
+                            <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                <label class="_span data-v-d863e514">{{card.z_times==0?'不限':card.z_times+'次'}}</label>
+                            </view>
+                            <view class="b data-v-d863e514" style="font-size:26rpx;">免费骑行次数</view>
+                            <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                        </view>
+                        <view class="flex1 item data-v-d863e514">
+                            <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                <label class="_span data-v-d863e514">{{card.z_each_free_time+'分钟'}}</label>
+                                <label class="s _span data-v-d863e514">/每次</label>
+                            </view>
+                            <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity!=0}}">
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.days+'天'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">有效天数</view>
+                                <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                            </view>
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.z_times==0?'不限':card.z_times+'次'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">免费骑行次数</view>
+                                <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                            </view>
+                            <view class="flex1 item data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.z_each_free_time+'分钟'}}</label>
+                                    <label class="s _span data-v-d863e514">/每次</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==1||card.type==4}}">
+                                <view class="flex1 item font26 data-v-d863e514">
+                                    <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                        <label class="_span data-v-d863e514">{{card.z_daily_free_times==0?'不限':card.z_daily_free_times+'次'}}</label>
+                                    </view>
+                                    <view class="b data-v-d863e514" style="font-size:26rpx;">每天免费次数</view>
+                                    <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                                </view>
+                                <view class="flex1 item data-v-d863e514">
+                                    <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                        <label class="_span data-v-d863e514">{{card.z_each_free_time+'分钟'}}</label>
+                                        <label class="s _span data-v-d863e514">/每次</label>
+                                    </view>
+                                    <view class="b data-v-d863e514" style="font-size:26rpx;">每次免费时长</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+                <view class="flex pt20 data-v-d863e514" wx:if="{{$root.g4>=0}}">
+                    <view class="row-col-center data-v-d863e514" style="width:100rpx;" wx:if="{{$root.g5>1}}">
+                        <label class="font24 color-f _span data-v-d863e514">小巴士</label>
+                    </view>
+                    <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity==0}}">
+                        <view class="flex1 item font26 data-v-d863e514">
+                            <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                <label class="_span data-v-d863e514">{{card.b_times+'次'}}</label>
+                            </view>
+                            <view class="b data-v-d863e514" style="font-size:26rpx;">免费乘车次数</view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==2&&card.is_activity!=0}}">
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.days+'天'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">有效天数</view>
+                                <image class="separator data-v-d863e514" src="https://img2.7mate.cn/separator.png"></image>
+                            </view>
+                            <view class="flex1 item font26 data-v-d863e514">
+                                <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                    <label class="_span data-v-d863e514">{{card.b_times+'次'}}</label>
+                                </view>
+                                <view class="b data-v-d863e514" style="font-size:26rpx;">免费乘车次数</view>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            <view class="flex1 row-left-center data-v-d863e514" wx:if="{{card.type==1||card.type==4}}">
+                                <view class="flex1 item font26 data-v-d863e514">
+                                    <view class="t data-v-d863e514" style="font-size:26rpx;">
+                                        <label class="_span data-v-d863e514">{{card.b_daily_free_times==0?'不限':card.b_daily_free_times+'次'}}</label>
+                                    </view>
+                                    <view class="b data-v-d863e514" style="font-size:26rpx;">每天免费次数</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="main data-v-d863e514">
+            <view class="content data-v-d863e514">
+                <view class="title data-v-d863e514">
+                    <view class="t data-v-d863e514">{{card.name}}</view>
+                    <view class="data-v-d863e514">
+                        <view class="p data-v-d863e514">{{'¥'+card.price}}</view>
+                        <view class="op data-v-d863e514">{{'¥'+card.original_price}}</view>
+                    </view>
+                </view>
+                <view class="desc data-v-d863e514">
+                    <rich-text nodes="{{card.desc}}"></rich-text>
+                </view>
+                <view class="_footer data-v-d863e514">
+                    <view bindtap="__e" class="agreement data-v-d863e514" data-event-opts="{{[ [ 'tap',[ [ 'check',['$event'] ] ] ] ]}}">
+                        <image class="check data-v-d863e514" src="https://img2.7mate.cn/card_checked.png" wx:if="{{checked}}"></image>
+                        <image class="check data-v-d863e514" src="https://img2.7mate.cn/card_unchecked.png" wx:if="{{!checked}}"></image>
+                        <view class="{{['data-v-d863e514',checked?'t_checked':'',!checked?'t_unchecked':'']}}">已阅读并同意按照</view>
+                        <view catchtap="__e" class="data-v-d863e514" data-event-opts="{{[ [ 'tap',[ [ 'gotoAgreement',['$event'] ] ] ] ]}}" style="color:#EA5359;">《套餐卡购买协议》</view>
+                        <view class="{{['data-v-d863e514',checked?'t_checked':'',!checked?'t_unchecked':'']}}">参与购买</view>
+                    </view>
+                    <view bindtap="__e" class="{{['data-v-d863e514',checked?'btn1':'',!checked?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'gotoPayment',['$0'],['card'] ] ] ] ]}}" wx:if="{{school.school_id&&card.need_examine}}">同意协议并提交审核</view>
+                    <view bindtap="__e" class="{{['data-v-d863e514',checked?'btn1':'',!checked?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'gotoPayment',['$0'],['card'] ] ] ] ]}}" wx:else>同意协议并购买</view>
+                    <view class="x-bottom data-v-d863e514"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-d863e514" data-com-type="wx" type="spinner" vueId="763cc006-1" wx:if="{{show_loading}}"></van-loading>
+</view>

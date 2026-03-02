@@ -1,0 +1,12 @@
+.ws_tabbar .van-hairline--top-bottom.van-tabbar.van-tabbar--fixed.van-tabbar--safe {
+    z-index: 1!important
+}
+
+.ws_tabbar .van-tabbar-item__icon {
+    top: 6rpx
+}
+
+.ws_tabbar .van-tabbar-item__text {
+    position: relative;
+    top: -6rpx
+}

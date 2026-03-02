@@ -1,0 +1,47 @@
+<view class="container data-v-02918f24">
+    <view class="box-sizing pl60 pr60 pt30 data-v-02918f24">
+        <view class="pb50 data-v-02918f24" wx:if="{{user.school_id!==0&&user.school_id!==115}}">
+            <view class="pb15 font32 data-v-02918f24">证件照片</view>
+            <view bindtap="__e" class="bg-f br10 row-center pt70 pb70 relative over-hidden data-v-02918f24" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['student_id_image'] ] ] ] ]}}">
+                <image class="data-v-02918f24" src="https://img2.7mate.cn/cert1_4.png" style="width:120rpx;height:100rpx;"></image>
+                <view class="font26 pt20 text-center data-v-02918f24" style="color:#999;">
+                    <view class="data-v-02918f24">账号本人学生证件/教职工证件照片</view>
+                    <view class="data-v-02918f24">（证件须含人像照片和姓名）</view>
+                </view>
+                <view class="absolute left0 top0 bg-f w_100 h_100 data-v-02918f24" wx:if="{{student_id_image_view}}">
+                    <image class="w_100 h_100 data-v-02918f24" mode="aspectFit" src="{{student_id_image_view}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="data-v-02918f24">
+            <view class="pb15 font32 data-v-02918f24">本人手机号凭证</view>
+            <view bindtap="__e" class="bg-f br10 row-center pt70 pb70 relative over-hidden data-v-02918f24" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['phone_certificate_image'] ] ] ] ]}}">
+                <image class="data-v-02918f24" src="https://img2.7mate.cn/cert1_4.png" style="width:120rpx;height:100rpx;"></image>
+                <view class="font26 pt20 text-center data-v-02918f24" style="color:#999;">
+                    <view class="data-v-02918f24">证明登录手机号为账号本人拥有的凭证</view>
+                    <view class="data-v-02918f24">（凭证须含手机号和姓名，如营业厅办理业务收据）</view>
+                </view>
+                <view class="absolute left0 top0 bg-f w_100 h_100 data-v-02918f24" wx:if="{{phone_certificate_image_view}}">
+                    <image class="w_100 h_100 data-v-02918f24" mode="aspectFit" src="{{phone_certificate_image_view}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fixed bottom0 left0 w_100 data-v-02918f24">
+        <view class="pb50 box-sizing pl50 pr50 data-v-02918f24">
+            <view class="pb30 font24 box-sizing row-left-top data-v-02918f24" style="color:#666;">
+                <view class="data-v-02918f24">注：</view>
+                <view class="flex1 data-v-02918f24">
+                    <view class="data-v-02918f24">1、认证信息仅用于身份核实，我们将严格保密；</view>
+                    <view class="data-v-02918f24">2、请如实上传认证信息，后台将进行人工审核；</view>
+                    <view class="data-v-02918f24">3、提交审核后，后台将尽快进行人工审核，请耐心等待；</view>
+                    <view class="data-v-02918f24">4、认证信息审核通过后即可支付购买套餐卡。</view>
+                </view>
+            </view>
+            <view bindtap="__e" class="row-center color-f font30 br40 data-v-02918f24" data-event-opts="{{[ [ 'tap',[ [ 'order',['$event'] ] ] ] ]}}" style="width:100%;height:80rpx;background:#FC555C;box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+                <view class="data-v-02918f24">提交审核</view>
+            </view>
+        </view>
+        <view class="x-bottom data-v-02918f24"></view>
+    </view>
+</view>

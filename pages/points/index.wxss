@@ -1,0 +1,400 @@
+#points_index.data-v-371b012a {
+    height: 100%
+}
+
+#points_index .back.data-v-371b012a {
+    height: 32rpx;
+    left: 64rpx;
+    position: fixed;
+    top: 118rpx;
+    width: 48rpx;
+    z-index: 400
+}
+
+#points_index .points_index_background.data-v-371b012a {
+    height: 358rpx;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 300
+}
+
+#points_index .points_index_container.data-v-371b012a {
+    background: linear-gradient(180deg,#de394d,#ec4551 21%,#e7404e 65%,#f04f4c);
+    min-height: 100%;
+    opacity: 1;
+    padding: 358rpx 60rpx 60rpx;
+    width: 100%;
+    z-index: 200
+}
+
+#points_index .points_index_container .points_index_container_header.data-v-371b012a {
+    background: #e7404e;
+    height: 358rpx;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200
+}
+
+#points_index .points_index_container .points_index_container_c.data-v-371b012a {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    left: 60rpx;
+    position: fixed;
+    top: 200rpx;
+    z-index: 400
+}
+
+#points_index .points_index_container .points_index_container_c .points_index_container_header_c_title.data-v-371b012a {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 60rpx
+}
+
+#points_index .points_index_container .points_index_container_c .points_index_container_header_c_icon.data-v-371b012a {
+    height: 40rpx;
+    margin-left: 32rpx;
+    width: 40rpx
+}
+
+#points_index .points_index_container .points_index_container_c .points_index_container_header_c_points.data-v-371b012a {
+    color: #fbe945;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 40rpx;
+    margin-left: 8rpx
+}
+
+#points_index .points_index_container .points_index_container_c .points_index_container_header_c_mx.data-v-371b012a {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    margin-left: 10rpx
+}
+
+#points_index .points_index_container .points_index_container_card.data-v-371b012a {
+    background: #fff;
+    border-radius: 10rpx;
+    box-shadow: 0 6rpx 12rpx rgba(0,0,0,.16);
+    margin-bottom: 48rpx;
+    opacity: 1;
+    padding: 36rpx 38rpx 36rpx 34rpx;
+    position: relative;
+    width: 558rpx;
+    z-index: 100
+}
+
+#points_index .points_index_container .points_index_container_card.pl4.data-v-371b012a {
+    width: 586rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_tip.data-v-371b012a {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #666;
+    display: -webkit-flex;
+    display: flex;
+    font-family: PingFang SC,serif;
+    font-size: 24rpx;
+    font-weight: 500;
+    position: absolute;
+    right: 38rpx;
+    top: 28rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_tip .r.data-v-371b012a {
+    color: #fd555b;
+    font-weight: 600
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_tip .points_right.data-v-371b012a {
+    height: 24rpx;
+    width: 24rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_title.data-v-371b012a {
+    color: #333;
+    font-family: PingFang SC,serif;
+    font-size: 32rpx;
+    font-weight: 500
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin.data-v-371b012a {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin .points_index_container_card_main_signin_process.data-v-371b012a {
+    display: inline-block;
+    text-align: center
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin .points_index_container_card_main_signin_process .points_index_container_card_main_signin_process_points.data-v-371b012a {
+    color: #fd555b;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin .points_index_container_card_main_signin_process .points_index_container_card_main_signin_process_icon.data-v-371b012a {
+    height: 50rpx;
+    margin-top: 12rpx;
+    width: 50rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin .points_index_container_card_main_signin_process .points_index_container_card_main_signin_process_date.data-v-371b012a {
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    margin-top: 12rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_signin .points_index_container_card_main_signin_line.data-v-371b012a {
+    background: #f8f8f8;
+    border-radius: 6px;
+    display: inline-block;
+    height: 8rpx;
+    width: 60rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item.data-v-371b012a {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 40rpx;
+    position: relative
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_icon.data-v-371b012a {
+    display: inline-block;
+    height: 50rpx;
+    width: 50rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_c.data-v-371b012a {
+    margin-left: 6rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_c .points_index_container_card_main_item_c_title.data-v-371b012a {
+    color: #333;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 28rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_c .points_index_container_card_main_item_c_desc.data-v-371b012a {
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 20rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_btn.data-v-371b012a {
+    border: 2rpx solid #fd555b;
+    border-radius: 30rpx;
+    color: #fd555b;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 116rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_main .points_index_container_card_main_item .points_index_container_card_main_item_btn.none.data-v-371b012a {
+    background: #ccc;
+    border: 2rpx solid #ccc;
+    color: #fff
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c.data-v-371b012a {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c .points_index_container_card_c_g.data-v-371b012a {
+    margin-left: 44rpx;
+    margin-top: 50rpx;
+    text-align: center;
+    width: 240rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c .points_index_container_card_c_g .points_index_container_card_c_g_icon.data-v-371b012a {
+    height: 140rpx;
+    width: 240rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c .points_index_container_card_c_g .points_index_container_card_c_g_title.data-v-371b012a {
+    color: #ffa201;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 20rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c .points_index_container_card_c_g .points_index_container_card_c_g_btn.data-v-371b012a {
+    border: 2rpx solid #fd555b;
+    border-radius: 30rpx;
+    color: #fd555b;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    margin: 8rpx auto 0;
+    text-align: center;
+    width: 138rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_c .points_index_container_card_c_none.data-v-371b012a {
+    height: 300rpx;
+    margin: 158rpx auto 112rpx;
+    width: 300rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_signinbtn.data-v-371b012a {
+    background: #fd555b;
+    border-radius: 30rpx;
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 46rpx auto 0;
+    text-align: center;
+    width: 170rpx
+}
+
+#points_index .points_index_container .points_index_container_card .points_index_container_card_signinbtn.none.data-v-371b012a {
+    background: #ccc
+}
+
+#points_index .points_index_container .points_index_container_rule.data-v-371b012a {
+    width: 630rpx
+}
+
+#points_index .points_index_container .points_index_container_rule .points_index_container_rule_title.data-v-371b012a {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center
+}
+
+#points_index .points_index_container .points_index_container_rule .points_index_container_rule_title .line.data-v-371b012a {
+    border: 2rpx solid #fff;
+    height: 0rpx;
+    width: 200rpx
+}
+
+#points_index .points_index_container .points_index_container_rule .points_index_container_rule_title .c.data-v-371b012a {
+    color: #fff;
+    font-family: PingFang SC,serif;
+    font-size: 32rpx;
+    font-weight: 500;
+    margin: 0 20rpx
+}
+
+#points_index .points_index_container .points_index_container_rule .p.data-v-371b012a {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 20rpx;
+    line-height: 60rpx
+}
+
+#points_index .signin_popup.data-v-371b012a {
+    height: 858rpx;
+    position: relative;
+    width: 600rpx
+}
+
+#points_index .signin_popup .signin_popup_1.data-v-371b012a {
+    height: 216rpx;
+    left: 50%;
+    margin-left: -177.5rpx;
+    position: absolute;
+    top: 0;
+    width: 355rpx;
+    z-index: 1002
+}
+
+#points_index .signin_popup .signin_popup_2.data-v-371b012a {
+    bottom: 0;
+    height: 754rpx;
+    left: 0;
+    position: absolute;
+    width: 600rpx
+}
+
+#points_index .signin_popup .signin_popup_title.data-v-371b012a {
+    color: #fff;
+    font-family: PingFang SC,serif;
+    font-size: 40rpx;
+    font-weight: 500;
+    position: absolute;
+    text-align: center;
+    top: 284rpx;
+    width: 100%
+}
+
+#points_index .signin_popup .signin_popup_desc.data-v-371b012a {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 28rpx;
+    position: absolute;
+    text-align: center;
+    top: 376rpx;
+    width: 100%
+}
+
+#points_index .signin_popup .signin_popup_icon.data-v-371b012a {
+    height: 72rpx;
+    left: 188rpx;
+    position: absolute;
+    top: 522rpx;
+    width: 72rpx
+}
+
+#points_index .signin_popup .signin_popup_points.data-v-371b012a {
+    color: #fbe945;
+    font-family: PingFang SC,serif;
+    font-size: 40rpx;
+    font-weight: 600;
+    left: 300rpx;
+    position: absolute;
+    top: 530rpx
+}
+
+#points_index .signin_popup .signin_popup_btn.data-v-371b012a {
+    background: #fff;
+    border: 2rpx solid #fd555b;
+    border-radius: 50rpx;
+    bottom: 58rpx;
+    color: #fd555b;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 32rpx;
+    height: 100rpx;
+    left: 50%;
+    line-height: 100rpx;
+    margin-left: -150rpx;
+    position: absolute;
+    text-align: center;
+    width: 300rpx
+}
+
+#points_index .van-popup {
+    background-color: initial;
+    z-index: 1001!important
+}
+
+#points_index .overlay-index--van-overlay {
+    z-index: 1000!important
+}

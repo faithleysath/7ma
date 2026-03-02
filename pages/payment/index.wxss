@@ -1,0 +1,106 @@
+#payment_index.data-v-6fc1d9b0 {
+    height: 100%
+}
+
+#payment_index .other-container .card.data-v-6fc1d9b0 {
+    background-color: #fff;
+    margin-top: 32rpx;
+    padding: 32rpx 60rpx 26rpx
+}
+
+#payment_index .other-container .card .title.data-v-6fc1d9b0 {
+    color: #333;
+    font-size: 40rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    margin-bottom: 32rpx
+}
+
+#payment_index .other-container .card .item.data-v-6fc1d9b0 {
+    height: 80rpx;
+    line-height: 80rpx
+}
+
+#payment_index .other-container .card .item wx-label.data-v-6fc1d9b0 {
+    font-size: 36rpx
+}
+
+#payment_index .other-container .card .item wx-label.data-v-6fc1d9b0:first-child {
+    color: #666
+}
+
+#payment_index .other-container .card .item wx-label.data-v-6fc1d9b0:last-child {
+    color: #333;
+    float: right
+}
+
+#payment_index .other-container .card .item wx-label.price.data-v-6fc1d9b0 {
+    color: red
+}
+
+#payment_index .other-container .card .item_2.data-v-6fc1d9b0 {
+    display: -webkit-flex;
+    display: flex;
+    height: 84rpx;
+    line-height: 84rpx;
+    position: relative
+}
+
+#payment_index .other-container .card .item_2 .container.data-v-6fc1d9b0 {
+    display: -webkit-flex;
+    display: flex
+}
+
+#payment_index .other-container .card .item_2 .container .icon.data-v-6fc1d9b0 {
+    height: 60rpx;
+    left: 0;
+    margin-top: -30rpx;
+    position: absolute;
+    top: 50%;
+    width: 60rpx
+}
+
+#payment_index .other-container .card .item_2 .container .payment.data-v-6fc1d9b0 {
+    border-bottom: 2rpx solid #e5e5e5;
+    margin-left: 76rpx
+}
+
+#payment_index .other-container .card .item_2 .container .payment._last.data-v-6fc1d9b0 {
+    border: none
+}
+
+#payment_index .other-container .card .item_2 .container .payment .name.data-v-6fc1d9b0 {
+    color: #666;
+    font-size: 32rpx
+}
+
+#payment_index .other-container .card .item_2 .container .payment .desc.data-v-6fc1d9b0 {
+    color: #666;
+    display: inline-block;
+    font-size: 20rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    margin-left: 16rpx;
+    position: relative;
+    top: -2rpx
+}
+
+#payment_index .other-container .card .item_2 .container .payment .btn.data-v-6fc1d9b0 {
+    color: red;
+    font-size: 28rpx;
+    margin-left: 16rpx
+}
+
+#payment_index .other-container .card .item_2 .container .check.data-v-6fc1d9b0 {
+    height: 40rpx;
+    margin-left: 20rpx;
+    margin-top: -20rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40rpx
+}
+
+page {
+    background-color: #f1f1f1
+}

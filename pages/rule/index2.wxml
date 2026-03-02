@@ -1,0 +1,16 @@
+<view class="container data-v-095f1470">
+    <view class="header box-sizing data-v-095f1470">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-095f1470" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-095f1470">换乘规则</view>
+    </view>
+    <view class="content over-auto ios data-v-095f1470">
+        <view class="box-sizing pl32 pr32 pt32 data-v-095f1470">
+            <view class="font30 pb32 data-v-095f1470">1、中国海洋大学西海岸校区车辆禁止出校，车辆禁止跨越三沙路互通。</view>
+            <view class="font30 pb32 data-v-095f1470">2、跨东西园区借车，上一笔订单结束时间与下一笔跨园区订单开始时间在15分钟内按一笔订单持续计费。</view>
+            <view class="font30 pb32 data-v-095f1470">3、换乘前后的车辆必须为同一种车型。</view>
+            <view class="font30 pb32 data-v-095f1470">4、同一笔订单只能享受一次免费换乘。</view>
+            <view class="font30 pb32 data-v-095f1470">5、套餐卡用户不享受换乘优惠，仅限余额或微信、支付宝支付的用户。</view>
+            <view class="font30 pb32 data-v-095f1470">6、如有其他问题，可联系客服为您处理。</view>
+        </view>
+    </view>
+</view>

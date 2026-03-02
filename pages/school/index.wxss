@@ -1,0 +1,46 @@
+#school_index.data-v-6c01a1a4 {
+    height: 100%
+}
+
+#school_index .ws_container .search.data-v-6c01a1a4 {
+    color: #b2b2b2;
+    font-size: 32rpx
+}
+
+#school_index .ws_container .item.data-v-6c01a1a4 {
+    border-bottom: 2rpx solid #f1f1f1;
+    color: #666;
+    font-size: 32rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 0 auto;
+    width: 576rpx
+}
+
+#school_index .field-index--van-field.van-cell.van-cell--borderless,#school_index .van-search__content {
+    background-color: #fff!important
+}
+
+#school_index .van-search__field {
+    border: 1px solid #9c9c9c;
+    border-radius: 15px
+}
+
+#school_index .field-index--van-field.van-cell.van-cell--borderless {
+    border-radius: 15px
+}
+
+#school_index .van-icon__image {
+    height: 20px;
+    margin-left: 14px;
+    margin-top: -2px;
+    width: 20px
+}
+
+#school_index .van-field__input {
+    padding-left: 22px
+}
+
+#school_index .cell-index--van-cell__left-icon.van-icon.van-icon--image {
+    height: 20px
+}

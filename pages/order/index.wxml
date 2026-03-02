@@ -1,0 +1,71 @@
+<view class="data-v-63701789" id="order_index" style="{{'background:'+($root.g0?'#ffffff':'#F1F1F1')+';'}}">
+    <view class="box-sizing pl20 pr20 search-wrap row-col-berween fixed left0 top0 w_100 line80 bg-f data-v-63701789" style="z-index:10;box-shadow:0 1px 5px 0px #ccc;">
+        <view class="data-v-63701789">查询日期</view>
+        <view bindtap="__e" class="row-left-center data-v-63701789" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+            <view class="data-v-63701789">{{y+'-'+m}}</view>
+            <image class="arrow block ml10 data-v-63701789" mode="scaleToFill" src="https://img2.7mate.cn/index_01.png" style="width:20rpx;height:30rpx;"></image>
+        </view>
+    </view>
+    <view class="pt50 bg-f data-v-63701789"></view>
+    <view class="ws_container1 data-v-63701789" wx:if="{{!loading}}">
+        <view bindtap="__e" class="item data-v-63701789" data-event-opts="{{[ [ 'tap',[ [ 'gotoOrderDetail',['$0'],[ [ ['orders','',index] ] ] ] ] ] ]}}" wx:for="{{orders}}" wx:for-item="order" wx:key="index">
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_yqx.jpg" wx:if="{{order.order_state===0}}"></image>
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_yxd.jpg" wx:if="{{order.order_state===10}}"></image>
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_jxz.jpg" wx:if="{{order.order_state===20}}"></image>
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_dzf.jpg" wx:if="{{order.order_state===30}}"></image>
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_ywc.jpg" wx:if="{{order.order_state===40&&order.is_over_area===0}}"></image>
+            <image class="badge data-v-63701789" src="https://img2.7mate.cn/badge_cq.jpg" wx:if="{{order.order_state===40&&order.is_over_area===1}}"></image>
+            <view class="header data-v-63701789">
+                <label class="order_title data-v-63701789">订单编号</label>
+                <label class="order_sn data-v-63701789">{{order.order_sn}}</label>
+            </view>
+            <view class="main data-v-63701789">
+                <view class="img data-v-63701789">
+                    <image class="data-v-63701789" src="https://img2.7mate.cn/detail_bike.png" wx:if="{{order.car_type==1}}"></image>
+                    <block wx:else>
+                        <image class="data-v-63701789" src="https://img2.7mate.cn/hbc_2.png" style="width:124rpx;height:124rpx;" wx:if="{{order.car_type==2&&(order.car_school_id==102||order.car_school_id==113)}}"></image>
+                        <block wx:else>
+                            <image class="data-v-63701789" src="https://img2.7mate.cn/detail_ebike.png" wx:if="{{order.car_type==2}}"></image>
+                        </block>
+                    </block>
+                </view>
+                <view class="container data-v-63701789">
+                    <view class="item data-v-63701789">
+                        <label class="title data-v-63701789">单车编号</label>
+                        <label class="content data-v-63701789">{{order.car_number}}</label>
+                    </view>
+                    <view class="item data-v-63701789">
+                        <label class="title data-v-63701789">订单时间</label>
+                        <label class="content data-v-63701789">{{order.created_at}}</label>
+                    </view>
+                    <view class="item data-v-63701789">
+                        <label class="title data-v-63701789">订单类型</label>
+                        <label class="content data-v-63701789" wx:if="{{order.car_type==1}}">单车</label>
+                        <block wx:else>
+                            <label class="content data-v-63701789" wx:if="{{order.car_type==2&&(order.car_school_id==102||order.car_school_id==113)}}">滑板车</label>
+                            <block wx:else>
+                                <label class="content data-v-63701789" wx:if="{{order.car_type==2}}">助力车</label>
+                            </block>
+                        </block>
+                    </view>
+                    <view class="item data-v-63701789">
+                        <label class="title data-v-63701789">订单价格</label>
+                        <label class="content order_amount data-v-63701789">{{'￥'+order.order_amount}}</label>
+                    </view>
+                </view>
+                <view class="detail data-v-63701789">
+                    <view class="text data-v-63701789">订单详情</view>
+                    <image class="arrow data-v-63701789" src="https://img2.7mate.cn/arrow_right.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="no_order data-v-63701789" wx:if="{{$root.g1}}">
+            <image class="img data-v-63701789" src="https://img2.7mate.cn/no_order.png"></image>
+            <view class="desc data-v-63701789">您还未有订单，请快下单吧！</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-63701789" data-com-type="wx" type="spinner" vueId="3bc35b9e-1" wx:if="{{show_loading}}"></van-loading>
+    <van-popup bind:__l="__l" class="data-v-63701789" data-com-type="wx" position="bottom" show="{{show}}" vueId="3bc35b9e-2" vueSlots="{{['default']}}">
+        <van-datetime-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-63701789" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e1'] ] ],[ '^confirm',[ ['getDate'] ] ] ]}}" title="选择年月" type="year-month" value="{{currentDate}}" vueId="{{'3bc35b9e-3'+','+'3bc35b9e-2'}}"></van-datetime-picker>
+    </van-popup>
+</view>

@@ -1,0 +1,22 @@
+<view class="data-v-38774042" id="cert_index">
+    <ws-header bind:__l="__l" bind:rightClick="__e" class="data-v-38774042" data-event-opts="{{[ [ '^rightClick',[ ['gotoRight'] ] ] ]}}" right_title="联系客服" title="认证" vueId="52664226-1"></ws-header>
+    <view class="ws_container data-v-38774042" wx:if="{{!show_loading&&!loading&&!location_loading}}">
+        <view bindtap="__e" class="cert _1 data-v-38774042" data-event-opts="{{[ [ 'tap',[ [ 'gotoCert',[1] ] ] ] ]}}">
+            <view class="title data-v-38774042">{{is_hnpy?'免押金认证':'师生免押金认证'}}</view>
+            <view class="desc data-v-38774042" wx:if="{{!is_hnpy}}">适用于在校师生，可购买套餐卡</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert1_status==0}}">点击认证</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert1_status==1}}">认证中</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert1_status==2}}">已驳回</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert1_status==3}}">认证成功</view>
+        </view>
+        <view bindtap="__e" class="cert _2 data-v-38774042" data-event-opts="{{[ [ 'tap',[ [ 'gotoCert',[2] ] ] ] ]}}" wx:if="{{cert_2_show}}">
+            <view class="title data-v-38774042">{{'充值'+depositprice.price_s+'元立即用车'}}</view>
+            <view class="desc data-v-38774042">送免押金骑行权益</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert2_status==0}}">点击认证</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert2_status==1}}">认证中</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert2_status==2}}">已驳回</view>
+            <view class="status data-v-38774042" wx:if="{{user.cert2_status==3}}">认证成功</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-38774042" data-com-type="wx" type="spinner" vueId="52664226-2" wx:if="{{show_loading}}"></van-loading>
+</view>

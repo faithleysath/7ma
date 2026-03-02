@@ -1,0 +1,128 @@
+#auth_phone.data-v-3b5cdfc2 {
+    height: 100%
+}
+
+#auth_phone .header.data-v-3b5cdfc2 {
+    height: 30rpx;
+    position: fixed;
+    top: 85rpx;
+    width: 100%
+}
+
+#auth_phone .header .close_container.data-v-3b5cdfc2 {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    height: 100rpx;
+    -webkit-justify-content: center;
+    justify-content: center;
+    justify-items: center;
+    left: 25rpx;
+    position: relative;
+    width: 100rpx
+}
+
+#auth_phone .header .close_container .close.data-v-3b5cdfc2 {
+    height: 30rpx;
+    width: 30rpx
+}
+
+#auth_phone .main.data-v-3b5cdfc2 {
+    padding: 0 60rpx;
+    position: absolute;
+    top: 140rpx;
+    width: 630rpx
+}
+
+#auth_phone .main .title.data-v-3b5cdfc2 {
+    color: #000;
+    font-size: 60rpx;
+    margin-top: 182rpx
+}
+
+#auth_phone .main .desc.data-v-3b5cdfc2 {
+    color: #333;
+    font-size: 32rpx;
+    margin-top: 60rpx;
+    width: 308rpx
+}
+
+#auth_phone .main .input.data-v-3b5cdfc2 {
+    margin-top: 104rpx
+}
+
+#auth_phone .main .input .field.data-v-3b5cdfc2 {
+    float: right
+}
+
+#auth_phone .main .change.data-v-3b5cdfc2 {
+    color: #666;
+    display: inline-block;
+    font-size: 32rpx;
+    margin-top: 54rpx
+}
+
+#auth_phone .main .btn.data-v-3b5cdfc2 {
+    background: #9c9c9c;
+    border-radius: 40rpx;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 30rpx auto 0;
+    text-align: center;
+    width: 560rpx
+}
+
+#auth_phone .main .btn.valid.data-v-3b5cdfc2 {
+    background: #fd555b!important
+}
+
+#auth_phone .main .agreement.data-v-3b5cdfc2 {
+    text-align: center
+}
+
+#auth_phone .main .agreement wx-label.data-v-3b5cdfc2 {
+    font-size: 20rpx
+}
+
+#auth_phone .main .agreement wx-label.data-v-3b5cdfc2:first-child {
+    color: #333
+}
+
+#auth_phone .main .agreement wx-label.data-v-3b5cdfc2:last-child {
+    color: red
+}
+
+#auth_phone ._footer.data-v-3b5cdfc2 {
+    text-align: center
+}
+
+#auth_phone ._footer ._span.data-v-3b5cdfc2 {
+    color: #666;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx
+}
+
+#auth_phone ._footer ._span.b.data-v-3b5cdfc2 {
+    color: red
+}
+
+#auth_phone .van-field__input.van-field__input {
+    color: #b2b2b2;
+    font-size: 32rpx
+}
+
+#auth_phone .van-cell:after {
+    border-color: #979797;
+    left: 0
+}
+
+#auth_phone .van-cell__title.van-cell__title {
+    max-width: 70rpx!important;
+    min-width: 70rpx!important
+}
+
+#auth_phone .field-index--van-field.van-cell {
+    padding-left: 0
+}

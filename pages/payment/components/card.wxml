@@ -1,0 +1,71 @@
+<view class="my-container col-flex flex data-v-bd86ab76">
+    <view class="header data-v-bd86ab76">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-bd86ab76" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-bd86ab76">支付订单</view>
+    </view>
+    <view class="main flex1 over-auto data-v-bd86ab76">
+        <view class="p35 box-sizing data-v-bd86ab76">
+            <view class="card data-v-bd86ab76" style="{{'background: linear-gradient(90deg, '+card.linear_gradient[0]+','+card.linear_gradient[1]+');'}}" wx:if="{{card.id}}">
+                <view class="tag data-v-bd86ab76" wx:if="{{card.is_activity}}">活动</view>
+                <image class="bg data-v-bd86ab76" src="https://img2.7mate.cn/i_dc.png" wx:if="{{card.carmodel_id===1}}"></image>
+                <image class="bg data-v-bd86ab76" src="https://img2.7mate.cn/i_zl.png" wx:if="{{card.carmodel_id===2}}"></image>
+                <view class="line fr data-v-bd86ab76">
+                    <view class="type_container data-v-bd86ab76">
+                        <view class="carmodel data-v-bd86ab76">{{card.carmodel_name}}</view>
+                        <view class="type data-v-bd86ab76">{{card.type_name}}</view>
+                    </view>
+                    <view class="title data-v-bd86ab76">{{card.name}}</view>
+                </view>
+                <view class="line data-v-bd86ab76">
+                    <view class="price_container data-v-bd86ab76">
+                        <view class="price data-v-bd86ab76">{{'¥'+card.price}}</view>
+                        <view class="original_price data-v-bd86ab76" wx:if="{{card.price<card.original_price}}">{{'¥'+card.original_price}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-sizing pl35 pr35 pt5 data-v-bd86ab76">
+            <view class="bg-f box-sizing p20 br10 data-v-bd86ab76">
+                <view class="row-left-bottom pb20 data-v-bd86ab76">
+                    <view class="font34 data-v-bd86ab76">支付时间</view>
+                    <view class="flex1 text-right font28 data-v-bd86ab76" style="color:#666;">未在规定时间内完成支付将取消订单</view>
+                </view>
+                <view class="data-v-bd86ab76" style="height:2rpx;background-color:#E6E6E6;"></view>
+                <view class="pt35 row-left-bottom pb10 data-v-bd86ab76">
+                    <view class="30 data-v-bd86ab76" style="color:#666;">剩余时间</view>
+                    <view class="flex1 row-right-center data-v-bd86ab76">
+                        <van-count-down bind:__l="__l" bind:change="__e" bind:finish="__e" class="data-v-bd86ab76" data-com-type="wx" data-event-opts="{{[ [ '^finish',[ ['finish'] ] ],[ '^change',[ ['change'] ] ] ]}}" time="{{getTime}}" useSlot="{{true}}" vueId="31416422-1" vueSlots="{{['default']}}">
+                            <view class="data-v-bd86ab76" style="font-size:60rpx;color:#FF4C52;">
+                                <text class="data-v-bd86ab76">{{(timeDate.minutes<10?'0'+timeDate.minutes:timeDate.minutes)+':'}}</text>
+                                <text class="data-v-bd86ab76">{{timeDate.seconds<10?'0'+timeDate.seconds:timeDate.seconds}}</text>
+                            </view>
+                        </van-count-down>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-sizing pl35 pr35 pt40 data-v-bd86ab76">
+            <view class="bg-f box-sizing br10 data-v-bd86ab76">
+                <view class="text-center font50 pt20 data-v-bd86ab76" style="color:#FF4C52;">{{'￥'+price}}</view>
+                <view class="text-center font20 data-v-bd86ab76" style="color:#b3b3b3;">支付金额</view>
+                <view class="pt20 pb20 data-v-bd86ab76">
+                    <view class="flex flex-wrap box-sizing pl10 pr10 data-v-bd86ab76">
+                        <view bindtap="__e" class="flex1 box-sizing pl10 pr10 data-v-bd86ab76" data-event-opts="{{[ [ 'tap',[ [ 'checkPayId',['$0'],[ [ ['payments','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{payments}}" wx:key="index">
+                            <view class="{{['pay-item','row-center','pb45','pt40','data-v-bd86ab76',checked_payment_id==item.id&&'pay-item-on']}}">
+                                <image class="data-v-bd86ab76" src="{{item.icon}}" style="width:60rpx;height:60rpx;"></image>
+                                <view class="font24 pt20 data-v-bd86ab76">{{item.name_s}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="pt100 pb100 data-v-bd86ab76"></view>
+        <view class="row-center pb100 data-v-bd86ab76" wx:if="{{!isCancel}}">
+            <view bindtap="__e" class="row-center font44 box-sizing data-v-bd86ab76" data-event-opts="{{[ [ 'tap',[ [ 'cancelOrder',['$event'] ] ] ] ]}}" style="width:600rpx;height:100rpx;border:3rpx solid #FF4C52;border-radius:50rpx;color:#FF4C52;">取 消</view>
+            <view class="pt30 data-v-bd86ab76"></view>
+            <view bindtap="__e" class="row-center font44 color-f data-v-bd86ab76" data-event-opts="{{[ [ 'tap',[ [ 'pay',['$event'] ] ] ] ]}}" style="width:600rpx;height:100rpx;background:linear-gradient(135deg, #FF6C58, #FF4C52);border-radius:50rpx;box-shadow:0px 0px 30rpx 0px rgba(95, 31, 33, 0.3);">确认支付</view>
+            <view class="pb100 data-v-bd86ab76"></view>
+        </view>
+    </view>
+</view>

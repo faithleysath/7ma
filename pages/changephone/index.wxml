@@ -1,0 +1,11 @@
+<view class="data-v-82609666" id="changephone_index">
+    <ws-header bind:__l="__l" class="data-v-82609666" title="换绑手机号" vueId="c5358f24-1"></ws-header>
+    <view class="ws_container data-v-82609666">
+        <view class="input data-v-82609666">
+            <van-field bind:__l="__l" bind:input="__e" class="data-v-82609666" data-com-type="wx" data-event-opts="{{[ [ '^input',[ ['onInput'] ] ] ]}}" maxlength="11" placeholder="输入新手机号" type="number" value="{{phone}}" vueId="c5358f24-2"></van-field>
+        </view>
+        <view class="footer data-v-82609666">
+            <view bindtap="__e" class="{{['btn','data-v-82609666',valid?'valid':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'gotoVerificationcode',['$event'] ] ] ] ]}}">下一步</view>
+        </view>
+    </view>
+</view>

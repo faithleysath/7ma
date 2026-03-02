@@ -1,0 +1,21 @@
+<view class="data-v-53899658" id="card_index">
+    <view class="header data-v-53899658">
+        <image bindtap="__e" class="back data-v-53899658" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/i_back.png"></image>
+        <van-tabs active="{{tab}}" bind:__l="__l" bind:change="__e" class="tabs data-v-53899658" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['tabChange'] ] ] ]}}" vueId="4fd4c5ba-1" vueSlots="{{['default']}}">
+            <van-tab bind:__l="__l" class="data-v-53899658" data-com-type="wx" name="{{item.value}}" title="{{item.name}}" vueId="{{'4fd4c5ba-2-'+index+','+'4fd4c5ba-1'}}" wx:for="{{[ {name:'单车',id:'carmodel1',value:0},{name:'助力车',id:'carmodel2',value:1},{name:'小巴士',id:'carmodel3',value:2},{name:'联合卡',id:'carmodel_multi',value:3} ]}}" wx:key="index"></van-tab>
+        </van-tabs>
+        <view class="title data-v-53899658" wx:if="{{$root.g0<=1}}">套餐卡</view>
+        <view bindtap="__e" class="my data-v-53899658" data-event-opts="{{[ [ 'tap',[ [ 'gotoMyCard',['$event'] ] ] ] ]}}">我的</view>
+    </view>
+    <view class="main data-v-53899658">
+        <view bindtap="__e" class="data-v-53899658" data-event-opts="{{[ [ 'tap',[ [ 'gotoBuyCard',['$0'],[ [ ['cards','',index] ] ] ] ] ] ]}}" wx:if="{{$root.g1}}" wx:for="{{cards}}" wx:for-item="card" wx:key="index">
+            <my-card bind:__l="__l" card="{{card}}" class="data-v-53899658" vueId="{{'4fd4c5ba-3-'+index}}"></my-card>
+        </view>
+        <view class="no_card data-v-53899658" wx:if="{{$root.g2}}">
+            <image class="img data-v-53899658" src="https://img2.7mate.cn/no_card.png"></image>
+            <view class="desc data-v-53899658">暂无套餐卡</view>
+        </view>
+        <view class="x-bottom data-v-53899658"></view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-53899658" data-com-type="wx" type="spinner" vueId="4fd4c5ba-4" wx:if="{{show_loading}}"></van-loading>
+</view>

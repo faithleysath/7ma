@@ -1,0 +1,6 @@
+<view class="ws_loading" hidden="{{!show}}" id="ws_loading">
+    <view class="container">
+        <image class="img" src="https://img2.7mate.cn/loading.gif"></image>
+        <view>努力加载中...</view>
+    </view>
+</view>

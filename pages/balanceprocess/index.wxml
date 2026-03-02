@@ -1,0 +1,66 @@
+<view style="height:100vh;background:#F5F6F8;">
+    <view class="relative" style="height:200rpx;background:#FC555C;">
+        <view class="absolute bottom35 left0 w_100">
+            <van-search background="#FC555C" bind:__l="__l" bind:change="__e" bind:search="__e" clearable="{{false}}" data-com-type="wx" data-event-opts="{{[ [ '^search',[ ['search'] ] ],[ '^change',[ ['change'] ] ] ]}}" leftIcon="{{true}}" maxlength="{{11}}" placeholder="请输入手机号码" useRightIconSlot="{{true}}" value="{{phone}}" vueId="a4c803d2-1" vueSlots="{{['right-icon']}}">
+                <view bindtap="__e" class="relative top3" data-event-opts="{{[ [ 'tap',[ [ 'search2',['$event'] ] ] ] ]}}" slot="right-icon">
+                    <van-icon bind:__l="__l" data-com-type="wx" name="search" vueId="{{'a4c803d2-2'+','+'a4c803d2-1'}}"></van-icon>
+                </view>
+            </van-search>
+        </view>
+    </view>
+    <view class="pt25 box-sizing pl30 pr30">
+        <view class="bg-f br20 pt65 pb35 pl45 pr45">
+            <view class="font25 pb30 row-berween" hidden="{{!info.user_name}}">
+                <view style="color:#888;">姓名:</view>
+                <view style="color:#000;">{{info.user_name}}</view>
+            </view>
+            <view class="font25 pb30 row-berween">
+                <view style="color:#888;">手机号:</view>
+                <view style="color:#000;">{{info.user_phone}}</view>
+            </view>
+            <view class="font25 pb30 row-berween">
+                <view style="color:#888;">退款申请时间:</view>
+                <view style="color:#000;">{{info.apply_time}}</view>
+            </view>
+            <view class="font25 pb30 row-berween">
+                <view style="color:#888;">处理进度:</view>
+                <view class="pl10 pr10 pt5 pb5 br20" style="color:#198027;border:2rpx solid #5AB770;">{{info.status}}</view>
+            </view>
+            <view class="font25 pb30 row-berween">
+                <view style="color:#888;">申请退款金额:</view>
+                <view class="row-left-center" style="color:#000;">
+                    <view style="color:#FC555C;">{{info.apply_refund_amount}}</view>
+                    <view>元</view>
+                </view>
+            </view>
+            <view class="font25 pb30 row-berween">
+                <view style="color:#888;">实际退款金额:</view>
+                <view class="row-left-center" style="color:#000;">
+                    <view style="color:#FC555C;">{{info.refund_amount}}</view>
+                    <view>元</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-popup bind:__l="__l" data-com-type="wx" round="{{true}}" show="{{showYzm}}" vueId="a4c803d2-3" vueSlots="{{['default']}}">
+        <view style="width:584rpx;">
+            <view class="row-right-center box-sizing">
+                <view bindtap="__e" class="pt35 pr30" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                    <van-icon bind:__l="__l" data-com-type="wx" name="cross" vueId="{{'a4c803d2-4'+','+'a4c803d2-3'}}"></van-icon>
+                </view>
+            </view>
+            <view class="row-center font35">输入验证码</view>
+            <view class="row-center font21 pt12 pb15" style="color:#9a9a9a;">{{'验证码发送至 '+phone}}</view>
+            <view class="row-center pb40">
+                <view class="pl30 pr30 pt8 pb8 font21 box-sizing br25" style="color:#9a9a9a;border:2rpx solid #9a9a9a;">
+                    <view>{{time+'秒'}}</view>
+                </view>
+            </view>
+            <view class="row-center">
+                <myp-one bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','verifyCode','$event',[] ] ] ] ] ]}}" maxlength="{{4}}" type="box" value="{{verifyCode}}" vueId="{{'a4c803d2-5'+','+'a4c803d2-3'}}"></myp-one>
+            </view>
+            <view bindtap="__e" class="color-f font28 text-center line85 mt45" data-event-opts="{{[ [ 'tap',[ [ 'select',['$event'] ] ] ] ]}}" style="background:#FC555C;" wx:if="{{$root.g0==4}}">查询</view>
+            <view class="color-f font28 text-center line85 mt45" style="background:#ccc;" wx:else>查询</view>
+        </view>
+    </van-popup>
+</view>

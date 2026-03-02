@@ -1,0 +1,65 @@
+<view class="container data-v-409eb367">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-409eb367" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="开票详情" vueId="4a2aeae6-1"></my-header>
+    <view class="content box-sizing p30 data-v-409eb367" wx:if="{{info.id}}">
+        <view class="box-sizing br10 bg-f p30 data-v-409eb367">
+            <view class="font36 data-v-409eb367">{{billingType[info.billing_type].title}}</view>
+            <view class="font28 pt30 data-v-409eb367" style="color:#666;">{{info.created_at}}</view>
+        </view>
+        <view class="font26 pt35 pb25 data-v-409eb367" style="color:#666;">发票详情</view>
+        <view class="box-sizing br10 bg-f p30 font30 data-v-409eb367">
+            <view class="row-berween data-v-409eb367">
+                <view class="data-v-409eb367">抬头类型</view>
+                <view class="data-v-409eb367" style="color:#666;">{{addrType[info.billing_address.type].title}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;"></view>
+            <view class="row-berween data-v-409eb367">
+                <view class="data-v-409eb367">发票抬头</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.title}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;"></view>
+            <view class="row-berween data-v-409eb367" wx:if="{{info.billing_address.type==0}}">
+                <view class="data-v-409eb367">税号</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.tax_id}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;" wx:if="{{info.billing_address.type==0}}"></view>
+            <view class="row-berween data-v-409eb367" wx:if="{{info.billing_address.type==1}}">
+                <view class="data-v-409eb367">身份证</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.identity_number}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;" wx:if="{{info.billing_address.type==1}}"></view>
+            <view class="row-berween data-v-409eb367">
+                <view class="data-v-409eb367">地址</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.address}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;"></view>
+            <view class="row-berween data-v-409eb367">
+                <view class="data-v-409eb367">电话</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.phone}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;"></view>
+            <view class="row-berween data-v-409eb367" wx:if="{{info.billing_address.type==0}}">
+                <view class="data-v-409eb367">开户行</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.bank}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;" wx:if="{{info.billing_address.type==0}}"></view>
+            <view class="row-berween data-v-409eb367" wx:if="{{info.billing_address.type==0}}">
+                <view class="data-v-409eb367">账号</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.bank_account}}</view>
+            </view>
+            <view class="mt25 mb25 data-v-409eb367" style="height:1.5rpx;background:#ccc;" wx:if="{{info.billing_address.type==0}}"></view>
+            <view class="row-col-berween data-v-409eb367">
+                <view class="data-v-409eb367">发票金额</view>
+                <view class="row-bottom-center data-v-409eb367" style="color:#666;">
+                    <view class="data-v-409eb367" style="color:#FC565A;font-size:64rpx;">{{info.money}}</view>
+                    <view class="relative bottom8 ml10 data-v-409eb367">元</view>
+                </view>
+            </view>
+        </view>
+        <view class="box-sizing br10 bg-f p30 mt30 data-v-409eb367">
+            <view class="row-berween data-v-409eb367">
+                <view class="data-v-409eb367">收件邮箱</view>
+                <view class="data-v-409eb367" style="color:#666;">{{info.billing_address.email}}</view>
+            </view>
+        </view>
+    </view>
+</view>

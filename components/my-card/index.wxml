@@ -1,0 +1,25 @@
+<view class="card data-v-3f5fc082" style="{{'background:'+'linear-gradient(90deg, '+card.linear_gradient[0]+','+card.linear_gradient[1]+')'+';'+'margin-top:'+top+';'+'margin-bottom:'+bottom+';'+'transform-origin:'+'0 0'+';'+'transform:'+'scale('+scale+')'+';'}}">
+    <view class="tag data-v-3f5fc082" wx:if="{{card.is_activity}}">活动</view>
+    <image class="bg data-v-3f5fc082" src="https://img2.7mate.cn/i_dc.png" wx:if="{{card.carmodel_id===1}}"></image>
+    <image class="bg data-v-3f5fc082" src="https://img2.7mate.cn/i_zl.png" wx:if="{{card.carmodel_id===2}}"></image>
+    <view class="absolute right40 bottom20 font24 data-v-3f5fc082" wx:if="{{card.need_examine}}">
+        <view class="data-v-3f5fc082" style="color:#fff;">该卡仅限在校师生可购，需通过审核</view>
+    </view>
+    <view class="line fr data-v-3f5fc082">
+        <view class="type_container data-v-3f5fc082">
+            <view class="carmodel data-v-3f5fc082">{{card.carmodel_name}}</view>
+            <view class="type data-v-3f5fc082">{{card.type_name}}</view>
+        </view>
+        <view class="title data-v-3f5fc082">{{card.name}}</view>
+    </view>
+    <view class="line data-v-3f5fc082">
+        <view class="price_container data-v-3f5fc082">
+            <view class="price data-v-3f5fc082">{{'¥'+card.price}}</view>
+            <view class="original_price data-v-3f5fc082" wx:if="{{card.price*1<card.original_price*1}}">{{'¥'+card.original_price}}</view>
+        </view>
+        <view class="row-left-center data-v-3f5fc082">
+            <view class="color-f font24 ell data-v-3f5fc082">了解详情</view>
+            <image class="block ml8 relative top3 data-v-3f5fc082" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+        </view>
+    </view>
+</view>

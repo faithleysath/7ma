@@ -1,0 +1,21 @@
+.container.data-v-d5ecded0 {
+    background: #efefef;
+    min-height: 100vh
+}
+
+.container .btn1.data-v-d5ecded0 {
+    background: #ffeadb;
+    color: #ff6006
+}
+
+.container .btn1.data-v-d5ecded0,.container .btn2.data-v-d5ecded0 {
+    border-radius: 30rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    padding: 0 40rpx
+}
+
+.container .btn2.data-v-d5ecded0 {
+    background: #dcf6dc;
+    color: #48b94b
+}

@@ -1,0 +1,31 @@
+<view class="container col-flex flex data-v-5d3030ed">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-5d3030ed" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="选择订单" vueId="f2f16468-1"></my-header>
+    <view class="flex bg-f relative w_100 left0 top0 data-v-5d3030ed" style="height:80rpx;">
+        <view bindtap="__e" class="{{['flex1','row-center','title-item','relative','data-v-5d3030ed',form.titleId==item.id&&'title-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggle',['$0'],[ [ ['titleList','id',item.id,'id'] ] ] ] ] ] ]}}" wx:for="{{titleList}}" wx:key="id">
+            <view class="data-v-5d3030ed">{{item.title}}</view>
+            <view class="line absolute bottom0 center-x data-v-5d3030ed"></view>
+        </view>
+    </view>
+    <view class="content flex1 data-v-5d3030ed">
+        <list-a bind:__l="__l" bind:change="__e" class="h_100 data-v-5d3030ed vue-ref" data-custom-hidden="{{!(form.titleId==0)}}" data-event-opts="{{[ [ '^change',[ ['listAChange'] ] ] ]}}" data-ref="listA" height="{{height}}" vueId="f2f16468-2"></list-a>
+        <list-b bind:__l="__l" bind:change="__e" class="data-v-5d3030ed vue-ref" data-custom-hidden="{{!(form.titleId==1)}}" data-event-opts="{{[ [ '^change',[ ['listAChange'] ] ] ]}}" data-ref="listB" height="{{height}}" vueId="f2f16468-3"></list-b>
+    </view>
+    <view class="popup fixed bottom0 left0 w_100 data-v-5d3030ed">
+        <view class="box-sizing pl60 pr60 pt30 data-v-5d3030ed">
+            <view class="row-left-center pb30 data-v-5d3030ed">
+                <view class="row-bottom-center data-v-5d3030ed">
+                    <view class="font34 relative bottom15 data-v-5d3030ed">合计：</view>
+                    <view class="data-v-5d3030ed" style="font-size:64rpx;color:#FF4C52;">{{form.count}}</view>
+                </view>
+                <view bindtap="__e" class="flex1 row-right-center data-v-5d3030ed" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingRead/billingRead'] ] ] ] ]}}">
+                    <view class="font24 data-v-5d3030ed" style="color:#666;">开票须知</view>
+                    <image class="ml10 block data-v-5d3030ed" mode="scaleToFill" src="https://img2.7mate.cn/index_01.png" style="width:13rpx;height:24rpx;"></image>
+                </view>
+            </view>
+            <view class="box-sizing pl10 pr10 data-v-5d3030ed">
+                <view class="color-f font36 text-center line80 br40 btn data-v-5d3030ed" style="height:80rpx;" wx:if="{{!$root.g0}}">下一步</view>
+                <view bindtap="__e" class="color-f font36 text-center line80 br40 btn btn-on data-v-5d3030ed" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingAddress/billingAddress?count='+form.count+'&order_type='+form.titleId] ] ] ] ]}}" style="height:80rpx;" wx:else>下一步</view>
+            </view>
+        </view>
+    </view>
+</view>

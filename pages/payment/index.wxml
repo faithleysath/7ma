@@ -1,0 +1,42 @@
+<view class="data-v-6fc1d9b0" id="payment_index">
+    <view class="other-container data-v-6fc1d9b0" wx:if="{{has_stock!=1}}">
+        <ws-header bind:__l="__l" class="data-v-6fc1d9b0" title="结算台" vueId="352a39a6-1"></ws-header>
+        <view class="ws_container data-v-6fc1d9b0" wx:if="{{!show_loading&&!loading2}}">
+            <view class="card data-v-6fc1d9b0">
+                <view class="title data-v-6fc1d9b0">支付金额</view>
+                <view class="item data-v-6fc1d9b0">
+                    <label class="data-v-6fc1d9b0">总计</label>
+                    <label class="price data-v-6fc1d9b0">{{'￥'+price}}</label>
+                </view>
+            </view>
+            <view class="card data-v-6fc1d9b0">
+                <view class="title data-v-6fc1d9b0">支付方式</view>
+                <view catchtap="__e" class="item_2 data-v-6fc1d9b0" data-event-opts="{{[ [ 'tap',[ [ 'checkPayment',[index] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:for-item="payment" wx:key="index">
+                    <view class="container data-v-6fc1d9b0">
+                        <image class="icon data-v-6fc1d9b0" src="{{payment[$orig].icon}}"></image>
+                        <view class="{{['payment','data-v-6fc1d9b0',index==payment.g0-1?'_last':'']}}">
+                            <label class="name data-v-6fc1d9b0">{{payment[$orig].name_s}}</label>
+                            <label class="data-v-6fc1d9b0" wx:if="{{user!==undefined}}">
+                                <label class="desc data-v-6fc1d9b0" wx:if="{{payment[$orig].id===1}}">{{'当前余额 ￥'+user.balance+''}}</label>
+                                <label bindtap="__e" class="btn data-v-6fc1d9b0" data-event-opts="{{[ [ 'tap',[ [ 'gotoRecharge',['$event'] ] ] ] ]}}" wx:if="{{payment[$orig].id===1}}">立即充值</label>
+                            </label>
+                        </view>
+                        <view class="data-v-6fc1d9b0">
+                            <image class="check data-v-6fc1d9b0" src="https://img2.7mate.cn/checked.png" wx:if="{{payment[$orig].checked===1}}"></image>
+                            <image class="check data-v-6fc1d9b0" src="https://img2.7mate.cn/unchecked.png" wx:if="{{payment[$orig].checked===0}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="footer data-v-6fc1d9b0" style="background:#F1F1F1;">
+                <view bindtap="__e" class="btn data-v-6fc1d9b0" data-event-opts="{{[ [ 'tap',[ [ 'pay',[1] ] ] ] ]}}">支付</view>
+            </view>
+        </view>
+    </view>
+    <block wx:else>
+        <view class="h_100 data-v-6fc1d9b0" wx:if="{{has_stock==1}}">
+            <card bind:__l="__l" bind:play="__e" card_code="{{card_code}}" class="data-v-6fc1d9b0" created_at="{{created_at}}" data-event-opts="{{[ [ '^play',[ ['cardPlay'] ] ] ]}}" order_id="{{order_id}}" payments="{{payments}}" price="{{price}}" vueId="352a39a6-2"></card>
+        </view>
+    </block>
+    <van-loading bind:__l="__l" class="spinner data-v-6fc1d9b0" data-com-type="wx" type="spinner" vueId="352a39a6-3" wx:if="{{show_loading}}"></van-loading>
+</view>

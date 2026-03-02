@@ -1,0 +1,4 @@
+<view>
+    <image class="top-icon" src="{{payImg}}" wx:if="{{showImg}}"></image>
+    <view class="pay-text">{{payText}}</view>
+</view>

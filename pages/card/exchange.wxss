@@ -1,0 +1,31 @@
+#card_exchage.data-v-43dd827d {
+    height: 100%
+}
+
+#card_exchage .input.data-v-43dd827d {
+    padding: 60rpx
+}
+
+#card_exchage .btn.data-v-43dd827d {
+    background: #fd555b;
+    border-radius: 40rpx;
+    bottom: 86rpx;
+    color: #fff;
+    font-size: 36rpx;
+    height: 80rpx;
+    left: 50%;
+    line-height: 80rpx;
+    margin-left: -280rpx;
+    position: fixed;
+    text-align: center;
+    width: 560rpx
+}
+
+#card_exchage .van-field__input.van-field__input {
+    color: #b2b2b2;
+    font-size: 32rpx
+}
+
+#card_exchage .van-cell:after {
+    border-color: #979797
+}

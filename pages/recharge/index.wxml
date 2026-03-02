@@ -1,0 +1,20 @@
+<view class="data-v-a7e0163e" id="recharge_index">
+    <ws-header bind:__l="__l" class="data-v-a7e0163e" title="充值金额" vueId="4e4ed37a-1"></ws-header>
+    <view class="ws_container data-v-a7e0163e" wx:if="{{!show_loading&&!loading}}">
+        <view class="main data-v-a7e0163e">
+            <view bindtap="__e" class="{{['item','data-v-a7e0163e',price.is_selected?'selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectPrice',[index] ] ] ] ]}}" wx:for="{{prices}}" wx:for-item="price" wx:key="index">{{''+price.price_s+''}}</view>
+        </view>
+    </view>
+    <view class="footer data-v-a7e0163e" wx:if="{{!show_loading}}">
+        <view bindtap="__e" class="btn data-v-a7e0163e" data-event-opts="{{[ [ 'tap',[ [ 'gotoPayment',['$event'] ] ] ] ]}}" wx:if="{{isPass}}">下一步</view>
+        <view bindtap="__e" class="btn data-v-a7e0163e" data-event-opts="{{[ [ 'tap',[ [ 'toast',['$event'] ] ] ] ]}}" wx:else>下一步</view>
+        <view class="agreement data-v-a7e0163e">
+            <van-checkbox bind:__l="__l" bind:change="__e" center="{{true}}" checkedColor="rgb(238, 10, 36)" class="data-v-a7e0163e" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isPassChange'] ] ] ]}}" shape="square" value="{{isPass}}" vueId="4e4ed37a-2" vueSlots="{{['default']}}">
+                <label class="_span data-v-a7e0163e">我已阅读并同意</label>
+                <label catchtap="__e" class="data-v-a7e0163e" data-event-opts="{{[ [ 'tap',[ [ 'gotoAgreement',['$event'] ] ] ] ]}}">《充值协议》</label>
+            </van-checkbox>
+            <view class="x-bottom data-v-a7e0163e"></view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-a7e0163e" data-com-type="wx" type="spinner" vueId="4e4ed37a-3" wx:if="{{show_loading}}"></van-loading>
+</view>

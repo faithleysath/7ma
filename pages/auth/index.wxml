@@ -1,0 +1,63 @@
+<view class="data-v-af30a154" id="auth_index">
+    <view class="_header data-v-af30a154">
+        <image class="logo data-v-af30a154" src="https://img2.7mate.cn/auth_index_logo.png"></image>
+        <label class="desc _span data-v-af30a154">7MA出行</label>
+    </view>
+    <view class="_middle data-v-af30a154">
+        <button bindtap="__e" class="btn data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'login',['$event'] ] ] ] ]}}" wx:if="{{isPass&&token}}">
+            <label class="_span data-v-af30a154">手机号快捷登录</label>
+        </button>
+        <block wx:else>
+            <view class="data-v-af30a154" wx:if="{{isPass}}">
+                <button class="btn data-v-af30a154" wx:if="{{status==0}}">
+                    <label class="_span data-v-af30a154">正在授权...</label>
+                </button>
+                <block wx:else>
+                    <button bindgetphonenumber="__e" class="btn data-v-af30a154" data-event-opts="{{[ [ 'getphonenumber',[ [ 'fastLogin',['$event'] ] ] ] ]}}" openType="getPhoneNumber" wx:if="{{status==1}}">
+                        <label class="_span data-v-af30a154">手机号快捷登录</label>
+                    </button>
+                    <block wx:else>
+                        <button bindtap="__e" class="btn data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'wx_login',['$event'] ] ] ] ]}}" wx:if="{{status==2}}">
+                            <label class="_span data-v-af30a154">授权失败，点击重新授权</label>
+                        </button>
+                    </block>
+                </block>
+            </view>
+            <view class="data-v-af30a154" wx:else>
+                <button class="btn data-v-af30a154" wx:if="{{status==0}}">
+                    <label class="_span data-v-af30a154">正在授权...</label>
+                </button>
+                <block wx:else>
+                    <button bindtap="__e" class="btn data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'toast',['$event'] ] ] ] ]}}" wx:if="{{status==1}}">
+                        <label class="_span data-v-af30a154">手机号快捷登录</label>
+                    </button>
+                    <block wx:else>
+                        <button bindtap="__e" class="btn data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'wx_login',['$event'] ] ] ] ]}}" wx:if="{{status==2}}">
+                            <label class="_span data-v-af30a154">授权失败，点击重新授权</label>
+                        </button>
+                    </block>
+                </block>
+            </view>
+        </block>
+        <button bindtap="__e" class="btn mt30 data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/privacy/privacy'] ] ] ] ]}}" style="background:linear-gradient(-45deg, #00C1FF, #61E4FF);" wx:if="{{needAuthorization}}">
+            <label class="_span data-v-af30a154">同意协议后可获取手机号</label>
+        </button>
+        <view class="link data-v-af30a154">
+            <label bindtap="__e" class="_span data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'gotoPhoneAuth',['$event'] ] ] ] ]}}">手机号登录/注册</label>
+            <label bindtap="__e" class="_span data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'gotoAppeal',['$event'] ] ] ] ]}}">已更换手机号</label>
+        </view>
+    </view>
+    <view bindtap="__e" class="absolute w_100 row-col-center left0 data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/balanceprocess/index'] ] ] ] ]}}" style="bottom:200rpx;">
+        <image class="block data-v-af30a154" mode="scaleToFill" src="https://img2.7mate.cn/auth_20230811_1.png" style="width:32rpx;height:33rpx;"></image>
+        <view class="font28 ml10 data-v-af30a154" style="color:#636363;">退款查询</view>
+    </view>
+    <view class="_footer data-v-af30a154">
+        <van-checkbox bind:__l="__l" bind:change="__e" center="{{true}}" checkedColor="rgb(238, 10, 36)" class="data-v-af30a154" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isPassChange'] ] ] ]}}" shape="square" value="{{isPass}}" vueId="3d3e5422-1" vueSlots="{{['default']}}">
+            <label class="_span data-v-af30a154">我已阅读并同意</label>
+            <label catchtap="__e" class="b _span data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'gotoUseCarAgreement',['$event'] ] ] ] ]}}">《用户协议》</label>
+            <label class="_span data-v-af30a154">与</label>
+            <label catchtap="__e" class="b _span data-v-af30a154" data-event-opts="{{[ [ 'tap',[ [ 'gotoPrivacyAgreement',['$event'] ] ] ] ]}}">《隐私政策》</label>
+        </van-checkbox>
+        <view class="x-bottom data-v-af30a154"></view>
+    </view>
+</view>

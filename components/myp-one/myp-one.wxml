@@ -1,0 +1,11 @@
+<view class="code-box data-v-9829eb7e">
+    <view class="flex-box data-v-9829eb7e">
+        <input bindinput="__e" class="hide-input data-v-9829eb7e" data-event-opts="{{[ [ 'input',[ [ 'getVal',['$event'] ] ] ] ]}}" focus="{{autoFocus}}" maxlength="{{maxlength}}" type="number" value="{{inputValue}}"></input>
+        <view class="{{[ 'data-v-9829eb7e','item',[codeIndex===item[$orig]?'active':'',type==='middle'?'middle':'',type==='bottom'?'bottom':'',type==='box'?'box':''] ]}}" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="line data-v-9829eb7e" wx:if="{{type!=='middle'}}"></view>
+            <view class="bottom-line data-v-9829eb7e" wx:if="{{type==='middle'&&codeIndex<=item[$orig]}}"></view>
+            <text class="dot data-v-9829eb7e" wx:if="{{item.g0}}">.</text>
+            <block wx:else>{{''+(codeArr[index]?codeArr[index]:'')}}</block>
+        </view>
+    </view>
+</view>

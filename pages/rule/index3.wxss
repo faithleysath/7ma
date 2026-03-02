@@ -1,0 +1,30 @@
+.container.data-v-0b99259e {
+    background: #f2f2f2;
+    min-height: 100vh
+}
+
+.container .header.data-v-0b99259e {
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    background: linear-gradient(135deg,#ff6c58,#ff4c52);
+    display: -webkit-flex;
+    display: flex;
+    height: 15vh;
+    padding-bottom: 25rpx;
+    position: relative;
+    top: 0;
+    width: 100%
+}
+
+.container .header .title.data-v-0b99259e {
+    color: #fff;
+    font-size: 34rpx;
+    text-align: center;
+    width: 100%
+}
+
+.container .content.data-v-0b99259e {
+    height: calc(100vh - 15vh)
+}

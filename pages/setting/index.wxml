@@ -1,0 +1,12 @@
+<view class="data-v-31d69968" id="setting_index">
+    <ws-header bind:__l="__l" class="data-v-31d69968" title="设置" vueId="13c0a9c8-1"></ws-header>
+    <view class="ws_container data-v-31d69968">
+        <view class="menu data-v-31d69968">
+            <view bindtap="__e" class="item data-v-31d69968" data-event-opts="{{[ [ 'tap',[ [ 'action',[index] ] ] ] ]}}" wx:for="{{menus}}" wx:for-item="menu" wx:key="index">
+                <image class="icon data-v-31d69968" src="{{'https://img2.7mate.cn/'+menu.icon}}"></image>
+                <label class="title data-v-31d69968">{{menu.title}}</label>
+                <image class="arrow data-v-31d69968" src="https://img2.7mate.cn/arrow_right.png" wx:if="{{menu.title!='退出登录'&&menu.title!='注销'}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

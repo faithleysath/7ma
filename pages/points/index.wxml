@@ -1,0 +1,129 @@
+<view class="data-v-371b012a" id="points_index">
+    <view class="data-v-371b012a" wx:if="{{!show_loading&&!loading}}">
+        <image bindtap="__e" class="back data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_white.png"></image>
+        <image class="points_index_background data-v-371b012a" src="https://img2.7mate.cn/point_background.png"></image>
+        <view class="points_index_container data-v-371b012a">
+            <view class="points_index_container_header data-v-371b012a"></view>
+            <view class="points_index_container_c data-v-371b012a">
+                <label class="points_index_container_header_c_title _span data-v-371b012a">积分</label>
+                <image class="points_index_container_header_c_icon data-v-371b012a" src="https://img2.7mate.cn/points_star.png"></image>
+                <label class="points_index_container_header_c_points _span data-v-371b012a">{{user_points}}</label>
+                <label bindtap="__e" class="points_index_container_header_c_mx _span data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goPointsRecords',['$0'],['user_points'] ] ] ] ]}}">明细</label>
+            </view>
+            <view class="points_index_container_card pt14 pr17 pb16 data-v-371b012a" wx:if="{{has_signin_task}}">
+                <view class="points_index_container_card_title data-v-371b012a">签到领积分</view>
+                <view class="points_index_container_card_tip data-v-371b012a" wx:if="{{signin_days>0}}">已连续签到<label class="r _span data-v-371b012a">{{signin_days}}</label>天</view>
+                <view class="points_index_container_card_main flex_sb mt14 data-v-371b012a">
+                    <view class="points_index_container_card_main_signin data-v-371b012a" wx:for="{{signin_process_details}}" wx:for-item="signin" wx:key="index">
+                        <view class="points_index_container_card_main_signin_process data-v-371b012a">
+                            <view class="points_index_container_card_main_signin_process_points data-v-371b012a">{{'+'+signin.points}}</view>
+                            <image class="points_index_container_card_main_signin_process_icon data-v-371b012a" src="https://img2.7mate.cn/gou_active.png" wx:if="{{signin.is_signin}}"></image>
+                            <image class="points_index_container_card_main_signin_process_icon data-v-371b012a" src="https://img2.7mate.cn/gou_none.png" wx:if="{{!signin.is_signin}}"></image>
+                            <view class="points_index_container_card_main_signin_process_date data-v-371b012a">{{signin.time}}</view>
+                        </view>
+                        <view class="points_index_container_card_main_signin_line data-v-371b012a" wx:if="{{index!==4}}"></view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="{{['points_index_container_card_signinbtn','data-v-371b012a',today_is_signin?'none':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'signin',['$event'] ] ] ] ]}}">{{''+(today_is_signin?'已签到':'签到')+''}}</view>
+            </view>
+            <view class="points_index_container_card data-v-371b012a" wx:if="{{$root.g0}}">
+                <view class="points_index_container_card_title data-v-371b012a">一次性任务</view>
+                <view class="points_index_container_card_main data-v-371b012a">
+                    <view class="points_index_container_card_main_item data-v-371b012a" wx:for="{{points_tasks.one_time_tasks}}" wx:for-item="task" wx:key="index">
+                        <image class="points_index_container_card_main_item_icon data-v-371b012a" src="{{task.icon}}"></image>
+                        <view class="points_index_container_card_main_item_c data-v-371b012a">
+                            <view class="points_index_container_card_main_item_c_title data-v-371b012a">{{task.title}}</view>
+                            <view class="points_index_container_card_main_item_c_desc data-v-371b012a">{{task.desc}}</view>
+                        </view>
+                        <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.one_time_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='cert'}}">去认证</view>
+                        <block wx:else>
+                            <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.one_time_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''}}">去完成</view>
+                            <block wx:else>
+                                <view class="points_index_container_card_main_item_btn none data-v-371b012a" wx:if="{{task.process==1}}">已完成</view>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="points_index_container_card data-v-371b012a" wx:if="{{$root.g1}}">
+                <view class="points_index_container_card_title data-v-371b012a">日常任务</view>
+                <view class="points_index_container_card_main data-v-371b012a">
+                    <view class="points_index_container_card_main_item data-v-371b012a" wx:for="{{points_tasks.daily_tasks}}" wx:for-item="task" wx:key="index">
+                        <image class="points_index_container_card_main_item_icon data-v-371b012a" src="https://img2.7mate.cn/task_2_1.png"></image>
+                        <view class="points_index_container_card_main_item_c data-v-371b012a">
+                            <view class="points_index_container_card_main_item_c_title data-v-371b012a">{{task.title}}</view>
+                            <view class="points_index_container_card_main_item_c_desc data-v-371b012a">{{task.desc}}</view>
+                        </view>
+                        <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='signin'}}">签到</view>
+                        <block wx:else>
+                            <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='cycling_bike'}}">去骑行</view>
+                            <block wx:else>
+                                <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='cycling_ebike'}}">去骑行</view>
+                                <block wx:else>
+                                    <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='cycling_bike_7'}}">去骑行</view>
+                                    <block wx:else>
+                                        <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process!==''&&task.process!=='1'&&task.name==='cycling_bike_7'}}">{{task.process+''}}</view>
+                                        <block wx:else>
+                                            <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='cycling_ebike_7'}}">去骑行</view>
+                                            <block wx:else>
+                                                <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process!==''&&task.process!=='1'&&task.name==='cycling_ebike_7'}}">{{task.process+''}}</view>
+                                                <block wx:else>
+                                                    <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='buy_card_1'}}">去购买</view>
+                                                    <block wx:else>
+                                                        <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''&&task.name==='buy_card_2'}}">去购买</view>
+                                                        <block wx:else>
+                                                            <view bindtap="__e" class="points_index_container_card_main_item_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goFinish',['$0'],[ [ ['points_tasks.daily_tasks','',index,'name'] ] ] ] ] ] ]}}" wx:if="{{task.process===''}}">去完成</view>
+                                                            <block wx:else>
+                                                                <view class="points_index_container_card_main_item_btn none data-v-371b012a" wx:if="{{task.process==='1'}}">已完成</view>
+                                                            </block>
+                                                        </block>
+                                                    </block>
+                                                </block>
+                                            </block>
+                                        </block>
+                                    </block>
+                                </block>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="points_index_container_card pl4 pb22 data-v-371b012a">
+                <view class="points_index_container_card_title pl14 data-v-371b012a">积分兑换</view>
+                <view bindtap="__e" class="points_index_container_card_tip data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'goPointsExchangeRecords',['$event'] ] ] ] ]}}">兑换记录<image class="points_right data-v-371b012a" src="https://img2.7mate.cn/points_right.png"></image>
+                </view>
+                <view class="points_index_container_card_c data-v-371b012a">
+                    <view class="points_index_container_card_c_g data-v-371b012a" wx:if="{{list.g2}}" wx:for="{{$root.l0}}" wx:for-item="list" wx:key="index">
+                        <image class="points_index_container_card_c_g_icon data-v-371b012a" src="{{list[$orig].image}}"></image>
+                        <view class="points_index_container_card_c_g_title data-v-371b012a">{{list[$orig].points+'积分'}}</view>
+                        <view bindtap="__e" class="points_index_container_card_c_g_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'exchange',['$0'],[ [ ['exchange_lists','',index] ] ] ] ] ] ]}}">立即兑换</view>
+                    </view>
+                    <image class="points_index_container_card_c_none data-v-371b012a" src="https://img2.7mate.cn/points_exchange_nocert.png" wx:if="{{user_cert1_status!=3}}"></image>
+                    <block wx:else>
+                        <image class="points_index_container_card_c_none data-v-371b012a" src="https://img2.7mate.cn/points_exchange_none.png" wx:if="{{$root.g3===0}}"></image>
+                    </block>
+                </view>
+            </view>
+            <view class="points_index_container_rule data-v-371b012a">
+                <view class="points_index_container_rule_title data-v-371b012a">
+                    <view class="line data-v-371b012a"></view>
+                    <view class="c data-v-371b012a">规则说明</view>
+                    <view class="line data-v-371b012a"></view>
+                </view>
+                <view class="p data-v-371b012a">
+                    <rich-text nodes="{{points_rule}}"></rich-text>
+                </view>
+            </view>
+        </view>
+        <van-popup bind:__l="__l" bind:clickOverlay="__e" bind:close="__e" class="data-v-371b012a" closeable="{{true}}" data-com-type="wx" data-event-opts="{{[ [ '^clickOverlay',[ ['e0'] ] ],[ '^close',[ ['e1'] ] ] ]}}" show="{{signin_popup_show}}" vueId="1cc3a372-1" vueSlots="{{['default']}}">
+            <view class="signin_popup data-v-371b012a">
+                <image class="signin_popup_1 data-v-371b012a" src="https://img2.7mate.cn/signin_popup_1.png"></image>
+                <image class="signin_popup_2 data-v-371b012a" src="https://img2.7mate.cn/signin_popup_2.png"></image>
+                <view class="signin_popup_title data-v-371b012a">{{signin_popup_title}}</view>
+                <view class="signin_popup_desc data-v-371b012a">{{signin_popup_desc}}</view>
+                <view bindtap="__e" class="signin_popup_btn data-v-371b012a" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}">关闭</view>
+            </view>
+        </van-popup>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-371b012a" data-com-type="wx" type="spinner" vueId="1cc3a372-2" wx:if="{{show_loading}}"></van-loading>
+</view>

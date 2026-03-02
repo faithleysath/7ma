@@ -1,0 +1,7 @@
+<view class="custom-class van-sticky" style="{{containerStyle}}">
+    <view class="{{utils.bem( 'sticky-wrap',{fixed:fixed} )}}" style="{{wrapStyle}}">
+        <slot></slot>
+    </view>
+</view>
+
+<wxs module="utils" src="../wxs/utils.wxs"/>

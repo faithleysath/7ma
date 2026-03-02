@@ -1,0 +1,17 @@
+<view class="container box-sizing pl40 pr40 data-v-44d7f2cc">
+    <view class="pt40 data-v-44d7f2cc">
+        <view class="font30 data-v-44d7f2cc" style="color:#009B03;">{{'练习数量 '+index+1+'/'+$root.g0}}</view>
+    </view>
+    <view class="box-sizing pt40 data-v-44d7f2cc">
+        <view class="row-left-center data-v-44d7f2cc">
+            <view class="relative data-v-44d7f2cc">
+                <view class="flex2_1 row-center font28 data-v-44d7f2cc">{{type[list[index].type]}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing pt30 data-v-44d7f2cc">
+        <view class="data-v-44d7f2cc" wx:for="{{list}}" wx:for-index="i" wx:key="i">
+            <kt bind:__l="__l" bind:change="__e" bind:next="__e" bind:prev="__e" bind:submit="__e" class="data-v-44d7f2cc" count="{{$root.g1}}" currentIndex="{{i}}" data-custom-hidden="{{!(index===i)}}" data-event-opts="{{[ [ '^prev',[ ['prev'] ] ],[ '^next',[ ['next'] ] ],[ '^change',[ ['change'] ] ],[ '^submit',[ ['submit'] ] ] ]}}" info="{{item}}" type="{{2}}" vueId="{{'272e6636-1-'+i}}"></kt>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container data-v-70d1a68b">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-70d1a68b" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="开票记录" vueId="44b38f60-1"></my-header>
+    <view class="content box-sizing p30 data-v-70d1a68b">
+        <view bindtap="__e" class="br10 bg-f box-sizing p30 mb30 font30 data-v-70d1a68b" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingDetail/billingDetail','$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+            <view class="row-berween data-v-70d1a68b">
+                <view class="data-v-70d1a68b">{{item.created_at}}</view>
+                <view class="row-left-center data-v-70d1a68b" style="{{'color:'+(!billingType[item.billing_type].type?'#666':'red')}}">
+                    <view class="data-v-70d1a68b">{{billingType[item.billing_type].title}}</view>
+                </view>
+            </view>
+            <view class="mt30 mb30 data-v-70d1a68b" style="height:1.5rpx;background:#ccc;"></view>
+            <view class="row-berween data-v-70d1a68b">
+                <view class="data-v-70d1a68b">{{'抬头类型：'+addrType[item.billing_address.type].title}}</view>
+                <view class="data-v-70d1a68b">{{item.money+'元'}}</view>
+            </view>
+        </view>
+        <view class="row-center line80 font30 data-v-70d1a68b" style="color:#666;" wx:if="{{notMore}}">暂无更多</view>
+        <view bindtap="__e" class="row-center line80 font30 data-v-70d1a68b" data-event-opts="{{[ [ 'tap',[ [ 'loadMore',['$event'] ] ] ] ]}}" style="color:#666;" wx:else>加载更多</view>
+    </view>
+</view>

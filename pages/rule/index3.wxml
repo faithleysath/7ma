@@ -1,0 +1,14 @@
+<view class="container data-v-0b99259e">
+    <view class="header box-sizing data-v-0b99259e">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-0b99259e" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-0b99259e">积分规则</view>
+    </view>
+    <view class="content over-auto ios data-v-0b99259e">
+        <view class="box-sizing pl32 pr32 pt32 data-v-0b99259e">
+            <view class="font30 pb32 data-v-0b99259e">1.视频广告必须完整看完后才能获得积分</view>
+            <view class="font30 pb32 data-v-0b99259e">2.视频广告每日最多观看10次，每次获得1积分</view>
+            <view class="font30 pb32 data-v-0b99259e">3.每日签到后可额外观看一次广告，获得7积分</view>
+            <view class="font30 pb32 data-v-0b99259e">4.积分可用于兑换免费的骑行卡</view>
+        </view>
+    </view>
+</view>

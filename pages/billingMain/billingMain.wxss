@@ -1,0 +1,26 @@
+.container.data-v-389c82ca {
+    background: #f2f2f2;
+    min-height: 100vh
+}
+
+.container .header.data-v-389c82ca {
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    background: linear-gradient(135deg,#ff6c58,#ff4c52);
+    display: -webkit-flex;
+    display: flex;
+    height: 15vh;
+    padding-bottom: 25rpx;
+    position: relative;
+    top: 0;
+    width: 100%
+}
+
+.container .header .title.data-v-389c82ca {
+    color: #fff;
+    font-size: 34rpx;
+    text-align: center;
+    width: 100%
+}

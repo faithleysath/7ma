@@ -1,0 +1,107 @@
+#order_detail.data-v-d1165e80 {
+    height: 100%
+}
+
+#order_detail .ws_container1 .header.data-v-d1165e80 {
+    border-bottom: 2rpx solid #e5e5e5;
+    margin: 0 60rpx;
+    padding-bottom: 14rpx
+}
+
+#order_detail .ws_container1 .header .icon.data-v-d1165e80 {
+    margin-top: 54rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .icon .bike.data-v-d1165e80 {
+    height: 170rpx;
+    width: 196rpx
+}
+
+#order_detail .ws_container1 .header .title.data-v-d1165e80 {
+    color: #717171;
+    font-size: 36rpx;
+    margin-top: 30rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .title.rd.data-v-d1165e80 {
+    color: red
+}
+
+#order_detail .ws_container1 .header .number.data-v-d1165e80 {
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-d1165e80 {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-d1165e80:first-child {
+    color: #717171
+}
+
+#order_detail .ws_container1 .header .number wx-label.data-v-d1165e80:last-child {
+    color: #3a3a3a
+}
+
+#order_detail .ws_container1 .header .price_title.data-v-d1165e80 {
+    color: #717171;
+    font-size: 32rpx;
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .price.data-v-d1165e80 {
+    text-align: center
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-d1165e80 {
+    color: #ff1700
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-d1165e80:first-child {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .header .price wx-label.data-v-d1165e80:last-child {
+    font-size: 48rpx
+}
+
+#order_detail .ws_container1 .main.data-v-d1165e80 {
+    margin-top: 14rpx;
+    padding: 0 60rpx
+}
+
+#order_detail .ws_container1 .main .title.data-v-d1165e80 {
+    color: #3a3a3a;
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx
+}
+
+#order_detail .ws_container1 .main .item.data-v-d1165e80 {
+    height: 80rpx;
+    line-height: 80rpx
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-d1165e80 {
+    font-size: 32rpx
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-d1165e80:first-child {
+    color: #717171;
+    float: left
+}
+
+#order_detail .ws_container1 .main .item wx-label.data-v-d1165e80:last-child {
+    color: #3a3a3a;
+    float: right
+}
+
+#order_detail .ws_container1 .main .item wx-label:last-child.red.data-v-d1165e80 {
+    color: #fd555b
+}
+
+page {
+    height: 100%
+}

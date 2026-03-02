@@ -1,0 +1,93 @@
+<view class="container data-v-094a41b4">
+    <view class="box-sizing p35 data-v-094a41b4">
+        <view class="data-v-094a41b4">
+            <view class="br15 box-sizing pl20 pr20 bg-f data-v-094a41b4">
+                <view class="font31 line85 data-v-094a41b4" style="border-bottom:1rpx solid #E9E9E9;">乘车人数</view>
+                <view class="row-col-berween pt25 pb25 data-v-094a41b4" style="border-bottom:1rpx solid #E9E9E9;">
+                    <view bindtap="__e" class="{{['br10','number-item','data-v-094a41b4',form.person_number==item+1&&'number-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'togglePersonNumber',[item+1] ] ] ] ]}}" wx:for="{{4}}" wx:for-index="__i0__" wx:key="*this">{{item+1+'人'}}</view>
+                    <view bindtap="__e" class="{{['br10','number-item','data-v-094a41b4',form.person_number>4&&'number-item-on']}}" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" style="width:160rpx;padding:0;">
+                        <label class="_span data-v-094a41b4">更多</label>
+                        <label class="_span data-v-094a41b4" hidden="{{!(form.person_number>4)}}">{{'('+form.person_number+'人)'}}</label>
+                    </view>
+                </view>
+                <view class="font31 row-left-top data-v-094a41b4">
+                    <view class="line85 data-v-094a41b4">支付方式</view>
+                    <view class="flex1 box-sizing data-v-094a41b4">
+                        <view bindtap="__e" class="row-right-center box-sizing pt20 pb20 relative data-v-094a41b4" data-event-opts="{{[ [ 'tap',[ [ 'togglePaymentId',['$0'],[ [ ['paymentList','',index] ] ] ] ] ] ]}}" wx:for="{{paymentList}}" wx:key="index">
+                            <view class="row-left-center relative data-v-094a41b4">
+                                <view bindtap="__e" class="font24 mr20 absolute top6 ell data-v-094a41b4" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/recharge/index'] ] ] ] ]}}" hidden="{{!(item.id==1)}}" style="color:#666;right:100%;">{{'立即充值 '+user.balance+'元'}}</view>
+                                <image class="data-v-094a41b4" mode="scaleToFill" src="{{item.icon}}" style="width:42rpx;height:42rpx;"></image>
+                                <view class="ml10 ell data-v-094a41b4">{{item.name_s}}</view>
+                                <view class="flex1 row-right-center data-v-094a41b4">
+                                    <icon class="{{['ml20','opacity0','data-v-094a41b4',form.payment_id==item.id&&'opacity1']}}" color="#E70014" size="30rpx" type="success_no_circle"></icon>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="mt20 mb20 data-v-094a41b4">
+                <view class="bg-f bg-f br15 data-v-094a41b4" wx:if="{{info.active_card&&info.active_card.id}}">
+                    <view class="relative data-v-094a41b4">
+                        <image class="block w_100 data-v-094a41b4" mode="scaleToFill" src="https://img2.7mate.cn/minibus_20240715_02.png" style="height:218rpx;"></image>
+                        <view class="absolute w_100 top0 left0 row-berween box-sizing pl20 pr20 color-f data-v-094a41b4" style="height:70rpx;">
+                            <view class="font30 row-left-center data-v-094a41b4">
+                                <view class="font700 data-v-094a41b4">{{info.active_card.type_name}}</view>
+                                <view class="ml30 font23 relative top5 data-v-094a41b4" wx:if="{{info.active_card.is_activity}}">活动卡</view>
+                            </view>
+                            <view class="row-left-center font23 data-v-094a41b4">
+                                <view catchtap="__e" class="data-v-094a41b4" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/detail?id='+info.active_card.id] ] ] ] ]}}">了解详情</view>
+                                <image class="ml20 data-v-094a41b4" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                            </view>
+                        </view>
+                        <view class="absolute w_100 box-sizing left0 top70 box-sizing pl20 pr20 data-v-094a41b4">
+                            <view class="ell color-f font26 pt20 data-v-094a41b4" style="width:360rpx;">{{info.active_card.name}}</view>
+                            <view class="font25 pt20 font700 data-v-094a41b4" style="width:360rpx;color:khaki;" wx:if="{{(info.active_card.type==1||info.active_card.type==4)&&info.active_card.b_daily_free_times==0}}">
+                                <view class="data-v-094a41b4">每次支付仅能抵扣一人乘车费用、5分钟内只能抵扣一次</view>
+                            </view>
+                            <view class="absolute right45 top10 color-f row-center data-v-094a41b4" style="width:140rpx;">
+                                <view class="font700 font50 data-v-094a41b4" wx:if="{{info.active_card.type==2}}">{{info.active_card.remaining_free_times}}</view>
+                                <view class="font700 font50 data-v-094a41b4" wx:if="{{info.active_card.type==1||info.active_card.type==4}}">{{info.active_card.b_daily_free_times==0?'不限':info.active_card.b_daily_free_times}}</view>
+                                <view class="data-v-094a41b4">次</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bg-f bg-f br15 data-v-094a41b4" wx:else>
+                    <view class="relative data-v-094a41b4">
+                        <image class="block w_100 data-v-094a41b4" mode="scaleToFill" src="https://img2.7mate.cn/minibus_20240715_01.png" style="height:218rpx;"></image>
+                        <view class="absolute w_100 top0 left0 row-berween box-sizing pl20 pr20 color-f data-v-094a41b4" style="height:70rpx;">
+                            <view class="font30 row-left-center data-v-094a41b4">
+                                <view class="font700 data-v-094a41b4">暂无可用套餐卡</view>
+                            </view>
+                            <view class="row-left-center font23 data-v-094a41b4">
+                                <view catchtap="__e" class="data-v-094a41b4" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/index?tab='+2] ] ] ] ]}}">购买套餐卡</view>
+                                <image class="ml20 data-v-094a41b4" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                            </view>
+                        </view>
+                        <view class="absolute w_100 box-sizing left0 top70 box-sizing pl20 pr20 data-v-094a41b4">
+                            <view class="ell color-f font26 pt20 data-v-094a41b4" style="width:360rpx;">购买套餐卡享优惠乘车</view>
+                            <view class="absolute right45 top10 color-f row-center data-v-094a41b4" style="width:140rpx;">
+                                <view class="font700 font50 pt20 data-v-094a41b4">---</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="bg-f br15 data-v-094a41b4">
+                <view class="row-center pt75 pb75 data-v-094a41b4">
+                    <view class="row-bottom-center font35 font700 data-v-094a41b4">
+                        <view class="data-v-094a41b4">需支金额：</view>
+                        <view class="font45 relative top5 data-v-094a41b4" style="color:#E70014;">{{getPrice||'0.00'}}</view>
+                        <view class="data-v-094a41b4">元</view>
+                    </view>
+                    <view class="text-center font28 pt20 data-v-094a41b4" style="color:#929292;">{{'(乘车单价'+info.price+'元/人)'}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="color-f font38 text-center line80 br40 mt40 data-v-094a41b4" data-event-opts="{{[ [ 'tap',[ [ 'payment',['$event'] ] ] ] ]}}" hidden="{{!form.payment_id}}" style="background:#E70014;">立即支付</view>
+    </view>
+    <van-popup bind:__l="__l" class="data-v-094a41b4" data-com-type="wx" position="bottom" show="{{morePicker}}" vueId="2c5b7d03-1" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-094a41b4" columns="{{moreList}}" data-com-type="wx" data-event-opts="{{[ [ '^confirm',[ ['confirm'] ] ],[ '^cancel',[ ['e1'] ] ] ]}}" showToolbar="{{true}}" valueKey="name" vueId="{{'2c5b7d03-2'+','+'2c5b7d03-1'}}"></van-picker>
+    </van-popup>
+</view>

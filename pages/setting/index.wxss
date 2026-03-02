@@ -1,0 +1,37 @@
+#setting_index.data-v-31d69968 {
+    height: 100%
+}
+
+#setting_index .menu.data-v-31d69968 {
+    padding: 0 30px
+}
+
+#setting_index .menu .item.data-v-31d69968 {
+    display: -webkit-flex;
+    display: flex;
+    height: 25px;
+    justify-items: center;
+    line-height: 25px;
+    margin-top: 35px;
+    position: relative
+}
+
+#setting_index .menu .item .icon.data-v-31d69968 {
+    height: 24px;
+    width: 24px
+}
+
+#setting_index .menu .item .title.data-v-31d69968 {
+    color: #3a3a3a;
+    font-size: 36rpx;
+    margin-left: 17px
+}
+
+#setting_index .menu .item .arrow.data-v-31d69968 {
+    height: 14px;
+    margin-top: -7px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 8px
+}

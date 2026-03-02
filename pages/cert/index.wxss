@@ -1,0 +1,66 @@
+#cert_index.data-v-38774042 {
+    height: 100%
+}
+
+#cert_index .ws_container .cert.data-v-38774042 {
+    border-radius: 20rpx;
+    color: #fff;
+    height: 200rpx;
+    margin: 0 auto;
+    padding-left: 60rpx;
+    position: relative;
+    width: 632rpx
+}
+
+#cert_index .ws_container .cert._1.data-v-38774042 {
+    background: linear-gradient(270deg,#64a2fa,#85f1f8);
+    margin-top: 64rpx
+}
+
+#cert_index .ws_container .cert._2.data-v-38774042 {
+    background: linear-gradient(90deg,#ff9e7c,#fc4b68);
+    margin-top: 48rpx
+}
+
+#cert_index .ws_container .cert._3.data-v-38774042 {
+    background: #bdbdbd
+}
+
+#cert_index .ws_container .cert .title.data-v-38774042 {
+    font-size: 60rpx;
+    padding-top: 36rpx
+}
+
+#cert_index .ws_container .cert .desc.data-v-38774042 {
+    font-size: 24rpx
+}
+
+#cert_index .ws_container .cert .select.data-v-38774042 {
+    height: 20rpx;
+    position: absolute;
+    right: 18rpx;
+    top: 28rpx;
+    width: 28rpx
+}
+
+#cert_index .ws_container .cert .status.data-v-38774042 {
+    bottom: 20rpx;
+    font-size: 24rpx;
+    position: absolute;
+    right: 48rpx
+}
+
+#cert_index .ws_container .btn.data-v-38774042 {
+    background: #fd555b;
+    border-radius: 40rpx;
+    bottom: 86rpx;
+    color: #fff;
+    font-size: 36rpx;
+    height: 80rpx;
+    left: 50%;
+    line-height: 80rpx;
+    margin-left: -280rpx;
+    position: absolute;
+    text-align: center;
+    width: 560rpx
+}

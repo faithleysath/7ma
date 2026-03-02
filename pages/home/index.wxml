@@ -1,0 +1,378 @@
+<view class="relative data-v-b22a8ec0" style="height:100vh;">
+    <view class="flex font28 relative data-v-b22a8ec0" style="height:80rpx;box-shadow:0 2px 5px 2px #ccc;z-index:2;" wx:if="{{user.minibus_service_on}}">
+        <view class="flex2_1 text-center row-center relative data-v-b22a8ec0" style="color:#EA5359;">
+            <view class="data-v-b22a8ec0">二轮车</view>
+            <view class="absolute center-x bottom0 br45 data-v-b22a8ec0" style="width:70rpx;height:6rpx;background:#FF5053;"></view>
+            <view class="absolute right0 data-v-b22a8ec0" style="width:1.5rpx;height:70%;background:#bebebe;top:15%;"></view>
+        </view>
+        <view bindtap="__e" class="flex2_1 text-center row-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/gjline/index'] ] ] ] ]}}">
+            <view class="data-v-b22a8ec0">小巴士</view>
+        </view>
+    </view>
+    <view class="box-sizing home-container data-v-b22a8ec0" style="{{'height:'+(user.minibus_service_on?'calc(100vh - 60px - 80rpx)':'calc(100vh - 60px)')+';'}}">
+        <view class="w_100 h_100 relative data-v-b22a8ec0">
+            <map bindmarkertap="__e" bindregionchange="__e" bindrendererror="__e" bindtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'markertap',[ [ 'markerTap',['$event'] ] ] ],[ 'tap',[ [ 'mapTap',['$event'] ] ] ],[ 'regionchange',[ [ 'regionchange',['$event'] ] ] ],[ 'rendererror',[ [ 'rendererror',['$event'] ] ] ] ]}}" id="map" latitude="{{mapInfo._latitude}}" longitude="{{mapInfo._longitude}}" markers="{{mapInfo.markers}}" polygons="{{mapInfo.polygons}}" polyline="{{mapInfo.polyline}}" showLocation="{{true}}" style="width:750rpx;height:100%;"></map>
+            <view class="{{['absolute','centers','animated','data-v-b22a8ec0',user_car_authority.order.order_id?'bounceOut':'',!user_car_authority.order.order_id?'bounceIn':'']}}">
+                <view bindtap="__e" class="absolute bg-f br30 center-x pl20 pr20 pt10 pb10 ell font24 font700 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'send',['$event'] ] ] ] ]}}" style="bottom:85rpx;box-shadow:0 0 10px 5px #ccc;" wx:if="{{!(user_car_authority.order&&user_car_authority.order.order_id)}}">{{'附近约'+carCount+'辆车'}}</view>
+                <image class="{{['block','absolute','bottom0','animated','data-v-b22a8ec0',isMapDragEnd&&'bounce']}}" mode="scaleToFill" src="https://img2.7mate.cn/map_center.png" style="width:39rpx;height:62rpx;left:-20rpx;"></image>
+            </view>
+            <view class="absolute left0 top0 w_100 pt20 pl40 pr40 box-sizing data-v-b22a8ec0">
+                <swiper autoplay="{{true}}" class="{{['mb20','animated','data-v-b22a8ec0',$root.g1]}}" duration="500" indicatorActiveColor="#F95A64" indicatorColor="#DFDFDF" indicatorDots="{{true}}" interval="3000" style="width:100%;height:140rpx;" wx:if="{{$root.g0}}">
+                    <swiper-item catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'action',['$0'],[ [ ['banners','',index] ] ] ] ] ] ]}}" wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
+                        <image class="w_100 h_100 data-v-b22a8ec0" mode="scaleToFill" src="{{banner.image_url}}" style="border-radius:5px;"></image>
+                    </swiper-item>
+                </swiper>
+                <view class="data-v-b22a8ec0" hidden="{{!false}}">
+                    <view class="data-v-b22a8ec0" wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
+                        <image bindload="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'load',[ [ 'swiperLoad',['$event'] ] ] ] ]}}" src="{{banner.image_url}}"></image>
+                    </view>
+                </view>
+                <view class="{{['absolute','bg-f','p20','br20','animated','left40','mb20','data-v-b22a8ec0',user_car_authority.order.order_id&&'bounceOutLeft']}}" style="box-shadow:0 0 10px 5px #ccc;width:114rpx;top:100%;">
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/yyq_20230720.png" style="width:114rpx;height:43rpx;"></image>
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/hcd_20230720.png" style="width:114rpx;height:51rpx;"></image>
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/jtq_20230720.png" style="width:114rpx;height:49rpx;"></image>
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/20250928_01.png" style="width:114rpx;height:49rpx;"></image>
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/20250928_02.png" style="width:114rpx;height:49rpx;"></image>
+                </view>
+                <view class="absolute right40 mb20 br5 font20 p10 data-v-b22a8ec0" style="min-width:90rpx;top:100%;background:rgba(0,0,0,0.6);" wx:if="{{!user_car_authority.order.order_id&&user.id}}">
+                    <view class="color-f font18 data-v-b22a8ec0" style="margin-bottom:2rpx;">网络延迟：</view>
+                    <view class="data-v-b22a8ec0" style="color:#F56C6C;" wx:if="{{healthMs=='未知'}}">{{healthMs}}</view>
+                    <block wx:else>
+                        <view class="data-v-b22a8ec0" style="color:#67C23A;" wx:if="{{healthMs<=100}}">{{healthMs+' ms'}}</view>
+                        <block wx:else>
+                            <view class="data-v-b22a8ec0" style="color:#E6A23C;" wx:if="{{healthMs>100&&healthMs<=300}}">{{healthMs+' ms'}}</view>
+                            <view class="data-v-b22a8ec0" style="color:#F56C6C;" wx:else>{{healthMs+' ms'}}</view>
+                        </block>
+                    </block>
+                </view>
+            </view>
+            <view class="absolute bottom0 left40 data-v-b22a8ec0" style="{{'bottom:'+(user_car_authority.order&&user_car_authority.order.order_id?'20rpx':'135rpx')+';'+'transition:'+'all 0.5s'+';'}}">
+                <image bindtap="__e" class="block data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'refresh',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/home_a.png" style="width:110rpx;height:110rpx;" wx:if="{{showRefresh}}"></image>
+                <image bindtap="__e" class="block data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'getCurLocation',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/home_b.png" style="width:110rpx;height:110rpx;"></image>
+            </view>
+            <view class="absolute bottom0 right40 data-v-b22a8ec0" style="{{'bottom:'+(user_car_authority.order&&user_car_authority.order.order_id?'20rpx':'135rpx')+';'+'transition:'+'all 0.5s'+';'}}">
+                <image bindtap="__e" class="block animated rubberBand infinite data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[true,2] ] ] ] ]}}" hidden="{{!( user_car_authority.order&&user_car_authority.order.order_id&&(user_car_authority.order.show_open_close_helmet_bth||user_car_authority.order.gys_helmet_bth) )}}" mode="scaleToFill" src="https://img2.7mate.cn/home_d_20230311.png" style="width:110rpx;height:110rpx;"></image>
+                <image bindtap="__e" class="block data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'openServiceModal',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/home_c.png" style="width:110rpx;height:110rpx;"></image>
+            </view>
+            <view class="absolute center-x data-v-b22a8ec0" style="bottom:155rpx;" wx:if="{{healthMs>=400}}">
+                <view class="data-v-b22a8ec0" style="width:450rpx;line-height:60rpx;color:#fff;font-size:28rpx;text-align:center;background:#DE2736;border-radius:30rpx;">当前网络不稳定，请检查网络</view>
+            </view>
+            <block wx:else>
+                <view class="absolute center-x data-v-b22a8ec0" style="bottom:155rpx;" wx:if="{{healthMs>=300}}">
+                    <view class="data-v-b22a8ec0" style="width:450rpx;line-height:60rpx;color:#fff;font-size:28rpx;text-align:center;background:#E6A23C;border-radius:30rpx;">当前网速较慢，请检查网络</view>
+                </view>
+            </block>
+            <view class="absolute bottom30 center-x data-v-b22a8ec0" wx:if="{{user_car_authority.unauthorized_code==-1&&user.id}}">
+                <socket-btn bind:__l="__l" bind:socketBtnGetOrder="__e" bind:socketBtnGetOrderInfo="__e" class="data-v-b22a8ec0 vue-ref" data-event-opts="{{[ [ '^socketBtnGetOrderInfo',[ ['socketBtnGetOrderInfo'] ] ],[ '^socketBtnGetOrder',[ ['socketBtnGetOrder'] ] ] ]}}" data-ref="socketBtn1" height="90rpx" isSuccess="{{isSuccess}}" text="核验订单后用车" text2="核验中..." vueId="6b3d36ea-1" width="620rpx"></socket-btn>
+            </view>
+            <block wx:else>
+                <view class="absolute bottom15 center-x data-v-b22a8ec0" style="width:640rpx;height:140rpx;" wx:if="{{!(user_car_authority.order&&user_car_authority.order.order_id)}}">
+                    <view class="{{['relative','w_100','h_100','animated','data-v-b22a8ec0',user_car_authority.order&&user_car_authority.order.order_id?'bounceOut':'bounceInUp']}}">
+                        <image class="absolute left0 top0 w_100 h_100 data-v-b22a8ec0" src="https://img2.7mate.cn/home_d_1.png"></image>
+                        <view class="absolute w_100 h_100 left0 top0 row-col-berween box-sizing pl45 pr40 data-v-b22a8ec0">
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'scan',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_e.png" style="width:60rpx;height:60rpx;"></image>
+                            <view catchtap="__e" class="color-f line100 relative left10 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'scan',['$event'] ] ] ] ]}}" style="font-size:44rpx;letter-spacing:6rpx;">扫码用车</view>
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'scan1',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/home_f.png" style="width:80rpx;height:80rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="data-v-b22a8ec0" wx:if="{{isSuccess||user_car_authority.order.order_id}}">
+                <top-order bind:__l="__l" bind:emit="__e" bind:getCarPosition="__e" bind:updateOrder="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ '^emit',[ ['emit'] ] ],[ '^updateOrder',[ ['updateOrder'] ] ],[ '^getCarPosition',[ ['getCarPosition'] ] ] ]}}" healthMs="{{healthMs}}" isSuccess="{{isSuccess}}" user_car_authority="{{user_car_authority}}" vueId="6b3d36ea-2" yjsTime="{{yjsTime}}"></top-order>
+            </view>
+            <view class="{{['absolute','box-sizing','left0','top0','p20','animated','w_100','bg-f','data-v-b22a8ec0',mapInfo.parking.name&&'bounceInRight']}}" hidden="{{!mapInfo.parking.name}}" style="box-shadow:0 0 10px 5px #ccc;">
+                <view class="p20 box-sizing row-left-center br10 data-v-b22a8ec0">
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_p3.png" style="width:80rpx;height:80rpx;"></image>
+                    <view class="flex1 box-sizing pl40 data-v-b22a8ec0">
+                        <view class="ell font32 pb10 data-v-b22a8ec0">{{mapInfo.parking.name}}</view>
+                        <view class="font24 data-v-b22a8ec0" style="color:#808080;">{{'距您'+mapInfo.parking.distance+'米'}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="{{['bg-f','absolute','bottom0','left0','w_100','pt20','pb20','animated','data-v-b22a8ec0',showServiceModal&&'bounceIn']}}" hidden="{{!showServiceModal}}" style="border-radius:20rpx 20rpx 0 0;">
+                <view class="service_modal flex font20 data-v-b22a8ec0">
+                    <view catchtap="__e" class="flex1 row-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'gotoBackCarError',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                        <image class="block data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_20220920_01.png" style="width:70rpx;height:70rpx;"></image>
+                        <view class="pt5 data-v-b22a8ec0">问题反馈</view>
+                    </view>
+                    <view catchtap="__e" class="flex1 row-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'gotoBikeBad',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                        <image class="block data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_20220920_02.png" style="width:70rpx;height:70rpx;"></image>
+                        <view class="pt5 data-v-b22a8ec0">上报故障</view>
+                    </view>
+                    <view catchtap="__e" class="flex1 row-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'goTsyJy',['$event'] ] ] ] ]}}" hidden="{{!user.id}}">
+                        <image class="block data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_20220920_03.png" style="width:70rpx;height:70rpx;"></image>
+                        <view class="pt5 data-v-b22a8ec0">建议投诉</view>
+                    </view>
+                    <view catchtap="__e" class="flex1 row-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'gotoService',['$event'] ] ] ] ]}}">
+                        <image class="block data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_20220920_04.png" style="width:70rpx;height:70rpx;"></image>
+                        <view class="pt5 data-v-b22a8ec0">客服中心</view>
+                    </view>
+                </view>
+            </view>
+            <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ ['e0'] ] ] ]}}" show="{{popup.show}}" vueId="6b3d36ea-3" vueSlots="{{['default']}}" zIndex="100">
+                <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                    <view catchtap="__e" class="block absolute centers data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'action',['$0'],['popup'] ] ] ] ]}}" style="width:540rpx;height:772rpx;margin-top:-100rpx;">
+                        <image class="data-v-b22a8ec0" model="scaleToFill" src="{{popup.image_url}}" style="width:540rpx;height:772rpx;"></image>
+                        <view catchtap="__e" class="absolute w_100 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="bottom:-50rpx;" wx:if="{{popup.remind_config}}">
+                            <view class="row-left-center data-v-b22a8ec0">
+                                <view class="data-v-b22a8ec0">
+                                    <van-checkbox bind:__l="__l" bind:change="__e" checkedColor="rgba(100,100,100,0.5)" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['setBannerNotShowSchoolId'] ] ] ]}}" iconSize="35rpx" shape="square" value="{{isBannerNotShowSchoolId}}" vueId="{{'6b3d36ea-4'+','+'6b3d36ea-3'}}" vueSlots="{{['default']}}">
+                                        <view class="font28 data-v-b22a8ec0" style="color:#ccc;">不再提醒</view>
+                                    </van-checkbox>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="absolute center-x data-v-b22a8ec0" style="bottom:-150rpx;">
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </van-overlay>
+            <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ ['e2'] ] ] ]}}" show="{{ls_show}}" vueId="6b3d36ea-5" vueSlots="{{['default']}}" zIndex="100">
+                <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                    <view class="block absolute centers data-v-b22a8ec0" style="width:600rpx;height:800rpx;margin-top:-100rpx;">
+                        <image class="data-v-b22a8ec0" model="scaleToFill" src="https://img2.7mate.cn/ls_xq.png" style="width:600rpx;height:800rpx;"></image>
+                        <view class="absolute left0 bottom60 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-b22a8ec0" style="z-index:10;">
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;">继续用车</view>
+                            <view catchtap="__e" class="text-center box-sizing color-f data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/updateSchool/index'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;background:#EA5359;">更换校区</view>
+                        </view>
+                        <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e4',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </van-overlay>
+            <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ ['e5'] ] ] ]}}" show="{{rc_show}}" vueId="6b3d36ea-6" vueSlots="{{['default']}}" zIndex="100">
+                <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                    <view class="block absolute centers data-v-b22a8ec0" style="width:600rpx;height:800rpx;margin-top:-100rpx;">
+                        <image class="data-v-b22a8ec0" model="scaleToFill" src="https://img2.7mate.cn/home_index_202308240829.png" style="width:600rpx;height:800rpx;"></image>
+                        <view class="absolute left0 bottom60 w_100 row-col-center box-sizing pl50 pr50 font32 data-v-b22a8ec0" style="z-index:10;">
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e6',['$event'] ] ] ] ]}}" style="width:420rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;">继续用车</view>
+                        </view>
+                        <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e7',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </van-overlay>
+            <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ [ 'toolsModal',[false] ] ] ] ]}}" show="{{toolsInfo.show}}" vueId="6b3d36ea-7" vueSlots="{{['default']}}" zIndex="100">
+                <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                    <view class="block absolute centers data-v-b22a8ec0" style="width:540rpx;height:772rpx;margin-top:-100rpx;">
+                        <image class="data-v-b22a8ec0" model="scaleToFill" src="{{toolsInfo.image_url}}" style="width:540rpx;height:772rpx;"></image>
+                        <view class="absolute left0 bottom40 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-b22a8ec0">
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" style="width:200rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #00C1FF;color:#00C1FF;" wx:if="{{toolsInfo.type==0}}">暂不借用</view>
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'openTk',[0] ] ] ] ]}}" style="width:200rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #00C1FF;color:#00C1FF;" wx:if="{{toolsInfo.type==2}}">关闭头盔</view>
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'openTk',[1] ] ] ] ]}}" style="width:200rpx;line-height:60rpx;border-radius:30rpx;background:#00C1FF;color:#fff;" wx:if="{{toolsInfo.type==0||toolsInfo.type==2}}">借用头盔</view>
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" style="width:100%;line-height:60rpx;border-radius:30rpx;background:#00C1FF;color:#fff;" wx:if="{{toolsInfo.type==1}}">我知道了</view>
+                        </view>
+                        <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                            <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'toolsModal',[false] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </van-overlay>
+        </view>
+        <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" show="{{backCarErrorInfo.show}}" vueId="6b3d36ea-8" vueSlots="{{['default']}}" zIndex="100">
+            <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                <view class="absolute centers data-v-b22a8ec0">
+                    <image class="block data-v-b22a8ec0" model="scaleToFill" src="{{backCarErrorInfo.image_url}}" style="width:600rpx;height:800rpx;" wx:if="{{backCarErrorInfo.image_url}}"></image>
+                    <view class="absolute left0 bottom40 w_100 row-col-berween box-sizing pl50 pr50 font32 data-v-b22a8ec0" style="z-index:10;">
+                        <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" src="https://img2.7mate.cn/home_s.png" style="width:220rpx;height:62rpx;"></image>
+                        <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'orderFinish',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{backCarErrorInfo.type==2&&is_mandatory_return}}">强制还车</view>
+                        <block wx:else>
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'contact_service',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:if="{{user_car_authority.order.lock_id===10||user_car_authority.order.lock_id===12&&user.school_id==62}}">无法还车</view>
+                            <view catchtap="__e" class="text-center box-sizing data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'gotoBackCarError',['$event'] ] ] ] ]}}" style="width:220rpx;line-height:60rpx;border-radius:30rpx;border:2rpx solid #EA5359;color:#EA5359;" wx:else>无法还车</view>
+                        </block>
+                    </view>
+                    <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                        <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'backCarErrorModal',[false] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                    </view>
+                </view>
+            </view>
+        </van-overlay>
+        <van-overlay bind:__l="__l" catch:tap="__e" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^tap',[ ['e8'] ] ] ]}}" show="{{imageInfo.show}}" vueId="6b3d36ea-9" vueSlots="{{['default']}}" zIndex="100">
+            <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                <view class="block absolute centers data-v-b22a8ec0" style="width:540rpx;height:660rpx;margin-top:-100rpx;">
+                    <image class="data-v-b22a8ec0" model="scaleToFill" src="{{imageInfo.image_url}}" style="width:540rpx;height:660rpx;"></image>
+                    <view class="absolute w_100 box-sizing pl60 pr60 data-v-b22a8ec0" style="height:200rpx;bottom:120rpx;">
+                        <view class="w_100 h_100 row-center data-v-b22a8ec0">
+                            <view class="data-v-b22a8ec0">{{imageInfo.text}}</view>
+                        </view>
+                    </view>
+                    <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                        <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e9',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                    </view>
+                </view>
+            </view>
+        </van-overlay>
+        <van-overlay bind:__l="__l" class="data-v-b22a8ec0" data-com-type="wx" show="{{rshyShow}}" vueId="6b3d36ea-10" vueSlots="{{['default']}}" zIndex="100">
+            <view class="relative data-v-b22a8ec0" style="height:100vh;">
+                <view class="block absolute centers data-v-b22a8ec0" style="margin-top:-100rpx;">
+                    <view class="box-sizing p25 data-v-b22a8ec0" style="background:#FFF3EE;width:610rpx;border-radius:20rpx;">
+                        <view class="font31 font700 pb25 data-v-b22a8ec0" style="color:#F94754;">人身核验</view>
+                        <view class="bg-f data-v-b22a8ec0" style="border-radius:20rpx;">
+                            <view class="row-center pt40 pb40 data-v-b22a8ec0">
+                                <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/rshy_1.png" style="width:296rpx;height:189rpx;"></image>
+                            </view>
+                            <view class="box-sizing pl40 pr40 pb35 data-v-b22a8ec0">
+                                <view class="font21 pb35 data-v-b22a8ec0">为了满足网络安全法等相关法律法规要求并保障您的安全出行，我们需要收集您的身份信息(包括姓名、身份证号)完成人身核验。</view>
+                                <view class="pb25 data-v-b22a8ec0">
+                                    <input bindinput="__e" class="line70 pl20 pr20 box-sizing font24 data-v-b22a8ec0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','real_name','$event',[] ],['rshyInfo'] ] ] ] ]}}" placeholder="请输入您的真实姓名" style="height:70rpx;background:#FBFBFB;border:1.5rpx solid #E9E9E9;border-radius:7rpx;" value="{{rshyInfo.real_name}}"></input>
+                                </view>
+                                <view class="pb35 data-v-b22a8ec0">
+                                    <input bindinput="__e" class="line70 pl20 pr20 box-sizing font24 data-v-b22a8ec0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','identity_number','$event',[] ],['rshyInfo'] ] ] ] ]}}" placeholder="请输入您的准确身份证号" style="height:70rpx;background:#FBFBFB;border:1.5rpx solid #E9E9E9;border-radius:7rpx;" type="idcard" value="{{rshyInfo.identity_number}}"></input>
+                                </view>
+                                <view bindtap="__e" class="font30 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'rshy',['$event'] ] ] ] ]}}" style="background:#F94754;padding:20rpx;border-radius:38rpx;" wx:if="{{$root.g2}}">
+                                    <view class="color-f text-center data-v-b22a8ec0">本人人身核验</view>
+                                </view>
+                                <view class="font30 data-v-b22a8ec0" style="background:#bbb;padding:20rpx;border-radius:38rpx;" wx:else>
+                                    <view class="color-f text-center data-v-b22a8ec0">本人人身核验</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="absolute center-x data-v-b22a8ec0" style="bottom:-100rpx;">
+                        <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e10',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                    </view>
+                </view>
+            </view>
+        </van-overlay>
+        <van-dialog bind:__l="__l" class="data-v-b22a8ec0" data-com-type="wx" show="{{isDd}}" showConfirmButton="{{false}}" title="7MA出行温馨提示" useSlot="{{true}}" vueId="6b3d36ea-11" vueSlots="{{['default']}}">
+            <view class="data-v-b22a8ec0" style="padding:20rpx 40rpx;font-size:30rpx;color:#666;line-height:50rpx;">
+                <text class="data-v-b22a8ec0">检测到车辆静止，车已断电，禁止换人骑行，完成人身核验后恢复供电</text>
+            </view>
+            <view class="data-v-b22a8ec0" style="display:flex;padding-top:20rpx;overflow:hidden;">
+                <van-button bind:__l="__l" bind:click="__e" block="{{true}}" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^click',[ ['e11'] ] ] ]}}" style="flex:1;" vueId="{{'6b3d36ea-12'+','+'6b3d36ea-11'}}" vueSlots="{{['default']}}">取消</van-button>
+                <van-button bind:__l="__l" bind:click="__e" block="{{true}}" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^click',[ ['rlsbHd'] ] ] ]}}" style="flex:1;color:#EA5359;" vueId="{{'6b3d36ea-13'+','+'6b3d36ea-11'}}" vueSlots="{{['default']}}">人身核验</van-button>
+            </view>
+        </van-dialog>
+        <van-dialog bind:__l="__l" class="data-v-b22a8ec0" data-com-type="wx" show="{{useCarProgress}}" showCancelButton="{{false}}" showConfirmButton="{{false}}" useSlot="{{true}}" vueId="6b3d36ea-14" vueSlots="{{['default']}}">
+            <use-car-ani bind:__l="__l" bind:close="__e" bind:lock="__e" bind:unlock="__e" carInfo="{{carInfo}}" class="data-v-b22a8ec0 vue-ref" data-event-opts="{{[ [ '^lock',[ ['useCarAniLockAgain'] ] ],[ '^close',[ ['e12'] ] ],[ '^unlock',[ ['useCarAniUnlockAgain'] ] ] ]}}" data-ref="useCarAni" type="{{useCarProgressType}}" vueId="{{'6b3d36ea-15'+','+'6b3d36ea-14'}}" wx:if="{{useCarProgress}}"></use-car-ani>
+        </van-dialog>
+        <van-dialog bind:__l="__l" class="data-v-b22a8ec0" data-com-type="wx" id="van-dialog" vueId="6b3d36ea-16"></van-dialog>
+        <view class="{{['absolute','left0','top0','w_100','h_100','animated','data-v-b22a8ec0',showInput?'bounceInRight':'bounceOutRight']}}" hidden="{{!(showInput!==0)}}" style="background:#555;z-index:3;">
+            <view bindtap="__e" class="pl50 pt30 pb30 bg-f data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e13',['$event'] ] ] ] ]}}">
+                <image class="block data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/back.png" style="width:45rpx;height:30rpx;"></image>
+            </view>
+            <view class="absolute centers data-v-b22a8ec0">
+                <view class="data-v-b22a8ec0">
+                    <input bindinput="__e" class="bg-f line70 pl30 pr30 br50 box-sizing font30 data-v-b22a8ec0" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','car_number','$event',[] ] ] ] ] ]}}" placeholder="请输入车编号" style="width:600rpx;height:70rpx;color:#333;" value="{{car_number}}"></input>
+                    <view bindtap="__e" class="btn line70 br50 color-f font30 mt20 text-center data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'scan1Action',['$event'] ] ] ] ]}}" style="width:600rpx;background:#EA5359;" wx:if="{{car_number}}">立即用车</view>
+                    <view class="btn line70 br50 color-f font30 mt20 text-center data-v-b22a8ec0" style="width:600rpx;background:#ccc;" wx:else>立即用车</view>
+                </view>
+            </view>
+        </view>
+        <ws-tabbar active="home" bind:__l="__l" class="data-v-b22a8ec0" placeholder="{{true}}" vueId="6b3d36ea-17"></ws-tabbar>
+    </view>
+    <view class="{{['popup_bottom','absolute','left0','bg-f','bottom0','animated','data-v-b22a8ec0',car.number&&'bounceInUp']}}" hidden="{{!car.number}}" style="z-index:10;">
+        <view class="box-sizing pl32 pr32 pt14 data-v-b22a8ec0">
+            <view class="row-left-center data-v-b22a8ec0" hidden="{{!(car.carmodel_id==1)}}">
+                <view class="flex1 data-v-b22a8ec0">
+                    <view class="data-v-b22a8ec0">
+                        <view class="font40 pb18 pl20 row-left-bottom data-v-b22a8ec0" style="color:#2E3033;">
+                            <view class="data-v-b22a8ec0">单车</view>
+                            <view class="font28 ml20 flex1 data-v-b22a8ec0" style="color:#EA5359;white-space:pre-wrap;">{{car.remark}}</view>
+                        </view>
+                        <view class="data-v-b22a8ec0" style="height:2rpx;background:#F5F5F5;"></view>
+                    </view>
+                    <view class="font30 pt35 pb35 pr10 data-v-b22a8ec0" style="color:#808080;">{{'车辆编号：'+car.number}}</view>
+                </view>
+                <view class="pl40 pr20 pb15 data-v-b22a8ec0">
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_g.png" style="width:250rpx;height:170rpx;"></image>
+                </view>
+            </view>
+            <view class="data-v-b22a8ec0" hidden="{{!(car.carmodel_id==2)}}">
+                <view class="data-v-b22a8ec0">
+                    <view class="font40 pb18 pl20 row-left-top data-v-b22a8ec0" style="color:#2E3033;">
+                        <view class="row-left-bottom data-v-b22a8ec0">
+                            <view class="data-v-b22a8ec0" wx:if="{{car.school_id==102||car.school_id==113}}">滑板车</view>
+                            <view class="data-v-b22a8ec0" wx:else>{{car.carmodel_name}}</view>
+                            <view class="font22 ml10 pr10 data-v-b22a8ec0" style="color:#808080;">{{'车辆编号'+car.number}}</view>
+                        </view>
+                        <view class="font28 ml20 flex1 data-v-b22a8ec0" style="color:#EA5359;white-space:pre-wrap;">{{car.remark}}</view>
+                    </view>
+                    <view class="data-v-b22a8ec0" style="height:2rpx;background:#F5F5F5;"></view>
+                </view>
+                <view class="row-col-berween box-sizing pl30 pr30 pt15 pb25 data-v-b22a8ec0">
+                    <image class="data-v-b22a8ec0" mode="aspectFit" src="https://img2.7mate.cn/hbc_2.png" style="width:250rpx;height:250rpx;" wx:if="{{car.school_id==102||car.school_id==113}}"></image>
+                    <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_j.png" style="width:250rpx;height:170rpx;" wx:else></image>
+                    <view class="flex1 box-sizing pl65 data-v-b22a8ec0">
+                        <view class="row-left-center mb20 data-v-b22a8ec0">
+                            <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_k.png" style="width:44rpx;height:44rpx;"></image>
+                            <view class="ml35 font24 data-v-b22a8ec0">当前电量</view>
+                            <view class="flex1 text-right font36 data-v-b22a8ec0" style="color:#EA5359;">{{car.electricity}}</view>
+                        </view>
+                        <view class="row-left-center data-v-b22a8ec0">
+                            <image class="data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/home_l.png" style="width:44rpx;height:44rpx;"></image>
+                            <view class="ml35 font24 data-v-b22a8ec0">续航里程</view>
+                            <view class="flex1 text-right font36 data-v-b22a8ec0" style="color:#EA5359;">{{car.mileage}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <image catchtap="__e" class="mb20 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/h5/index?path='+car.H5Url] ] ] ] ]}}" mode="widthFix" src="https://img2.7mate.cn/home_h.png?2" style="width:100%;"></image>
+            <view class="relative mb20 data-v-b22a8ec0" style="height:220rpx;color:#FEFBF8;">
+                <image class="absolute w_100 h_100 left0 top0 data-v-b22a8ec0" mode="widthFix" src="https://img2.7mate.cn/home_m.png" wx:if="{{haveFree}}"></image>
+                <image class="absolute w_100 h_100 left0 top0 data-v-b22a8ec0" mode="widthFix" src="https://img2.7mate.cn/home_n.png" wx:else></image>
+                <view class="absolute row-col-berween top0 left0 w_100 box-sizing pl50 pr50 data-v-b22a8ec0" style="height:70rpx;z-index:10;">
+                    <view catchtap="__e" class="font32 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index?number='+car.number] ] ] ] ]}}" hidden="{{!haveFree}}">计费规则</view>
+                    <view catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/index?tab='+car.carmodel_id-1] ] ] ] ]}}" hidden="{{!!haveFree}}">
+                        <view class="font28 data-v-b22a8ec0">暂无可用套餐卡</view>
+                        <view class="font20 data-v-b22a8ec0">购买套餐卡享优惠骑行</view>
+                    </view>
+                    <view class="font23 row-left-center data-v-b22a8ec0">
+                        <view catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/rule/index?number='+car.number] ] ] ] ]}}" hidden="{{!haveFree}}">了解详情</view>
+                        <view bindtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'carInfoEvent',['$0','buy'],['car'] ] ] ] ]}}" hidden="{{!!haveFree}}">购买套餐卡</view>
+                        <image class="ml20 data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                    </view>
+                </view>
+                <view bindtap="__e" class="absolute w_100 left0 top70 row-left-center box-sizing pl50 pr20 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'carInfoEvent',['$0'],['car'] ] ] ] ]}}" style="height:150rpx;z-index:10;">
+                    <image class="absolute bottom0 data-v-b22a8ec0" hidden="{{!(car.carmodel_id==1)}}" mode="scaleToFill" src="https://img2.7mate.cn/home_p.png" style="left:170rpx;width:172rpx;height:120rpx;"></image>
+                    <image class="absolute bottom0 data-v-b22a8ec0" hidden="{{!(car.carmodel_id==2)}}" mode="scaleToFill" src="https://img2.7mate.cn/home_o.png" style="left:170rpx;width:172rpx;height:120rpx;"></image>
+                    <view class="relative bottom10 row-botton-berween w_100 data-v-b22a8ec0">
+                        <view class="data-v-b22a8ec0" style="width:250rpx;">
+                            <view class="row-left-bottom data-v-b22a8ec0">
+                                <view class="font45 data-v-b22a8ec0" wx:if="{{car.carmodel_id==2}}">
+                                    <view class="data-v-b22a8ec0" wx:if="{{car.school_id==102||car.school_id==113}}">滑板车</view>
+                                    <view class="data-v-b22a8ec0" wx:else>{{car.carmodel_name}}</view>
+                                </view>
+                                <view class="font45 data-v-b22a8ec0" wx:else>{{car.carmodel_name}}</view>
+                                <view class="font24 ml10 relative bottom2 ell data-v-b22a8ec0" hidden="{{!haveFree}}">{{carSort}}</view>
+                            </view>
+                            <view class="font24 pt35 data-v-b22a8ec0" hidden="{{!haveFree}}">{{'每次'+car.each_free_time+'分钟免费'}}</view>
+                            <view class="font24 pt35 data-v-b22a8ec0" hidden="{{!!haveFree}}">{{'起步价：'+car.first_price+'元'+car.first_time+'分钟'}}</view>
+                        </view>
+                        <view class="data-v-b22a8ec0">
+                            <view class="font24 row-left-center data-v-b22a8ec0" hidden="{{!!haveFree}}">
+                                <view class="relative bottom2 data-v-b22a8ec0">了解详情</view>
+                                <image class="ml20 data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                            </view>
+                            <view class="font24 row-left-center data-v-b22a8ec0" hidden="{{!haveFree}}">
+                                <view class="relative bottom2 data-v-b22a8ec0">了解详情</view>
+                                <image class="ml20 data-v-b22a8ec0" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                            </view>
+                        </view>
+                        <view class="text-center data-v-b22a8ec0" style="width:190rpx;height:135rpx;">
+                            <view class="font700 data-v-b22a8ec0" style="font-size:80rpx;" wx:if="{{haveFree}}">{{car.days}}</view>
+                            <view class="data-v-b22a8ec0" wx:if="{{haveFree}}">{{carSort=='天数卡'?'天':'次'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="data-v-b22a8ec0" wx:if="{{car.cycling_order_face_recognition}}">
+                <van-checkbox bind:__l="__l" bind:change="__e" checkedColor="rgb(238, 10, 36)" class="data-v-b22a8ec0" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isPassChange'] ] ] ]}}" shape="square" value="{{isPass}}" vueId="6b3d36ea-18" vueSlots="{{['default']}}">
+                    <text class="data-v-b22a8ec0">我已阅读并同意</text>
+                    <text catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'gotoUseCarAgreement',['$event'] ] ] ] ]}}" style="color:#1F6CE1;">《用户协议》</text>
+                </van-checkbox>
+            </view>
+            <view class="row-col-berween box-sizing pl20 pr20 data-v-b22a8ec0">
+                <view catchtap="__e" class="box-sizing text-center font36 data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'e14',['$event'] ] ] ] ]}}" style="width:280rpx;height:80rpx;line-height:80rpx;border:2rpx solid #FF5053;border-radius:40rpx;color:#FF5053;">取消</view>
+                <view class="pb20 pt20 data-v-b22a8ec0" wx:if="{{user_car_authority.unauthorized_code==-1}}">
+                    <socket-btn bind:__l="__l" bind:socketBtnGetOrder="__e" bind:socketBtnGetOrderInfo="__e" class="data-v-b22a8ec0 vue-ref" data-event-opts="{{[ [ '^socketBtnGetOrderInfo',[ ['socketBtnGetOrderInfo'] ] ],[ '^socketBtnGetOrder',[ ['socketBtnGetOrder'] ] ] ]}}" data-ref="socketBtn2" height="80rpx" isSuccess="{{isSuccess}}" text="核验订单" text2="核验中..." vueId="6b3d36ea-19" width="280rpx"></socket-btn>
+                </view>
+                <image catchtap="__e" class="data-v-b22a8ec0" data-event-opts="{{[ [ 'tap',[ [ 'submitRshy',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://img2.7mate.cn/home_r.png" style="width:319rpx;height:119rpx;" wx:else></image>
+            </view>
+        </view>
+        <view class="x-bottom data-v-b22a8ec0"></view>
+    </view>
+</view>

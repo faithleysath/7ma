@@ -1,0 +1,22 @@
+#service_bike_bad.data-v-08c2be5e {
+    height: 100%
+}
+
+#service_bike_bad .ws_container.data-v-08c2be5e {
+    padding: 0 60rpx;
+    width: 630rpx
+}
+
+#service_bike_bad .right_icon_class {
+    font-size: 64rpx!important
+}
+
+#service_bike_bad .field-index--van-field.van-cell {
+    margin-top: 34rpx;
+    padding: 20rpx 0
+}
+
+#service_bike_bad .van-cell:after {
+    border-bottom: 2rpx solid #9c9c9c;
+    left: 0
+}

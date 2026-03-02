@@ -1,0 +1,48 @@
+.recharge.data-v-5cf9e532 {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 86rpx
+}
+
+.recharge .l.data-v-5cf9e532 {
+    color: #333;
+    font-size: 48rpx
+}
+
+.recharge .r wx-label.data-v-5cf9e532 {
+    color: red
+}
+
+.recharge .r wx-label.data-v-5cf9e532:first-child {
+    font-size: 24rpx
+}
+
+.recharge .r wx-label.data-v-5cf9e532:last-child {
+    font-size: 40rpx
+}
+
+#cert_cert2 {
+    height: 100%
+}
+
+#cert_cert2 .van-field__input {
+    color: #b2b2b2;
+    font-size: 32rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    margin-top: 20rpx
+}
+
+#cert_cert2 .field-index--van-field.van-cell {
+    padding: 0
+}
+
+#cert_cert2 .van-cell:after {
+    border-bottom: 2rpx solid #9c9c9c;
+    left: 0
+}

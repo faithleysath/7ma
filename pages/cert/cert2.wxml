@@ -1,0 +1,26 @@
+<view class="cert_cert _2 data-v-5cf9e532" hidden="{{!false}}" id="cert_cert2">
+    <ws-header bind:__l="__l" bind:rightClick="__e" class="data-v-5cf9e532" data-event-opts="{{[ [ '^rightClick',[ ['gotoRight'] ] ] ]}}" right_title="联系客服" title="实名认证" vueId="9abf342c-1"></ws-header>
+    <view class="ws_container data-v-5cf9e532" wx:if="{{!show_loading}}">
+        <view class="title data-v-5cf9e532">个人信息</view>
+        <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field data-v-5cf9e532" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',1] ] ] ],[ '^blur',[ [ 'onBlur',['$event',1] ] ] ] ]}}" placeholder="填写真实姓名" readonly="{{cert!==undefined&&(cert.status==1||cert.status==3)?true:false}}" value="{{user_name}}" vueId="9abf342c-2"></van-field>
+        <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field data-v-5cf9e532" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',2] ] ] ],[ '^blur',[ [ 'onBlur',['$event',2] ] ] ] ]}}" placeholder="填写身份证号码" readonly="{{cert!==undefined&&(cert.status==1||cert.status==3)?true:false}}" type="idcard" value="{{identity_number}}" vueId="9abf342c-3"></van-field>
+        <view class="tip data-v-5cf9e532">注：认证信息仅用于身份信息认证和购买骑行保险，我们将严格保密</view>
+        <view class="recharge data-v-5cf9e532">
+            <view class="l data-v-5cf9e532">充值</view>
+            <view class="r data-v-5cf9e532">
+                <label class="data-v-5cf9e532">￥</label>
+                <label class="data-v-5cf9e532">{{deposit_price}}</label>
+            </view>
+        </view>
+        <view class="_footer data-v-5cf9e532" wx:if="{{cert===undefined||cert.status!==undefined&&(cert.status==0||cert.status==2)}}">
+            <view bindtap="__e" class="btn data-v-5cf9e532" data-event-opts="{{[ [ 'tap',[ [ 'submitCert',['$event'] ] ] ] ]}}">{{cert!==undefined&&cert.status==2?'重新提交':'提交并付款'}}</view>
+            <view class="agreement data-v-5cf9e532">
+                <label class="c1 data-v-5cf9e532">点击提交即表示同意</label>
+                <label bindtap="__e" class="c2 data-v-5cf9e532" data-event-opts="{{[ [ 'tap',[ [ 'gotoAgreement',[1] ] ] ] ]}}">《服务协议》</label>
+                <label class="c1 data-v-5cf9e532">和</label>
+                <label bindtap="__e" class="c2 data-v-5cf9e532" data-event-opts="{{[ [ 'tap',[ [ 'gotoAgreement',[2] ] ] ] ]}}">《充值协议》</label>
+            </view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-5cf9e532" data-com-type="wx" type="spinner" vueId="9abf342c-4" wx:if="{{show_loading}}"></van-loading>
+</view>

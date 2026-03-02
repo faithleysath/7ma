@@ -1,0 +1,34 @@
+<view class="data-v-5c48ce40" id="points_records">
+    <view class="data-v-5c48ce40" style="height:100%;" wx:if="{{!show_loading&&!loading2}}">
+        <image bindtap="__e" class="back data-v-5c48ce40" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_white.png"></image>
+        <image class="points_records_background data-v-5c48ce40" src="https://img2.7mate.cn/points_records_bg.png"></image>
+        <view class="points_records_container data-v-5c48ce40">
+            <view class="points_records_container_header data-v-5c48ce40">
+                <view class="points_records_container_header_c data-v-5c48ce40">
+                    <view class="points_records_container_header_c_title data-v-5c48ce40">积分明细</view>
+                    <view class="points_records_container_header_c_points data-v-5c48ce40">{{'可用积分：'+user_points}}</view>
+                </view>
+            </view>
+            <view class="points_records_container_card_container data-v-5c48ce40">
+                <scroll-view bindscrolltolower="__e" class="points_records_container_card_container_item data-v-5c48ce40" data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrollToLower',['$event'] ] ] ] ]}}" scrollY="{{true}}">
+                    <view class="pt23 pb18 data-v-5c48ce40" wx:if="{{$root.g0>0}}">
+                        <view class="data-v-5c48ce40" wx:for="{{$root.l0}}" wx:for-item="record" wx:key="index">
+                            <view class="points_records_container_card_container_item_process data-v-5c48ce40">
+                                <label class="points_records_container_card_container_item_process_dot _span data-v-5c48ce40"></label>
+                                <label class="points_records_container_card_container_item_process_date _span data-v-5c48ce40">{{record[$orig].time}}</label>
+                                <label class="points_records_container_card_container_item_process_content _span data-v-5c48ce40">{{record[$orig].content}}</label>
+                                <label class="points_records_container_card_container_item_process_points _span data-v-5c48ce40">{{record[$orig].points}}</label>
+                            </view>
+                            <view class="points_records_container_card_container_item_line data-v-5c48ce40" wx:if="{{index!==record.g1-1}}"></view>
+                        </view>
+                        <view class="bottom_loading data-v-5c48ce40" wx:if="{{loading}}">
+                            <van-loading bind:__l="__l" class="data-v-5c48ce40" data-com-type="wx" type="spinner" vueId="de699fd2-1"></van-loading>
+                        </view>
+                    </view>
+                    <image class="points_records_container_card_container_item_none data-v-5c48ce40" src="https://img2.7mate.cn/no_points.png" wx:if="{{$root.g2===0}}"></image>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-5c48ce40" data-com-type="wx" type="spinner" vueId="de699fd2-2" wx:if="{{show_loading}}"></van-loading>
+</view>

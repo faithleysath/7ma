@@ -1,0 +1,35 @@
+<view class="container data-v-e9febec2">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-e9febec2" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="问题反馈详情" vueId="512127c0-1"></my-header>
+    <view class="box-sizing pl32 pr32 pt40 pb100 data-v-e9febec2">
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb30 data-v-e9febec2">
+            <view class="font36 data-v-e9febec2" wx:if="{{info.status==0}}">问题反馈处理中</view>
+            <block wx:else>
+                <view class="font36 data-v-e9febec2" wx:if="{{info.status==1}}">问题反馈已处理</view>
+                <block wx:else>
+                    <view class="font36 data-v-e9febec2" wx:if="{{info.status==2}}">问题反馈已驳回</view>
+                </block>
+            </block>
+            <view class="font28 pt30 data-v-e9febec2" style="color:#666;">{{info.created_at}}</view>
+        </view>
+        <view class="font26 pt40 pb15 data-v-e9febec2" style="color:#666;">问题详情</view>
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb30 font30 data-v-e9febec2">
+            <view class="row-col-berween data-v-e9febec2">
+                <view class="data-v-e9febec2">车辆编号</view>
+                <view class="font26 data-v-e9febec2" style="color:#999;">{{info.car_number}}</view>
+            </view>
+            <view class="mt20 mb20 data-v-e9febec2" style="border-bottom:1.5rpx solid #ccc;"></view>
+            <view class="row-col-berween data-v-e9febec2">
+                <view class="data-v-e9febec2">问题类型</view>
+                <view class="font26 data-v-e9febec2" style="color:#999;">{{info.question_type}}</view>
+            </view>
+        </view>
+        <view class="data-v-e9febec2" wx:if="{{$root.g0}}">
+            <view class="font26 pt40 pb15 data-v-e9febec2" style="color:#666;">车辆照片</view>
+            <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb20 flex flex-wrap data-v-e9febec2">
+                <view bindtap="__e" class="flex4_1 box-sizing p10 data-v-e9febec2" data-event-opts="{{[ [ 'tap',[ [ 'look',['$0','$1'],[ 'info.image',[ ['info.image','',index] ] ] ] ] ] ]}}" style="height:150rpx;" wx:for="{{info.image}}" wx:key="*this">
+                    <image class="w_100 h_100 data-v-e9febec2" mode="scaleToFill" src="{{item}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

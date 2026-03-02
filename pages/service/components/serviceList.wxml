@@ -1,0 +1,15 @@
+<view>
+    <view wx:if="{{$root.g0}}">
+        <view bindtap="__e" class="box-sizing pt35 pl32 pr32" data-event-opts="{{[ [ 'tap',[ [ 'gotoH5',['$0'],[ [ ['list','',__i0__] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:for-index="__i0__" wx:key="*this">
+            <view class="row-left-top pb35" style="border-bottom:2rpx solid #e8e8e8;">
+                <view class="flex1 box-sizing font32">{{item.title}}</view>
+                <view class="pl28">
+                    <image class="relative top4" mode="scaleToFill" src="https://img2.7mate.cn/arrow_right.png" style="width:16rpx;height:28rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view></view>
+    </view>
+</view>

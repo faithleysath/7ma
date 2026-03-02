@@ -1,0 +1,19 @@
+<view class="data-v-7f458cae" id="card_my">
+    <view class="header data-v-7f458cae">
+        <image bindtap="__e" class="back data-v-7f458cae" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/i_back.png"></image>
+        <van-tabs active="{{tab}}" bind:__l="__l" bind:change="__e" class="tabs data-v-7f458cae" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['tabChange'] ] ] ]}}" vueId="0a782224-1" vueSlots="{{['default']}}">
+            <van-tab bind:__l="__l" class="data-v-7f458cae" data-com-type="wx" title="{{_tab.name}}" vueId="{{'0a782224-2-'+index+','+'0a782224-1'}}" wx:for="{{tabs}}" wx:for-item="_tab" wx:key="index"></van-tab>
+        </van-tabs>
+        <view class="my data-v-7f458cae">我的套餐卡</view>
+    </view>
+    <view class="main data-v-7f458cae">
+        <view bindtap="__e" class="card data-v-7f458cae" data-event-opts="{{[ [ 'tap',[ [ 'gotoCardDetail',['$0'],[ [ ['cards','',index] ] ] ] ] ] ]}}" wx:if="{{$root.g0}}" wx:for="{{cards}}" wx:for-item="card" wx:key="index">
+            <my-card bind:__l="__l" bind:freeze="__e" card="{{card}}" class="data-v-7f458cae" data-event-opts="{{[ [ '^freeze',[ ['freeze'] ] ] ]}}" vueId="{{'0a782224-3-'+index}}"></my-card>
+        </view>
+        <view class="no_card data-v-7f458cae" wx:if="{{$root.g1}}">
+            <image class="img data-v-7f458cae" src="https://img2.7mate.cn/no_card.png"></image>
+            <view class="desc data-v-7f458cae">赶紧购买套餐卡吧...</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-7f458cae" data-com-type="wx" type="spinner" vueId="0a782224-4" wx:if="{{show_loading}}"></van-loading>
+</view>

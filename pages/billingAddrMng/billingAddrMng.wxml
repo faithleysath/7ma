@@ -1,0 +1,24 @@
+<view class="container data-v-61563d12">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-61563d12" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="发票抬头管理" vueId="919e4780-1"></my-header>
+    <view class="content data-v-61563d12">
+        <view bindtap="__e" class="box-sizing pl30 pr30 pt30 data-v-61563d12" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingEdit/billingEdit?id='+item.id] ] ] ] ]}}" wx:for="{{list}}" wx:key="id">
+            <view class="br10 bg-f box-sizing p25 font30 data-v-61563d12">
+                <view class="row-berween data-v-61563d12">
+                    <view class="data-v-61563d12" style="color:#333;">{{item.title}}</view>
+                    <view class="font26 data-v-61563d12" style="color:#666;">{{item.type==1?'个人/非企业单位':'企业单位'}}</view>
+                </view>
+                <view class="mt30 mb30 data-v-61563d12" style="height:1.5rpx;background:#ccc;"></view>
+                <view class="row-berween data-v-61563d12">
+                    <view class="data-v-61563d12" style="color:#333;">接收邮箱</view>
+                    <view class="font26 data-v-61563d12" style="color:#666;">{{item.email}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fixed w_100 left0 bottom0 row-center pb100 data-v-61563d12">
+        <view bindtap="__e" class="row-center color-f font30 br40 data-v-61563d12" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingAdd/billingAdd'] ] ] ] ]}}" style="width:600rpx;height:80rpx;background:linear-gradient(135deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+            <view class="data-v-61563d12">新增</view>
+        </view>
+    </view>
+    <view class="data-v-61563d12" style="height:200rpx;"></view>
+</view>

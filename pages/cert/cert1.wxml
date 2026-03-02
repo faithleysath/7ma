@@ -1,0 +1,125 @@
+<view class="container data-v-5256108f">
+    <view class="header box-sizing data-v-5256108f">
+        <image bindtap="__e" class="absolute left32 bottom24 data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back_icon.png" style="width:24rpx;height:40rpx;"></image>
+        <view class="title data-v-5256108f">实名认证</view>
+        <image bindtap="__e" class="absolute right32 bottom18 data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/service/index'] ] ] ] ]}}" src="https://img2.7mate.cn/cert1_1.png" style="width:52rpx;height:52rpx;"></image>
+    </view>
+    <view class="content over-auto ios box-sizing pl32 pr32 relative data-v-5256108f" wx:if="{{!isEdit}}">
+        <image class="absolute left0 data-v-5256108f" mode="widthFix" src="https://img2.7mate.cn/cert1_3.png" style="top:186rpx;width:750rpx;" wx:if="{{form.area_type==1}}"></image>
+        <block wx:else>
+            <image class="absolute left0 data-v-5256108f" mode="widthFix" src="https://img2.7mate.cn/cert1_5.png" style="top:186rpx;width:750rpx;" wx:if="{{form.area_type==2}}"></image>
+        </block>
+        <view class="relative data-v-5256108f" wx:if="{{!isNot}}">
+            <view class="font36 pt50 pb20 data-v-5256108f" style="color:#1a1a1a;">骑行区域</view>
+            <view bindtap="__e" class="br20 box-sizing pl20 pr20 pt34 pb34 row-left-center data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/school/index'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);">
+                <view class="data-v-5256108f" style="color:#4D4D4D;">{{form.area_type==1?'学校':'运营区'}}</view>
+                <view class="flex1 text-right data-v-5256108f">{{form.name}}</view>
+                <image class="block ml10 relative top4 data-v-5256108f" src="https://img2.7mate.cn/arrow_right.png" style="width:18rpx;height:29rpx;"></image>
+            </view>
+            <view class="font36 pt50 pb20 data-v-5256108f" style="color:#1a1a1a;">个人信息</view>
+            <view class="br20 box-sizing pl20 pr20 pt34 pb34 data-v-5256108f" style="background:rgba(255,255,255,0.7);">
+                <view bindtap="__e" class="br20 box-sizing pb32 row-berween data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'getPersonType',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);">
+                    <view class="data-v-5256108f" style="color:#4D4D4D;">{{form.person_type_name?form.person_type_name:'请选择人员类型'}}</view>
+                    <image class="block ml10 relative top4 data-v-5256108f" src="https://img2.7mate.cn/arrow_right.png" style="width:18rpx;height:29rpx;"></image>
+                </view>
+                <view class="data-v-5256108f" style="height:2rpx;background:#B3B3B3;"></view>
+                <view bindtap="__e" class="br20 box-sizing pt32 pb32 row-berween data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'getStudentType',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);" wx:if="{{form.person_type==1&&form.has_train}}">
+                    <view class="data-v-5256108f" style="color:#4D4D4D;">{{form.student_type_name?form.student_type_name:'请选择学生类型'}}</view>
+                    <image class="block ml10 relative top4 data-v-5256108f" src="https://img2.7mate.cn/arrow_right.png" style="width:18rpx;height:29rpx;"></image>
+                </view>
+                <view class="data-v-5256108f" style="height:2rpx;background:#B3B3B3;" wx:if="{{form.person_type==1&&form.has_train}}"></view>
+                <view class="row-left-center pb32 pt32 data-v-5256108f">
+                    <view class="data-v-5256108f" style="color:#4D4D4D;">姓名</view>
+                    <input bindinput="__e" class="text-right flex1 data-v-5256108f" data-event-opts="{{[ [ 'input',[ [ 'getValue',['$event','real_name'] ] ] ] ]}}" placeholder="请输入姓名" type="text" value="{{form.real_name}}"></input>
+                </view>
+                <view class="data-v-5256108f" style="height:2rpx;background:#B3B3B3;" wx:if="{{form.graduate_time_for_cycling_card&&form.person_type==1}}"></view>
+                <view bindtap="__e" class="pt32 box-sizing pb32 row-berween data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);" wx:if="{{form.graduate_time_for_cycling_card&&form.person_type==1}}">
+                    <view class="data-v-5256108f" style="color:#4D4D4D;">{{form.graduate_time||'请选择毕业时间'}}</view>
+                    <image class="block ml10 relative top4 data-v-5256108f" src="https://img2.7mate.cn/arrow_right.png" style="width:18rpx;height:29rpx;"></image>
+                </view>
+                <view class="data-v-5256108f" hidden="{{!(form.area_id!=84)}}">
+                    <view class="data-v-5256108f" style="height:2rpx;background:#B3B3B3;"></view>
+                    <view class="row-left-center pt32 pb32 data-v-5256108f" wx:if="{{form.area_type!==''}}">
+                        <view bindtap="__e" class="{{['flex1','data-v-5256108f',form.cert_type==2&&'font24']}}" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" style="color:#4D4D4D;" wx:if="{{form.area_type==1}}">{{form.type_text}}</view>
+                        <view class="{{['flex1','data-v-5256108f',form.cert_type==2&&'font24']}}" style="color:#4D4D4D;" wx:else>{{form.type_text}}</view>
+                        <input bindinput="__e" class="text-right flex1 font28 data-v-5256108f" data-event-opts="{{[ [ 'input',[ [ 'getValue',['$event','$0'],['type'] ] ] ] ]}}" placeholder="请输入号码" type="text" value="{{form[type]}}" wx:if="{{type}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="data-v-5256108f" hidden="{{!(form.area_id!=84)}}">
+                <view class="data-v-5256108f" wx:if="{{form.is_upload_cert_photo==1||localtionImg}}">
+                    <view class="font36 pt50 pb20 data-v-5256108f" style="color:#1a1a1a;">证件照片</view>
+                    <view bindtap="__e" class="br20 box-sizing pl20 pr20 pt34 pb34 row-center data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);width:686rpx;height:400rpx;" wx:if="{{!localtionImg}}">
+                        <image class="data-v-5256108f" src="https://img2.7mate.cn/cert1_4.png" style="width:120rpx;height:100rpx;"></image>
+                        <view class="font30 pt45 data-v-5256108f" style="color:#b3b3b3;" wx:if="{{form.cert_type==1}}">请上传相关证件</view>
+                        <view class="font30 pt45 data-v-5256108f" style="color:#b3b3b3;" wx:else>学生证、校园卡、录取通知书均可</view>
+                    </view>
+                    <view bindtap="__e" class="br20 over-hidden data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" style="background:rgba(255,255,255,0.7);width:686rpx;height:400rpx;" wx:else>
+                        <image class="w_100 h_100 block data-v-5256108f" src="{{localtionImg}}"></image>
+                    </view>
+                    <view class="font24 box-sizing pl20 pt20 data-v-5256108f">注：认证信息仅用于身份核实，我们将严格保密</view>
+                </view>
+                <view class="data-v-5256108f" style="height:400rpx;" wx:else></view>
+            </view>
+            <view class="row-center pt100 pb100 data-v-5256108f">
+                <view class="flex font24 data-v-5256108f">
+                    <van-checkbox bind:__l="__l" bind:change="__e" class="relative bottom4 data-v-5256108f" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['isTrue'] ] ] ]}}" iconSize="12px" shape="square" value="{{checked}}" vueId="9e28e56a-1" vueSlots="{{['default']}}">
+                        <view class="data-v-5256108f" style="color:#a0a0a0;">已阅读并同意</view>
+                    </van-checkbox>
+                    <view bindtap="__e" class="data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'gotoH5',['$0'],['agreement'] ] ] ] ]}}" style="color:#FF4C52;">《服务协议》</view>
+                </view>
+                <view bindtap="__e" class="btn mt20 data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'rshyAction',['$event'] ] ] ] ]}}">提交认证</view>
+            </view>
+        </view>
+        <view class="pt100 row-center data-v-5256108f" wx:else>
+            <view class="pt100 data-v-5256108f"></view>
+            <image class="data-v-5256108f" src="https://img2.7mate.cn/cert1_2.png?122" style="width:500rpx;height:500rpx;opacity:0.7;"></image>
+            <view class="font44 data-v-5256108f" style="color:#666;">当前不在运营区内</view>
+            <view class="font44 mt10 data-v-5256108f" style="color:#666;">请至运营区内进行认证</view>
+            <view class="pt100 pb100 data-v-5256108f"></view>
+            <view bindtap="__e" class="btn data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/home/index','switchTab'] ] ] ] ]}}">前往首页</view>
+        </view>
+    </view>
+    <view class="content over-auto ios box-sizing pl32 pr32 relative data-v-5256108f" wx:else>
+        <is-edit bind:__l="__l" class="data-v-5256108f" form="{{form}}" localtionImg="{{localtionImg}}" type="{{type}}" vueId="9e28e56a-2"></is-edit>
+    </view>
+    <van-popup bind:__l="__l" bind:clickOverlay="__e" class="data-v-5256108f" data-com-type="wx" data-event-opts="{{[ [ '^clickOverlay',[ ['e2'] ] ] ]}}" duration="200" position="bottom" show="{{typeListShow}}" vueId="9e28e56a-3" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:change="__e" bind:confirm="__e" class="data-v-5256108f" columns="{{typeList}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e3'] ] ],[ '^confirm',[ ['getType'] ] ],[ '^change',[ ['getType'] ] ] ]}}" showToolbar="{{true}}" vueId="{{'9e28e56a-4'+','+'9e28e56a-3'}}"></van-picker>
+    </van-popup>
+    <van-popup bind:__l="__l" bind:clickOverlay="__e" class="data-v-5256108f" data-com-type="wx" data-event-opts="{{[ [ '^clickOverlay',[ ['e4'] ] ] ]}}" duration="200" position="bottom" show="{{byShow}}" vueId="9e28e56a-5" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:change="__e" bind:confirm="__e" class="data-v-5256108f" columns="{{byTimeList}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e5'] ] ],[ '^confirm',[ ['getByTime'] ] ],[ '^change',[ ['getByTime'] ] ] ]}}" showToolbar="{{true}}" vueId="{{'9e28e56a-6'+','+'9e28e56a-5'}}"></van-picker>
+    </van-popup>
+    <van-overlay bind:__l="__l" class="data-v-5256108f" data-com-type="wx" show="{{rshyShow}}" vueId="9e28e56a-7" vueSlots="{{['default']}}" zIndex="100">
+        <view class="relative data-v-5256108f" style="height:100vh;">
+            <view class="block absolute centers data-v-5256108f" style="margin-top:-100rpx;">
+                <view class="box-sizing p25 data-v-5256108f" style="background:#FFF3EE;width:610rpx;border-radius:20rpx;">
+                    <view class="font31 font700 pb25 data-v-5256108f" style="color:#F94754;">人身核验</view>
+                    <view class="bg-f data-v-5256108f" style="border-radius:20rpx;">
+                        <view class="row-center pt40 pb40 data-v-5256108f">
+                            <image class="data-v-5256108f" mode="scaleToFill" src="https://img2.7mate.cn/rshy_1.png" style="width:296rpx;height:189rpx;"></image>
+                        </view>
+                        <view class="box-sizing pl40 pr40 pb35 data-v-5256108f">
+                            <view class="font21 pb35 data-v-5256108f">为了满足网络安全法等相关法律法规要求并保障您的安全出行，我们需要收集您的身份信息(包括姓名、身份证号)完成人身核验。</view>
+                            <view class="pb25 data-v-5256108f">
+                                <input bindinput="__e" class="line70 pl20 pr20 box-sizing font24 data-v-5256108f" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','real_name','$event',[] ],['rshyInfo'] ] ] ] ]}}" placeholder="请输入您的真实姓名" style="height:70rpx;background:#FBFBFB;border:1.5rpx solid #E9E9E9;border-radius:7rpx;" value="{{rshyInfo.real_name}}"></input>
+                            </view>
+                            <view class="pb35 data-v-5256108f">
+                                <input bindinput="__e" class="line70 pl20 pr20 box-sizing font24 data-v-5256108f" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','identity_number','$event',[] ],['rshyInfo'] ] ] ] ]}}" placeholder="请输入您的准确身份证号" style="height:70rpx;background:#FBFBFB;border:1.5rpx solid #E9E9E9;border-radius:7rpx;" type="idcard" value="{{rshyInfo.identity_number}}"></input>
+                            </view>
+                            <view bindtap="__e" class="font30 data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'rshy',['$event'] ] ] ] ]}}" style="background:#F94754;padding:20rpx;border-radius:38rpx;" wx:if="{{$root.g0}}">
+                                <view class="color-f text-center data-v-5256108f">本人人身核验</view>
+                            </view>
+                            <view class="font30 data-v-5256108f" style="background:#bbb;padding:20rpx;border-radius:38rpx;" wx:else>
+                                <view class="color-f text-center data-v-5256108f">本人人身核验</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="absolute center-x data-v-5256108f" style="bottom:-100rpx;">
+                    <image catchtap="__e" class="data-v-5256108f" data-event-opts="{{[ [ 'tap',[ [ 'e6',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://jq.7mate.cn/popup_close.png" style="width:60rpx;height:60rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+    <van-dialog bind:__l="__l" class="data-v-5256108f" data-com-type="wx" id="van-dialog" vueId="9e28e56a-8"></van-dialog>
+</view>

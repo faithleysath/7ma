@@ -1,0 +1,27 @@
+<view class="box-sizing pt50 pl30 pr30 relative data-v-06f03e9f">
+    <view class="row-col-berween data-v-06f03e9f">
+        <view class="row-left-center font28 data-v-06f03e9f" style="color:#666;">
+            <view class="data-v-06f03e9f">车辆编号：</view>
+            <view class="data-v-06f03e9f">{{carInfo.number}}</view>
+        </view>
+        <view class="loader data-v-06f03e9f" wx:if="{{!showBtn}}"></view>
+        <block wx:else>
+            <view bindtap="__e" class="font24 color-f text-center line50 pl20 pr20 data-v-06f03e9f" data-event-opts="{{[ [ 'tap',[ [ 'unLock',['$event'] ] ] ] ]}}" style="height:50rpx;border-radius:20rpx;background:#EA5359;" wx:if="{{type==1}}">再次开锁</view>
+            <block wx:else>
+                <view bindtap="__e" class="font24 color-f text-center line50 pl20 pr20 data-v-06f03e9f" data-event-opts="{{[ [ 'tap',[ [ 'lock',['$event'] ] ] ] ]}}" style="height:50rpx;border-radius:20rpx;background:#EA5359;" wx:if="{{type==2}}">再次关锁</view>
+                <block wx:else>
+                    <view class="font24 color-f text-center line50 data-v-06f03e9f" style="color:#EA5359;" wx:if="{{type==3}}">响应超时，请重新尝试</view>
+                </block>
+            </block>
+        </block>
+    </view>
+    <view class="pt20 data-v-06f03e9f">
+        <view class="relative data-v-06f03e9f" style="height:20rpx;background:#ccc;border-radius:10rpx;">
+            <view class="ani data-v-06f03e9f" hidden="{{!value}}" style="{{'width:'+value+'%'+';'}}"></view>
+        </view>
+    </view>
+    <view class="pt30 pb50 text-center font25 data-v-06f03e9f" style="color:#999;" wx:if="{{!showBtn}}">
+        <view class="data-v-06f03e9f">{{'正在'+(type==1?'开锁':'关锁')+'中，请耐心等待片刻...'}}</view>
+    </view>
+    <view bindtap="__e" class="row-center pt30 pb30 font30 data-v-06f03e9f" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" style="color:#EA5359;border-top:1px solid #e8e8e8;" wx:if="{{showBtn}}">关 闭</view>
+</view>

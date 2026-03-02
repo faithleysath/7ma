@@ -1,0 +1,16 @@
+<view class="auth_verificationcode data-v-9464c24a" id="auth_verificationcode">
+    <image bindtap="__e" class="back data-v-9464c24a" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/back.png"></image>
+    <view class="title data-v-9464c24a">确认验证码</view>
+    <view class="desc data-v-9464c24a">6位动态码已发送至<view class="_br data-v-9464c24a"></view>{{phone}}</view>
+    <view class="field data-v-9464c24a">
+        <view class="container data-v-9464c24a">
+            <view class="input data-v-9464c24a" wx:for="{{n}}" wx:for-index="__i0__" wx:for-item="i" wx:key="*this">{{''+verification_codes[i]+''}}<view class="cursor data-v-9464c24a" wx:if="{{show_focus[i]}}"></view>
+            </view>
+        </view>
+        <input bindinput="__e" class="van-field__input data-v-9464c24a" confirmHold="{{true}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','verification_code','$event',[] ] ],[ 'onInput',['$event'] ] ] ] ]}}" focus="{{focus}}" holdKeyboard="{{true}}" maxlength="6" type="number" value="{{verification_code}}"></input>
+    </view>
+    <view class="action data-v-9464c24a">
+        <view bindtap="__e" class="data-v-9464c24a" data-event-opts="{{[ [ 'tap',[ [ 'getVerificationCode',['$event'] ] ] ] ]}}">{{code}}</view>
+        <view bindtap="__e" class="data-v-9464c24a" data-event-opts="{{[ [ 'tap',[ [ 'gotoService',['$event'] ] ] ] ]}}">收不到验证码?</view>
+    </view>
+</view>

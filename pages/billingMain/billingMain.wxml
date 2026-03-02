@@ -1,0 +1,14 @@
+<view class="container data-v-389c82ca">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-389c82ca" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="开发票" vueId="2803d454-1"></my-header>
+    <view class="content data-v-389c82ca">
+        <view bindtap="__e" class="row-center pt50 data-v-389c82ca" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingList/billingList'] ] ] ] ]}}">
+            <image class="data-v-389c82ca" mode="scaleToFill" src="https://img2.7mate.cn/billingMain_01.png" style="width:686rpx;height:250rpx;"></image>
+        </view>
+        <view bindtap="__e" class="row-center pt50 data-v-389c82ca" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingAddrMng/billingAddrMng'] ] ] ] ]}}">
+            <image class="data-v-389c82ca" mode="scaleToFill" src="https://img2.7mate.cn/billingMain_02.png" style="width:686rpx;height:250rpx;"></image>
+        </view>
+        <view bindtap="__e" class="row-center pt50 data-v-389c82ca" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/billingMng/billingMng'] ] ] ] ]}}">
+            <image class="data-v-389c82ca" mode="scaleToFill" src="https://img2.7mate.cn/billingMain_03.png" style="width:686rpx;height:250rpx;"></image>
+        </view>
+    </view>
+</view>

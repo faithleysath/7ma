@@ -1,0 +1,96 @@
+<view class="data-v-72dd1bc9" style="min-height:100vh;background:#F3F5F9;">
+    <view class="box-sizing data-v-72dd1bc9" style="background:#FC555C;height:200rpx;">
+        <view class="relative top30 left31 br20 bg-f h_100 box-sizing pt30 data-v-72dd1bc9" style="width:688rpx;">
+            <view class="clear-fix h_100 data-v-72dd1bc9">
+                <view class="pull-left w_50 box-sizing pl40 h_100 data-v-72dd1bc9">
+                    <view class="font24 data-v-72dd1bc9">账户余额（元）</view>
+                    <view class="ell font700 pt15 data-v-72dd1bc9" style="font-size:64rpx;color:#FC555C;" wx:if="{{user.balance!==undefined}}">{{user.balance}}</view>
+                    <view class="ell font700 pt15 data-v-72dd1bc9" style="font-size:64rpx;color:#FC555C;" wx:else>---</view>
+                </view>
+                <view class="pull-right w_50 box-sizing pl5 pr15 row-right-center h_100 data-v-72dd1bc9">
+                    <view bindtap="__e" class="color-f font24 pl45 pr45 pt15 pb15 br40 data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'gotoRecharge',['$event'] ] ] ] ]}}" hidden="{{!user.id}}" style="background:#FC555C;">充值</view>
+                    <view bindtap="__e" class="font24 pl45 pr45 pt15 pb15 br40 box-sizing bg-f ml15 data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'gotoMenu',[4] ] ] ] ]}}" style="border:1px solid #d8d8d8;" wx:if="{{user.balance!==undefined&&user.balance!='0.00'}}">退款</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing data-v-72dd1bc9" style="padding:70rpx 31rpx 200rpx 31rpx;" wx:if="{{user.cert1_status==3||user.cycling_card_show===0&&user.cert1_status!=3||user.id&&school.cycling_card_show===0}}">
+        <view class="bg-f br20 data-v-72dd1bc9">
+            <view class="pt20 pb20 row-berween data-v-72dd1bc9">
+                <view class="row-left-center data-v-72dd1bc9">
+                    <view class="br5 data-v-72dd1bc9" style="height:28rpx;width:8rpx;background:#FC555C;"></view>
+                    <view class="font26 ml15 data-v-72dd1bc9">已购买套餐卡</view>
+                </view>
+                <view bindtap="__e" class="mr20 font24 font700 line45 pl10 pr10 br10 data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/my'] ] ] ] ]}}" style="color:#FC555C;border:1px solid #FC555C;">查看更多</view>
+            </view>
+            <view class="box-sizing pl20 pr20 data-v-72dd1bc9">
+                <view class="data-v-72dd1bc9" style="border-bottom:1.5rpx solid #E9E9E9;"></view>
+            </view>
+            <view class="box-sizing pt20 pb30 data-v-72dd1bc9">
+                <view class="box-sizing pl20 pr20 data-v-72dd1bc9">
+                    <view class="data-v-72dd1bc9" wx:if="{{hasStockCard.order_id}}">
+                        <view bindtap="__e" class="pt20 pb20 row-col-berween data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'goPayment',['$event'] ] ] ] ]}}">
+                            <view class="data-v-72dd1bc9" style="color:#FC555C;">您有待支付套餐卡订单</view>
+                            <view class="color-f font24 pl30 pr30 pt15 pb15 br40 row-left-center data-v-72dd1bc9" style="background:#FC555C;">
+                                <view class="data-v-72dd1bc9">前往支付</view>
+                                <image class="block ml8 relative top3 data-v-72dd1bc9" src="https://img2.7mate.cn/arrow_right_f.png" style="width:12rpx;height:20rpx;"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view class="data-v-72dd1bc9" wx:if="{{$root.g0}}">
+                            <view bindtap="__e" class="data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/detail?id='+item.id] ] ] ] ]}}" wx:for="{{myCardList}}" wx:key="index">
+                                <my-card bind:__l="__l" bind:freeze="__e" bottom="10rpx" card="{{item}}" class="data-v-72dd1bc9" data-event-opts="{{[ [ '^freeze',[ ['freeze'] ] ] ]}}" scale="{{0.945}}" top="0" vueId="{{'28240d71-1-'+index}}"></my-card>
+                            </view>
+                        </view>
+                        <view class="br15 row-col-berween box-sizing pl40 pr40 data-v-72dd1bc9" style="height:163rpx;background:#F6F6F6;" wx:else>
+                            <view class="font24 data-v-72dd1bc9" style="color:#9a9a9a;">您还未购买套餐卡</view>
+                            <view bindtap="__e" class="color-f font24 pl45 pr45 pt15 pb15 br40 data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/index'] ] ] ] ]}}" style="background:#FC555C;">去购买</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="bg-f br20 mt30 data-v-72dd1bc9">
+            <view class="pt20 pb20 row-berween data-v-72dd1bc9">
+                <view class="row-left-center data-v-72dd1bc9">
+                    <view class="br5 data-v-72dd1bc9" style="height:28rpx;width:8rpx;background:#FC555C;"></view>
+                    <view class="font26 ml15 data-v-72dd1bc9">优惠套餐卡推荐</view>
+                </view>
+                <view bindtap="__e" class="mr20 font24 font700 line45 pl10 pr10 br10 data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/index'] ] ] ] ]}}" style="color:#FC555C;border:1px solid #FC555C;">查看更多</view>
+            </view>
+            <view class="box-sizing pl20 pr20 data-v-72dd1bc9">
+                <view class="data-v-72dd1bc9" style="border-bottom:1.5rpx solid #E9E9E9;"></view>
+            </view>
+            <view class="box-sizing pt20 pb30 data-v-72dd1bc9">
+                <view class="box-sizing pl20 pr20 data-v-72dd1bc9">
+                    <view class="data-v-72dd1bc9" wx:if="{{$root.g1}}">
+                        <view bindtap="__e" class="data-v-72dd1bc9" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/card/buy?code='+item.code] ] ] ] ]}}" wx:for="{{cardList}}" wx:key="index">
+                            <card-list bind:__l="__l" bottom="10rpx" card="{{item}}" class="data-v-72dd1bc9" scale="{{0.945}}" top="0" vueId="{{'28240d71-2-'+index}}"></card-list>
+                        </view>
+                    </view>
+                    <view class="br15 row-center box-sizing pl40 pr40 data-v-72dd1bc9" style="height:163rpx;background:#F6F6F6;" wx:else>
+                        <view class="font24 data-v-72dd1bc9" style="color:#9a9a9a;">暂未上线套餐卡</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="_footer box-sizing pl32 pr32 data-v-72dd1bc9" hidden="{{!adBannerShow}}">
+        <image class="block data-v-72dd1bc9" mode="scaleToFill" src="https://img2.7mate.cn/ad_01.png" style="width:100%;height:50rpx;"></image>
+        <ad binderror="__e" bindload="__e" class="data-v-72dd1bc9" data-event-opts="{{[ [ 'error',[ [ 'e0',['$event'] ] ] ],[ 'load',[ [ 'e1',['$event'] ] ] ] ]}}" unitId="adunit-a80215f940d83220"></ad>
+        <view class="data-v-72dd1bc9" style="height:300rpx;"></view>
+    </view>
+    <van-dialog bind:__l="__l" class="data-v-72dd1bc9" data-com-type="wx" show="{{dialogShow}}" showConfirmButton="{{false}}" title="是否确认退款" useSlot="{{true}}" vueId="28240d71-3" vueSlots="{{['default']}}">
+        <view class="data-v-72dd1bc9" style="padding:20rpx 40rpx;font-size:30rpx;color:#333;font-weight:700;line-height:50rpx;">
+            <label class="_span data-v-72dd1bc9">提交余额退款申请后，</label>
+            <label class="_span data-v-72dd1bc9" style="color:red;">账户将被锁定，无法正常使用</label>
+            <label class="_span data-v-72dd1bc9">，退款将在3~5个工作日到账。</label>
+        </view>
+        <view class="data-v-72dd1bc9" style="display:flex;padding-top:20rpx;overflow:hidden;">
+            <van-button bind:__l="__l" bind:click="__e" block="{{true}}" class="data-v-72dd1bc9" data-com-type="wx" data-event-opts="{{[ [ '^click',[ ['e2'] ] ] ]}}" style="flex:1;" vueId="{{'28240d71-4'+','+'28240d71-3'}}" vueSlots="{{['default']}}">取消</van-button>
+            <van-button bind:__l="__l" bind:click="__e" block="{{true}}" class="data-v-72dd1bc9" data-com-type="wx" data-event-opts="{{[ [ '^click',[ ['confirm'] ] ] ]}}" disabled="{{confirmButtonText!='确定'}}" style="flex:1;" vueId="{{'28240d71-5'+','+'28240d71-3'}}" vueSlots="{{['default']}}">{{confirmButtonText!='确定'?confirmButtonText+'s':confirmButtonText}}</van-button>
+        </view>
+    </van-dialog>
+    <ws-tabbar active="wallet" bind:__l="__l" class="data-v-72dd1bc9" vueId="28240d71-6"></ws-tabbar>
+</view>

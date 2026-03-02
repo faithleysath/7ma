@@ -1,0 +1,19 @@
+<view class="over-auto ios" style="max-height:500rpx;min-height:500rpx;">
+    <view wx:for="{{list}}" wx:key="index">
+        <view class="box-sizing pt15 pb15 pl20 pr20 mb30 font24 line50" style="border-left:2rpx solid #F94754;background:#FBFBFB;">
+            <view class="row-left-center">
+                <view>呼叫站点：</view>
+                <view class="font700">{{item.start_site_name}}</view>
+            </view>
+            <view>{{'行驶方向：'+item.end_site_name}}</view>
+            <view>{{'呼叫时间：'+item.created_at}}</view>
+            <view class="row-left-center">
+                <view>应答情况：</view>
+                <view style="color:#E6A23C;" wx:if="{{item.status==0}}">等待司机应答</view>
+                <view style="color:#67C23A;" wx:else>司机已应答，正在努力赶来</view>
+            </view>
+            <view wx:if="{{item.status==1}}">{{'应答时间：'+item.updated_at}}</view>
+        </view>
+    </view>
+    <view class="text-center font30 pt100" style="color:#b7b7b7;" wx:if="{{!$root.g0}}">--暂无数据--</view>
+</view>

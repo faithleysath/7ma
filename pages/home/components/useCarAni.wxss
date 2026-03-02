@@ -1,0 +1,40 @@
+.ani.data-v-06f03e9f {
+    background: #009b03;
+    border-radius: 10rpx;
+    height: 100%;
+    transition: all .2s
+}
+
+.loader.data-v-06f03e9f {
+    -webkit-animation: spin-data-v-06f03e9f 1s linear infinite;
+    animation: spin-data-v-06f03e9f 1s linear infinite;
+    border: 8rpx solid rgba(0,0,0,.1);
+    border-left-color: #009b03;
+    border-radius: 50%;
+    height: 30rpx;
+    width: 30rpx
+}
+
+@-webkit-keyframes spin-data-v-06f03e9f {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes spin-data-v-06f03e9f {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}

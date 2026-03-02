@@ -1,0 +1,45 @@
+<scroll-view bindscrolltolower="__e" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ] ]}}" scrollY="{{true}}" style="{{'height:'+height+'px'}}">
+    <view class="pt30"></view>
+    <view class="bg-f box-sizing p30 mb30 relative" wx:for="{{$root.l0}}" wx:key="order_id">
+        <view class="row-left-top font26">
+            <view style="color:#807979;">交易类型：</view>
+            <view>骑行消费</view>
+        </view>
+        <view class="row-left-top font26 pt10">
+            <view style="color:#807979;">订单编号：</view>
+            <view>{{item[$orig].order_sn}}</view>
+        </view>
+        <view class="row-left-top font26 pt10">
+            <view style="color:#807979;">付款时间：</view>
+            <view>{{item[$orig].payment_time}}</view>
+        </view>
+        <view class="row-left-top font26 pt10">
+            <view style="color:#807979;">付款方式：</view>
+            <view>{{item[$orig].payment_name}}</view>
+        </view>
+        <image class="absolute right0 top0" mode="scaleToFill" src="https://img2.7mate.cn/billing_04.png" style="width:100rpx;height:100rpx;" wx:if="{{item[$orig].billing_type==3}}"></image>
+        <block wx:else>
+            <image class="absolute right0 top0" mode="scaleToFill" src="https://img2.7mate.cn/billing_03.png" style="width:100rpx;height:100rpx;" wx:if="{{item[$orig].billing_type==1||item[$orig].billing_type==2}}"></image>
+        </block>
+        <view class="absolute right30 bottom30">
+            <view bindtap="__e" class="row-right-center mb30" data-event-opts="{{[ [ 'tap',[ [ 'setListId',['$0'],[ [ ['list','order_id',item[$orig].order_id] ] ] ] ] ] ]}}" wx:if="{{item[$orig].billing_type==0}}">
+                <icon color="{{item.g0>=0?'#FF4C52':'#C5C5C5'}}" type="success"></icon>
+            </view>
+            <view class="row-right-center" style="{{'opacity:'+(item[$orig].refund_amount>0?1:0)}}">
+                <view class="row-bottom-center">
+                    <view class="font20" style="color:#00A2FF;">退款：</view>
+                    <view class="relative top2" style="color:#00A2FF;">{{item[$orig].refund_amount}}</view>
+                </view>
+            </view>
+            <view class="row-right-center">
+                <view class="row-bottom-center">
+                    <view class="font24" style="color:#FF4C52;">￥</view>
+                    <view class="font30" style="color:#FF4C52;">{{item[$orig].order_amount}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="row-center line80 font30" style="color:#666;" wx:if="{{notMore}}">暂无更多</view>
+    <view bindtap="__e" class="row-center line80 font30" data-event-opts="{{[ [ 'tap',[ [ 'loadMore',['$event'] ] ] ] ]}}" style="color:#666;" wx:else>加载更多</view>
+    <view style="height:320rpx;"></view>
+</scroll-view>

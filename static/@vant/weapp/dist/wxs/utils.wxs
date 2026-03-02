@@ -1,0 +1,7 @@
+var bem = require('../../../../../require('. / static / @vant / weapp / dist / wxs / bem.wxs ')().bem;var addUnit = require('. / static / @vant / weapp / dist / wxs / add - unit.wxs ')();');
+var memoize = require('p_./static/@vant/weapp/dist/wxs/memoize.wxs')().memoize;
+module.exports = ({
+  bem: memoize(bem),
+  addUnit: addUnit,
+  memoize: memoize,
+});

@@ -1,0 +1,102 @@
+#service_index.data-v-2cafe60e {
+    background: #fff;
+    min-height: 100vh
+}
+
+#service_index .header.data-v-2cafe60e {
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    background: linear-gradient(135deg,#ff6c58,#ff4c52);
+    display: -webkit-flex;
+    display: flex;
+    height: 15vh;
+    padding-bottom: 25rpx;
+    position: relative;
+    top: 0;
+    width: 100%
+}
+
+#service_index .header .title.data-v-2cafe60e {
+    color: #fff;
+    font-size: 34rpx;
+    text-align: center;
+    width: 100%
+}
+
+#service_index .content.data-v-2cafe60e {
+    height: calc(100vh - 15vh)
+}
+
+#service_index .content .btn.data-v-2cafe60e {
+    background: linear-gradient(135deg,#ff6c58,#ff4c52);
+    border-radius: 50rpx;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(95,31,33,.3);
+    color: #fff;
+    font-size: 44rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 600rpx
+}
+
+#service_index .swiper.data-v-2cafe60e {
+    height: calc(100vh - 15vh - 262rpx)
+}
+
+#service_index .popup .container {
+    padding: 60rpx;
+    z-index: 101
+}
+
+#service_index .popup .container ._item {
+    font-size: 36rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-bottom: 54rpx;
+    margin-top: 0
+}
+
+#service_index .popup .container ._item.last {
+    margin-bottom: 0
+}
+
+#service_index .popup .container ._item wx-label.fl {
+    color: #333;
+    float: left
+}
+
+#service_index .popup .container ._item wx-label.fr {
+    color: #007aff;
+    float: right
+}
+
+#service_index .popup .van-popup--bottom {
+    bottom: 160rpx
+}
+
+#service_index .popup .popup-index--van-popup--bottom.popup-index--van-popup--safe {
+    border-radius: 20rpx
+}
+
+#service_index .popup2 .cancel {
+    background-color: #fff;
+    border-radius: 20rpx;
+    color: #333;
+    font-size: 36rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    width: 100%;
+    z-index: 101
+}
+
+#service_index .popup2 .van-popup--bottom {
+    border-radius: 20rpx;
+    bottom: 20rpx
+}
+
+#service_index .popup2 .popup-index--van-popup--bottom.popup-index--van-popup--safe,#service_index .van-popup--bottom.van-popup--safe {
+    padding-bottom: 0
+}

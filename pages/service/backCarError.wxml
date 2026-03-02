@@ -1,0 +1,60 @@
+<view class="bike_bad data-v-26f7f181" id="service_back_car_error">
+    <ws-header bind:__l="__l" class="data-v-26f7f181" title="无法还车" vueId="4e283398-1"></ws-header>
+    <view class="ws_container data-v-26f7f181">
+        <view class="line data-v-26f7f181"></view>
+        <view class="tip data-v-26f7f181">
+            <view class="img data-v-26f7f181">
+                <image class="i data-v-26f7f181" src="https://img2.7mate.cn/tip.png"></image>
+            </view>
+            <view class="c data-v-26f7f181">请至运营区关锁并距车1米内点击还车，或重启软件再试。</view>
+        </view>
+        <view class="line data-v-26f7f181"></view>
+        <view class="card data-v-26f7f181" style="padding-bottom:20px;">
+            <view class="header data-v-26f7f181">
+                <label class="data-v-26f7f181" style="color:#333333;">单车编号：</label>
+                <label class="data-v-26f7f181" style="color:#666666;">{{car_number}}</label>
+            </view>
+            <view class="label data-v-26f7f181">选择问题类型</view>
+            <view bindtap="__e" class="select data-v-26f7f181" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <view class="data-v-26f7f181">{{question_type}}</view>
+                <image class="arrow data-v-26f7f181" src="https://img2.7mate.cn/arrow_bottom.png"></image>
+            </view>
+            <van-popup bind:__l="__l" class="data-v-26f7f181" data-com-type="wx" position="bottom" show="{{show_question_types_modal}}" vueId="4e283398-2" vueSlots="{{['default']}}">
+                <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-26f7f181" columns="{{question_types}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['onCancel'] ] ],[ '^confirm',[ ['onConfirm'] ] ] ]}}" defaultIndex="0" showToolbar="{{true}}" title="问题类型" vueId="{{'4e283398-3'+','+'4e283398-2'}}"></van-picker>
+            </van-popup>
+            <view class="data-v-26f7f181" wx:if="{{question_type=='车辆故障'}}">
+                <view class="error data-v-26f7f181">
+                    <view bindtap="__e" class="container data-v-26f7f181" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',index,1],['errors_1'] ] ] ] ]}}" wx:for="{{errors_1}}" wx:for-item="error" wx:key="index">
+                        <image class="data-v-26f7f181" src="{{'https://img2.7mate.cn/bike_error_'+index+1+'_1.png'}}" wx:if="{{error.checked}}"></image>
+                        <image class="data-v-26f7f181" src="{{'https://img2.7mate.cn/bike_error_'+index+1+'.png'}}" wx:else></image>
+                        <view class="text data-v-26f7f181">{{error.title}}</view>
+                        <view class="error_btn data-v-26f7f181" wx:if="{{index===0&&error.checked}}">
+                            <view catchtap="__e" class="{{['data-v-26f7f181',btn.checked?'checked':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',i,2],[ [ ['errors_1','',index,'btns'] ] ] ] ] ] ]}}" wx:for="{{error.btns}}" wx:for-index="i" wx:for-item="btn" wx:key="i">{{btn.title+''}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="error _2 data-v-26f7f181">
+                    <view bindtap="__e" class="container data-v-26f7f181" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',index,1],['errors_2'] ] ] ] ]}}" wx:for="{{errors_2}}" wx:for-item="error" wx:key="index">
+                        <image class="data-v-26f7f181" src="{{'https://img2.7mate.cn/bike_error_'+index+4+(index==0&&carmodel_id==1?'_4':'')+'_1.png'}}" wx:if="{{error.checked}}"></image>
+                        <image class="data-v-26f7f181" src="{{'https://img2.7mate.cn/bike_error_'+index+4+(index==0&&carmodel_id==1?'_3':'')+'.png'}}" wx:else></image>
+                        <view class="text data-v-26f7f181">{{error.title}}</view>
+                    </view>
+                </view>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field _2 data-v-26f7f181" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',1] ] ] ],[ '^blur',[ [ 'onBlur',['$event',1] ] ] ] ]}}" placeholder="请填写其他原因" value="{{remark}}" vueId="4e283398-4" wx:if="{{errors_2[2].checked!==undefined&&errors_2[2].checked||question_type=='其他'}}"></van-field>
+        </view>
+        <view class="line data-v-26f7f181"></view>
+        <view class="{{['card','data-v-26f7f181',is_iphone_x?'b1':'b2']}}">
+            <view class="label data-v-26f7f181" hidden="{{!false}}" style="margin-top:0;">请确定损坏车辆当前位置</view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field _3 data-v-26f7f181" data-com-type="wx" data-custom-hidden="{{!false}}" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',2] ] ] ],[ '^blur',[ [ 'onBlur',['$event',2] ] ] ] ]}}" placeholder="请输入地点：（如：江苏理工学院北门）" value="{{position}}" vueId="4e283398-5"></van-field>
+            <view class="desc data-v-26f7f181">拍摄包含车辆编号，车锁，单车周围环境的照片</view>
+            <view class="up_photo data-v-26f7f181">
+                <image class="data-v-26f7f181" src="{{tempImg}}" wx:for="{{tempImgs}}" wx:for-item="tempImg" wx:key="index"></image>
+                <image bindtap="__e" class="data-v-26f7f181" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/plus.png" wx:if="{{$root.g0<5}}"></image>
+            </view>
+        </view>
+        <view class="footer data-v-26f7f181">
+            <view bindtap="__e" class="btn data-v-26f7f181" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">提交</view>
+        </view>
+    </view>
+</view>

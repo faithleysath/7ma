@@ -1,0 +1,62 @@
+#order_other.data-v-1d72f3fa {
+    height: 100%
+}
+
+#order_other .ws_container .header.data-v-1d72f3fa {
+    text-align: center
+}
+
+#order_other .ws_container .header .icon.data-v-1d72f3fa {
+    height: 206rpx;
+    margin-top: 48rpx;
+    width: 180rpx
+}
+
+#order_other .ws_container .header .desc.data-v-1d72f3fa {
+    color: #333;
+    font-size: 40rpx;
+    margin-top: 28rpx
+}
+
+#order_other .ws_container .header .price.data-v-1d72f3fa {
+    color: red;
+    font-size: 48rpx
+}
+
+#order_other .ws_container .line.data-v-1d72f3fa {
+    background-color: #e5e5e5;
+    height: 2rpx;
+    margin: 30rpx auto 0;
+    width: 632rpx
+}
+
+#order_other .ws_container .main.data-v-1d72f3fa {
+    padding: 24rpx 78rpx
+}
+
+#order_other .ws_container .main .item.data-v-1d72f3fa {
+    display: -webkit-flex;
+    display: flex;
+    font-size: 32rpx;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-top: 16rpx
+}
+
+#order_other .ws_container .main .item .l.data-v-1d72f3fa {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #666;
+    display: -webkit-flex;
+    display: flex;
+    min-width: 160rpx
+}
+
+#order_other .ws_container .main .item .r.data-v-1d72f3fa {
+    color: #333;
+    text-align: justify
+}
+
+page {
+    height: 100%
+}

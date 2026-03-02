@@ -1,0 +1,24 @@
+<view class="chartsview data-v-67d68ca0" id="{{'ChartBoxId'+cid}}">
+    <view class="data-v-67d68ca0" wx:if="{{mixinDatacomLoading}}">
+        <qiun-loading bind:__l="__l" class="data-v-67d68ca0" loadingType="{{loadingType}}" vueId="d3f9f55c-1"></qiun-loading>
+    </view>
+    <view bindtap="__e" class="data-v-67d68ca0" data-event-opts="{{[ [ 'tap',[ [ 'reloading',['$event'] ] ] ] ]}}" wx:if="{{mixinDatacomErrorMessage&&errorShow}}">
+        <qiun-error bind:__l="__l" class="data-v-67d68ca0" errorMessage="{{errorMessage}}" vueId="d3f9f55c-2"></qiun-error>
+    </view>
+    <block wx:if="{{type2d}}">
+        <view bindtap="__e" class="data-v-67d68ca0" data-event-opts="{{[ [ 'tap',[ [ '_tap',['$event'] ] ] ] ]}}" wx:if="{{ontouch}}">
+            <canvas binderror="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" canvasId="{{cid}}" class="data-v-67d68ca0" data-event-opts="{{[ [ 'touchstart',[ [ '_touchStart',['$event'] ] ] ],[ 'touchmove',[ [ '_touchMove',['$event'] ] ] ],[ 'touchend',[ [ '_touchEnd',['$event'] ] ] ],[ 'error',[ [ '_error',['$event'] ] ] ] ]}}" disableScroll="{{disScroll}}" hidden="{{!showchart}}" id="{{cid}}" style="{{'width:'+cWidth+'px'+';'+'height:'+cHeight+'px'+';'+'background:'+background+';'}}" type="2d"></canvas>
+        </view>
+        <view bindtap="__e" class="data-v-67d68ca0" data-event-opts="{{[ [ 'tap',[ [ '_tap',['$event'] ] ] ] ]}}" wx:if="{{!ontouch}}">
+            <canvas binderror="__e" canvasId="{{cid}}" class="data-v-67d68ca0" data-event-opts="{{[ [ 'error',[ [ '_error',['$event'] ] ] ] ]}}" disableScroll="{{disScroll}}" hidden="{{!showchart}}" id="{{cid}}" style="{{'width:'+cWidth+'px'+';'+'height:'+cHeight+'px'+';'+'background:'+background+';'}}" type="2d"></canvas>
+        </view>
+    </block>
+    <block wx:if="{{!type2d}}">
+        <view bindtap="__e" class="data-v-67d68ca0" data-event-opts="{{[ [ 'tap',[ [ '_tap',['$event'] ] ] ] ]}}" wx:if="{{ontouch}}">
+            <canvas binderror="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" canvasId="{{cid}}" class="data-v-67d68ca0" data-event-opts="{{[ [ 'touchstart',[ [ '_touchStart',['$event'] ] ] ],[ 'touchmove',[ [ '_touchMove',['$event'] ] ] ],[ 'touchend',[ [ '_touchEnd',['$event'] ] ] ],[ 'error',[ [ '_error',['$event'] ] ] ] ]}}" disableScroll="{{disScroll}}" id="{{cid}}" style="{{'width:'+cWidth+'px'+';'+'height:'+cHeight+'px'+';'+'background:'+background+';'}}" wx:if="{{showchart}}"></canvas>
+        </view>
+        <view class="data-v-67d68ca0" wx:if="{{!ontouch}}">
+            <canvas binderror="__e" bindtap="__e" canvasId="{{cid}}" class="data-v-67d68ca0" data-event-opts="{{[ [ 'tap',[ [ '_tap',['$event'] ] ] ],[ 'error',[ [ '_error',['$event'] ] ] ] ]}}" disableScroll="{{disScroll}}" id="{{cid}}" style="{{'width:'+cWidth+'px'+';'+'height:'+cHeight+'px'+';'+'background:'+background+';'}}" wx:if="{{showchart}}"></canvas>
+        </view>
+    </block>
+</view>

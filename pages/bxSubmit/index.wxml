@@ -1,0 +1,52 @@
+<view class="container data-v-6f5db643">
+    <view class="box-sizing p30 data-v-6f5db643">
+        <view class="bg-f br15 font28 data-v-6f5db643">
+            <view class="box-sizing p25 data-v-6f5db643">
+                <view class="row-berween pb25 data-v-6f5db643">
+                    <view class="font28 data-v-6f5db643">申请人:</view>
+                    <view class="font28 text-right box-sizing pr25 flex1 pl25 data-v-6f5db643">{{apply_payment.user_name}}</view>
+                </view>
+                <view class="data-v-6f5db643" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view bindtap="__e" class="box-sizing p25 data-v-6f5db643" data-event-opts="{{[ [ 'tap',[ [ 'openTime',['$event'] ] ] ] ]}}">
+                <view class="row-berween pb25 data-v-6f5db643">
+                    <view class="font28 data-v-6f5db643">事故时间:</view>
+                    <view class="font28 text-right box-sizing pr25 flex1 pl25 data-v-6f5db643" wx:if="{{apply_payment.accident_time}}">{{apply_payment.accident_time}}</view>
+                    <view class="font28 text-right box-sizing pr25 flex1 pl25 data-v-6f5db643" style="color:#909090;" wx:else>请选择时间</view>
+                </view>
+                <view class="data-v-6f5db643" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view class="box-sizing p25 data-v-6f5db643">
+                <view class="row-berween pb25 data-v-6f5db643">
+                    <view class="font28 data-v-6f5db643">事故地点:</view>
+                    <input bindinput="__e" class="font28 text-right box-sizing pr25 flex1 pl25 data-v-6f5db643" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','accident_address','$event',[] ],['apply_payment'] ] ] ] ]}}" placeholder="请输入事故地点" value="{{apply_payment.accident_address}}"></input>
+                </view>
+                <view class="data-v-6f5db643" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view class="box-sizing p25 data-v-6f5db643">
+                <view class="row-berween pb25 data-v-6f5db643">
+                    <view class="font28 data-v-6f5db643">事故描述:</view>
+                </view>
+                <textarea autoHeight="{{true}}" bindinput="__e" class="font28 box-sizing pr25 flex1 pl25 pb25 data-v-6f5db643" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','accident_detail','$event',[] ],['apply_payment'] ] ] ] ]}}" maxlength="200" placeholder="请输入事故描述(200字以内)" style="min-height:100rpx;" value="{{apply_payment.accident_detail}}"></textarea>
+                <view class="data-v-6f5db643" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view class="box-sizing p25 data-v-6f5db643">
+                <view class="row-berween pb25 data-v-6f5db643">
+                    <view class="font28 data-v-6f5db643">事故相关照片：(最多5张):</view>
+                </view>
+                <view class="row-left-center pb25 box-sizing pl25 pr25 data-v-6f5db643">
+                    <view bindtap="__e" class="row-center relative mr10 data-v-6f5db643" data-event-opts="{{[ [ 'tap',[ [ 'prevImage',['$0',index],[ [ ['apply_payment.image','',index] ] ] ] ] ] ]}}" style="width:104rpx;height:104rpx;border:2rpx solid #e9e9e9;" wx:for="{{apply_payment.image}}" wx:key="index">
+                        <image class="block w_100 h_100 data-v-6f5db643" mode="aspectFit" src="{{item}}"></image>
+                    </view>
+                    <view bindtap="__e" class="row-center data-v-6f5db643" data-event-opts="{{[ [ 'tap',[ [ 'openUpload',['$event'] ] ] ] ]}}" style="width:104rpx;height:104rpx;border:2rpx solid #e9e9e9;" wx:if="{{$root.g0}}">
+                        <image class="block data-v-6f5db643" mode="scaleToFill" src="https://img2.7mate.cn/baoxian_05.png" style="width:40rpx;height:40rpx;"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="mt30 row-center color-f font31 data-v-6f5db643" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="background:#F94754;border-radius:13rpx;width:688rpx;height:76rpx;">提交申请</view>
+    </view>
+    <van-popup bind:__l="__l" class="data-v-6f5db643" data-com-type="wx" overlay="{{true}}" position="bottom" show="{{showTime}}" vueId="3fc5de7c-1" vueSlots="{{['default']}}">
+        <van-datetime-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-6f5db643" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e0'] ] ],[ '^confirm',[ ['confirm'] ] ] ]}}" type="datetime" value="{{currentDate}}" vueId="{{'3fc5de7c-2'+','+'3fc5de7c-1'}}"></van-datetime-picker>
+    </van-popup>
+</view>

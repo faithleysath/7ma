@@ -1,0 +1,23 @@
+<view class="container data-v-4f0d0b05">
+    <view class="row-bottom-center pt80 pb60 data-v-4f0d0b05">
+        <view class="font700 relative bottom15 data-v-4f0d0b05">￥</view>
+        <view class="font700 data-v-4f0d0b05" style="font-size:80rpx;">{{price}}</view>
+    </view>
+    <view class="text-center pb30 data-v-4f0d0b05">{{'7MA出行'+orderText[order_type]}}</view>
+    <view class="box-sizing pl25 pr25 data-v-4f0d0b05">
+        <view class="br10 row-left-center pt20 pb20 bg-f box-sizing pl40 pr40 data-v-4f0d0b05">
+            <view class="data-v-4f0d0b05">
+                <image class="block data-v-4f0d0b05" mode="scaleToFill" src="https://img2.7mate.cn/alioss0054b9de6f154611b30ce33493e2fb5a.png" style="width:60rpx;height:60rpx;"></image>
+            </view>
+            <view class="pl20 data-v-4f0d0b05">微信支付</view>
+            <view class="flex1 row-right-center data-v-4f0d0b05">
+                <icon class="data-v-4f0d0b05" color="#ec3f4c" type="success"></icon>
+            </view>
+        </view>
+    </view>
+    <view class="fixed bottom0 left0 w_100 box-sizing pl15 pr15 data-v-4f0d0b05">
+        <view bindtap="__e" class="br10 color-f line100 text-center data-v-4f0d0b05" data-event-opts="{{[ [ 'tap',[ [ 'goWxAppPay',['$event'] ] ] ] ]}}" style="background:#ec3f4c;">立即支付</view>
+        <view class="x-bottom data-v-4f0d0b05"></view>
+        <view class="pb30 data-v-4f0d0b05"></view>
+    </view>
+</view>

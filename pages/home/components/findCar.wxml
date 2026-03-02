@@ -1,0 +1,8 @@
+<view class="data-v-ab85365c">
+    <view class="relative data-v-ab85365c">
+        <view class="ripple-button green-button data-v-ab85365c">
+            <text class="fa fa-check button-icon data-v-ab85365c"></text>
+        </view>
+        <text class="absolute centers button-label ell data-v-ab85365c">寻车</text>
+    </view>
+</view>

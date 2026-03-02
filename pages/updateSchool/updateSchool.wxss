@@ -1,0 +1,24 @@
+.container.data-v-f12563b2 {
+    background: #f2f2f2;
+    min-height: 100vh
+}
+
+.container .btn.data-v-f12563b2 {
+    background: linear-gradient(135deg,#ff6c58,#ff4c52);
+    border-radius: 50rpx;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(95,31,33,.3);
+    color: #fff;
+    font-size: 44rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 600rpx
+}
+
+.data-v-f12563b2 .van-picker__confirm {
+    color: #ff4c52
+}
+
+.data-v-f12563b2 .van-picker__cancel {
+    color: #b3b3b3
+}

@@ -1,0 +1,69 @@
+<view class="container data-v-3ccfdfe1">
+    <view class="box-sizing p30 data-v-3ccfdfe1">
+        <view class="bg-f br15 box-sizing pt25 pl25 pr25 font28 data-v-3ccfdfe1">
+            <view class="row-berween pb25 data-v-3ccfdfe1">
+                <view class="label data-v-3ccfdfe1">保单号：</view>
+                <view class="flex1 text-right data-v-3ccfdfe1">{{info.insurance_number}}</view>
+            </view>
+            <view class="row-berween pb25 data-v-3ccfdfe1">
+                <view class="label data-v-3ccfdfe1">保险开始时间：</view>
+                <view class="flex1 text-right data-v-3ccfdfe1">{{info.car_start_time}}</view>
+            </view>
+            <view class="row-berween pb25 data-v-3ccfdfe1">
+                <view class="label data-v-3ccfdfe1">保险结束时间：</view>
+                <view class="flex1 text-right data-v-3ccfdfe1">{{info.car_end_time}}</view>
+            </view>
+        </view>
+        <view class="font31 mt25 data-v-3ccfdfe1">
+            <view class="row-berween data-v-3ccfdfe1">
+                <view bindtap="__e" class="row-col-center bg-f data-v-3ccfdfe1" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/bxSubmit/index'] ] ] ] ]}}" style="border-radius:13rpx;border:2rpx solid #F94754;width:326rpx;height:76rpx;color:#F94754;">
+                    <image class="block data-v-3ccfdfe1" mode="scaleToFill" src="https://img2.7mate.cn/baoxian_02.png" style="width:28rpx;height:33rpx;"></image>
+                    <view class="ml15 data-v-3ccfdfe1">申请理赔</view>
+                </view>
+                <view bindtap="__e" class="row-col-center color-f data-v-3ccfdfe1" data-event-opts="{{[ [ 'tap',[ [ 'openTel',['$event'] ] ] ] ]}}" style="border-radius:13rpx;border:2rpx solid #F94754;width:326rpx;height:76rpx;background:#F94754;">
+                    <image class="block data-v-3ccfdfe1" mode="scaleToFill" src="https://img2.7mate.cn/baoxian_03.png" style="width:35rpx;height:32rpx;"></image>
+                    <view class="ml15 data-v-3ccfdfe1">理赔电话</view>
+                </view>
+            </view>
+        </view>
+        <view class="bg-f br15 font28 mt25 data-v-3ccfdfe1">
+            <view class="row-left-center box-sizing pt25 pb25 data-v-3ccfdfe1">
+                <view class="br5 data-v-3ccfdfe1" style="width:8rpx;height:28rpx;background:#F94754;"></view>
+                <view class="ml25 font700 data-v-3ccfdfe1">保险详情</view>
+            </view>
+            <view class="box-sizing pl20 pr20 data-v-3ccfdfe1">
+                <view class="data-v-3ccfdfe1" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view class="box-sizing pt25 pl25 pr25 data-v-3ccfdfe1">
+                <view class="row-berween pb25 data-v-3ccfdfe1">
+                    <view class="label data-v-3ccfdfe1">保险区域</view>
+                    <view class="flex1 text-right data-v-3ccfdfe1">{{info.car_school_name+(info.car_school_area?'--'+info.car_school_area:'')}}</view>
+                </view>
+                <view class="row-berween pb25 data-v-3ccfdfe1">
+                    <view class="label data-v-3ccfdfe1">投保人</view>
+                    <view class="flex1 text-right data-v-3ccfdfe1">常州柒玛信息科技有限公司</view>
+                </view>
+                <view class="row-berween pb25 data-v-3ccfdfe1">
+                    <view class="label data-v-3ccfdfe1">承保人</view>
+                    <view class="flex1 text-right data-v-3ccfdfe1">{{info.insurance_company}}</view>
+                </view>
+                <view class="row-berween pb25 data-v-3ccfdfe1" wx:for="{{info.insurance_items}}" wx:key="index">
+                    <view class="label data-v-3ccfdfe1">{{item.content}}</view>
+                    <view class="flex1 text-right data-v-3ccfdfe1">{{item.amount+'万'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="bg-f br15 font28 mt25 data-v-3ccfdfe1">
+            <view class="row-left-center box-sizing pt25 pb25 data-v-3ccfdfe1">
+                <view class="br5 data-v-3ccfdfe1" style="width:8rpx;height:28rpx;background:#F94754;"></view>
+                <view class="ml25 font700 data-v-3ccfdfe1">理赔流程</view>
+            </view>
+            <view class="box-sizing pl20 pr20 data-v-3ccfdfe1">
+                <view class="data-v-3ccfdfe1" style="border-bottom:2rpx solid #e9e9e9;"></view>
+            </view>
+            <view class="box-sizing p25 data-v-3ccfdfe1">
+                <image class="block w_100 data-v-3ccfdfe1" mode="widthFix" src="https://img2.7mate.cn/baoxian_04.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

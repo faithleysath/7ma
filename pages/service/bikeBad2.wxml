@@ -1,0 +1,45 @@
+<view class="bike_bad data-v-b1180c14" id="service_bike_bad2">
+    <ws-header bind:__l="__l" class="data-v-b1180c14" title="车辆故障" vueId="bc7b8b76-1"></ws-header>
+    <view class="ws_container data-v-b1180c14">
+        <view class="line data-v-b1180c14"></view>
+        <view class="card data-v-b1180c14" style="padding:23px 30px;">
+            <view class="header data-v-b1180c14">
+                <label class="data-v-b1180c14" style="color:#666666;">单车编号：</label>
+                <label class="data-v-b1180c14" style="color:#666666;">{{car_number}}</label>
+            </view>
+            <view class="label data-v-b1180c14">请选择损坏部位<label class="required data-v-b1180c14">（必填）</label>
+            </view>
+            <view class="error data-v-b1180c14">
+                <view bindtap="__e" class="container data-v-b1180c14" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',index,1],['errors_1'] ] ] ] ]}}" wx:for="{{errors_1}}" wx:for-item="error" wx:key="index">
+                    <image class="data-v-b1180c14" src="{{'https://img2.7mate.cn/bike_error_'+index+1+'_1.png'}}" wx:if="{{error.checked}}"></image>
+                    <image class="data-v-b1180c14" src="{{'https://img2.7mate.cn/bike_error_'+index+1+'.png'}}" wx:else></image>
+                    <view class="text data-v-b1180c14">{{error.title}}</view>
+                    <view class="error_btn data-v-b1180c14" wx:if="{{index===0&&error.checked}}">
+                        <view catchtap="__e" class="{{['data-v-b1180c14',btn.checked?'checked':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',i,2],[ [ ['errors_1','',index,'btns'] ] ] ] ] ] ]}}" wx:for="{{error.btns}}" wx:for-index="i" wx:for-item="btn" wx:key="i">{{btn.title+''}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="error _2 data-v-b1180c14">
+                <view bindtap="__e" class="container data-v-b1180c14" data-event-opts="{{[ [ 'tap',[ [ 'check',['$0',index,1],['errors_2'] ] ] ] ]}}" wx:for="{{errors_2}}" wx:for-item="error" wx:key="index">
+                    <image class="data-v-b1180c14" src="{{'https://img2.7mate.cn/bike_error_'+index+4+(index==0&&carmodel_id==1?'_4':'')+'_1.png'}}" wx:if="{{error.checked}}"></image>
+                    <image class="data-v-b1180c14" src="{{'https://img2.7mate.cn/bike_error_'+index+4+(index==0&&carmodel_id==1?'_3':'')+'.png'}}" wx:else></image>
+                    <view class="text data-v-b1180c14">{{error.title}}</view>
+                </view>
+            </view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field _2 data-v-b1180c14" clearable="{{true}}" data-com-type="wx" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',1] ] ] ],[ '^blur',[ [ 'onBlur',['$event',1] ] ] ] ]}}" placeholder="请填写其他原因" value="{{remark}}" vueId="bc7b8b76-2" wx:if="{{errors_2[2].checked!==undefined&&errors_2[2].checked}}"></van-field>
+        </view>
+        <view class="line data-v-b1180c14"></view>
+        <view class="{{['card','data-v-b1180c14',is_iphone_x?'b1':'b2']}}">
+            <view class="label data-v-b1180c14" hidden="{{!false}}" style="margin-top:0;">请确定损坏车辆当前位置</view>
+            <van-field bind:__l="__l" bind:blur="__e" bind:input="__e" class="field _3 data-v-b1180c14" data-com-type="wx" data-custom-hidden="{{!false}}" data-event-opts="{{[ [ '^input',[ [ 'onInput',['$event',2] ] ] ],[ '^blur',[ [ 'onBlur',['$event',2] ] ] ] ]}}" placeholder="请输入地点：（如：江苏理工学院北门）" value="{{position}}" vueId="bc7b8b76-3"></van-field>
+            <view class="desc data-v-b1180c14">拍摄包含车辆编号，车锁，单车周围环境的照片</view>
+            <view class="up_photo data-v-b1180c14">
+                <image class="data-v-b1180c14" src="{{tempImg}}" wx:for="{{tempImgs}}" wx:for-item="tempImg" wx:key="index"></image>
+                <image bindtap="__e" class="data-v-b1180c14" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/plus.png" wx:if="{{$root.g0<5}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="footer data-v-b1180c14">
+        <view bindtap="__e" class="btn data-v-b1180c14" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">提交</view>
+    </view>
+</view>

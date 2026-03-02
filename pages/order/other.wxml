@@ -1,0 +1,33 @@
+<view class="data-v-1d72f3fa" id="order_other">
+    <ws-header bind:__l="__l" class="data-v-1d72f3fa" title="{{title}}" vueId="045e3c20-1"></ws-header>
+    <view class="ws_container data-v-1d72f3fa" wx:if="{{$root.g0}}">
+        <view class="header data-v-1d72f3fa">
+            <image class="icon data-v-1d72f3fa" src="https://img2.7mate.cn/ddf.png"></image>
+            <view class="desc data-v-1d72f3fa">{{'您需要支付车辆'+(order.type==1?'调度费':'赔偿费')}}</view>
+            <view class="price data-v-1d72f3fa">{{'￥'+order.order_amount}}</view>
+        </view>
+        <view class="line data-v-1d72f3fa"></view>
+        <view class="main data-v-1d72f3fa">
+            <view class="item data-v-1d72f3fa">
+                <view class="l data-v-1d72f3fa">单车编号：</view>
+                <view class="r data-v-1d72f3fa">{{order.car_number}}</view>
+            </view>
+            <view class="item data-v-1d72f3fa">
+                <view class="l data-v-1d72f3fa">开始时间：</view>
+                <view class="r data-v-1d72f3fa">{{order.car_start_time}}</view>
+            </view>
+            <view class="item data-v-1d72f3fa">
+                <view class="l data-v-1d72f3fa">结束时间：</view>
+                <view class="r data-v-1d72f3fa">{{order.car_end_time}}</view>
+            </view>
+            <view class="item data-v-1d72f3fa" wx:if="{{order.parking_location}}">
+                <view class="l data-v-1d72f3fa">停车位置：</view>
+                <view class="r data-v-1d72f3fa">{{order.parking_location}}</view>
+            </view>
+        </view>
+        <view class="footer data-v-1d72f3fa">
+            <view bindtap="__e" class="btn data-v-1d72f3fa" data-event-opts="{{[ [ 'tap',[ [ 'gotoPayment',['$event'] ] ] ] ]}}">支付</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-1d72f3fa" data-com-type="wx" type="spinner" vueId="045e3c20-2" wx:if="{{show_loading}}"></van-loading>
+</view>

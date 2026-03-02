@@ -1,0 +1,25 @@
+<view class="container box-sizing pl40 pr40 data-v-e018212a">
+    <view class="pt40 data-v-e018212a">
+        <dtjd bind:__l="__l" class="data-v-e018212a" count="{{$root.g0}}" currentIndex="{{index+1}}" vueId="7e47b38f-1" vueSlots="{{['default']}}">></dtjd>
+    </view>
+    <view class="box-sizing pt60 data-v-e018212a">
+        <view class="row-col-berween data-v-e018212a">
+            <view class="relative data-v-e018212a">
+                <image class="block data-v-e018212a" mode="scaleToFill" src="https://img2.7mate.cn/qxks_1.png" style="width:240rpx;height:55rpx;"></image>
+                <view class="absolute w_100 h_100 left0 top0 flex font28 data-v-e018212a">
+                    <view class="flex2_1 row-center color-f data-v-e018212a">{{type[list[index].type]}}</view>
+                    <view class="flex2_1 row-center data-v-e018212a" style="color:#CE0E1D;">10分</view>
+                </view>
+            </view>
+            <view class="font28 data-v-e018212a">
+                <text class="data-v-e018212a">总分：</text>
+                <text class="data-v-e018212a" style="color:#009B03;">{{exam_config.total_score+'分'}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="box-sizing pt30 data-v-e018212a">
+        <view class="data-v-e018212a" wx:for="{{list}}" wx:for-index="i" wx:key="i">
+            <kt bind:__l="__l" bind:change="__e" bind:next="__e" bind:submit="__e" class="data-v-e018212a" count="{{$root.g1}}" currentIndex="{{i}}" data-custom-hidden="{{!(index===i)}}" data-event-opts="{{[ [ '^next',[ ['next'] ] ],[ '^change',[ ['change'] ] ],[ '^submit',[ ['submit'] ] ] ]}}" info="{{item}}" vueId="{{'7e47b38f-2-'+i}}"></kt>
+        </view>
+    </view>
+</view>

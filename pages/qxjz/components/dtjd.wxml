@@ -1,0 +1,16 @@
+<view class="data-v-7a6c7b5c">
+    <view class="row-berween font30 data-v-7a6c7b5c" style="color:#009B03;">
+        <view class="data-v-7a6c7b5c">
+            <text class="data-v-7a6c7b5c">答题进度</text>
+            <text class="data-v-7a6c7b5c">{{currentIndex+'/'+count}}</text>
+        </view>
+        <view class="data-v-7a6c7b5c">
+            <text class="data-v-7a6c7b5c">{{$root.g0+'%'}}</text>
+        </view>
+    </view>
+    <view class="pt20 data-v-7a6c7b5c">
+        <view class="progress data-v-7a6c7b5c">
+            <view class="progress-item data-v-7a6c7b5c" style="{{'width:'+$root.g1+'%'+';'}}"></view>
+        </view>
+    </view>
+</view>

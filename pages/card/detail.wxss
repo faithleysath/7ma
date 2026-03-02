@@ -1,0 +1,210 @@
+#card_buy.data-v-4ae9c354 {
+    height: 100%
+}
+
+#card_buy .w375.data-v-4ae9c354 {
+    width: 375rpx!important
+}
+
+#card_buy .w250.data-v-4ae9c354 {
+    width: 250rpx!important
+}
+
+#card_buy .header.data-v-4ae9c354 {
+    position: relative;
+    width: 100%
+}
+
+#card_buy .header .bg.data-v-4ae9c354 {
+    left: 0;
+    top: 0;
+    width: 750rpx;
+    z-index: 1
+}
+
+#card_buy .header .back.data-v-4ae9c354 {
+    height: 40rpx;
+    left: 30rpx;
+    position: fixed;
+    top: 112rpx;
+    width: 23rpx;
+    z-index: 3
+}
+
+#card_buy .header .yellow_container.data-v-4ae9c354 {
+    bottom: 0;
+    height: 250rpx;
+    left: 70rpx;
+    position: absolute;
+    z-index: 2
+}
+
+#card_buy .header .yellow_container .yellow.data-v-4ae9c354 {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 614rpx
+}
+
+#card_buy .header .yellow_container .t.data-v-4ae9c354 {
+    -webkit-align-items: center;
+    align-items: center;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    left: 0;
+    position: absolute;
+    top: 64rpx;
+    width: 612rpx
+}
+
+#card_buy .header .yellow_container .t .t1.data-v-4ae9c354 {
+    font-size: 36rpx;
+    margin-left: 84rpx;
+    position: absolute;
+    top: 0
+}
+
+#card_buy .header .yellow_container .t .t2.data-v-4ae9c354 {
+    font-size: 36rpx;
+    margin-right: 84rpx;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+#card_buy .header .yellow_container .b.data-v-4ae9c354 {
+    -webkit-align-items: center;
+    align-items: center;
+    bottom: 56rpx;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    left: 0;
+    position: absolute;
+    width: 612rpx
+}
+
+#card_buy .header .yellow_container .b .b1.data-v-4ae9c354 {
+    font-size: 44rpx;
+    margin-left: 84rpx
+}
+
+#card_buy .header .yellow_container .b .b2.data-v-4ae9c354 {
+    font-size: 44rpx;
+    margin-right: 84rpx;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+#card_buy .header .discount.data-v-4ae9c354 {
+    height: 3.75%;
+    position: fixed;
+    right: 73rpx;
+    top: 22.1%;
+    width: 120rpx;
+    z-index: 3
+}
+
+#card_buy .header .shadow.data-v-4ae9c354 {
+    height: 24rpx;
+    left: 0;
+    position: fixed;
+    top: 464rpx;
+    width: 750rpx;
+    z-index: 3
+}
+
+#card_buy .header .title.data-v-4ae9c354 {
+    color: #fff;
+    font-size: 34rpx;
+    position: fixed;
+    text-align: center;
+    top: 112rpx;
+    width: 100%;
+    z-index: 2
+}
+
+#card_buy .attribute.data-v-4ae9c354 {
+    -webkit-align-items: center;
+    align-items: center;
+    background: #454955;
+    box-shadow: 0 -2px 20px 0 rgba(95,31,33,.35);
+    display: -webkit-flex;
+    display: flex;
+    left: 0;
+    padding: 0 0 15rpx;
+    top: 41%;
+    width: 750rpx;
+    z-index: 2
+}
+
+#card_buy .attribute .item.data-v-4ae9c354 {
+    color: #fff;
+    position: relative;
+    text-align: center
+}
+
+#card_buy .attribute .item .t.data-v-4ae9c354 {
+    font-size: 36rpx
+}
+
+#card_buy .attribute .item .t .s.data-v-4ae9c354 {
+    font-size: 24rpx;
+    opacity: .5
+}
+
+#card_buy .attribute .item .b.data-v-4ae9c354 {
+    font-size: 24rpx;
+    margin-top: 13rpx;
+    opacity: .5
+}
+
+#card_buy .attribute .item .separator.data-v-4ae9c354 {
+    height: 42rpx;
+    margin-top: -21rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 2rpx
+}
+
+#card_buy .main.data-v-4ae9c354 {
+    background: #fff;
+    border-radius: 10px;
+    height: 43.5%;
+    margin: 25rpx 32rpx;
+    overflow: hidden;
+    width: 686rpx
+}
+
+#card_buy .main .content.data-v-4ae9c354 {
+    height: 100%;
+    padding: 0 40rpx
+}
+
+#card_buy .main .content .desc.data-v-4ae9c354 {
+    color: #332f2f;
+    font-size: 28rpx;
+    height: 92%;
+    margin: 4% 0;
+    overflow-y: auto
+}
+
+page {
+    background-color: #f7f7f7
+}
+
+#card_buy wx-checkbox .wx-checkbox-input {
+    height: 20rpx;
+    width: 20rpx
+}
+
+#card_buy wx-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    background-color: #ea5359;
+    content: "";
+    height: 30rpx;
+    width: 30rpx
+}

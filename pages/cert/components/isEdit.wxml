@@ -1,0 +1,46 @@
+<view>
+    <image class="absolute left0" mode="widthFix" src="https://img2.7mate.cn/cert1_3.png" style="top:186rpx;width:750rpx;" wx:if="{{form.area_type==1}}"></image>
+    <block wx:else>
+        <image class="absolute left0" mode="widthFix" src="https://img2.7mate.cn/cert1_5.png" style="top:186rpx;width:750rpx;" wx:if="{{form.area_type==2}}"></image>
+    </block>
+    <view class="relative pb100">
+        <view class="font36 pt50 pb20" style="color:#1a1a1a;">骑行区域</view>
+        <view class="br20 box-sizing pl20 pr20 pt34 pb34 row-left-center" style="background:rgba(255,255,255,0.7);">
+            <view style="color:#4D4D4D;">{{form.area_type==1?'学校':'运营区'}}</view>
+            <view class="flex1 text-right">{{form.name}}</view>
+        </view>
+        <view class="font36 pt50 pb20" style="color:#1a1a1a;">个人信息</view>
+        <view class="br20 box-sizing pl20 pr20 pt34 pb34" style="background:rgba(255,255,255,0.7);">
+            <view class="row-left-center pb32">
+                <view style="color:#4D4D4D;">人员类型</view>
+                <input class="text-right flex1" disabled="{{true}}" type="text" value="{{$root.g0[0].name}}"></input>
+            </view>
+            <view style="height:2rpx;background:#B3B3B3;"></view>
+            <view class="row-left-center pt32 pb32" wx:if="{{form.person_type==1&&form.student_type}}">
+                <view style="color:#4D4D4D;">学生类型</view>
+                <input class="text-right flex1" disabled="{{true}}" type="text" value="{{$root.g1[0].name}}"></input>
+            </view>
+            <view style="height:2rpx;background:#B3B3B3;" wx:if="{{form.person_type==1&&form.student_type}}"></view>
+            <view class="row-left-center pb32 pt32">
+                <view style="color:#4D4D4D;">姓名</view>
+                <input class="text-right flex1" disabled="{{true}}" type="text" value="{{form.real_name}}"></input>
+            </view>
+            <view style="height:2rpx;background:#B3B3B3;" wx:if="{{form.graduate_time}}"></view>
+            <view class="row-left-center pb32 pt32" wx:if="{{form.graduate_time}}">
+                <view style="color:#4D4D4D;">毕业时间</view>
+                <input class="text-right flex1" disabled="{{true}}" type="text" value="{{$root.g2}}"></input>
+            </view>
+            <view style="height:2rpx;background:#B3B3B3;"></view>
+            <view class="row-left-center pt32">
+                <view class="{{['flex1',form.cert_type==2&&'font24']}}" style="color:#4D4D4D;">{{form.type_text}}</view>
+                <input class="text-right flex1 font28" disabled="{{true}}" type="text" value="{{form[type]}}"></input>
+            </view>
+        </view>
+        <view wx:if="{{localtionImg}}">
+            <view class="font36 pt50 pb20" style="color:#1a1a1a;">证件照片</view>
+            <view class="br20 over-hidden" style="background:rgba(255,255,255,0.7);width:686rpx;height:400rpx;">
+                <image class="w_100 h_100 block" src="{{localtionImg}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

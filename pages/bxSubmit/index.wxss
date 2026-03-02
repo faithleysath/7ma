@@ -1,0 +1,12 @@
+.van-picker__confirm {
+    color: #f94754!important
+}
+
+.van-picker__cancel {
+    color: #999!important
+}
+
+.container.data-v-6f5db643 {
+    background: #f3f5f9;
+    min-height: 100vh
+}

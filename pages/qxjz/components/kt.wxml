@@ -1,0 +1,42 @@
+<view class="container data-v-53532c60">
+    <view class="font30 font700 data-v-53532c60" style="color:#292929;">{{info.content}}</view>
+    <view class="pt25 font700 data-v-53532c60">
+        <view bindtap="__e" class="data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'change',['$0'],[ [ ['info.options','',index] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="{{['box-sizing','p25','item','row-left-center','data-v-53532c60',item.g0?'warning':'',item.g1?'error':'',item.g2?'success':'']}}">
+                <view class="data-v-53532c60" style="width:40rpx;height:40rpx;">{{item[$orig].key}}</view>
+                <view class="flex1 data-v-53532c60">{{item[$orig].text}}</view>
+                <view class="data-v-53532c60" style="width:54rpx;height:54rpx;">
+                    <image class="block data-v-53532c60" mode="scaleToFill" src="https://img2.7mate.cn/qxks_2.png" style="width:54rpx;height:54rpx;" wx:if="{{item.g3}}"></image>
+                    <image class="block data-v-53532c60" mode="scaleToFill" src="https://img2.7mate.cn/qxks_3.png" style="width:54rpx;height:54rpx;" wx:if="{{item.g4}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pt15 font28 font700 data-v-53532c60" wx:if="{{isDone}}">
+        <view class="data-v-53532c60">
+            <text class="data-v-53532c60">正确答案</text>
+            <text class="ml10 data-v-53532c60" style="color:#D9363D;">{{$root.g5}}</text>
+        </view>
+        <view class="pt15 data-v-53532c60">
+            <text class="data-v-53532c60">你的答案</text>
+            <text class="ml10 data-v-53532c60" style="color:#D9363D;">{{$root.g6}}</text>
+        </view>
+    </view>
+    <view class="pt50 data-v-53532c60">
+        <view class="row-left-center color-f data-v-53532c60">
+            <view class="flex1 box-sizing pl15 pr15 data-v-53532c60" wx:if="{{type==2&&currentIndex}}">
+                <view bindtap="__e" class="text-center data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'prev',['$event'] ] ] ] ]}}" style="height:88rpx;background:#D9363D;font-size:32rpx;border-radius:44rpx;line-height:88rpx;">上一题</view>
+            </view>
+            <view class="flex1 box-sizing pl15 pr15 data-v-53532c60">
+                <view bindtap="__e" class="text-center data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" style="height:88rpx;background:#D9363D;font-size:32rpx;border-radius:44rpx;line-height:88rpx;" wx:if="{{currentIndex>=count-1&&isDone&&type!=2}}">交卷</view>
+                <block wx:else>
+                    <view bindtap="__e" class="text-center data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" style="height:88rpx;background:#009B03;font-size:32rpx;border-radius:44rpx;line-height:88rpx;" wx:if="{{currentIndex>=count-1&&isDone&&type==2}}">返回</view>
+                    <block wx:else>
+                        <view bindtap="__e" class="text-center data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'vertfy',['$event'] ] ] ] ]}}" style="height:88rpx;background:#D9363D;font-size:32rpx;border-radius:44rpx;line-height:88rpx;" wx:if="{{!isDone}}">选好了</view>
+                        <view bindtap="__e" class="text-center data-v-53532c60" data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}" style="height:88rpx;background:#D9363D;font-size:32rpx;border-radius:44rpx;line-height:88rpx;" wx:else>下一题</view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

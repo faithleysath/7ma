@@ -1,0 +1,53 @@
+<view class="card data-v-27a476cf" style="{{'background:'+'linear-gradient(90deg, '+card.linear_gradient[0]+','+card.linear_gradient[1]+')'+';'+'margin-top:'+top+';'+'margin-bottom:'+bottom+';'+'transform-origin:'+'0 0'+';'+'transform:'+'scale('+scale+')'+';'}}">
+    <view class="act_tag data-v-27a476cf" wx:if="{{card.is_activity}}">活动</view>
+    <image class="tag data-v-27a476cf" src="https://img2.7mate.cn/card_tag_2.png" wx:if="{{card.state===2&&card.is_freeze!=1}}"></image>
+    <image class="tag data-v-27a476cf" src="https://img2.7mate.cn/card_tag_3.png" wx:if="{{card.state===3}}"></image>
+    <image class="bg data-v-27a476cf" src="https://img2.7mate.cn/i_dc.png" wx:if="{{card.carmodel_id===1}}"></image>
+    <image class="bg data-v-27a476cf" src="https://img2.7mate.cn/i_zl.png" wx:if="{{card.carmodel_id===2}}"></image>
+    <view class="line fr data-v-27a476cf">
+        <view class="ll data-v-27a476cf">
+            <view class="carmodel data-v-27a476cf">{{card.carmodel_name}}</view>
+            <view catchtap="__e" class="jd_btn data-v-27a476cf" data-event-opts="{{[ [ 'tap',[ [ 'freeze',['$0',0],['card.id'] ] ] ] ]}}" style="{{'color:'+card.linear_gradient[0]}}" wx:if="{{card.is_freeze==1&&card.is_credit_score_freeze==0}}">解冻</view>
+        </view>
+        <view class="state data-v-27a476cf" wx:if="{{card.examine_status==1}}">待审核</view>
+        <block wx:else>
+            <view class="state data-v-27a476cf" wx:if="{{card.examine_status==2&&card.order_state==10}}">待支付</view>
+            <block wx:else>
+                <view class="font22 line50 br25 color-f pl10 pr10 data-v-27a476cf" style="border:1px solid #ccc;background:#cccccc88;" wx:if="{{card.is_credit_score_freeze==1}}">信用分过低冻结使用</view>
+                <block wx:else>
+                    <view class="state data-v-27a476cf" wx:if="{{card.state==0}}">未生效</view>
+                    <block wx:else>
+                        <view class="state data-v-27a476cf" wx:if="{{card.state==4}}">已冻结</view>
+                        <block wx:else>
+                            <view class="remaining data-v-27a476cf" wx:if="{{card.type===1&&card.state===1}}">
+                                <text class="data-v-27a476cf" wx:if="{{card.left_time}}">{{card.left_time}}</text>
+                                <text class="data-v-27a476cf" wx:else>{{'剩余'+card.remaining_free_days+'天'}}</text>
+                            </view>
+                            <block wx:else>
+                                <view class="remaining data-v-27a476cf" wx:if="{{card.type===2&&card.state!=3}}">
+                                    <text class="data-v-27a476cf">{{'剩余'+card.remaining_free_times+'次'}}</text>
+                                </view>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </block>
+    </view>
+    <view class="line md data-v-27a476cf" wx:if="{{card.is_activity&&(card.remaining_valid_days>0||card.left_time)}}">
+        <view class="upper data-v-27a476cf" wx:if="{{card.left_time}}">{{card.left_time}}</view>
+        <view class="upper data-v-27a476cf" wx:else>{{'还有'+card.remaining_valid_days+'天到期'}}</view>
+    </view>
+    <block wx:else>
+        <view class="line md data-v-27a476cf" wx:if="{{card.upper_daily_limit===1}}">
+            <view class="upper data-v-27a476cf">已达今日上限</view>
+        </view>
+    </block>
+    <view class="line lt data-v-27a476cf">
+        <view class="title data-v-27a476cf">{{card.name}}</view>
+        <view class="details data-v-27a476cf">
+            <view class="btn data-v-27a476cf">查看详情</view>
+            <image class="arrow data-v-27a476cf" src="https://img2.7mate.cn/card_arrow_right.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,137 @@
+#points_records.data-v-5c48ce40 {
+    height: 100%
+}
+
+#points_records .back.data-v-5c48ce40 {
+    height: 32rpx;
+    left: 64rpx;
+    position: absolute;
+    top: 118rpx;
+    width: 48rpx;
+    z-index: 999
+}
+
+#points_records .points_records_background.data-v-5c48ce40 {
+    height: 358rpx;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+#points_records .points_records_container.data-v-5c48ce40 {
+    background: linear-gradient(180deg,#de394d,#ec4551 21%,#e7404e 65%,#f04f4c);
+    height: 100%;
+    opacity: 1;
+    padding: 0 60rpx;
+    width: 100%
+}
+
+#points_records .points_records_container .points_records_container_header.data-v-5c48ce40 {
+    height: 27%;
+    position: relative
+}
+
+#points_records .points_records_container .points_records_container_header .points_records_container_header_c.data-v-5c48ce40 {
+    bottom: 24rpx;
+    left: 0;
+    position: absolute
+}
+
+#points_records .points_records_container .points_records_container_header .points_records_container_header_c .points_records_container_header_c_title.data-v-5c48ce40 {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 60rpx
+}
+
+#points_records .points_records_container .points_records_container_header .points_records_container_header_c .points_records_container_header_c_points.data-v-5c48ce40 {
+    color: #fff;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    margin-top: 26rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container.data-v-5c48ce40 {
+    height: 73%;
+    position: relative;
+    width: 630rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item.data-v-5c48ce40 {
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    height: 95%;
+    overflow-y: auto
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item.data-v-5c48ce40::-webkit-scrollbar {
+    display: none
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process.data-v-5c48ce40 {
+    height: 44rpx;
+    padding: 0 0 0 36rpx;
+    position: relative
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process .points_records_container_card_container_item_process_dot.data-v-5c48ce40 {
+    background: #eee;
+    border-radius: 50%;
+    display: inline-block;
+    height: 20rpx;
+    width: 20rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process .points_records_container_card_container_item_process_date.data-v-5c48ce40 {
+    color: #333;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    margin-left: 8rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process .points_records_container_card_container_item_process_content.data-v-5c48ce40 {
+    color: #333;
+    font-family: PingFangSC-Regular,serif;
+    font-size: 24rpx;
+    margin-left: 52rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process .points_records_container_card_container_item_process_points.data-v-5c48ce40 {
+    color: #fd555b;
+    display: inline-block;
+    font-family: PingFang SC,serif;
+    font-size: 32rpx;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    width: 100rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_process .points_records_container_card_container_item_process_points.de.data-v-5c48ce40 {
+    color: #63b72d
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item .points_records_container_card_container_item_line.data-v-5c48ce40 {
+    border: 2rpx solid #eee;
+    height: 48rpx;
+    margin-left: 44rpx;
+    position: relative;
+    top: 4rpx;
+    width: 0rpx
+}
+
+#points_records .points_records_container .points_records_container_card_container .points_records_container_card_container_item_none.data-v-5c48ce40 {
+    height: 300rpx;
+    left: 50%;
+    margin-left: -150rpx;
+    position: absolute;
+    top: 318rpx;
+    width: 300rpx
+}
+
+#points_records .bottom_loading.data-v-5c48ce40 {
+    padding-top: 36rpx;
+    text-align: center
+}

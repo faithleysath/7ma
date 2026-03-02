@@ -1,0 +1,42 @@
+<view class="container data-v-d5ecded0">
+    <view class="box-sizing p30 data-v-d5ecded0">
+        <view class="bg-f br20 pt60 box-sizing pb70 data-v-d5ecded0">
+            <view class="text-center font32 font700 data-v-d5ecded0">骑行驾照线上考试最高分数据</view>
+            <view class="row-center pt60 data-v-d5ecded0">
+                <view class="relative data-v-d5ecded0" style="width:350rpx;height:350rpx;background:#fff;">
+                    <qiun-data-charts bind:__l="__l" chartData="{{chartData}}" class="data-v-d5ecded0" opts="{{opts}}" type="arcbar" vueId="8c24969a-1"></qiun-data-charts>
+                    <view class="absolute w_100 h_100 left0 top0 row-bottom-center data-v-d5ecded0">
+                        <view class="row-center box-sizing data-v-d5ecded0">
+                            <view class="pb20 data-v-d5ecded0" style="font-size:110rpx;color:#DE2736;font-weight:700;">{{info.exam_info.exam_score}}</view>
+                            <view class="font30 pb20 data-v-d5ecded0" style="color:#292929;">{{'满分'+info.exam_info.total_score+'分'}}</view>
+                            <view class="btn1 data-v-d5ecded0" wx:if="{{info.exam_flag==0||info.exam_flag==2}}">未通过</view>
+                            <view class="btn2 data-v-d5ecded0" wx:else>已通过</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex box-sizing pt50 data-v-d5ecded0">
+                <view class="flex3_1 text-center data-v-d5ecded0" style="border-right:1px solid #D8D8D8;">
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">{{$root.f0}}</view>
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">答题时长</view>
+                </view>
+                <view class="flex3_1 text-center data-v-d5ecded0" style="border-right:1px solid #D8D8D8;">
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">{{info.exam_info.correct_question_num+'/'+info.exam_info.total_question_num}}</view>
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">正确题数</view>
+                </view>
+                <view class="flex3_1 text-center data-v-d5ecded0">
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">{{info.exam_info.pass_score}}</view>
+                    <view class="font28 line40 data-v-d5ecded0" style="color:#838383;">及格分数</view>
+                </view>
+            </view>
+            <view class="pt50 row-center data-v-d5ecded0">
+                <view bindtap="__e" class="data-v-d5ecded0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/qxjz/ks'] ] ] ] ]}}" style="width:523rpx;height:98rpx;background:#DE2736;color:#fff;font-size:32rpx;line-height:98rpx;text-align:center;border-radius:49rpx;">{{info.exam_flag==0?'开始考试':'再考一次'}}</view>
+                <view bindtap="__e" class="data-v-d5ecded0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/qxjz/st'] ] ] ] ]}}" style="margin-top:30rpx;width:523rpx;height:98rpx;background:#FAE0E2;color:#DE2736;font-size:32rpx;line-height:98rpx;text-align:center;border-radius:49rpx;">刷题练习</view>
+            </view>
+            <view bindtap="__e" class="row-center fixed right30 bottom100 br_50 data-v-d5ecded0" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/qxdzjz/index?number='+info.exam_info.exam_number+'&time='+info.exam_info.exam_date+'&name='+userName] ] ] ] ]}}" style="width:128rpx;height:128rpx;background:#D9363D;color:#fff;font-size:30rpx;box-shadow:0 0 5px 5px #FAE0E2;" wx:if="{{info.exam_flag==1}}">
+                <view class="data-v-d5ecded0">查看</view>
+                <view class="data-v-d5ecded0">驾照</view>
+            </view>
+        </view>
+    </view>
+</view>

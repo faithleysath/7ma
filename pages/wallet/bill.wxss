@@ -1,0 +1,66 @@
+#wallet_bill.data-v-2c91e46c {
+    height: 100%
+}
+
+#wallet_bill .ws_container .no_bill.data-v-2c91e46c {
+    margin-top: 128rpx;
+    max-height: 100%;
+    text-align: center
+}
+
+#wallet_bill .ws_container .no_bill .img.data-v-2c91e46c {
+    height: 248rpx;
+    width: 248rpx
+}
+
+#wallet_bill .ws_container .no_bill .desc.data-v-2c91e46c {
+    color: #bbb;
+    font-size: 32rpx
+}
+
+#wallet_bill .ws_container .card.data-v-2c91e46c {
+    background-color: #fff;
+    margin-top: 40rpx;
+    padding: 30rpx;
+    position: relative
+}
+
+#wallet_bill .ws_container .card .badge.data-v-2c91e46c {
+    height: 90rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90rpx
+}
+
+#wallet_bill .ws_container .card .item wx-label.data-v-2c91e46c {
+    font-size: 28rpx
+}
+
+#wallet_bill .ws_container .card .item wx-label.data-v-2c91e46c:first-child {
+    color: #888
+}
+
+#wallet_bill .ws_container .card .item wx-label.data-v-2c91e46c:last-child {
+    color: #4c4c4c
+}
+
+#wallet_bill .ws_container .card .price.data-v-2c91e46c {
+    bottom: 20rpx;
+    color: #ff1700;
+    position: absolute;
+    right: 30rpx
+}
+
+#wallet_bill .ws_container .card .price wx-label.data-v-2c91e46c:first-child {
+    font-size: 32rpx
+}
+
+#wallet_bill .ws_container .card .price wx-label.data-v-2c91e46c:last-child {
+    font-size: 48rpx
+}
+
+page {
+    background: #f1f1f1;
+    height: 100%
+}

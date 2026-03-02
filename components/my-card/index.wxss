@@ -1,0 +1,116 @@
+.card.data-v-3f5fc082 {
+    background: linear-gradient(90deg,#e72f3d,#ff6955);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px 0 rgba(76,7,10,.1);
+    height: 240rpx;
+    margin-top: 40rpx;
+    opacity: .99;
+    position: relative;
+    width: 686rpx
+}
+
+.card.data-v-3f5fc082:last-child {
+    margin-bottom: 32rpx
+}
+
+.card .tag.data-v-3f5fc082 {
+    background: linear-gradient(90deg,#fe854a,#ff720d);
+    border-radius: 10rpx 0 20rpx 0;
+    color: #fff;
+    font-size: 26rpx;
+    font-weight: 400;
+    height: 44rpx;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 120rpx
+}
+
+.card .bg.data-v-3f5fc082 {
+    height: 240rpx;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 344rpx
+}
+
+.card .line.data-v-3f5fc082 {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    position: relative;
+    width: 586rpx
+}
+
+.card .line.fr.data-v-3f5fc082 {
+    left: 50rpx;
+    position: absolute;
+    top: 40rpx
+}
+
+.card .line.data-v-3f5fc082:last-child {
+    bottom: 40rpx;
+    left: 50rpx;
+    position: absolute
+}
+
+.card .line .type_container.data-v-3f5fc082 {
+    display: table-cell;
+    vertical-align: bottom
+}
+
+.card .line .type_container .carmodel.data-v-3f5fc082 {
+    color: #fff;
+    display: inline-block;
+    font-size: 36rpx
+}
+
+.card .line .type_container .type.data-v-3f5fc082 {
+    color: #fff;
+    display: inline-block;
+    font-size: 20rpx;
+    margin-left: 30rpx;
+    opacity: .6
+}
+
+.card .line .title.data-v-3f5fc082 {
+    color: #fff;
+    font-size: 36rpx
+}
+
+.card .line .price_container.data-v-3f5fc082 {
+    display: table-cell;
+    vertical-align: bottom;
+    width: 400rpx
+}
+
+.card .line .price_container .price.data-v-3f5fc082 {
+    color: #fff;
+    display: inline-block;
+    font-size: 48rpx
+}
+
+.card .line .price_container .original_price.data-v-3f5fc082 {
+    color: #fff;
+    display: inline-block;
+    font-size: 30rpx;
+    margin-left: 49rpx;
+    opacity: .6;
+    text-decoration: line-through
+}
+
+.card .line .btn.data-v-3f5fc082 {
+    background: #fff;
+    border-radius: 30rpx;
+    color: #e93641;
+    float: right;
+    font-size: 40rpx;
+    height: 60rpx;
+    padding: 2rpx 35rpx;
+    text-align: center;
+    width: 150rpx
+}

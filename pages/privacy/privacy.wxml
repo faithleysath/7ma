@@ -1,0 +1,13 @@
+<view class="relative" style="width:100%;height:100vh;">
+    <view class="pt30 row-center">
+        <view bindtap="__e" class="row-center color-f font30 br20" data-event-opts="{{[ [ 'tap',[ [ 'open',['$event'] ] ] ] ]}}" style="width:686rpx;height:80rpx;background:linear-gradient(-45deg, #00C1FF, #61E4FF);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+            <view>查看隐私协议</view>
+        </view>
+    </view>
+    <view class="pt50 row-center relative">
+        <view class="row-center color-f font30 br20" style="width:686rpx;height:80rpx;background:linear-gradient(-45deg, #FF4C52, #FF6C58);box-shadow:0 5rpx 20rpx 0 rgba(95, 31, 33, 0.2);">
+            <view>我已阅读并同意隐私协议</view>
+        </view>
+        <button bindagreeprivacyauthorization="__e" class="absolute w_100 h_100 left0 topo" data-event-opts="{{[ [ 'agreeprivacyauthorization',[ [ 'agreeprivacyauthorization',['$event'] ] ] ] ]}}" openType="agreePrivacyAuthorization" style="opacity:0;">我已阅读并同意隐私协议</button>
+    </view>
+</view>

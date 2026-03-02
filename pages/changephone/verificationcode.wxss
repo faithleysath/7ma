@@ -1,0 +1,125 @@
+.changephone_verificationcode.data-v-46fe93d8 {
+    height: 100%;
+    padding: 0 60rpx
+}
+
+.changephone_verificationcode .back.data-v-46fe93d8 {
+    height: 30rpx;
+    margin-top: 120rpx;
+    width: 46rpx
+}
+
+.changephone_verificationcode .title.data-v-46fe93d8 {
+    color: #333;
+    font-size: 60rpx;
+    margin-top: 80rpx
+}
+
+.changephone_verificationcode .desc.data-v-46fe93d8 {
+    color: #333;
+    font-size: 32rpx;
+    margin-top: 120rpx;
+    position: relative
+}
+
+.changephone_verificationcode .desc .code.data-v-46fe93d8 {
+    color: #979797;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+page {
+    height: auto
+}
+
+.changephone_verificationcode .first .van-cell {
+    margin-left: 0
+}
+
+.changephone_verificationcode .van-cell {
+    padding: 0
+}
+
+.changephone_verificationcode .van-cell:after {
+    border: none;
+    left: 0
+}
+
+.changephone_verificationcode .van-field__input {
+    background: transparent;
+    color: transparent;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: -120%;
+    margin-top: 60rpx;
+    position: relative;
+    text-align: left;
+    top: 60rpx;
+    z-index: 9999
+}
+
+.changephone_verificationcode .field {
+    margin-top: 0;
+    position: relative
+}
+
+.changephone_verificationcode .field .container {
+    bottom: -2rpx;
+    display: -webkit-flex;
+    display: flex;
+    height: 80rpx;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    z-index: 1
+}
+
+.changephone_verificationcode .field .container .input {
+    -webkit-align-items: center;
+    align-items: center;
+    border-bottom: 2rpx solid #979797;
+    display: -webkit-flex;
+    display: flex;
+    height: 80rpx;
+    -webkit-justify-content: center;
+    justify-content: center;
+    line-height: 80rpx;
+    text-align: center;
+    width: 80rpx;
+    z-index: 999
+}
+
+.changephone_verificationcode .field .container .input:first-child {
+    margin-left: 0
+}
+
+.changephone_verificationcode .field .container .input .cursor {
+    -webkit-animation: focus .7s infinite;
+    animation: focus .7s infinite;
+    background-color: #000;
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 2rpx
+}
+
+@-webkit-keyframes focus {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes focus {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}

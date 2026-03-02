@@ -1,0 +1,3 @@
+<view class="data-v-80d6195e" id="h5">
+    <web-view class="data-v-80d6195e" src="{{path}}"></web-view>
+</view>

@@ -1,0 +1,44 @@
+<view class="data-v-1034b95d" id="order_index" style="{{'background:'+($root.g0?'#ffffff':'#F1F1F1')+';'}}">
+    <view class="ws_container1 data-v-1034b95d" wx:if="{{!loading}}">
+        <view bindtap="__e" class="item data-v-1034b95d" data-event-opts="{{[ [ 'tap',[ [ 'gotoOrderDetail',['$0'],[ [ ['orders','',index] ] ] ] ] ] ]}}" wx:for="{{orders}}" wx:for-item="order" wx:key="index">
+            <image class="badge data-v-1034b95d" src="https://img2.7mate.cn/badge_ywc.jpg" wx:if="{{order.order_state==1}}"></image>
+            <image class="badge data-v-1034b95d" src="https://img2.7mate.cn/minibus_wzf.png" wx:if="{{order.order_state==0}}"></image>
+            <view class="header data-v-1034b95d">
+                <label class="order_title data-v-1034b95d">订单编号</label>
+                <label class="order_sn data-v-1034b95d">{{order.order_sn}}</label>
+            </view>
+            <view class="main data-v-1034b95d">
+                <view class="img data-v-1034b95d">
+                    <image class="data-v-1034b95d" src="https://img2.7mate.cn/minibus_icon.png"></image>
+                </view>
+                <view class="container data-v-1034b95d">
+                    <view class="item data-v-1034b95d">
+                        <label class="title data-v-1034b95d">车辆名称</label>
+                        <label class="content data-v-1034b95d">{{order.bus_name}}</label>
+                    </view>
+                    <view class="item data-v-1034b95d">
+                        <label class="title data-v-1034b95d">订单时间</label>
+                        <label class="content data-v-1034b95d">{{order.created_at}}</label>
+                    </view>
+                    <view class="item data-v-1034b95d">
+                        <label class="title data-v-1034b95d">订单人数</label>
+                        <label class="content data-v-1034b95d">{{order.person_number}}</label>
+                    </view>
+                    <view class="item data-v-1034b95d">
+                        <label class="title data-v-1034b95d">订单价格</label>
+                        <label class="content order_amount data-v-1034b95d">{{'￥'+order.order_amount}}</label>
+                    </view>
+                </view>
+                <view class="detail data-v-1034b95d">
+                    <view class="text data-v-1034b95d">订单详情</view>
+                    <image class="arrow data-v-1034b95d" src="https://img2.7mate.cn/arrow_right.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="no_order data-v-1034b95d" wx:if="{{$root.g1}}">
+            <image class="img data-v-1034b95d" src="https://img2.7mate.cn/no_order.png"></image>
+            <view class="desc data-v-1034b95d">您还未有订单，请快下单吧！</view>
+        </view>
+    </view>
+    <van-loading bind:__l="__l" class="spinner data-v-1034b95d" data-com-type="wx" type="spinner" vueId="1e395787-1" wx:if="{{show_loading}}"></van-loading>
+</view>

@@ -1,0 +1,7 @@
+<view class="data-v-6c01a1a4" id="school_index">
+    <ws-header bind:__l="__l" class="data-v-6c01a1a4" title="{{title}}" vueId="0b45c9d4-1"></ws-header>
+    <view class="ws_container data-v-6c01a1a4">
+        <van-search bind:__l="__l" bind:change="__e" bind:input="__e" class="search data-v-6c01a1a4" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['onChange'] ] ],[ '^input',[ [ '__set_model',[ '','name','$event',[] ] ] ] ] ]}}" leftIcon="https://img2.7mate.cn/search.png" placeholder="搜索区域" value="{{name}}" vueId="0b45c9d4-2"></van-search>
+        <view bindtap="__e" class="item data-v-6c01a1a4" data-event-opts="{{[ [ 'tap',[ [ 'backFrom',['$0'],[ [ ['schools','',index] ] ] ] ] ] ]}}" wx:for="{{schools}}" wx:for-item="school" wx:key="index">{{''+school.name+''}}</view>
+    </view>
+</view>

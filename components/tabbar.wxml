@@ -1,0 +1,13 @@
+<view class="ws_tabbar" id="ws_tabbar">
+    <van-tabbar active="{{active}}" activeColor="#FD5558" bind:__l="__l" bind:change="__e" class="vue-ref" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['tabbarChange'] ] ] ]}}" data-ref="tabbar" inactiveColor="#666666" vueId="2025dc66-1" vueSlots="{{['default']}}">
+        <van-tabbar-item bind:__l="__l" data-com-type="wx" name="home" vueId="{{'2025dc66-2'+','+'2025dc66-1'}}" vueSlots="{{['default','icon','icon-active']}}">
+            <image slot="icon" src="https://img2.7mate.cn/tab_a_u.png" style="width:30px;height:30px;"></image>
+            <image slot="icon-active" src="https://img2.7mate.cn/tab_a_s.png" style="width:30px;height:30px;"></image>首页</van-tabbar-item>
+        <van-tabbar-item bind:__l="__l" data-com-type="wx" name="wallet" vueId="{{'2025dc66-3'+','+'2025dc66-1'}}" vueSlots="{{['default','icon','icon-active']}}">
+            <image slot="icon" src="https://img2.7mate.cn/tab_b_u.png" style="width:30px;height:30px;"></image>
+            <image slot="icon-active" src="https://img2.7mate.cn/tab_b_s.png" style="width:30px;height:30px;"></image>钱包</van-tabbar-item>
+        <van-tabbar-item bind:__l="__l" data-com-type="wx" name="member" vueId="{{'2025dc66-4'+','+'2025dc66-1'}}" vueSlots="{{['default','icon','icon-active']}}">
+            <image slot="icon" src="https://img2.7mate.cn/tab_c_u.png" style="width:30px;height:30px;"></image>
+            <image slot="icon-active" src="https://img2.7mate.cn/tab_c_s.png" style="width:30px;height:30px;"></image>我的</van-tabbar-item>
+    </van-tabbar>
+</view>

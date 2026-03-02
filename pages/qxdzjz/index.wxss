@@ -1,0 +1,19 @@
+.container.data-v-08fdd360 {
+    background: #000;
+    background-image: url(https://img2.7mate.cn/qxdzjz_3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh
+}
+
+.btn.data-v-08fdd360 {
+    background: #ffe2b2;
+    border: 5rpx solid #f2c48f;
+    border-radius: 42rpx;
+    box-sizing: border-box;
+    color: #a95d05;
+    font-size: 32rpx;
+    height: 83rpx;
+    text-align: center;
+    width: 221rpx
+}

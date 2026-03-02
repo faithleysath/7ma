@@ -1,0 +1,6 @@
+<view class="relative data-v-96ec0922">
+    <image class="w_100 data-v-96ec0922" mode="widthFix" src="https://img2.7mate.cn/seat_bg.png"></image>
+    <van-transition bind:__l="__l" class="absolute data-v-96ec0922" customClass="block" data-com-type="wx" name="fade-up" show="{{union_id}}" style="left:214rpx;bottom:520rpx;" vueId="196977a5-1" vueSlots="{{['default']}}">
+        <image bindtap="__e" class="data-v-96ec0922" data-event-opts="{{[ [ 'tap',[ [ 'go',['$event'] ] ] ] ]}}" src="https://img2.7mate.cn/seat_btn.png" style="width:322rpx;height:102rpx;"></image>
+    </van-transition>
+</view>

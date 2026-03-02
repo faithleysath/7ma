@@ -1,0 +1,28 @@
+<view class="ws_header data-v-243e8ca7" id="ws_header">
+    <view class="{{['_header','data-v-243e8ca7',showTab?'_2':'']}}">
+        <view class="tip data-v-243e8ca7" wx:if="{{tip!==''}}">{{tip}}</view>
+        <view bindtap="__e" class="back data-v-243e8ca7" data-event-opts="{{[ [ 'tap',[ [ 'backAction',['$event'] ] ] ] ]}}" wx:if="{{show_back}}">
+            <image class="img data-v-243e8ca7" height="15" src="https://img2.7mate.cn/back.png" width="23"></image>
+        </view>
+        <view class="title data-v-243e8ca7" style="{{'margin-top:'+200+(is_iphone_x?40:20)+'rpx'}}">
+            <label class="data-v-243e8ca7">{{title}}</label>
+            <image bindtap="__e" class="{{['icon','data-v-243e8ca7',title_icon_class]}}" data-event-opts="{{[ [ 'tap',[ [ 'titleIconClick',['$event'] ] ] ] ]}}" src="{{title_icon}}" wx:if="{{title_icon}}"></image>
+        </view>
+        <view class="picker data-v-243e8ca7" wx:if="{{title==='账单'}}">
+            <view class="label data-v-243e8ca7">交易类型</view>
+            <view bindtap="__e" class="input data-v-243e8ca7" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <label class="data-v-243e8ca7">{{column.value}}</label>
+                <image class="arrow data-v-243e8ca7" src="https://img2.7mate.cn/arrow_bottom.png"></image>
+            </view>
+            <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="_picker data-v-243e8ca7" columns="{{columns}}" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['e1'] ] ],[ '^confirm',[ ['onConfirm'] ] ] ]}}" defaultIndex="{{column.index}}" showToolbar="{{true}}" title="交易类型" vueId="551d6604-1" wx:if="{{showPicker}}"></van-picker>
+        </view>
+        <view class="tab data-v-243e8ca7" wx:if="{{showTab}}">
+            <van-tabs active="{{tab}}" bind:__l="__l" bind:change="__e" class="data-v-243e8ca7" data-com-type="wx" data-event-opts="{{[ [ '^change',[ ['tabChange'] ] ] ]}}" vueId="551d6604-2" vueSlots="{{['default']}}">
+                <van-tab bind:__l="__l" class="data-v-243e8ca7" data-com-type="wx" title="{{_tab}}" vueId="{{'551d6604-3-'+index+','+'551d6604-2'}}" wx:for="{{tabs}}" wx:for-item="_tab" wx:key="index"></van-tab>
+            </van-tabs>
+        </view>
+        <view bindtap="__e" class="right data-v-243e8ca7" data-event-opts="{{[ [ 'tap',[ [ 'rightClick',['$event'] ] ] ] ]}}" wx:if="{{right_title}}">{{right_title}}</view>
+        <image bindtap="__e" class="{{['right','data-v-243e8ca7',right_icon_class]}}" data-event-opts="{{[ [ 'tap',[ [ 'rightClick',['$event'] ] ] ] ]}}" src="{{right_icon}}" wx:if="{{right_icon}}"></image>
+    </view>
+    <view class="overlay z1 data-v-243e8ca7" wx:if="{{show_overlay}}"></view>
+</view>

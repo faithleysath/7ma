@@ -1,0 +1,6 @@
+<view class="row-center" style="{{'background:'+(pass&&isSuccess?background:background2)+';'+'color:'+(pass&&isSuccess?color:color2)+';'+'width:'+width+';'+'height:'+height+';'+'font-size:'+fontSize+';'+'border-radius:'+br+';'}}">
+    <view wx:if="{{!isSuccess}}">连接中...</view>
+    <view bindtap="__e" class="w_100 h_100 row-center" data-event-opts="{{[ [ 'tap',[ [ 'reset',['$event'] ] ] ] ]}}" wx:else>
+        <text>{{pass?text:text2}}</text>
+    </view>
+</view>

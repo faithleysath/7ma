@@ -1,0 +1,9 @@
+<view class="container">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="更换校区" vueId="73d3bbe6-1"></my-header>
+    <image class="w_100 block" mode="widthFix" src="https://img2.7mate.cn/update_school_01.png"></image>
+    <image class="w_100 block" mode="widthFix" src="https://img2.7mate.cn/update_school_02.png"></image>
+    <view class="relative">
+        <view bindtap="__e" class="absolute" data-event-opts="{{[ [ 'tap',[ [ 'go',['/pages/updateSchool/updateSchool'] ] ] ] ]}}" style="width:600rpx;height:140rpx;left:75rpx;top:105rpx;"></view>
+        <image class="w_100 block" mode="widthFix" src="https://img2.7mate.cn/update_school_03.png"></image>
+    </view>
+</view>

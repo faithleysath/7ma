@@ -1,0 +1,22 @@
+<view class="container data-v-0e20ee5f">
+    <my-header bgColor="{{['#FF6C58','#FF4C52']}}" bind:__l="__l" bind:back="__e" class="data-v-0e20ee5f" data-event-opts="{{[ [ '^back',[ ['back'] ] ] ]}}" fontColor="#fff" title="投诉详情" vueId="5ba91000-1"></my-header>
+    <view class="box-sizing pl32 pr32 pt40 pb100 data-v-0e20ee5f">
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb30 data-v-0e20ee5f">
+            <view class="font36 data-v-0e20ee5f">{{info.status==0?'投诉处理中':'已处理'}}</view>
+            <view class="font28 pt30 data-v-0e20ee5f" style="color:#666;">{{info.created_at}}</view>
+        </view>
+        <view class="font26 pt40 pb15 data-v-0e20ee5f" style="color:#666;">投诉内容</view>
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb30 data-v-0e20ee5f">
+            <view class="font30 data-v-0e20ee5f" style="color:#999;">{{info.title}}</view>
+        </view>
+        <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb20 data-v-0e20ee5f">
+            <view class="font30 pre-wrap data-v-0e20ee5f" style="color:#999;">{{info.content}}</view>
+        </view>
+        <view class="data-v-0e20ee5f" wx:if="{{info.reply}}">
+            <view class="font26 pt40 pb15 data-v-0e20ee5f" style="color:#666;">回复内容</view>
+            <view class="bg-f br10 box-sizing pl20 pr20 pt30 pb30 mb20 data-v-0e20ee5f">
+                <view class="font30 pre-wrap data-v-0e20ee5f" style="color:#999;">{{info.reply}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+<view class="data-v-3666b94c" id="member_detail">
+    <ws-header bind:__l="__l" class="data-v-3666b94c" title="个人信息" vueId="654bb1e9-1"></ws-header>
+    <view class="ws_container data-v-3666b94c" wx:if="{{!loading}}">
+        <view bindtap="__e" class="item data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+            <label class="_span data-v-3666b94c">头像</label>
+            <view class="right data-v-3666b94c">
+                <image class="avatar data-v-3666b94c" src="{{tempImgPath?tempImgPath:user.avatar?user.avatar:'https://img2.7mate.cn/logo.png'}}"></image>
+                <image class="arrow data-v-3666b94c" src="https://img2.7mate.cn/arrow_right.png"></image>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view class="item data-v-3666b94c">
+            <label class="_span data-v-3666b94c">昵称</label>
+            <view class="right data-v-3666b94c">
+                <input bindblur="__e" bindinput="__e" border="{{false}}" class="field_content data-v-3666b94c" data-event-opts="{{[ [ 'blur',[ [ 'onChange',['$event',1] ] ] ],[ 'input',[ [ '__set_model',[ '','nickname','$event',[] ] ] ] ] ]}}" inputAlign="right" placeholder="请填写昵称" placeholderStyle="color:#666666;" value="{{nickname}}"></input>
+                <image class="arrow data-v-3666b94c" src="https://img2.7mate.cn/arrow_right.png"></image>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view class="item data-v-3666b94c">
+            <label class="_span data-v-3666b94c">手机号</label>
+            <view class="right data-v-3666b94c">
+                <label class="content pr17 _span data-v-3666b94c">{{user.phone}}</label>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view bindtap="__e" class="item data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'onChange',['',2] ] ] ] ]}}">
+            <label class="_span data-v-3666b94c">性别</label>
+            <view class="right data-v-3666b94c">
+                <label class="content _span data-v-3666b94c" wx:if="{{user.sex===0}}">请选择性别</label>
+                <block wx:else>
+                    <label class="content _span data-v-3666b94c" wx:if="{{user.sex===1}}">男</label>
+                    <block wx:else>
+                        <label class="content _span data-v-3666b94c" wx:if="{{user.sex===2}}">女</label>
+                    </block>
+                </block>
+                <image class="arrow data-v-3666b94c" src="https://img2.7mate.cn/arrow_right.png"></image>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view class="item data-v-3666b94c" wx:if="{{user.cert1_status===3}}">
+            <label class="_span data-v-3666b94c">学校</label>
+            <view class="right data-v-3666b94c">
+                <label class="content pr17 _span data-v-3666b94c">{{user.school_name}}</label>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view bindtap="__e" class="item data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'onChange',['',3] ] ] ] ]}}" wx:if="{{user.cert1_status===3}}">
+            <label class="_span data-v-3666b94c">学院</label>
+            <view class="right data-v-3666b94c">
+                <label class="content _span data-v-3666b94c">{{user.college_name?user.college_name:'请选择学院'}}</label>
+                <image class="arrow data-v-3666b94c" src="https://img2.7mate.cn/arrow_right.png"></image>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+        <view bindtap="__e" class="item data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'onChange',['',4] ] ] ] ]}}" wx:if="{{user.cert1_status===3}}">
+            <label class="_span data-v-3666b94c">入学时间</label>
+            <view class="right data-v-3666b94c">
+                <label class="content _span data-v-3666b94c">{{user.admission_time?user.admission_time:'请选择入学时间'}}</label>
+                <image class="arrow data-v-3666b94c" src="https://img2.7mate.cn/arrow_right.png"></image>
+            </view>
+            <view class="line data-v-3666b94c"></view>
+        </view>
+    </view>
+    <van-popup bind:__l="__l" class="data-v-3666b94c" data-com-type="wx" position="bottom" show="{{popup>0}}" vueId="654bb1e9-2" vueSlots="{{['default']}}">
+        <van-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-3666b94c" columns="{{columns}}" confirmButtonText="完成" data-com-type="wx" data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ],[ '^cancel',[ ['onCancel'] ] ] ]}}" showToolbar="{{true}}" vueId="{{'654bb1e9-3'+','+'654bb1e9-2'}}" wx:if="{{popup!==4}}"></van-picker>
+        <van-datetime-picker bind:__l="__l" bind:cancel="__e" bind:confirm="__e" class="data-v-3666b94c" data-com-type="wx" data-event-opts="{{[ [ '^cancel',[ ['onCancel'] ] ],[ '^confirm',[ ['onConfirm'] ] ] ]}}" formatter="{{formatter}}" maxDate="{{maxDate}}" minDate="{{minDate}}" type="year-month" value="{{maxDate}}" vueId="{{'654bb1e9-4'+','+'654bb1e9-2'}}" wx:if="{{popup===4}}"></van-datetime-picker>
+    </van-popup>
+    <van-popup bind:__l="__l" class="popup data-v-3666b94c" data-com-type="wx" position="bottom" show="{{show_modal}}" vueId="654bb1e9-5" vueSlots="{{['default']}}">
+        <view class="container data-v-3666b94c">
+            <view bindtap="__e" class="_item data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',[1] ] ] ] ]}}">
+                <label class="data-v-3666b94c">拍照</label>
+            </view>
+            <view bindtap="__e" class="_item last data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',[2] ] ] ] ]}}">
+                <label class="data-v-3666b94c">从手机相册选择</label>
+            </view>
+        </view>
+    </van-popup>
+    <van-popup bind:__l="__l" class="popup2 data-v-3666b94c" data-com-type="wx" overlay="{{false}}" position="bottom" show="{{show_modal}}" vueId="654bb1e9-6" vueSlots="{{['default']}}">
+        <view bindtap="__e" class="cancel data-v-3666b94c" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{show_modal}}">取消</view>
+    </van-popup>
+    <view class="tip data-v-3666b94c" wx:if="{{tip!==''}}">{{tip}}</view>
+    <van-loading bind:__l="__l" class="spinner data-v-3666b94c" data-com-type="wx" type="spinner" vueId="654bb1e9-7" wx:if="{{loading}}"></van-loading>
+</view>

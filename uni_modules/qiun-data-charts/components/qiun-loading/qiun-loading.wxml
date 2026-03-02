@@ -1,0 +1,7 @@
+<view>
+    <loading1 bind:__l="__l" vueId="492ad452-1" wx:if="{{loadingType==1}}"></loading1>
+    <loading2 bind:__l="__l" vueId="492ad452-2" wx:if="{{loadingType==2}}"></loading2>
+    <loading3 bind:__l="__l" vueId="492ad452-3" wx:if="{{loadingType==3}}"></loading3>
+    <loading4 bind:__l="__l" vueId="492ad452-4" wx:if="{{loadingType==4}}"></loading4>
+    <loading5 bind:__l="__l" vueId="492ad452-5" wx:if="{{loadingType==5}}"></loading5>
+</view>

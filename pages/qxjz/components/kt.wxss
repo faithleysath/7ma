@@ -1,0 +1,21 @@
+.item.data-v-53532c60 {
+    background: #efefef;
+    border-radius: 15rpx;
+    font-size: 28rpx;
+    margin-bottom: 24rpx
+}
+
+.item.warning.data-v-53532c60 {
+    background: #fdf6ec;
+    color: #e6a23c
+}
+
+.item.error.data-v-53532c60 {
+    background: #ffe8ea;
+    color: #dc0f18
+}
+
+.item.success.data-v-53532c60 {
+    background: #dcf6dc;
+    color: #009b03
+}

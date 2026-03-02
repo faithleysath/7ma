@@ -1,0 +1,38 @@
+.btn-item.data-v-65e93a21 {
+    background: #fff3ee;
+    border-radius: 21rpx 21rpx 0 0;
+    font-size: 31rpx;
+    min-width: 165rpx;
+    padding: 20rpx;
+    text-align: center
+}
+
+.btn-item-on.data-v-65e93a21 {
+    background: #fff;
+    color: #f94754
+}
+
+.container.data-v-65e93a21 {
+    height: 100vh
+}
+
+.line-item.data-v-65e93a21 {
+    background: #f1f1f1;
+    border-radius: 28rpx;
+    font-size: 28rpx;
+    line-height: 55rpx;
+    padding: 0 30rpx
+}
+
+.line-item-active.data-v-65e93a21 {
+    background: #f94754;
+    color: #fff
+}
+
+.data-v-65e93a21 .van-picker__confirm {
+    color: #ff4c52
+}
+
+.data-v-65e93a21 .van-picker__cancel {
+    color: #b3b3b3
+}

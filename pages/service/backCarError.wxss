@@ -1,0 +1,30 @@
+#service_back_car_error.data-v-26f7f181 {
+    height: 100%
+}
+
+#service_back_car_error .ws_container .tip.data-v-26f7f181 {
+    background-color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 32rpx;
+    padding: 0 92rpx 28rpx
+}
+
+#service_back_car_error .ws_container .tip .img.data-v-26f7f181 {
+    display: inline-block;
+    height: 84rpx;
+    line-height: 84rpx;
+    width: 176rpx
+}
+
+#service_back_car_error .ws_container .tip .img .i.data-v-26f7f181 {
+    height: 72rpx;
+    width: 84rpx
+}
+
+#service_back_car_error .ws_container .tip .c.data-v-26f7f181 {
+    color: #666;
+    display: inline-block;
+    font-size: 28rpx;
+    margin-left: 48rpx
+}
