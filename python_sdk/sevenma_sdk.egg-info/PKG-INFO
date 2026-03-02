@@ -1,3 +1,11 @@
+Metadata-Version: 2.4
+Name: sevenma-sdk
+Version: 0.1.0
+Summary: Python SDK for 7ma auth, location and map APIs
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31.0
+
 # sevenma-sdk
 
 Python SDK for APIs documented in `接口文档-定位地图登录详版.md`.

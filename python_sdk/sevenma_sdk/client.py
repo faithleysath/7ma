@@ -106,30 +106,6 @@ class SevenMAClient:
     # -------------------------------------------------------------------------
     # Auth/login APIs
     # -------------------------------------------------------------------------
-    def wechat_login(
-        self,
-        *,
-        code: str,
-        device_id: str,
-        force_new_account: Optional[bool] = None,
-        restore_confirm: Optional[bool] = None,
-    ) -> Any:
-        payload: Dict[str, Any] = {"code": code, "device_id": device_id}
-        if force_new_account is not None:
-            payload["force_new_account"] = force_new_account
-        if restore_confirm is not None:
-            payload["restore_confirm"] = restore_confirm
-
-        result = self._request(
-            "POST",
-            "/wechat/login",
-            service="auth",
-            json_body=payload,
-            allowed_status_codes={200, 403001},
-        )
-        self._save_token_from_payload(result)
-        return result
-
     def send_sms_login_code(self, *, phone: str, scene: int = 1, sms_type: str = "login") -> Any:
         payload = {"phone": phone.replace(" ", ""), "type": sms_type, "scene": scene}
         return self._request(
@@ -146,7 +122,6 @@ class SevenMAClient:
         phone: str,
         code: str,
         device_id: str,
-        wechat_openid: Optional[str] = None,
         force_new_account: Optional[bool] = None,
         restore_confirm: Optional[bool] = None,
     ) -> Any:
@@ -156,8 +131,6 @@ class SevenMAClient:
             "login_type": "sms_code",
             "device_id": device_id,
         }
-        if wechat_openid is not None:
-            payload["wechat_openid"] = wechat_openid
         if force_new_account is not None:
             payload["force_new_account"] = force_new_account
         if restore_confirm is not None:
@@ -173,50 +146,8 @@ class SevenMAClient:
         self._save_token_from_payload(result)
         return result
 
-    def wechat_bind_phone(
-        self,
-        *,
-        device_id: str,
-        phone_code: str,
-        wechat_openid: str,
-    ) -> Any:
-        payload = {
-            "device_id": device_id,
-            "phone_code": phone_code,
-            "wechat_openid": wechat_openid,
-        }
-        result = self._request(
-            "POST",
-            "/wechat/bind_phone",
-            service="auth",
-            json_body=payload,
-            allowed_status_codes={200, 403001},
-        )
-        self._save_token_from_payload(result)
-        return result
-
     def get_shared_key(self) -> Any:
         return self._request("GET", "/shared_key", service="auth")
-
-    def legacy_authorization_code(self, *, code: str, extra_payload: Optional[Mapping[str, Any]] = None) -> Any:
-        payload: Dict[str, Any] = {"code": code}
-        if extra_payload:
-            payload.update(dict(extra_payload))
-        return self._request("POST", "/miniapp/authorization_code", service="api", json_body=payload)
-
-    def legacy_auth_wechat(
-        self,
-        *,
-        authcode: str,
-        encrypt_data: str,
-        extra_payload: Optional[Mapping[str, Any]] = None,
-    ) -> Any:
-        payload: Dict[str, Any] = {"authcode": authcode, "encryptData": encrypt_data}
-        if extra_payload:
-            payload.update(dict(extra_payload))
-        result = self._request("POST", "/auth/wechat", service="api", json_body=payload)
-        self._save_token_from_payload(result)
-        return result
 
     # -------------------------------------------------------------------------
     # 40301 captcha APIs

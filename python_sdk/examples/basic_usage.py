@@ -6,8 +6,14 @@ from sevenma_sdk import CaptchaRequiredError, SevenMAClient
 def main() -> None:
     client = SevenMAClient(app_version="demo-0.1.0")
     try:
-        login = client.wechat_login(
-            code="replace_with_real_wx_code",
+        client.send_sms_login_code(
+            phone="replace_with_real_phone",
+            scene=1,
+        )
+
+        login = client.login_with_sms_code(
+            phone="replace_with_real_phone",
+            code="replace_with_real_sms_code",
             device_id="replace_with_real_device_id",
         )
         print("login:", login)

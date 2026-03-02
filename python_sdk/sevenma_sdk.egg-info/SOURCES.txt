@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+sevenma_sdk/__init__.py
+sevenma_sdk/client.py
+sevenma_sdk/exceptions.py
+sevenma_sdk.egg-info/PKG-INFO
+sevenma_sdk.egg-info/SOURCES.txt
+sevenma_sdk.egg-info/dependency_links.txt
+sevenma_sdk.egg-info/requires.txt
+sevenma_sdk.egg-info/top_level.txt
