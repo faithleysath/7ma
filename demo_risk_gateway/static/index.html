@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Login Demo</title>
+  <style>
+    :root {
+      --bg: #f2f7ff;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #1363df;
+      --danger: #d90429;
+      --ok: #138a36;
+      --border: #dbe4f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 10% 10%, #dbe9ff 0%, var(--bg) 45%, #edf2fb 100%);
+      color: var(--text);
+      font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+    .card {
+      width: min(760px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(33, 67, 123, 0.12);
+      padding: 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    .hint {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    label {
+      color: #334155;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7d4e8;
+      outline: none;
+      font-size: 14px;
+    }
+    input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(19, 99, 223, 0.14);
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .secondary {
+      background: #4b5563;
+    }
+    .log {
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px dashed #b6c6dd;
+      border-radius: 10px;
+      background: #f7fbff;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 280px;
+      overflow: auto;
+    }
+    .ok { color: var(--ok); }
+    .err { color: var(--danger); }
+    .hidden { display: none; }
+
+    .captcha-wrap {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e4ecf7;
+    }
+    .canvas-area {
+      position: relative;
+      width: 320px;
+      height: 160px;
+      border: 1px solid #c7d4e8;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #e6eefc;
+    }
+    .canvas-area img.bg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .canvas-area img.slider {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
+    }
+    .slider-row {
+      width: 320px;
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .slider-row input[type="range"] { flex: 1; }
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .status {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .row { grid-template-columns: 1fr; gap: 8px; }
+      .canvas-area, .slider-row { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>短信登录 + 风控挑战 Demo</h1>
+    <p class="hint">验证码固定为 <strong>999222</strong>，登录请求会先 100% 触发 40301，再走滑块挑战。</p>
+
+    <div class="row">
+      <label for="phone">手机号</label>
+      <input id="phone" type="text" value="13800138000" />
+    </div>
+    <div class="row">
+      <label for="smsCode">短信验证码</label>
+      <input id="smsCode" type="text" value="999222" />
+    </div>
+    <div class="row">
+      <label>操作</label>
+      <div>
+        <button id="loginBtn">登录</button>
+        <button id="resetBtn" class="secondary" type="button">重置日志</button>
+      </div>
+    </div>
+
+    <section id="captchaSection" class="captcha-wrap hidden">
+      <h3>安全验证（滑块）</h3>
+      <div class="small" id="captchaTips"></div>
+      <div class="canvas-area">
+        <img id="bgImg" class="bg" alt="captcha-background" />
+        <img id="sliderImg" class="slider" alt="captcha-slider-piece" />
+      </div>
+      <div class="slider-row">
+        <input id="sliderRange" type="range" min="0" max="268" value="0" />
+        <button id="verifyBtn" type="button">提交验证</button>
+        <button id="refreshBtn" class="secondary" type="button">换一张</button>
+      </div>
+      <div id="captchaStatus" class="status"></div>
+    </section>
+
+    <pre id="log" class="log"></pre>
+  </main>
+
+  <script>
+    const PRESET_CODE = "999222";
+    const DEVICE_KEY = "risk_demo_device_id";
+    const PHONE_EL = document.getElementById("phone");
+    const CODE_EL = document.getElementById("smsCode");
+    const LOGIN_BTN = document.getElementById("loginBtn");
+    const RESET_BTN = document.getElementById("resetBtn");
+    const LOG_EL = document.getElementById("log");
+
+    const CAPTCHA_SECTION = document.getElementById("captchaSection");
+    const CAPTCHA_TIPS = document.getElementById("captchaTips");
+    const CAPTCHA_STATUS = document.getElementById("captchaStatus");
+    const BG_IMG = document.getElementById("bgImg");
+    const SLIDER_IMG = document.getElementById("sliderImg");
+    const SLIDER_RANGE = document.getElementById("sliderRange");
+    const VERIFY_BTN = document.getElementById("verifyBtn");
+    const REFRESH_BTN = document.getElementById("refreshBtn");
+
+    const state = {
+      gatewayHeaders: {},
+      authToken: "",
+      loginKey: "",
+      captchaToken: "",
+      verifyToken: "",
+      sliderY: 0,
+      trackingStartAt: 0,
+      track: [],
+      lastLoginPayload: null,
+      isBusy: false,
+    };
+
+    function getOrCreateDeviceId() {
+      const cached = localStorage.getItem(DEVICE_KEY);
+      if (cached) return cached;
+      const value = "web_" + Math.random().toString(36).slice(2, 10);
+      localStorage.setItem(DEVICE_KEY, value);
+      return value;
+    }
+
+    function log(msg, type = "normal") {
+      const ts = new Date().toLocaleTimeString();
+      const prefix = type === "ok" ? "[OK]" : type === "err" ? "[ERR]" : "[INFO]";
+      LOG_EL.textContent += `${ts} ${prefix} ${msg}\n`;
+      LOG_EL.scrollTop = LOG_EL.scrollHeight;
+    }
+
+    function setBusy(v) {
+      state.isBusy = v;
+      LOGIN_BTN.disabled = v;
+      VERIFY_BTN.disabled = v;
+      REFRESH_BTN.disabled = v;
+    }
+
+    function updateGatewayHeaders(resp) {
+      const gls = resp.headers.get("GenieLamp-H-session");
+      const traceId = resp.headers.get("X-Trace-Id");
+      if (gls) state.gatewayHeaders["GenieLamp-H-session"] = gls;
+      if (traceId) state.gatewayHeaders["X-Trace-Id"] = traceId;
+    }
+
+    async function apiFetch(path, options = {}) {
+      const headers = {
+        "Content-Type": "application/json",
+        ...state.gatewayHeaders,
+      };
+      if (state.authToken) {
+        headers["Authorization"] = "Bearer " + state.authToken;
+      }
+      const resp = await fetch(path, { ...options, headers: { ...headers, ...(options.headers || {}) } });
+      updateGatewayHeaders(resp);
+      return resp;
+    }
+
+    function buildLoginPayload() {
+      return {
+        phone: PHONE_EL.value.trim(),
+        code: CODE_EL.value.trim(),
+        login_type: "sms_code",
+        device_id: getOrCreateDeviceId(),
+      };
+    }
+
+    function showCaptcha() {
+      CAPTCHA_SECTION.classList.remove("hidden");
+    }
+
+    function hideCaptcha() {
+      CAPTCHA_SECTION.classList.add("hidden");
+      CAPTCHA_STATUS.textContent = "";
+    }
+
+    function resetSliderTrack() {
+      state.trackingStartAt = Date.now();
+      state.track = [{ x: 0, y: 0, t: 0 }];
+    }
+
+    function sliderCurrentX() {
+      return parseInt(SLIDER_RANGE.value, 10) || 0;
+    }
+
+    function renderSliderPiece() {
+      SLIDER_IMG.style.left = sliderCurrentX() + "px";
+      SLIDER_IMG.style.top = state.sliderY + "px";
+    }
+
+    function appendTrackPoint() {
+      const x = sliderCurrentX();
+      const t = Date.now() - state.trackingStartAt;
+      state.track.push({ x, y: 0, t });
+      renderSliderPiece();
+    }
+
+    async function loginFlow() {
+      if (state.isBusy) return;
+      const payload = buildLoginPayload();
+      state.lastLoginPayload = payload;
+      if (!payload.phone) {
+        log("phone is required", "err");
+        return;
+      }
+      if (payload.code !== PRESET_CODE) {
+        log("this demo expects sms code 999222", "err");
+      }
+
+      setBusy(true);
+      try {
+        const resp = await apiFetch("/auth/login", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+        const data = await resp.json();
+        log("POST /auth/login -> " + JSON.stringify(data));
+
+        if (data.status_code === 200) {
+          state.authToken = data?.data?.token || "";
+          hideCaptcha();
+          log("login success, token=" + state.authToken, "ok");
+          return;
+        }
+
+        if (data.status_code === 40301 && data?.data?.login_key) {
+          state.loginKey = data.data.login_key;
+          log("risk triggered, login_key=" + state.loginKey);
+          await initCaptcha();
+          showCaptcha();
+          return;
+        }
+
+        log("login failed: " + (data.message || "unknown"), "err");
+      } catch (err) {
+        log("login request error: " + String(err), "err");
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    async function initCaptcha() {
+      CAPTCHA_STATUS.textContent = "loading captcha...";
+      const payload = {
+        scene: "login",
+        device_id: getOrCreateDeviceId(),
+        login_key: state.loginKey,
+        client_info: {
+          user_agent: navigator.userAgent,
+          screen: `${window.innerWidth}x${window.innerHeight}`,
+          language: navigator.language || "zh-CN",
+        },
+        type: "slider",
+      };
+
+      const resp = await apiFetch("/auth/captcha/polaris/captcha/generate", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
+      const data = await resp.json();
+      log("POST /auth/captcha/.../generate -> " + JSON.stringify(data));
+
+      if (data.code !== 0 || !data.data) {
+        CAPTCHA_STATUS.textContent = "generate failed";
+        log("captcha generate failed: " + (data.message || "unknown"), "err");
+        return;
+      }
+
+      state.captchaToken = data.data.token;
+      state.sliderY = Number(data.data.slider_y || 0);
+      BG_IMG.src = data.data.background_img;
+      SLIDER_IMG.src = data.data.slider_img;
+      CAPTCHA_TIPS.textContent = data.data.tips || "Drag to verify";
+      SLIDER_RANGE.value = "0";
+      resetSliderTrack();
+      renderSliderPiece();
+      CAPTCHA_STATUS.textContent = "slide then click verify";
+    }
+
+    async function verifyCaptcha() {
+      if (!state.captchaToken) return;
+      setBusy(true);
+      try {
+        const duration = Math.max(1, Date.now() - state.trackingStartAt);
+        const verifyPayload = {
+          token: state.captchaToken,
+          position: { x: sliderCurrentX(), y: 0 },
+          track: state.track.slice(),
+          device_id: getOrCreateDeviceId(),
+          duration,
+        };
+        const verifyResp = await apiFetch("/auth/captcha/polaris/captcha/verify", {
+          method: "POST",
+          body: JSON.stringify(verifyPayload),
+        });
+        const verifyData = await verifyResp.json();
+        log("POST /auth/captcha/.../verify -> " + JSON.stringify(verifyData));
+
+        if (verifyData.code !== 0 || !verifyData.data?.success) {
+          CAPTCHA_STATUS.textContent = "verify failed, refresh and retry";
+          log("verify failed", "err");
+          return;
+        }
+
+        state.verifyToken = verifyData.data.verify_token;
+        const validateResp = await apiFetch(
+          `/auth/captcha/validate?token=${encodeURIComponent(state.verifyToken)}&login_key=${encodeURIComponent(state.loginKey)}`,
+          { method: "GET" }
+        );
+        const validateData = await validateResp.json();
+        log("GET /auth/captcha/validate -> " + JSON.stringify(validateData));
+
+        if (validateData.code !== 0) {
+          CAPTCHA_STATUS.textContent = "validate failed";
+          log("validate failed: " + (validateData.message || "unknown"), "err");
+          return;
+        }
+
+        CAPTCHA_STATUS.innerHTML = '<span class="ok">captcha validated, retrying login...</span>';
+        await retryLoginAfterCaptcha();
+      } catch (err) {
+        log("captcha verify error: " + String(err), "err");
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    async function retryLoginAfterCaptcha() {
+      if (!state.lastLoginPayload) return;
+      const resp = await apiFetch("/auth/login", {
+        method: "POST",
+        body: JSON.stringify(state.lastLoginPayload),
+      });
+      const data = await resp.json();
+      log("POST /auth/login (retry) -> " + JSON.stringify(data));
+      if (data.status_code === 200) {
+        state.authToken = data?.data?.token || "";
+        hideCaptcha();
+        log("retry login success", "ok");
+      } else {
+        CAPTCHA_STATUS.innerHTML = '<span class="err">retry still blocked</span>';
+        log("retry login still blocked", "err");
+      }
+    }
+
+    LOGIN_BTN.addEventListener("click", loginFlow);
+    RESET_BTN.addEventListener("click", () => {
+      LOG_EL.textContent = "";
+      log("log reset");
+    });
+    REFRESH_BTN.addEventListener("click", () => initCaptcha().catch((e) => log(String(e), "err")));
+    VERIFY_BTN.addEventListener("click", () => verifyCaptcha().catch((e) => log(String(e), "err")));
+
+    SLIDER_RANGE.addEventListener("pointerdown", resetSliderTrack);
+    SLIDER_RANGE.addEventListener("input", appendTrackPoint);
+    SLIDER_RANGE.addEventListener("change", appendTrackPoint);
+
+    // Initial reset.
+    resetSliderTrack();
+    renderSliderPiece();
+    log("ready, click login");
+  </script>
+</body>
+</html>
+
